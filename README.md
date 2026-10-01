@@ -4,109 +4,92 @@ Una aplicación web desarrollada con React y TailwindCSS que muestra informació
 
 ## Características
 
-- Visualización de los máximos goleadores de la Champions League
+- Ranking de los máximos goleadores de la Champions League
+- Ficha de cada jugador con su perfil, sus equipos y sus temporadas
+- Páginas de equipos legendarios y de temporadas históricas
+- Rutas propias para cada vista (`#/jugadores/cristiano-ronaldo/temporadas`): se pueden compartir y el botón "atrás" funciona
 - Diseño responsive para dispositivos móviles y de escritorio
-- Interfaz de usuario moderna con TailwindCSS
-- Animaciones y transiciones para mejorar la experiencia de usuario
 
 ## Estructura del Proyecto
 
 ```
-champions-league-scorers/
+champions-league-app/
 ├── public/
+│   ├── data/players.json        # Datos de los goleadores (un único formato)
+│   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
-├── files/
-│   ├── ChampionsLeagueFooter.js
-│   ├── ChampionsLeagueScorers.js
-│   ├── PlayerRow.js
-│   ├── index.js
-│   └── index.css
+├── src/
+│   ├── App.js                   # Layout y rutas
+│   ├── index.js                 # Punto de entrada (HashRouter + PlayersProvider)
+│   ├── index.css                # Estilos propios (efectos, tablas, animaciones)
+│   ├── components/              # Cabecera, pie, avatar, paginación, marco de ficha...
+│   ├── data/PlayersContext.js   # Carga players.json y lo comparte entre páginas
+│   ├── pages/                   # Una página por ruta
+│   └── utils/                   # Cálculos de estadísticas (con tests) y rutas de assets
 ├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-└── README.md
+├── tailwind.config.js           # Colores de marca: champions-blue y champions-gold
+└── postcss.config.js
 ```
+
+### Rutas
+
+| Ruta | Página |
+|---|---|
+| `#/` | Ranking de goleadores |
+| `#/jugadores/:id` | Perfil del jugador |
+| `#/jugadores/:id/equipos` | Goles por equipo |
+| `#/jugadores/:id/temporadas` | Estadísticas por temporada |
+| `#/equipos` | Equipos legendarios |
+| `#/temporadas` | Temporadas históricas |
+
+### Formato de `public/data/players.json`
+
+```json
+{
+  "id": "cristiano-ronaldo",
+  "name": "Cristiano Ronaldo",
+  "nationality": "Portugal",
+  "birthdate": "05/02/1985",
+  "image": "images/players/1.jpeg",
+  "goals": 140, "matches": 183, "finals": 6, "titles": 5,
+  "teams": [{ "name": "Real Madrid", "goals": 105 }],
+  "biography": "...",
+  "seasons": [{ "season": "2013-14", "club": "Real Madrid", "goals": 17, "matches": 11, "assists": 5, "title": true }]
+}
+```
+
+- `id` se usa en la URL y debe ser único.
+- `image` es relativa a `public/` (sin `/` inicial). Si falla, se muestra el logo.
+- En `seasons`, `matches` y `assists` son opcionales: si faltan, la app muestra "-" y no los cuenta en los promedios.
+- El orden del ranking se calcula a partir de `goals`; los empates comparten posición.
 
 ## Instalación
 
-1. Clona el repositorio
-2. Instala las dependencias:
-
 ```bash
 npm install
+npm start      # servidor de desarrollo
+npm test       # tests
+npm run build  # build de producción
 ```
-
-3. Inicia el servidor de desarrollo:
-
-```bash
-npm start
-```
-
-## Tecnologías Utilizadas
-
-- React.js
-- TailwindCSS para estilos
-- JavaScript ES6+
-
-## Desarrollo
-
-Este proyecto está optimizado para ser desplegado utilizando GitHub Pages.
 
 ## Despliegue en GitHub Pages
 
-Para desplegar esta aplicación en GitHub Pages, sigue estos pasos:
+```bash
+npm run deploy
+```
 
-1. Asegúrate de tener Git instalado en tu sistema:
-   - Descarga Git desde [git-scm.com](https://git-scm.com/downloads)
-   - Instala siguiendo las instrucciones para tu sistema operativo
+Este comando genera el build y lo publica en la rama `gh-pages`. En GitHub, en **Settings > Pages**, selecciona la rama `gh-pages` como origen.
 
-2. Crea un repositorio en GitHub:
-   - Ve a [github.com](https://github.com/) y crea una cuenta si aún no tienes una
-   - Haz clic en "New repository" y nombra tu repositorio "champions-league-app"
-   - No inicialices el repositorio con ningún archivo
+La aplicación queda en https://renem21.github.io/champions-league-app.
 
-3. Desde la terminal, en la raíz de tu proyecto:
-   ```bash
-   # Inicializar un repositorio git local
-   git init
-   
-   # Añadir todos los archivos al staging
-   git add .
-   
-   # Hacer commit de los cambios
-   git commit -m "Primera versión de Champions League App"
-   
-   # Conectar con el repositorio remoto (reemplaza ESTUDIANTE con tu nombre de usuario)
-   git remote add origin https://github.com/Noult888/champions-league-app.git
-   
-   # Subir los archivos al repositorio remoto
-   git push -u origin master
-   ```
+Notas:
 
-4. Desplegar en GitHub Pages:
-   ```bash
-   # Ejecutar el script de despliegue
-   npm run deploy
-   ```
+- `node_modules/` y `build/` no se versionan (ver `.gitignore`).
+- Todas las rutas a `public/` pasan por `asset()` (`src/utils/asset.js`), que añade `PUBLIC_URL`. Así funcionan tanto en local como bajo `/champions-league-app/`.
+- La app usa `HashRouter` porque GitHub Pages no redirige las rutas al `index.html`.
 
-5. Activar GitHub Pages en la configuración del repositorio:
-   - Ve a la página de tu repositorio en GitHub
-   - Haz clic en "Settings" > "Pages"
-   - En "Source", selecciona la rama "gh-pages"
-   - Haz clic en "Save"
+## Tecnologías Utilizadas
 
-Tu aplicación estará disponible en: https://Noult888.github.io/champions-league-app
-
-## Notas importantes
-
-- La primera vez que despliega, puede tardar unos minutos en estar disponible
-- Después de cada actualización, ejecuta `npm run deploy` para actualizar el sitio
-- La aplicación utiliza HashRouter para garantizar que las rutas funcionen correctamente en GitHub Pages
-
-Para contribuir al proyecto:
-
-1. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`)
-2. Realiza tus cambios
-3. Haz commit de tus cambios (`git commit -m 'Añadir nueva característica'`)
-4. Realiza un push a la rama (`git push origin feature/nueva-caracteristica`)
-5. Abre un Pull Request
+- React 18 y React Router 7
+- TailwindCSS
+- Create React App
