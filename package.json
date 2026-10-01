@@ -2,7 +2,7 @@
   "name": "champions-league-scorers",
   "version": "1.0.0",
   "description": "Aplicación que muestra los máximos goleadores de la UEFA Champions League",
-  "homepage": "https://Noult888.github.io/champions-league-app",
+  "homepage": "https://renem21.github.io/champions-league-app",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
