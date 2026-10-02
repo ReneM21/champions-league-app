@@ -1,0 +1,131 @@
+{
+  "updatedAt": null,
+  "source": null,
+  "players": [
+    {
+      "id": "cristiano-ronaldo",
+      "name": "Cristiano Ronaldo",
+      "nationality": "Portugal",
+      "goals": 140,
+      "matches": 183,
+      "years": "2003–2022",
+      "clubs": [
+        "Manchester United",
+        "Real Madrid",
+        "Juventus"
+      ]
+    },
+    {
+      "id": "lionel-messi",
+      "name": "Lionel Messi",
+      "nationality": "Argentina",
+      "goals": 129,
+      "matches": 163,
+      "years": "2004–2023",
+      "clubs": [
+        "Barcelona",
+        "Paris Saint-Germain"
+      ]
+    },
+    {
+      "id": "robert-lewandowski",
+      "name": "Robert Lewandowski",
+      "nationality": "Polonia",
+      "goals": 103,
+      "matches": 120,
+      "years": "2011–2024",
+      "clubs": [
+        "Borussia Dortmund",
+        "Bayern München",
+        "Barcelona"
+      ]
+    },
+    {
+      "id": "karim-benzema",
+      "name": "Karim Benzema",
+      "nationality": "Francia",
+      "goals": 90,
+      "matches": 152,
+      "years": "2005–2024",
+      "clubs": [
+        "Lyon",
+        "Real Madrid"
+      ]
+    },
+    {
+      "id": "raul-gonzalez",
+      "name": "Raúl González",
+      "nationality": "España",
+      "goals": 71,
+      "matches": 142,
+      "years": "1995–2012",
+      "clubs": [
+        "Real Madrid",
+        "Schalke"
+      ]
+    },
+    {
+      "id": "thomas-muller",
+      "name": "Thomas Müller",
+      "nationality": "Alemania",
+      "goals": 56,
+      "matches": 149,
+      "years": "2009–2024",
+      "clubs": [
+        "Bayern München"
+      ]
+    },
+    {
+      "id": "ruud-van-nistelrooy",
+      "name": "Ruud van Nistelrooy",
+      "nationality": "Países Bajos",
+      "goals": 56,
+      "matches": 73,
+      "years": "1998–2010",
+      "clubs": [
+        "PSV Eindhoven",
+        "Manchester United",
+        "Real Madrid"
+      ]
+    },
+    {
+      "id": "kylian-mbappe",
+      "name": "Kylian Mbappé",
+      "nationality": "Francia",
+      "goals": 55,
+      "matches": 70,
+      "years": "2016–2025",
+      "clubs": [
+        "Monaco",
+        "Paris Saint-Germain",
+        "Real Madrid"
+      ]
+    },
+    {
+      "id": "thierry-henry",
+      "name": "Thierry Henry",
+      "nationality": "Francia",
+      "goals": 50,
+      "matches": 112,
+      "years": "1997–2010",
+      "clubs": [
+        "Monaco",
+        "Arsenal",
+        "Barcelona"
+      ]
+    },
+    {
+      "id": "erling-haaland",
+      "name": "Erling Haaland",
+      "nationality": "Noruega",
+      "goals": 49,
+      "matches": 48,
+      "years": "2019–2025",
+      "clubs": [
+        "Salzburg",
+        "Borussia Dortmund",
+        "Manchester City"
+      ]
+    }
+  ]
+}

@@ -2,11 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PlayerAvatar from '../components/PlayerAvatar';
 import { usePlayers } from '../data/PlayersContext';
+import { formatValue } from '../utils/stats';
 
 const actionClass = 'transform transition-transform duration-300 hover:scale-105 active:scale-95';
 
 const HomePage = () => {
-  const { players } = usePlayers();
+  const { players, updatedAt, source } = usePlayers();
+  const updatedLabel = updatedAt
+    ? new Date(updatedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })
+    : null;
 
   return (
     <div className="p-4 md:p-8 animate-fadeIn">
@@ -27,6 +31,7 @@ const HomePage = () => {
                 <th scope="col" className="text-xs uppercase tracking-wider">Jugador</th>
                 <th scope="col" className="text-xs uppercase tracking-wider">Nacionalidad</th>
                 <th scope="col" className="text-xs uppercase tracking-wider">Goles</th>
+                <th scope="col" className="text-xs uppercase tracking-wider">Partidos</th>
                 <th scope="col" className="text-xs uppercase tracking-wider">Acciones</th>
               </tr>
             </thead>
@@ -44,6 +49,7 @@ const HomePage = () => {
                   </td>
                   <td className="whitespace-nowrap text-sm text-gray-500">{player.nationality || '-'}</td>
                   <td className="whitespace-nowrap text-sm font-bold text-champions-gold">{player.goals}</td>
+                  <td className="whitespace-nowrap text-sm text-gray-500">{formatValue(player.matches)}</td>
                   <td className="whitespace-nowrap text-sm font-medium">
                     <div className="flex space-x-3">
                       <Link to={`/jugadores/${player.id}`} className={`text-champions-blue hover:text-blue-700 ${actionClass}`}>
@@ -70,6 +76,19 @@ const HomePage = () => {
           La información mostrada incluye los máximos goleadores históricos de la UEFA Champions League.
           Para ver estadísticas detalladas de cada jugador, incluyendo temporadas, equipos y rendimiento,
           utilice los enlaces de la tabla.
+        </p>
+        <p className="text-sm text-gray-700 mt-2">
+          {updatedLabel ? (
+            <>
+              Ranking actualizado automáticamente el <strong>{updatedLabel}</strong> con datos de{' '}
+              <a href={source} target="_blank" rel="noopener noreferrer" className="text-champions-blue underline">
+                Wikipedia
+              </a>{' '}
+              (CC BY-SA). Las biografías y el desglose por temporada se mantienen a mano.
+            </>
+          ) : (
+            'El ranking todavía no se ha actualizado automáticamente.'
+          )}
         </p>
         <p className="text-sm text-gray-700 mt-2">
           Los campos marcados con "-" indican que la información no está disponible actualmente.

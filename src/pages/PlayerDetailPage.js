@@ -27,7 +27,8 @@ const PlayerDetailPage = () => (
             <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Posición en el ranking:</span> {player.position}º</p>
             <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Nacionalidad:</span> {formatValue(player.nationality)}</p>
             <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Fecha de nacimiento:</span> {formatValue(player.birthdate)}</p>
-            <p className="text-gray-700"><span className="font-semibold text-champions-blue">Equipos:</span> {player.teams.map((t) => t.name).join(', ') || '-'}</p>
+            <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Años en la competición:</span> {formatValue(player.years || null)}</p>
+            <p className="text-gray-700"><span className="font-semibold text-champions-blue">Equipos:</span> {(player.clubs || player.teams.map((t) => t.name)).join(', ') || '-'}</p>
           </div>
 
           <div className="md:col-span-2 glass-card p-5">

@@ -1,24 +1,32 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { asset } from '../utils/asset';
-import { rankPlayers } from '../utils/stats';
+import { mergePlayers } from './mergePlayers';
 
 const PlayersContext = createContext({ status: 'loading', players: [] });
 
-// Carga public/data/players.json una sola vez y lo comparte con todas las páginas.
+const fetchJson = (path) =>
+  fetch(asset(path)).then((response) => {
+    if (!response.ok) throw new Error(`HTTP ${response.status} en ${path}`);
+    return response.json();
+  });
+
+// Carga el ranking (actualizado automáticamente) y las fichas de jugador
+// una sola vez y lo comparte con todas las páginas.
 export function PlayersProvider({ children }) {
   const [state, setState] = useState({ status: 'loading', players: [] });
 
   useEffect(() => {
     let cancelled = false;
 
-    fetch(asset('data/players.json'))
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((players) => {
-        const sorted = [...players].sort((a, b) => b.goals - a.goals);
-        if (!cancelled) setState({ status: 'ready', players: rankPlayers(sorted) });
+    Promise.all([fetchJson('data/ranking.json'), fetchJson('data/players.json')])
+      .then(([ranking, details]) => {
+        if (cancelled) return;
+        setState({
+          status: 'ready',
+          players: mergePlayers(ranking, details),
+          updatedAt: ranking.updatedAt,
+          source: ranking.source,
+        });
       })
       .catch((error) => {
         console.error('Error cargando los datos de jugadores:', error);
