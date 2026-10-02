@@ -5,8 +5,6 @@
     "nationality": "Portugal",
     "birthdate": "05/02/1985",
     "image": "images/players/1.jpeg",
-    "goals": 140,
-    "matches": 183,
     "finals": 6,
     "titles": 5,
     "teams": [
@@ -43,8 +41,6 @@
     "nationality": "Argentina",
     "birthdate": "24/06/1987",
     "image": "images/players/2.jpg",
-    "goals": 129,
-    "matches": 163,
     "finals": 5,
     "titles": 4,
     "teams": [
@@ -80,8 +76,6 @@
     "nationality": "Polonia",
     "birthdate": "21/08/1988",
     "image": "images/players/3.avif",
-    "goals": 103,
-    "matches": 120,
     "finals": 3,
     "titles": 1,
     "teams": [
@@ -112,8 +106,6 @@
     "nationality": "Francia",
     "birthdate": "19/12/1987",
     "image": "images/players/4.webp",
-    "goals": 90,
-    "matches": 152,
     "finals": 5,
     "titles": 5,
     "teams": [
@@ -149,8 +141,6 @@
     "nationality": "España",
     "birthdate": "27/06/1977",
     "image": "images/players/5.webp",
-    "goals": 71,
-    "matches": 142,
     "finals": 3,
     "titles": 3,
     "teams": [
@@ -183,8 +173,6 @@
     "nationality": "Alemania",
     "birthdate": "13/09/1989",
     "image": "images/players/7.webp",
-    "goals": 56,
-    "matches": 149,
     "finals": 3,
     "titles": 2,
     "teams": [
@@ -215,8 +203,6 @@
     "nationality": "Países Bajos",
     "birthdate": "01/07/1976",
     "image": "images/players/6.jpg",
-    "goals": 56,
-    "matches": 73,
     "finals": 0,
     "titles": 0,
     "teams": [
@@ -245,8 +231,6 @@
     "nationality": "Francia",
     "birthdate": "20/12/1998",
     "image": "images/players/9.webp",
-    "goals": 55,
-    "matches": 70,
     "finals": 1,
     "titles": 0,
     "teams": [
@@ -273,8 +257,6 @@
     "nationality": "Francia",
     "birthdate": "17/08/1977",
     "image": "images/players/8.webp",
-    "goals": 50,
-    "matches": 112,
     "finals": 2,
     "titles": 1,
     "teams": [
@@ -304,8 +286,6 @@
     "nationality": "Noruega",
     "birthdate": "21/07/2000",
     "image": "images/players/10.webp",
-    "goals": 49,
-    "matches": 48,
     "finals": 1,
     "titles": 1,
     "teams": [

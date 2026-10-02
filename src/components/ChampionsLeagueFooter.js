@@ -1,12 +1,14 @@
 import React from 'react';
+import { usePlayers } from '../data/PlayersContext';
 import { LOGO } from '../utils/asset';
 
 const ChampionsLeagueFooter = () => {
   const currentYear = new Date().getFullYear();
+  const { source } = usePlayers();
 
   return (
     <footer className="bg-champions-blue text-white border-t border-champions-gold">
-      <div className="flex justify-center items-center p-6">
+      <div className="flex flex-wrap justify-center items-center gap-y-2 p-6">
         <div className="w-10 h-10 mr-4 overflow-hidden rounded-lg shadow-md border border-champions-gold/30 bg-champions-blue/80">
           <img
             src={LOGO}
@@ -17,6 +19,14 @@ const ChampionsLeagueFooter = () => {
         <p className="text-sm">
           &copy; {currentYear} <span className="text-champions-gold">UEFA Champions League</span> - Estadísticas Históricas
         </p>
+        {source && (
+          <p className="text-xs text-blue-300 ml-4">
+            Fuente:{' '}
+            <a href={source} target="_blank" rel="noopener noreferrer" className="underline hover:text-champions-gold">
+              Wikipedia
+            </a>
+          </p>
+        )}
       </div>
 
       {/* Barra decorativa con estrellas */}

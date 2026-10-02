@@ -4,7 +4,7 @@ Una aplicación web desarrollada con React y TailwindCSS que muestra informació
 
 ## Características
 
-- Ranking de los máximos goleadores de la Champions League
+- Ranking de los máximos goleadores de la Champions League, actualizado automáticamente cada día desde Wikipedia
 - Ficha de cada jugador con su perfil, sus equipos y sus temporadas
 - Páginas de equipos legendarios y de temporadas históricas
 - Rutas propias para cada vista (`#/jugadores/cristiano-ronaldo/temporadas`): se pueden compartir y el botón "atrás" funciona
@@ -15,7 +15,8 @@ Una aplicación web desarrollada con React y TailwindCSS que muestra informació
 ```
 champions-league-app/
 ├── public/
-│   ├── data/players.json        # Datos de los goleadores (un único formato)
+│   ├── data/ranking.json        # Ranking (generado automáticamente, no editar)
+│   ├── data/players.json        # Fichas de jugador (se editan a mano)
 │   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
 ├── src/
@@ -23,9 +24,11 @@ champions-league-app/
 │   ├── index.js                 # Punto de entrada (HashRouter + PlayersProvider)
 │   ├── index.css                # Estilos propios (efectos, tablas, animaciones)
 │   ├── components/              # Cabecera, pie, avatar, paginación, marco de ficha...
-│   ├── data/PlayersContext.js   # Carga players.json y lo comparte entre páginas
+│   ├── data/                    # Carga y une ranking.json y players.json
 │   ├── pages/                   # Una página por ruta
 │   └── utils/                   # Cálculos de estadísticas (con tests) y rutas de assets
+├── scripts/                     # Actualización del ranking desde Wikipedia (con tests)
+├── .github/workflows/           # Publicación y actualización automáticas
 ├── package.json
 ├── tailwind.config.js           # Colores de marca: champions-blue y champions-gold
 └── postcss.config.js
@@ -42,7 +45,18 @@ champions-league-app/
 | `#/equipos` | Equipos legendarios |
 | `#/temporadas` | Temporadas históricas |
 
-### Formato de `public/data/players.json`
+### Datos
+
+Los datos se reparten en dos archivos que la app une por `id`:
+
+| Archivo | Contenido | Quién lo mantiene |
+|---|---|---|
+| `public/data/ranking.json` | Top 10 histórico: goles, partidos, años, clubes y nación | El workflow **Actualizar datos**. No se edita a mano |
+| `public/data/players.json` | Biografía, foto, fecha de nacimiento, finales, títulos, goles por equipo y temporadas | A mano |
+
+El ranking decide qué jugadores aparecen y en qué orden. Si entra al top 10 un jugador sin ficha en `players.json`, aparece con los datos del ranking y el logo como foto. Para completarlo, añade su ficha con el mismo `id` (su nombre en minúsculas, sin tildes y con guiones; por ejemplo `kylian-mbappe`).
+
+#### Formato de `public/data/players.json`
 
 ```json
 {
@@ -51,7 +65,7 @@ champions-league-app/
   "nationality": "Portugal",
   "birthdate": "05/02/1985",
   "image": "images/players/1.jpeg",
-  "goals": 140, "matches": 183, "finals": 6, "titles": 5,
+  "finals": 6, "titles": 5,
   "teams": [{ "name": "Real Madrid", "goals": 105 }],
   "biography": "...",
   "seasons": [{ "season": "2013-14", "club": "Real Madrid", "goals": 17, "matches": 11, "assists": 5, "title": true }]
@@ -61,16 +75,30 @@ champions-league-app/
 - `id` se usa en la URL y debe ser único.
 - `image` es relativa a `public/` (sin `/` inicial). Si falla, se muestra el logo.
 - En `seasons`, `matches` y `assists` son opcionales: si faltan, la app muestra "-" y no los cuenta en los promedios.
-- El orden del ranking se calcula a partir de `goals`; los empates comparten posición.
+- El orden del ranking se calcula a partir de los goles de `ranking.json`; los empates comparten posición.
 
 ## Instalación
 
 ```bash
 npm install
 npm start      # servidor de desarrollo
-npm test       # tests
+npm test       # tests de la app
+npm run test:scripts  # tests del analizador de Wikipedia
 npm run build  # build de producción
 ```
+
+## Actualización automática de los datos
+
+El workflow `.github/workflows/update-data.yml` se ejecuta todos los días a las 06:00 UTC:
+
+1. Ejecuta `npm run update-data`, que descarga la tabla histórica de [List of UEFA Champions League top scorers](https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers) y genera `public/data/ranking.json`.
+2. Si el ranking cambió, lo commitea en `master` y vuelve a publicar la app.
+
+Para lanzarlo a mano: **Actions → Actualizar datos → Run workflow**.
+
+Antes de guardar, el script comprueba los datos: al menos 10 jugadores, goles ordenados, Cristiano Ronaldo presente y ningún jugador que pierda más de 2 goles respecto al ranking anterior. Si algo falla (por ejemplo, porque Wikipedia cambió el formato de la tabla), el workflow termina con error sin tocar los datos, y GitHub te avisa por email. El analizador está en `scripts/ranking-parser.js`.
+
+Los datos de Wikipedia tienen licencia CC BY-SA, por eso la página cita la fuente.
 
 ## Despliegue en GitHub Pages
 

@@ -1,4 +1,6 @@
 # Publica la app en GitHub Pages cada vez que se sube algo a master.
+# También lo llama update-data.yml tras actualizar el ranking, porque los
+# commits hechos por un workflow no disparan otros workflows.
 # Requiere Settings > Pages > Source: "GitHub Actions".
 name: Deploy a GitHub Pages
 
@@ -6,13 +8,19 @@ on:
   push:
     branches: [master]
   workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit a publicar
+        type: string
+        required: false
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Si llegan dos pushes seguidos, se publica solo el último
+# Si llegan dos publicaciones seguidas, se publica solo la última
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -22,16 +30,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - run: npm ci
 
       - name: Tests
-        run: npm test
+        run: npm test && npm run test:scripts
         env:
           CI: true
 

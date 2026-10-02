@@ -95,7 +95,7 @@ const PlayerSeasonsPage = () => (
                 <Figure value={formatRatio(summary.goalsPerMatch)} label="Goles por Partido" color="text-green-600" />
               </div>
               <p className="text-xs text-gray-500 mt-4">
-                Suma de las temporadas de la tabla. El promedio solo tiene en cuenta las temporadas con partidos registrados.
+                Suma de las temporadas de la tabla, que se actualiza a mano y puede no incluir la temporada en curso. El promedio solo tiene en cuenta las temporadas con partidos registrados.
               </p>
             </div>
           </div>

@@ -1,0 +1,64 @@
+# Actualiza el ranking de goleadores desde Wikipedia todos los días y, si
+# cambió, lo commitea en master y vuelve a publicar la app.
+# Si los datos descargados no pasan las comprobaciones, el workflow falla
+# sin tocar nada y GitHub avisa por email.
+name: Actualizar datos
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # 06:00 UTC, después de las jornadas de martes a jueves
+  workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Descargar ranking de Wikipedia
+        run: npm run update-data
+
+      - name: Commit si hay cambios
+        id: commit
+        run: |
+          git add public/data/ranking.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Actualizar ranking de goleadores desde Wikipedia"
+            git push origin HEAD:master
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}
