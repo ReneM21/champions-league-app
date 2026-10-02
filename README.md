@@ -74,13 +74,21 @@ npm run build  # build de producción
 
 ## Despliegue en GitHub Pages
 
+La aplicación queda en https://renem21.github.io/champions-league-app.
+
+### Automático (recomendado)
+
+El workflow `.github/workflows/deploy.yml` ejecuta los tests, genera el build y publica la app cada vez que se sube algo a `master`. También se puede lanzar a mano desde la pestaña **Actions**.
+
+Para que funcione, en **Settings > Pages > Source** tiene que estar seleccionado **GitHub Actions**.
+
+### Manual
+
 ```bash
 npm run deploy
 ```
 
-Este comando genera el build y lo publica en la rama `gh-pages`. En GitHub, en **Settings > Pages**, selecciona la rama `gh-pages` como origen.
-
-La aplicación queda en https://renem21.github.io/champions-league-app.
+Este comando genera el build y lo publica en la rama `gh-pages`. Solo tiene efecto si en **Settings > Pages > Source** está seleccionado **Deploy from a branch** con la rama `gh-pages`.
 
 Notas:
 
