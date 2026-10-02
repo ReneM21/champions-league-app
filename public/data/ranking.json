@@ -1,6 +1,6 @@
 {
-  "updatedAt": null,
-  "source": null,
+  "updatedAt": "2026-10-02T03:26:23.406Z",
+  "source": "https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers",
   "players": [
     {
       "id": "cristiano-ronaldo",
@@ -21,7 +21,7 @@
       "nationality": "Argentina",
       "goals": 129,
       "matches": 163,
-      "years": "2004–2023",
+      "years": "2005–2023",
       "clubs": [
         "Barcelona",
         "Paris Saint-Germain"
@@ -31,12 +31,12 @@
       "id": "robert-lewandowski",
       "name": "Robert Lewandowski",
       "nationality": "Polonia",
-      "goals": 103,
-      "matches": 120,
-      "years": "2011–2024",
+      "goals": 109,
+      "matches": 144,
+      "years": "2011–",
       "clubs": [
         "Borussia Dortmund",
-        "Bayern München",
+        "Bayern Munich",
         "Barcelona"
       ]
     },
@@ -46,33 +46,59 @@
       "nationality": "Francia",
       "goals": 90,
       "matches": 152,
-      "years": "2005–2024",
+      "years": "2005–2023",
       "clubs": [
         "Lyon",
         "Real Madrid"
       ]
     },
     {
+      "id": "kylian-mbappe",
+      "name": "Kylian Mbappé",
+      "nationality": "Francia",
+      "goals": 71,
+      "matches": 99,
+      "years": "2016–",
+      "clubs": [
+        "Monaco",
+        "Paris Saint-Germain",
+        "Real Madrid"
+      ]
+    },
+    {
       "id": "raul-gonzalez",
-      "name": "Raúl González",
+      "name": "Raúl",
       "nationality": "España",
       "goals": 71,
       "matches": 142,
-      "years": "1995–2012",
+      "years": "1995–2011",
       "clubs": [
         "Real Madrid",
-        "Schalke"
+        "Schalke 04"
+      ]
+    },
+    {
+      "id": "erling-haaland",
+      "name": "Erling Haaland",
+      "nationality": "Noruega",
+      "goals": 59,
+      "matches": 59,
+      "years": "2019–",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Borussia Dortmund",
+        "Manchester City"
       ]
     },
     {
       "id": "thomas-muller",
       "name": "Thomas Müller",
       "nationality": "Alemania",
-      "goals": 56,
-      "matches": 149,
-      "years": "2009–2024",
+      "goals": 57,
+      "matches": 163,
+      "years": "2009–2025",
       "clubs": [
-        "Bayern München"
+        "Bayern Munich"
       ]
     },
     {
@@ -81,7 +107,7 @@
       "nationality": "Países Bajos",
       "goals": 56,
       "matches": 73,
-      "years": "1998–2010",
+      "years": "1998–2009",
       "clubs": [
         "PSV Eindhoven",
         "Manchester United",
@@ -89,42 +115,15 @@
       ]
     },
     {
-      "id": "kylian-mbappe",
-      "name": "Kylian Mbappé",
-      "nationality": "Francia",
+      "id": "harry-kane",
+      "name": "Harry Kane",
+      "nationality": "Inglaterra",
       "goals": 55,
-      "matches": 70,
-      "years": "2016–2025",
+      "matches": 71,
+      "years": "2016–",
       "clubs": [
-        "Monaco",
-        "Paris Saint-Germain",
-        "Real Madrid"
-      ]
-    },
-    {
-      "id": "thierry-henry",
-      "name": "Thierry Henry",
-      "nationality": "Francia",
-      "goals": 50,
-      "matches": 112,
-      "years": "1997–2010",
-      "clubs": [
-        "Monaco",
-        "Arsenal",
-        "Barcelona"
-      ]
-    },
-    {
-      "id": "erling-haaland",
-      "name": "Erling Haaland",
-      "nationality": "Noruega",
-      "goals": 49,
-      "matches": 48,
-      "years": "2019–2025",
-      "clubs": [
-        "Salzburg",
-        "Borussia Dortmund",
-        "Manchester City"
+        "Tottenham Hotspur",
+        "Bayern Munich"
       ]
     }
   ]
