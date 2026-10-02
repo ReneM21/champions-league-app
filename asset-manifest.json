@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/champions-league-app/static/css/main.f88139b8.css",
+    "main.js": "/champions-league-app/static/js/main.c3308abf.js",
+    "index.html": "/champions-league-app/index.html",
+    "main.f88139b8.css.map": "/champions-league-app/static/css/main.f88139b8.css.map",
+    "main.c3308abf.js.map": "/champions-league-app/static/js/main.c3308abf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f88139b8.css",
+    "static/js/main.c3308abf.js"
+  ]
+}

@@ -1,0 +1,18 @@
+# Dependencias
+/node_modules
+
+# Build de producción (se publica con `npm run deploy` en la rama gh-pages)
+/build
+
+# Tests
+/coverage
+
+# Varios
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
