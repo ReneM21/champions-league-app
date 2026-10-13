@@ -10,11 +10,14 @@ export const formatRatio = (ratio) => (ratio === null ? '-' : ratio.toFixed(2));
 
 export const formatValue = (value) => (value === undefined || value === null ? '-' : value);
 
-// Posición con empates: dos jugadores con los mismos goles comparten puesto (1, 2, 2, 4...).
-export const rankPlayers = (players) =>
+export const formatDate = (isoDate) =>
+  isoDate ? new Date(isoDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+
+// Posición con empates: dos jugadores con el mismo valor comparten puesto (1, 2, 2, 4...).
+export const rankPlayers = (players, key = 'goals') =>
   players.map((player) => ({
     ...player,
-    position: 1 + players.filter((other) => other.goals > player.goals).length,
+    position: 1 + players.filter((other) => other[key] > player[key]).length,
   }));
 
 export const sortSeasonsDesc = (seasons) =>

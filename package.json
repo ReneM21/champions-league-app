@@ -11,7 +11,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test:scripts": "node --test \"scripts/*.test.js\"",
-    "update-data": "node scripts/update-ranking.js"
+    "update-data": "node scripts/update-ranking.js goals",
+    "update-assists": "node scripts/update-ranking.js assists"
   },
   "dependencies": {
     "react": "^18.2.0",

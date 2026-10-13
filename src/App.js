@@ -10,6 +10,7 @@ import PlayerTeamsPage from './pages/PlayerTeamsPage';
 import PlayerSeasonsPage from './pages/PlayerSeasonsPage';
 import TeamsPage from './pages/TeamsPage';
 import SeasonsPage from './pages/SeasonsPage';
+import AssistsPage from './pages/AssistsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const ScrollToTopOnNavigate = () => {
@@ -43,6 +44,7 @@ const App = () => {
             <Route path="/jugadores/:id/equipos" element={<PlayerTeamsPage />} />
             <Route path="/jugadores/:id/temporadas" element={<PlayerSeasonsPage />} />
             <Route path="/equipos" element={<TeamsPage />} />
+            <Route path="/asistencias" element={<AssistsPage />} />
             <Route path="/temporadas" element={<SeasonsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

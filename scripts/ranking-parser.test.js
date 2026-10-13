@@ -73,3 +73,44 @@ test('validateRanking rechaza datos sospechosos', () => {
   // El ranking inicial es manual (updatedAt null): no se compara
   assert.doesNotThrow(() => validateRanking(players, { ...generated, updatedAt: null }));
 });
+
+const { parseStatTable } = require('./ranking-parser');
+const assistsFixture = fs.readFileSync(path.join(__dirname, '__fixtures__', 'wikipedia-records-assists.html'), 'utf8');
+
+test('asistencias: elige la tabla histórica aunque antes haya otra con columna Assists', () => {
+  const rows = parseStatTable(assistsFixture, 'assists');
+  assert.equal(rows.length, 12);
+  assert.deepEqual(rows[0], {
+    id: 'jugador-uno',
+    name: 'Jugador Uno',
+    nationality: 'Portugal',
+    assists: 45,
+    matches: 180,
+    years: '',
+    clubs: [],
+  });
+  assert.ok(!rows.some((r) => r.name === 'Otro Jugador'));
+});
+
+test('asistencias: respeta los empates agrupados con rowspan', () => {
+  const rows = parseStatTable(assistsFixture, 'assists');
+  const ocho = rows.find((r) => r.id === 'jugador-ocho');
+  assert.equal(ocho.assists, 27);
+  assert.equal(ocho.matches, 100);
+  assert.equal(ocho.nationality, 'Bélgica');
+});
+
+test('asistencias: top 10 con empates y validación', () => {
+  const players = topPlayers(parseStatTable(assistsFixture, 'assists'), 'assists');
+  assert.equal(players.length, 11); // el décimo y el undécimo empatan con 25
+  assert.doesNotThrow(() => validateRanking(players, null, 'assists'));
+
+  const generated = { updatedAt: '2026-01-01T00:00:00Z', players: [{ id: 'jugador-dos', assists: 50 }] };
+  assert.throws(() => validateRanking(players, generated, 'assists'), /Jugador Dos baja de 50 a 41 asistencias/);
+  const flojos = players.map((p) => ({ ...p, assists: 10 }));
+  assert.throws(() => validateRanking(flojos, null, 'assists'), /El líder solo tiene 10 asistencias/);
+});
+
+test('asistencias: falla si la página no tiene la tabla', () => {
+  assert.throws(() => parseStatTable(fixture, 'assists'), /No se encontró la tabla de asistencias/);
+});

@@ -5,6 +5,7 @@ Una aplicación web desarrollada con React y TailwindCSS que muestra informació
 ## Características
 
 - Ranking de los máximos goleadores de la Champions League, actualizado automáticamente cada día desde Wikipedia
+- Ranking de los máximos asistidores, actualizado de la misma forma
 - Ficha de cada jugador con su perfil, sus equipos y sus temporadas
 - Páginas de equipos legendarios y de temporadas históricas
 - Rutas propias para cada vista (`#/jugadores/cristiano-ronaldo/temporadas`): se pueden compartir y el botón "atrás" funciona
@@ -15,7 +16,8 @@ Una aplicación web desarrollada con React y TailwindCSS que muestra informació
 ```
 champions-league-app/
 ├── public/
-│   ├── data/ranking.json        # Ranking (generado automáticamente, no editar)
+│   ├── data/ranking.json        # Ranking de goleadores (generado automáticamente, no editar)
+│   ├── data/assists.json        # Ranking de asistidores (generado automáticamente, no editar)
 │   ├── data/players.json        # Fichas de jugador (se editan a mano)
 │   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
@@ -24,7 +26,7 @@ champions-league-app/
 │   ├── index.js                 # Punto de entrada (HashRouter + PlayersProvider)
 │   ├── index.css                # Estilos propios (efectos, tablas, animaciones)
 │   ├── components/              # Cabecera, pie, avatar, paginación, marco de ficha...
-│   ├── data/                    # Carga y une ranking.json y players.json
+│   ├── data/                    # Carga los JSON y une ranking.json con players.json
 │   ├── pages/                   # Una página por ruta
 │   └── utils/                   # Cálculos de estadísticas (con tests) y rutas de assets
 ├── scripts/                     # Actualización del ranking desde Wikipedia (con tests)
@@ -42,6 +44,7 @@ champions-league-app/
 | `#/jugadores/:id` | Perfil del jugador |
 | `#/jugadores/:id/equipos` | Goles por equipo |
 | `#/jugadores/:id/temporadas` | Estadísticas por temporada |
+| `#/asistencias` | Ranking de asistidores |
 | `#/equipos` | Equipos legendarios |
 | `#/temporadas` | Temporadas históricas |
 
@@ -52,6 +55,7 @@ Los datos se reparten en dos archivos que la app une por `id`:
 | Archivo | Contenido | Quién lo mantiene |
 |---|---|---|
 | `public/data/ranking.json` | Top 10 histórico: goles, partidos, años, clubes y nación | El workflow **Actualizar datos**. No se edita a mano |
+| `public/data/assists.json` | Top 10 histórico de asistencias y partidos | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/players.json` | Biografía, foto, fecha de nacimiento, finales, títulos, goles por equipo y temporadas | A mano |
 
 El ranking decide qué jugadores aparecen y en qué orden. Si entra al top 10 un jugador sin ficha en `players.json`, aparece con los datos del ranking y el logo como foto. Para completarlo, añade su ficha con el mismo `id` (su nombre en minúsculas, sin tildes y con guiones; por ejemplo `kylian-mbappe`).
@@ -84,6 +88,8 @@ npm install
 npm start      # servidor de desarrollo
 npm test       # tests de la app
 npm run test:scripts  # tests del analizador de Wikipedia
+npm run update-data     # descarga el ranking de goleadores
+npm run update-assists  # descarga el ranking de asistidores
 npm run build  # build de producción
 ```
 
@@ -91,12 +97,15 @@ npm run build  # build de producción
 
 El workflow `.github/workflows/update-data.yml` se ejecuta todos los días a las 06:00 UTC:
 
-1. Ejecuta `npm run update-data`, que descarga la tabla histórica de [List of UEFA Champions League top scorers](https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers) y genera `public/data/ranking.json`.
-2. Si el ranking cambió, lo commitea en `master` y vuelve a publicar la app.
+1. `npm run update-data` descarga la tabla histórica de [List of UEFA Champions League top scorers](https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers) y genera `public/data/ranking.json`.
+2. `npm run update-assists` descarga la tabla de más asistencias de [UEFA Champions League records and statistics](https://en.wikipedia.org/wiki/UEFA_Champions_League_records_and_statistics) y genera `public/data/assists.json`. Como esa página tiene varias tablas con columna de asistencias, se usa la que tiene más filas.
+3. Si algún ranking cambió, lo commitea en `master` y vuelve a publicar la app.
+
+Los dos rankings son independientes: si uno falla, el otro se actualiza igualmente.
 
 Para lanzarlo a mano: **Actions → Actualizar datos → Run workflow**.
 
-Antes de guardar, el script comprueba los datos: al menos 10 jugadores, goles ordenados, Cristiano Ronaldo presente y ningún jugador que pierda más de 2 goles respecto al ranking anterior. Si algo falla (por ejemplo, porque Wikipedia cambió el formato de la tabla), el workflow termina con error sin tocar los datos, y GitHub te avisa por email. El analizador está en `scripts/ranking-parser.js`.
+Antes de guardar, el script comprueba los datos: al menos 10 jugadores, valores ordenados, un líder con al menos 30, ningún jugador que pierda más de 2 respecto al ranking anterior y, en goles, Cristiano Ronaldo presente. Si algo falla (por ejemplo, porque Wikipedia cambió el formato de la tabla), el workflow termina con error sin tocar los datos, y GitHub te avisa por email. El analizador está en `scripts/ranking-parser.js`.
 
 Los datos de Wikipedia tienen licencia CC BY-SA, por eso la página cita la fuente.
 

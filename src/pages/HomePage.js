@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PlayerAvatar from '../components/PlayerAvatar';
 import { usePlayers } from '../data/PlayersContext';
-import { formatValue } from '../utils/stats';
+import { formatDate, formatValue } from '../utils/stats';
 
 const actionClass = 'transform transition-transform duration-300 hover:scale-105 active:scale-95';
 
 const HomePage = () => {
   const { players, updatedAt, source } = usePlayers();
-  const updatedLabel = updatedAt
-    ? new Date(updatedAt).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })
-    : null;
+  const updatedLabel = formatDate(updatedAt);
 
   return (
     <div className="p-4 md:p-8 animate-fadeIn">

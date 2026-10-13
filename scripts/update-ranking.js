@@ -1,27 +1,35 @@
-// Descarga el ranking histórico de goleadores de la Champions desde Wikipedia
-// y lo guarda en public/data/ranking.json. Lo ejecuta el workflow
-// .github/workflows/update-data.yml; en local: npm run update-data
+// Descarga un ranking histórico de la Champions desde Wikipedia y lo guarda
+// en public/data. Lo ejecuta el workflow .github/workflows/update-data.yml.
+// En local:
+//   npm run update-data      -> goleadores (ranking.json)
+//   npm run update-assists   -> asistidores (assists.json)
 const fs = require('fs');
 const path = require('path');
-const { parseTopScorers, topPlayers, validateRanking } = require('./ranking-parser');
+const { parseStatTable, topPlayers, validateRanking } = require('./ranking-parser');
 
-const PAGE = 'List_of_UEFA_Champions_League_top_scorers';
-const SOURCE = `https://en.wikipedia.org/wiki/${PAGE}`;
-const API_URL = `https://en.wikipedia.org/api/rest_v1/page/html/${PAGE}`;
-const OUTPUT = path.join(__dirname, '..', 'public', 'data', 'ranking.json');
+const RANKINGS = {
+  goals: { page: 'List_of_UEFA_Champions_League_top_scorers', output: 'ranking.json' },
+  assists: { page: 'UEFA_Champions_League_records_and_statistics', output: 'assists.json' },
+};
 
-async function main() {
-  const response = await fetch(API_URL, {
+async function main(stat) {
+  const config = RANKINGS[stat];
+  if (!config) throw new Error(`Ranking desconocido: "${stat}". Usa: ${Object.keys(RANKINGS).join(', ')}.`);
+
+  const source = `https://en.wikipedia.org/wiki/${config.page}`;
+  const output = path.join(__dirname, '..', 'public', 'data', config.output);
+
+  const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/html/${config.page}`, {
     // Wikipedia pide identificar a los clientes automáticos
     headers: { 'User-Agent': 'champions-league-app (https://github.com/ReneM21/champions-league-app)' },
   });
   if (!response.ok) throw new Error(`Wikipedia respondió ${response.status}`);
 
-  const players = topPlayers(parseTopScorers(await response.text()));
-  const previous = fs.existsSync(OUTPUT) ? JSON.parse(fs.readFileSync(OUTPUT, 'utf8')) : null;
-  validateRanking(players, previous);
+  const players = topPlayers(parseStatTable(await response.text(), stat), stat);
+  const previous = fs.existsSync(output) ? JSON.parse(fs.readFileSync(output, 'utf8')) : null;
+  validateRanking(players, previous, stat);
 
-  console.table(players.map(({ name, nationality, goals, matches }) => ({ name, nationality, goals, matches })));
+  console.table(players.map(({ name, nationality, matches, [stat]: value }) => ({ name, nationality, [stat]: value, matches })));
 
   // Sin cambios no se reescribe el archivo, así no hay commits vacíos
   if (previous && previous.updatedAt && JSON.stringify(previous.players) === JSON.stringify(players)) {
@@ -29,12 +37,12 @@ async function main() {
     return;
   }
 
-  const ranking = { updatedAt: new Date().toISOString(), source: SOURCE, players };
-  fs.writeFileSync(OUTPUT, `${JSON.stringify(ranking, null, 2)}\n`);
-  console.log(`Ranking actualizado en ${path.relative(process.cwd(), OUTPUT)}.`);
+  const ranking = { updatedAt: new Date().toISOString(), source, players };
+  fs.writeFileSync(output, `${JSON.stringify(ranking, null, 2)}\n`);
+  console.log(`Ranking actualizado en ${path.relative(process.cwd(), output)}.`);
 }
 
-main().catch((error) => {
+main(process.argv[2] || 'goals').catch((error) => {
   console.error(error.message);
   process.exit(1);
 });
