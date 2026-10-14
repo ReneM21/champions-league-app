@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T03:26:23.406Z",
+  "updatedAt": "2026-10-14T10:42:46.219Z",
   "source": "https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers",
   "players": [
     {
@@ -91,6 +91,18 @@
       ]
     },
     {
+      "id": "harry-kane",
+      "name": "Harry Kane",
+      "nationality": "Inglaterra",
+      "goals": 57,
+      "matches": 72,
+      "years": "2016–",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Bayern Munich"
+      ]
+    },
+    {
       "id": "thomas-muller",
       "name": "Thomas Müller",
       "nationality": "Alemania",
@@ -112,18 +124,6 @@
         "PSV Eindhoven",
         "Manchester United",
         "Real Madrid"
-      ]
-    },
-    {
-      "id": "harry-kane",
-      "name": "Harry Kane",
-      "nationality": "Inglaterra",
-      "goals": 55,
-      "matches": 71,
-      "years": "2016–",
-      "clubs": [
-        "Tottenham Hotspur",
-        "Bayern Munich"
       ]
     }
   ]
