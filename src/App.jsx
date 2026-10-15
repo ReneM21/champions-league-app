@@ -5,6 +5,7 @@ import ChampionsLeagueHeader from './components/ChampionsLeagueHeader';
 import ChampionsLeagueFooter from './components/ChampionsLeagueFooter';
 import PageSkeleton from './components/PageSkeleton';
 import { usePlayers } from './data/PlayersContext';
+import { asset } from './utils/asset';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -26,12 +27,34 @@ const AssistsPage = lazy(PAGES.AssistsPage);
 const ComparePage = lazy(PAGES.ComparePage);
 const RecordsPage = lazy(PAGES.RecordsPage);
 
-const usePreloadPages = (ready) => {
+// Las imágenes precargadas se guardan aquí para que el navegador las mantenga
+// decodificadas en memoria y aparezcan al instante al cambiar de página
+const preloaded = [];
+
+const preloadImages = (urls) => {
+  for (const url of new Set(urls)) {
+    const image = new Image();
+    image.decoding = 'async';
+    image.src = asset(url);
+    preloaded.push(image);
+  }
+};
+
+// Tras cargar los datos, precarga las páginas y luego los escudos y las fotos
+// (salvo con ahorro de datos), para que no aparezcan de golpe al navegar
+const usePreload = ({ status, clubs, byId }) => {
   useEffect(() => {
-    if (!ready) return undefined;
-    const timer = setTimeout(() => Object.values(PAGES).forEach((load) => load().catch(() => {})), 300);
+    if (status !== 'ready') return undefined;
+    const timer = setTimeout(() => {
+      Object.values(PAGES).forEach((load) => load().catch(() => {}));
+      if (navigator.connection && navigator.connection.saveData) return;
+      preloadImages([
+        ...Object.values(clubs || {}).map((club) => club.logo),
+        ...[...(byId || new Map()).values()].map((player) => player.image),
+      ].filter(Boolean));
+    }, 300);
     return () => clearTimeout(timer);
-  }, [ready]);
+  }, [status, clubs, byId]);
 };
 
 // Sube al principio al cambiar de página, pero no al cambiar de pestaña dentro
@@ -46,8 +69,9 @@ const ScrollToTopOnNavigate = () => {
 };
 
 const App = () => {
-  const { status } = usePlayers();
-  usePreloadPages(status === 'ready');
+  const data = usePlayers();
+  const { status } = data;
+  usePreload(data);
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
