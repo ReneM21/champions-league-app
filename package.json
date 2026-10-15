@@ -14,7 +14,8 @@
     "update-assists": "node scripts/update-ranking.js assists",
     "update-photos": "node scripts/update-photos.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "update-profiles": "node scripts/update-profiles.js"
   },
   "dependencies": {
     "@heroui/react": "^3.2.6",

@@ -20,6 +20,9 @@ champions-league-app/
 │   ├── data/ranking.json        # Ranking de goleadores (generado automáticamente, no editar)
 │   ├── data/assists.json        # Ranking de asistidores (generado automáticamente, no editar)
 │   ├── data/photos.json         # Fotos descargadas de Commons y su crédito (generado automáticamente)
+│   ├── data/profiles.json       # Fichas automáticas: biografía, nacimiento y posición (generado)
+│   ├── data/all-goals.json      # Tabla completa de goleadores (generado)
+│   ├── data/all-assists.json    # Tabla completa de asistidores (generado)
 │   ├── data/players.json        # Fichas de jugador (se editan a mano)
 │   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
@@ -59,6 +62,8 @@ Los datos se reparten en dos archivos que la app une por `id`:
 | `public/data/ranking.json` | Top 10 histórico: goles, partidos, años, clubes y nación | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/assists.json` | Top 10 histórico de asistencias y partidos | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/photos.json` | Fotos de Wikimedia Commons de los jugadores sin foto en su ficha, con autor y licencia | El workflow **Actualizar datos**. No se edita a mano |
+| `public/data/profiles.json` | Ficha automática de cada jugador de los rankings: biografía (Wikipedia en español), nacimiento y posición (Wikidata) | El workflow **Actualizar datos**. No se edita a mano |
+| `public/data/all-goals.json`, `all-assists.json` | Tablas completas de Wikipedia, para conocer los goles de un asistidor y viceversa | El workflow **Actualizar datos** |
 | `public/data/players.json` | Biografía, foto, fecha de nacimiento, finales, títulos, goles por equipo y temporadas | A mano |
 
 El ranking decide qué jugadores aparecen y en qué orden. Si entra al top 10 un jugador sin ficha en `players.json`, aparece con los datos del ranking y el logo como foto. Para completarlo, añade su ficha con el mismo `id` (su nombre en minúsculas, sin tildes y con guiones; por ejemplo `kylian-mbappe`).
@@ -94,6 +99,7 @@ npm run test:scripts  # tests del analizador de Wikipedia
 npm run update-data     # descarga el ranking de goleadores
 npm run update-assists  # descarga el ranking de asistidores
 npm run update-photos   # descarga las fotos que faltan
+npm run update-profiles # crea las fichas automáticas que faltan
 npm run build  # build de producción
 ```
 
@@ -104,7 +110,8 @@ El workflow `.github/workflows/update-data.yml` se ejecuta todos los días a las
 1. `npm run update-data` descarga la tabla histórica de [List of UEFA Champions League top scorers](https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers) y genera `public/data/ranking.json`.
 2. `npm run update-assists` descarga la tabla de más asistencias de [UEFA Champions League records and statistics](https://en.wikipedia.org/wiki/UEFA_Champions_League_records_and_statistics) y genera `public/data/assists.json`. Como esa página tiene varias tablas con columna de asistencias, se usa la que tiene más filas.
 3. `npm run update-photos` busca, para cada jugador de los rankings sin foto propia, la imagen principal de su artículo de Wikipedia. Si es un archivo de Wikimedia Commons (licencia libre), la descarga a `public/images/players/` y guarda autor y licencia en `public/data/photos.json`. Las imágenes que no son de Commons (por ejemplo, "fair use") se ignoran y el jugador sigue con el logo.
-4. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
+4. `npm run update-profiles` crea la ficha automática de cada jugador de los rankings que no la tenga: la introducción de su artículo en la Wikipedia en español como biografía, y su fecha de nacimiento y posición de Wikidata. Todos los jugadores de los dos rankings tienen así su página. Lo escrito a mano en `players.json` siempre tiene prioridad.
+5. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
 
 Para usar otra foto para un jugador, ponla en `public/images/players/` y añade `"image"` a su ficha en `players.json`: la foto de la ficha siempre tiene prioridad.
 

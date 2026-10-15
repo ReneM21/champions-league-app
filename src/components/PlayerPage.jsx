@@ -18,27 +18,34 @@ const PlayerPage = ({ children }) => {
   const player = usePlayer(id);
 
   if (!player) {
-    return <NotFoundPage title="Jugador no encontrado" message="El jugador que buscas no está en la lista de goleadores." />;
+    return <NotFoundPage title="Jugador no encontrado" message="El jugador que buscas no está en los rankings de goleadores ni de asistidores." />;
   }
+
+  // Los asistidores que no están entre los goleadores vuelven a su ranking
+  const fromAssists = !player.goalsPosition;
+  const rankLine = player.goalsPosition
+    ? `${player.goalsPosition}º máximo goleador de la historia`
+    : `${player.assistsPosition}º máximo asistidor de la historia`;
+  const headline = player.goals !== null && !fromAssists ? { value: player.goals, label: 'goles' } : { value: player.assists, label: 'asistencias' };
 
   return (
     <div className="animate-fadeIn">
-      <Link to="/" className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'mb-4 text-muted' })}>
-        ← Goleadores
+      <Link to={fromAssists ? '/asistencias' : '/'} className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'mb-4 text-muted' })}>
+        ← {fromAssists ? 'Asistidores' : 'Goleadores'}
       </Link>
 
       <section className="champions-hero mb-6 flex flex-col gap-6 rounded-3xl p-6 text-white sm:flex-row sm:items-center sm:p-8">
         <PlayerAvatar player={player} className="size-24 ring-4 ring-white/20" />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-medium text-white/70">{player.position}º máximo goleador de la historia</p>
+          <p className="text-sm font-medium text-white/70">{rankLine}</p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{player.name}</h1>
           <p className="mt-1 text-white/80">
             {[player.nationality, player.years].filter(Boolean).join(' · ') || ' '}
           </p>
         </div>
         <div className="sm:text-right">
-          <p className="text-5xl font-bold tabular-nums text-champions-gold">{player.goals}</p>
-          <p className="text-sm uppercase tracking-wide text-white/70">goles</p>
+          <p className="text-5xl font-bold tabular-nums text-champions-gold">{headline.value}</p>
+          <p className="text-sm uppercase tracking-wide text-white/70">{headline.label}</p>
         </div>
       </section>
 

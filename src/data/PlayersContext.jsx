@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { asset } from '../utils/asset';
-import { rankPlayers } from '../utils/stats';
-import { mergePlayers, withPhoto } from './mergePlayers';
+import { buildPlayers } from './buildPlayers';
 
 const EMPTY_ASSISTS = { updatedAt: null, source: null, players: [] };
 
@@ -13,39 +12,40 @@ const fetchJson = (path) =>
     return response.json();
   });
 
-// Carga el ranking (actualizado automáticamente) y las fichas de jugador
-// una sola vez y lo comparte con todas las páginas.
+// Carga los rankings, fichas, fotos y tablas completas una sola vez, los une
+// con buildPlayers y lo comparte con todas las páginas.
 export function PlayersProvider({ children }) {
   const [state, setState] = useState({ status: 'loading', players: [], assists: EMPTY_ASSISTS });
 
   useEffect(() => {
     let cancelled = false;
 
+    // Los archivos opcionales no impiden cargar la app si faltan
+    const optional = (path, fallback) =>
+      fetchJson(path).catch((error) => {
+        console.warn(`No se pudo cargar ${path}:`, error.message);
+        return fallback;
+      });
+
     Promise.all([
       fetchJson('data/ranking.json'),
       fetchJson('data/players.json'),
-      // Si falla, la app funciona igual y la página de asistencias sale vacía
-      fetchJson('data/assists.json').catch((error) => {
-        console.error('Error cargando las asistencias:', error);
-        return EMPTY_ASSISTS;
-      }),
-      // Sin fotos descargadas se muestra el logo
-      fetchJson('data/photos.json').catch(() => ({})),
+      optional('data/assists.json', EMPTY_ASSISTS),
+      optional('data/photos.json', {}),
+      optional('data/profiles.json', {}),
+      optional('data/all-goals.json', []),
+      optional('data/all-assists.json', []),
     ])
-      .then(([ranking, details, assists, photos]) => {
+      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists]) => {
         if (cancelled) return;
+        const { scorers, assisters, byId } = buildPlayers({ ranking, assists, details, photos, profiles, allGoals, allAssists });
         setState({
           status: 'ready',
-          players: mergePlayers(ranking, details, photos),
+          players: scorers,
+          byId,
           updatedAt: ranking.updatedAt,
           source: ranking.source,
-          assists: {
-            ...assists,
-            players: rankPlayers(
-              [...assists.players].sort((a, b) => b.assists - a.assists).map((player) => withPhoto(player, photos)),
-              'assists'
-            ),
-          },
+          assists: { ...assists, players: assisters },
         });
       })
       .catch((error) => {
@@ -63,9 +63,14 @@ export function PlayersProvider({ children }) {
 
 export const usePlayers = () => useContext(PlayersContext);
 
-export const usePlayer = (id) => usePlayers().players.find((player) => player.id === id);
+// Cualquier jugador con página (goleadores y asistidores)
+export const usePlayer = (id) => {
+  const { byId } = usePlayers();
+  return byId ? byId.get(id) : undefined;
+};
 
 export const usePlayerByName = () => {
-  const { players } = usePlayers();
-  return (name) => players.find((player) => player.name === name);
+  const { byId } = usePlayers();
+  const all = byId ? [...byId.values()] : [];
+  return (name) => all.find((player) => player.name === name);
 };

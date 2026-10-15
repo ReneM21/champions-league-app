@@ -3,6 +3,8 @@
 // En local:
 //   npm run update-data      -> goleadores (ranking.json)
 //   npm run update-assists   -> asistidores (assists.json)
+// Además guarda la tabla completa en all-goals.json / all-assists.json, que
+// la app usa para mostrar los goles y asistencias de cualquier jugador.
 const fs = require('fs');
 const path = require('path');
 const { parseStatTable, topPlayers, validateRanking } = require('./ranking-parser');
@@ -25,11 +27,22 @@ async function main(stat) {
   });
   if (!response.ok) throw new Error(`Wikipedia respondió ${response.status}`);
 
-  const players = topPlayers(parseStatTable(await response.text(), stat), stat);
+  const rows = parseStatTable(await response.text(), stat);
+  const players = topPlayers(rows, stat);
   const previous = fs.existsSync(output) ? JSON.parse(fs.readFileSync(output, 'utf8')) : null;
   validateRanking(players, previous, stat);
 
   console.table(players.map(({ name, nationality, matches, [stat]: value }) => ({ name, nationality, [stat]: value, matches })));
+
+  // Tabla completa: solo se escribe si cambió, como el ranking
+  const fullOutput = path.join(__dirname, '..', 'public', 'data', `all-${stat}.json`);
+  const full = [...rows].sort((a, b) => b[stat] - a[stat]);
+  const previousFull = fs.existsSync(fullOutput) ? fs.readFileSync(fullOutput, 'utf8') : null;
+  const fullText = `${JSON.stringify(full, null, 2)}\n`;
+  if (previousFull !== fullText) {
+    fs.writeFileSync(fullOutput, fullText);
+    console.log(`Tabla completa (${full.length} jugadores) en ${path.relative(process.cwd(), fullOutput)}.`);
+  }
 
   // Sin cambios no se reescribe el archivo, así no hay commits vacíos
   if (previous && previous.updatedAt && JSON.stringify(previous.players) === JSON.stringify(players)) {
