@@ -303,5 +303,69 @@
       { "season": "2023-24", "club": "Manchester City", "goals": 8, "matches": 10, "assists": 2 },
       { "season": "2024-25", "club": "Manchester City", "goals": 6 }
     ]
+  },
+  {
+    "id": "harry-kane",
+    "name": "Harry Kane",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "ryan-giggs",
+    "name": "Ryan Giggs",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "angel-di-maria",
+    "name": "Ángel Di María",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "david-beckham",
+    "name": "David Beckham",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "luis-figo",
+    "name": "Luís Figo",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "xavi",
+    "name": "Xavi",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
+  },
+  {
+    "id": "kevin-de-bruyne",
+    "name": "Kevin De Bruyne",
+    "titles": null,
+    "finals": null,
+    "teams": [],
+    "seasons": []
   }
 ]
