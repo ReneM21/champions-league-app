@@ -49,11 +49,37 @@ function extractFromQuery(response) {
   return (page && page.extract) || '';
 }
 
-// Recorta la introducción a frases completas (como mucho maxChars, al menos una frase)
+// Versión del formato de las fichas. Al subirla, las fichas anteriores se
+// regeneran en la siguiente ejecución (por ejemplo, tras mejorar la limpieza).
+const PROFILE_VERSION = 2;
+
+// Quita de la introducción lo que no aporta en una ficha: pronunciación
+// fonética, nombres en otros alfabetos entre corchetes y caracteres invisibles.
+function cleanBiography(text) {
+  let clean = text
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .replace(/\[[^\]]*\]/g, '')
+    .replace(/pronunciaci[oó]n en [^:;()]+:\s*\/[^/]*\//gi, '')
+    .replace(/pronunciado\s*\/[^/]*\//gi, '')
+    .replace(/,\s*;/g, ';');
+  // Paréntesis que se han quedado vacíos o con separadores sueltos
+  let previous;
+  do {
+    previous = clean;
+    clean = clean
+      .replace(/\(\s*[;,]\s*/g, '(')
+      .replace(/\s*[;,]\s*\)/g, ')')
+      .replace(/\(\s*\)/g, '');
+  } while (clean !== previous);
+  return clean.replace(/\s+([,.;])/g, '$1').replace(/\s+/g, ' ').trim();
+}
+
+// Recorta la introducción a frases completas (como mucho maxChars, al menos una frase).
+// No corta tras una inicial con punto ("F. C.", "S. S. C. Napoli"), que suele ser una abreviatura.
 function trimBiography(text, maxChars = 600) {
-  const clean = text.replace(/\s+/g, ' ').trim();
+  const clean = cleanBiography(text);
   if (!clean) return '';
-  const sentences = clean.split(/(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿¡])/);
+  const sentences = clean.split(/(?<=[^\sA-ZÁÉÍÓÚÑ][.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿¡])/);
   let result = sentences[0];
   for (const sentence of sentences.slice(1)) {
     if (result.length + 1 + sentence.length > maxChars) break;
@@ -69,7 +95,8 @@ function playersWithoutProfile(rankings, profiles) {
   const seen = new Set();
   const result = [];
   for (const player of rankings.flatMap((r) => r.players)) {
-    if (profiles[player.id] || seen.has(player.id)) continue;
+    const current = profiles[player.id] && profiles[player.id].version >= PROFILE_VERSION;
+    if (current || seen.has(player.id)) continue;
     seen.add(player.id);
     result.push({ id: player.id, name: player.name, article: player.article || player.name.replace(/ /g, '_') });
   }
@@ -77,6 +104,8 @@ function playersWithoutProfile(rankings, profiles) {
 }
 
 module.exports = {
+  PROFILE_VERSION,
+  cleanBiography,
   wikidataIdFromPageProps,
   formatWikidataDate,
   entityData,

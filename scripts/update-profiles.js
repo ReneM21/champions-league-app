@@ -13,6 +13,7 @@ const {
   extractFromQuery,
   trimBiography,
   playersWithoutProfile,
+  PROFILE_VERSION,
 } = require('./profiles');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
@@ -69,6 +70,7 @@ async function buildProfile(player) {
 
   return {
     profile: {
+      version: PROFILE_VERSION,
       wikidata: qid,
       birthdate: data.birthdate,
       position: position || null,

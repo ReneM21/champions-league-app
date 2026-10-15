@@ -89,6 +89,43 @@ El ranking decide qué jugadores aparecen y en qué orden. Si entra al top 10 un
 - En `seasons`, `matches` y `assists` son opcionales: si faltan, la app muestra "-" y no los cuenta en los promedios.
 - El orden del ranking se calcula a partir de los goles de `ranking.json`; los empates comparten posición.
 
+#### Cómo rellenar títulos y temporadas
+
+Los jugadores que entraron en los rankings de forma automática tienen en `players.json` una plantilla vacía, por ejemplo:
+
+```json
+{
+  "id": "ryan-giggs",
+  "name": "Ryan Giggs",
+  "titles": null,
+  "finals": null,
+  "teams": [],
+  "seasons": []
+}
+```
+
+Rellena solo lo que sepas: lo que se quede en `null` o vacío se muestra como "-" en la ficha. Biografía, fecha de nacimiento, posición y foto ya llegan solas (fichas automáticas y fotos de Commons); si las escribes aquí, lo tuyo tiene prioridad.
+
+| Campo | Qué poner | Ejemplo |
+|---|---|---|
+| `titles` | Champions League ganadas (número, sin comillas) | `2` |
+| `finals` | Finales disputadas (no puede ser menor que `titles`) | `4` |
+| `teams` | Goles en la Champions por club; activa la pestaña Equipos con porcentajes | `[{ "name": "Manchester United", "goals": 29 }]` |
+| `seasons` | Una línea por temporada; activa la pestaña Temporadas | ver abajo |
+
+Cada temporada (las cifras de los ejemplos de esta sección son inventadas, solo muestran el formato):
+
+```json
+{ "season": "2007-08", "club": "Manchester United", "goals": 1, "matches": 9, "assists": 3, "title": true }
+```
+
+- `season` con el formato `2007-08` (año de inicio, guion, dos cifras del año siguiente).
+- `goals` es obligatorio; `matches` y `assists` son opcionales (si no los sabes, no los pongas).
+- `"title": true` solo en las temporadas en que ganó la Champions. El número de temporadas con `title` no puede superar `titles`.
+- Los números van sin comillas y no puede quedar una coma después del último elemento de una lista.
+
+**Para editarlo desde GitHub sin instalar nada:** abre `public/data/players.json` en el repositorio, pulsa el lápiz (*Edit this file*), cambia los datos y pulsa *Commit changes* en `master`. Al guardar se ejecutan los tests: si algo está mal escrito, el despliegue se detiene y en la pestaña **Actions** el error dice exactamente qué jugador y qué temporada revisar (por ejemplo, `ryan-giggs: seasons[3] (2007/08): "season" debe tener el formato "2013-14"`). Si todo está bien, la web se actualiza en un par de minutos.
+
 ## Instalación
 
 ```bash

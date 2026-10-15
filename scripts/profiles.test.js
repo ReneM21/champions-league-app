@@ -9,6 +9,8 @@ const {
   extractFromQuery,
   trimBiography,
   playersWithoutProfile,
+  cleanBiography,
+  PROFILE_VERSION,
 } = require('./profiles');
 
 test('wikidataIdFromPageProps lee el elemento de Wikidata', () => {
@@ -59,9 +61,37 @@ test('trimBiography corta en frases completas', () => {
 
 test('playersWithoutProfile ignora fichas automáticas existentes y repetidos', () => {
   const rankings = [{ players: [{ id: 'a', name: 'A' }, { id: 'b', name: 'Jugador B' }] }, { players: [{ id: 'b', name: 'Jugador B' }, { id: 'c', name: 'C', article: 'C_(footballer)' }] }];
-  assert.deepEqual(playersWithoutProfile(rankings, { a: {} }), [
+  const current = { version: PROFILE_VERSION };
+  assert.deepEqual(playersWithoutProfile(rankings, { a: current }), [
     { id: 'b', name: 'Jugador B', article: 'Jugador_B' },
     { id: 'c', name: 'C', article: 'C_(footballer)' },
   ]);
-  assert.deepEqual(playersWithoutProfile(rankings, { a: {}, b: {}, c: {} }), []);
+  assert.deepEqual(playersWithoutProfile(rankings, { a: current, b: current, c: current }), []);
+  // Las fichas de una versión anterior se regeneran
+  assert.deepEqual(playersWithoutProfile(rankings, { a: current, b: { version: 1 }, c: {} }).map((p) => p.id), ['b', 'c']);
+});
+
+test('cleanBiography quita pronunciación, corchetes y paréntesis vacíos (casos reales)', () => {
+  assert.equal(
+    cleanBiography('Sir David Robert Joseph Beckham (pronunciación en inglés: /ˈdeɪvɪd ˈbɛkəm/; Londres, Inglaterra, 2 de mayo de 1975) es un exfutbolista.'),
+    'Sir David Robert Joseph Beckham (Londres, Inglaterra, 2 de mayo de 1975) es un exfutbolista.'
+  );
+  assert.equal(
+    cleanBiography('Karim Mostafa Benzema ([árabe: / كريم بنزيما /; pronunciación en francés: /ka.ʁim bɛn.ze.ma/]; Lyon, Ródano, 19 de diciembre de 1987) es un futbolista francés de ascendencia argelina\u200b\u200b que juega como delantero.'),
+    'Karim Mostafa Benzema (Lyon, Ródano, 19 de diciembre de 1987) es un futbolista francés de ascendencia argelina que juega como delantero.'
+  );
+  assert.equal(
+    cleanBiography('Robert Lewandowski (pronunciado /ˈrɔbɛrt lɛvanˈdɔfskʲi/ ()) (Varsovia, 21 de agosto de 1988) es un futbolista polaco.'),
+    'Robert Lewandowski (Varsovia, 21 de agosto de 1988) es un futbolista polaco.'
+  );
+  assert.equal(
+    cleanBiography('Erling Braut Haaland (nacido como Håland, pronunciación en noruego: /æɭɪŋ ˈhɔːlɑːnd/; Leeds, Inglaterra, 21 de julio de 2000)\u200b es un futbolista noruego.'),
+    'Erling Braut Haaland (nacido como Håland; Leeds, Inglaterra, 21 de julio de 2000) es un futbolista noruego.'
+  );
+});
+
+test('trimBiography no corta en abreviaturas como "F. C."', () => {
+  const text = 'Juega como delantero en el Manchester City F. C. de la Premier League. Es internacional con Noruega.';
+  assert.equal(trimBiography(text, 80), 'Juega como delantero en el Manchester City F. C. de la Premier League.');
+  assert.equal(trimBiography(text, 200), text);
 });
