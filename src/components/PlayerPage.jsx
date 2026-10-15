@@ -1,32 +1,35 @@
 import React from 'react';
-import { Link, NavLink, useLocation, useParams, useSearchParams } from 'react-router-dom';
+import { Link, NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
 import PlayerAvatar from './PlayerAvatar';
 import { usePlayer } from '../data/PlayersContext';
 import NotFoundPage from '../pages/NotFoundPage';
 import ShareButton from './ShareButton';
 import { useTitle } from '../utils/useTitle';
+import PlayerDetailPage from '../pages/PlayerDetailPage';
+import PlayerTeamsPage from '../pages/PlayerTeamsPage';
+import PlayerSeasonsPage from '../pages/PlayerSeasonsPage';
 
 const TABS = [
-  { path: '', label: 'Perfil' },
-  { path: '/equipos', label: 'Equipos' },
-  { path: '/temporadas', label: 'Temporadas' },
+  { path: '', label: 'Perfil', Component: PlayerDetailPage },
+  { path: '/equipos', label: 'Equipos', Component: PlayerTeamsPage },
+  { path: '/temporadas', label: 'Temporadas', Component: PlayerSeasonsPage },
 ];
 
-// Marco común de las fichas de jugador: busca el jugador de la URL y pinta
-// la portada y el submenú Perfil / Equipos / Temporadas.
+// Ficha de jugador: busca el jugador de la URL y pinta la portada, el submenú
+// Perfil / Equipos / Temporadas y la pestaña elegida. Es una sola ruta
+// (/jugadores/:id/*), así que al cambiar de pestaña la portada y la foto no se
+// vuelven a montar y no hay parpadeo: solo cambia el contenido de abajo.
 // Desde la lista de asistidores se llega con ?ranking=asistencias: entonces
-// las vistas destacan las asistencias en lugar de los goles.
-// children(player, stat) recibe la estadística destacada: 'goals' o 'assists'.
-const PlayerPage = ({ children }) => {
-  const { id } = useParams();
+// las pestañas destacan las asistencias ('assists') en lugar de los goles.
+const PlayerPage = () => {
+  const { id, '*': tabPath = '' } = useParams();
   const [searchParams] = useSearchParams();
   const player = usePlayer(id);
-  const { pathname } = useLocation();
-  const tab = TABS.find(({ path }) => path && pathname.endsWith(path));
-  useTitle(player ? `${player.name}${tab ? ` · ${tab.label}` : ''}` : null);
+  const tab = TABS.find(({ path }) => path.replace('/', '') === tabPath.replace(/\/$/, ''));
+  useTitle(player ? `${player.name}${tab && tab.path ? ` · ${tab.label}` : ''}` : null);
 
-  if (!player) {
+  if (!player || !tab) {
     return <NotFoundPage title="Jugador no encontrado" message="El jugador que buscas no está en los rankings de goleadores ni de asistidores." />;
   }
 
@@ -87,7 +90,7 @@ const PlayerPage = ({ children }) => {
         ))}
       </nav>
 
-      {children(player, stat)}
+      <tab.Component player={player} stat={stat} />
     </div>
   );
 };
