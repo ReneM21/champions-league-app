@@ -75,7 +75,7 @@ async function main() {
   const missingBirthdate = players.filter((p) => !p.birthdate);
   if (missingBirthdate.length) console.log(`Sin fecha de nacimiento (no se pueden identificar): ${missingBirthdate.map((p) => p.name).join(', ')}`);
 
-  const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, seasons: [] }]));
+  const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, name: null, seasons: [] }]));
   const teamsByYear = {};
   const logos = new Map(); // nombre del club -> URL del escudo (el más reciente)
   const leaders = {}; // temporada -> máximo goleador, máximo asistente y equipos
@@ -96,6 +96,7 @@ async function main() {
         const season = seasonFromRow(row, year);
         if (!season) continue;
         result[player.id].uefaId = row.playerId;
+        result[player.id].name = row.player.internationalName;
         result[player.id].seasons.push(season);
         found++;
       }

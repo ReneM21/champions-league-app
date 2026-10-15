@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@heroui/react';
 import DataNote from '../components/DataNote';
 import PageHeader from '../components/PageHeader';
+import QuickFacts from '../components/QuickFacts';
 import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
@@ -21,6 +22,8 @@ const HomePage = () => {
         title="Máximos goleadores"
         description="Los jugadores con más goles en la historia de la UEFA Champions League."
       />
+
+      <QuickFacts />
 
       <Podium players={players} stat="goals" statLabel="goles" profileOf={self} />
 
@@ -54,7 +57,8 @@ const HomePage = () => {
         </p>
         <p>
           Las fotos de los jugadores sin ficha propia vienen de Wikimedia Commons; el autor y la licencia aparecen al
-          pasar el ratón por encima. Los campos marcados con "-" no tienen datos disponibles.
+          pasar el ratón por encima. Los campos marcados con "-" no tienen datos disponibles. "En activo" señala a los
+          jugadores que han jugado la Champions esta temporada.
         </p>
       </DataNote>
     </div>
