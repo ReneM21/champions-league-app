@@ -1,1 +1,58 @@
-{}
+{
+  "angel-di-maria": {
+    "image": "images/players/angel-di-maria.jpg",
+    "author": "Кирилл Венедиктов",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:NIG-ARG_(5).jpg"
+  },
+  "david-beckham": {
+    "image": "images/players/david-beckham.jpg",
+    "author": "Soccer Aid for Unicef",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:David_Beckham_UNICEF_(cropped2).jpg"
+  },
+  "harry-kane": {
+    "image": "images/players/harry-kane.jpg",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Harry_Kane_England_v_Ghana_23_June_2026-219_(cropped).jpg"
+  },
+  "kevin-de-bruyne": {
+    "image": "images/players/kevin-de-bruyne.jpg",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_(cropped).jpg"
+  },
+  "luis-figo": {
+    "image": "images/players/luis-figo.jpg",
+    "author": "Žan Kolman",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Luis_Figo_2023.jpg"
+  },
+  "neymar": {
+    "image": "images/players/neymar.jpg",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg"
+  },
+  "ryan-giggs": {
+    "image": "images/players/ryan-giggs.jpg",
+    "author": "Дмитрий Голубович",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ryan_Giggs_2015_(cropped).jpg"
+  },
+  "xavi": {
+    "image": "images/players/xavi.jpg",
+    "author": "Meysam Mehabadi",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Xavi,_Persepolis_vs._Al_Sadd,_20190520_02_(cropped).jpg"
+  }
+}
