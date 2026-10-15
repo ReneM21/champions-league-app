@@ -1,0 +1,15 @@
+name: Probe (temporal)
+on:
+  push:
+    branches: [claude/nifty-archimedes-bl6gsx]
+    paths: ['.github/workflows/probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          get() { echo "=== $1"; curl -sS -m 30 -A "Mozilla/5.0" -w "\nHTTP %{http_code}\n" "$1" | head -c 2500; echo; }
+          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2024&stats=assists"
+          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=1994&stats=assists"
+          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=ALL&stats=assists"
+          get "https://comp.uefa.com/v2/players?competitionId=1&name=Giggs"
