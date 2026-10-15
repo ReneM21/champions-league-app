@@ -1,7 +1,8 @@
-# Actualiza el ranking de goleadores desde Wikipedia todos los días y, si
-# cambió, lo commitea en master y vuelve a publicar la app.
-# Si los datos descargados no pasan las comprobaciones, el workflow falla
-# sin tocar nada y GitHub avisa por email.
+# Actualiza los rankings de goleadores y asistidores desde Wikipedia todos los
+# días y, si cambiaron, los commitea en master y vuelve a publicar la app.
+# Si los datos de un ranking no pasan las comprobaciones, ese ranking no se
+# toca, el otro se actualiza igualmente y el workflow termina en error para
+# que GitHub avise por email.
 name: Actualizar datos
 
 on:
@@ -31,22 +32,30 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      - name: Instalar dependencias
+        id: install
+        run: npm ci
 
-      - name: Descargar ranking de Wikipedia
+      - name: Goleadores
         run: npm run update-data
+
+      # Se ejecuta aunque falle el paso anterior: los rankings son independientes
+      - name: Asistidores
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run update-assists
 
       - name: Commit si hay cambios
         id: commit
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json
+          git add public/data/ranking.json public/data/assists.json
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Actualizar ranking de goleadores desde Wikipedia"
+            git commit -m "Actualizar rankings desde Wikipedia"
             git push origin HEAD:master
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -54,7 +63,8 @@ jobs:
 
   deploy:
     needs: update
-    if: needs.update.outputs.changed == 'true'
+    # always(): publica lo que se actualizó aunque el otro ranking haya fallado
+    if: ${{ always() && needs.update.outputs.changed == 'true' }}
     permissions:
       contents: read
       pages: write

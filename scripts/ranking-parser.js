@@ -1,5 +1,5 @@
-// Análisis de la tabla histórica de goleadores de Wikipedia y validación del
-// ranking resultante. Sin E/S: update-ranking.js descarga y escribe.
+// Análisis de las tablas históricas de Wikipedia (goleadores y asistidores)
+// y validación del ranking resultante. Sin E/S: update-ranking.js descarga y escribe.
 const cheerio = require('cheerio');
 
 const TOP_N = 10;
@@ -77,13 +77,39 @@ function tableGrid($, table) {
   return grid;
 }
 
+// Configuración de cada ranking.
+// - header: cabecera de la columna de la estadística (sin "per game", ratios...).
+// - requireApps: la tabla debe tener columna de partidos. En la página de
+//   goleadores evita confundir la tabla histórica con la de cada temporada.
+// - largestTable: usa la tabla candidata con más filas en vez de la primera
+//   (la página de récords tiene varias tablas con columna de asistencias).
+// - leader: comprobación mínima del líder histórico.
+const STATS = {
+  goals: {
+    label: 'goles',
+    header: /^goals?\b(?!.*(per|ratio|\/))/,
+    requireApps: true,
+    largestTable: false,
+    leader: { id: 'cristiano-ronaldo', min: 140 },
+  },
+  assists: {
+    label: 'asistencias',
+    header: /^assists?\b(?!.*(per|ratio|\/))/,
+    requireApps: false,
+    largestTable: true,
+    leader: null,
+  },
+};
+
+const MIN_LEADER = 30; // ningún líder histórico tiene menos
+
 // Índice de cada columna a partir del texto de la cabecera
-function columnIndexes($, headerRow) {
+function columnIndexes($, headerRow, statHeader) {
   const find = (regex) => headerRow.findIndex((cell) => cell && regex.test(cleanText($(cell).text()).toLowerCase()));
   return {
     player: find(/^player/),
     nation: find(/^(nation|country)/),
-    goals: find(/^goals?\b(?!.*(per|ratio|\/))/),
+    stat: find(statHeader),
     apps: find(/^(apps|appearances|matches)/),
     years: find(/^(years|career|seasons)/),
     clubs: find(/^club/),
@@ -117,73 +143,93 @@ function clubsFromCell($, cell) {
   return [...new Set(names.map((n) => cleanText(n).replace(/\s*\(.*?\)\s*/g, '')).filter(Boolean))];
 }
 
-// Devuelve todas las filas de la primera tabla con columnas Player, Goals y Apps
-function parseTopScorers(html) {
-  const $ = cheerio.load(html);
+function rowsFromTable($, table, stat, config) {
+  const grid = tableGrid($, table);
+  const headerIndex = grid.findIndex((row) => {
+    const cols = columnIndexes($, row, config.header);
+    return cols.player >= 0 && cols.stat >= 0 && (!config.requireApps || cols.apps >= 0);
+  });
+  if (headerIndex < 0) return [];
 
-  for (const table of $('table').toArray()) {
-    const grid = tableGrid($, table);
-    const headerIndex = grid.findIndex((row) => {
-      const cols = columnIndexes($, row);
-      return cols.player >= 0 && cols.goals >= 0 && cols.apps >= 0;
+  const cols = columnIndexes($, grid[headerIndex], config.header);
+  const rows = [];
+  for (const row of grid.slice(headerIndex + 1)) {
+    const playerCell = row[cols.player];
+    if (!playerCell || ($(playerCell).is('th') && cleanText($(playerCell).text()).toLowerCase() === 'player')) continue;
+    const name = playerName($, playerCell);
+    const value = toInt($(row[cols.stat]).text());
+    if (!name || Number.isNaN(value)) continue;
+
+    const nation =
+      cols.nation >= 0
+        ? nationFromCell($, row[cols.nation]) || cleanText($(row[cols.nation]).text())
+        : nationFromCell($, playerCell);
+    const apps = cols.apps >= 0 ? toInt($(row[cols.apps]).text()) : NaN;
+    rows.push({
+      id: playerId(name),
+      name,
+      nationality: translateNation(nation),
+      [stat]: value,
+      matches: Number.isNaN(apps) ? null : apps,
+      years: cols.years >= 0 ? cleanText($(row[cols.years]).text()) : '',
+      clubs: cols.clubs >= 0 ? clubsFromCell($, row[cols.clubs]) : [],
     });
-    if (headerIndex < 0) continue;
-
-    const cols = columnIndexes($, grid[headerIndex]);
-    const rows = [];
-    for (const row of grid.slice(headerIndex + 1)) {
-      const playerCell = row[cols.player];
-      if (!playerCell || $(playerCell).is('th') && cleanText($(playerCell).text()).toLowerCase() === 'player') continue;
-      const name = playerName($, playerCell);
-      const goals = toInt($(row[cols.goals]).text());
-      if (!name || Number.isNaN(goals)) continue;
-
-      const nation = cols.nation >= 0 ? nationFromCell($, row[cols.nation]) || cleanText($(row[cols.nation]).text()) : nationFromCell($, playerCell);
-      const apps = toInt($(row[cols.apps]).text());
-      rows.push({
-        id: playerId(name),
-        name,
-        nationality: translateNation(nation),
-        goals,
-        matches: Number.isNaN(apps) ? null : apps,
-        years: cols.years >= 0 ? cleanText($(row[cols.years]).text()) : '',
-        clubs: cols.clubs >= 0 ? clubsFromCell($, row[cols.clubs]) : [],
-      });
-    }
-    if (rows.length) return rows;
   }
-
-  throw new Error('No se encontró la tabla de goleadores (columnas Player, Goals y Apps).');
+  return rows;
 }
 
-// Los TOP_N con más goles, incluidos todos los empatados con el último
-function topPlayers(rows, n = TOP_N) {
-  const sorted = [...rows].sort((a, b) => b.goals - a.goals);
+// Devuelve las filas de la tabla histórica de la estadística ('goals' o 'assists')
+function parseStatTable(html, stat) {
+  const config = STATS[stat];
+  const $ = cheerio.load(html);
+  let best = [];
+
+  for (const table of $('table').toArray()) {
+    const rows = rowsFromTable($, table, stat, config);
+    if (rows.length && !config.largestTable) return rows;
+    if (rows.length > best.length) best = rows;
+  }
+  if (best.length) return best;
+
+  throw new Error(`No se encontró la tabla de ${config.label} (columnas Player y ${stat === 'goals' ? 'Goals' : 'Assists'}).`);
+}
+
+const parseTopScorers = (html) => parseStatTable(html, 'goals');
+
+// Los TOP_N con más valor en la estadística, incluidos los empatados con el último
+function topPlayers(rows, stat = 'goals', n = TOP_N) {
+  const sorted = [...rows].sort((a, b) => b[stat] - a[stat]);
   if (sorted.length <= n) return sorted;
-  const cutoff = sorted[n - 1].goals;
-  return sorted.filter((row) => row.goals >= cutoff);
+  const cutoff = sorted[n - 1][stat];
+  return sorted.filter((row) => row[stat] >= cutoff);
 }
 
 // Lanza un error si el resultado no es fiable; así el workflow falla sin publicar
-function validateRanking(players, previous) {
+function validateRanking(players, previous, stat = 'goals') {
+  const { label, leader } = STATS[stat];
   const errors = [];
   if (players.length < TOP_N) errors.push(`Solo hay ${players.length} jugadores (mínimo ${TOP_N}).`);
   players.forEach((p, i) => {
-    if (!Number.isInteger(p.goals) || p.goals <= 0) errors.push(`Goles no válidos para ${p.name}: ${p.goals}`);
-    if (i > 0 && p.goals > players[i - 1].goals) errors.push(`El ranking no está ordenado en ${p.name}.`);
+    if (!Number.isInteger(p[stat]) || p[stat] <= 0) errors.push(`Valor de ${label} no válido para ${p.name}: ${p[stat]}`);
+    if (i > 0 && p[stat] > players[i - 1][stat]) errors.push(`El ranking no está ordenado en ${p.name}.`);
   });
   const ids = players.map((p) => p.id);
   if (new Set(ids).size !== ids.length) errors.push('Hay ids de jugador repetidos.');
 
-  const ronaldo = players.find((p) => p.id === 'cristiano-ronaldo');
-  if (!ronaldo || ronaldo.goals < 140) errors.push('Cristiano Ronaldo no aparece con al menos 140 goles.');
+  if (players.length && players[0][stat] < MIN_LEADER) {
+    errors.push(`El líder solo tiene ${players[0][stat]} ${label} (mínimo ${MIN_LEADER}).`);
+  }
+  if (leader) {
+    const found = players.find((p) => p.id === leader.id);
+    if (!found || found[stat] < leader.min) errors.push(`Cristiano Ronaldo no aparece con al menos ${leader.min} ${label}.`);
+  }
 
   // Solo se compara con un ranking que ya vino de Wikipedia (el inicial es manual)
   if (previous && previous.updatedAt) {
     for (const before of previous.players) {
       const now = players.find((p) => p.id === before.id);
-      if (now && now.goals < before.goals - 2) {
-        errors.push(`${now.name} baja de ${before.goals} a ${now.goals} goles.`);
+      if (now && now[stat] < before[stat] - 2) {
+        errors.push(`${now.name} baja de ${before[stat]} a ${now[stat]} ${label}.`);
       }
     }
   }
@@ -191,4 +237,4 @@ function validateRanking(players, previous) {
   if (errors.length) throw new Error(`Datos descartados:\n- ${errors.join('\n- ')}`);
 }
 
-module.exports = { parseTopScorers, topPlayers, validateRanking, playerId, translateNation, TOP_N };
+module.exports = { parseStatTable, parseTopScorers, topPlayers, validateRanking, playerId, translateNation, STATS, TOP_N };

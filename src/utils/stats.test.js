@@ -5,6 +5,11 @@ describe('rankPlayers', () => {
     const ranked = rankPlayers([{ goals: 60 }, { goals: 56 }, { goals: 56 }, { goals: 50 }]);
     expect(ranked.map((p) => p.position)).toEqual([1, 2, 2, 4]);
   });
+
+  it('puede ordenar por otra estadística', () => {
+    const ranked = rankPlayers([{ assists: 40 }, { assists: 40 }, { assists: 30 }], 'assists');
+    expect(ranked.map((p) => p.position)).toEqual([1, 1, 3]);
+  });
 });
 
 describe('summarizeSeasons', () => {
