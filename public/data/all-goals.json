@@ -1,1 +1,710 @@
-[]
+[
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "article": "Cristiano_Ronaldo",
+    "nationality": "Portugal",
+    "goals": 140,
+    "matches": 183,
+    "years": "2003–2022",
+    "clubs": [
+      "Manchester United",
+      "Real Madrid",
+      "Juventus"
+    ]
+  },
+  {
+    "id": "lionel-messi",
+    "name": "Lionel Messi",
+    "article": "Lionel_Messi",
+    "nationality": "Argentina",
+    "goals": 129,
+    "matches": 163,
+    "years": "2005–2023",
+    "clubs": [
+      "Barcelona",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "robert-lewandowski",
+    "name": "Robert Lewandowski",
+    "article": "Robert_Lewandowski",
+    "nationality": "Polonia",
+    "goals": 109,
+    "matches": 144,
+    "years": "2011–2026",
+    "clubs": [
+      "Borussia Dortmund",
+      "Bayern Munich",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "karim-benzema",
+    "name": "Karim Benzema",
+    "article": "Karim_Benzema",
+    "nationality": "Francia",
+    "goals": 90,
+    "matches": 152,
+    "years": "2005–2023",
+    "clubs": [
+      "Lyon",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "kylian-mbappe",
+    "name": "Kylian Mbappé",
+    "article": "Kylian_Mbappé",
+    "nationality": "Francia",
+    "goals": 72,
+    "matches": 100,
+    "years": "2016–",
+    "clubs": [
+      "Monaco",
+      "Paris Saint-Germain",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "raul-gonzalez",
+    "name": "Raúl",
+    "article": "Raúl_(footballer)",
+    "nationality": "España",
+    "goals": 71,
+    "matches": 142,
+    "years": "1995–2011",
+    "clubs": [
+      "Real Madrid",
+      "Schalke 04"
+    ]
+  },
+  {
+    "id": "erling-haaland",
+    "name": "Erling Haaland",
+    "article": "Erling_Haaland",
+    "nationality": "Noruega",
+    "goals": 61,
+    "matches": 60,
+    "years": "2019–",
+    "clubs": [
+      "Red Bull Salzburg",
+      "Borussia Dortmund",
+      "Manchester City"
+    ]
+  },
+  {
+    "id": "harry-kane",
+    "name": "Harry Kane",
+    "article": "Harry_Kane",
+    "nationality": "Inglaterra",
+    "goals": 57,
+    "matches": 72,
+    "years": "2016–",
+    "clubs": [
+      "Tottenham Hotspur",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "thomas-muller",
+    "name": "Thomas Müller",
+    "article": "Thomas_Müller",
+    "nationality": "Alemania",
+    "goals": 57,
+    "matches": 163,
+    "years": "2009–2025",
+    "clubs": [
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "ruud-van-nistelrooy",
+    "name": "Ruud van Nistelrooy",
+    "article": "Ruud_van_Nistelrooy",
+    "nationality": "Países Bajos",
+    "goals": 56,
+    "matches": 73,
+    "years": "1998–2009",
+    "clubs": [
+      "PSV Eindhoven",
+      "Manchester United",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "mohamed-salah",
+    "name": "Mohamed Salah",
+    "article": "Mohamed_Salah",
+    "nationality": "Egipto",
+    "goals": 50,
+    "matches": 98,
+    "years": "2013–",
+    "clubs": [
+      "Basel",
+      "Chelsea",
+      "Roma",
+      "Liverpool"
+    ]
+  },
+  {
+    "id": "thierry-henry",
+    "name": "Thierry Henry",
+    "article": "Thierry_Henry",
+    "nationality": "Francia",
+    "goals": 50,
+    "matches": 112,
+    "years": "1997–2012",
+    "clubs": [
+      "Monaco",
+      "Arsenal",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "alfredo-di-stefano",
+    "name": "Alfredo Di Stéfano",
+    "article": "Alfredo_Di_Stéfano",
+    "nationality": "Argentina",
+    "goals": 49,
+    "matches": 58,
+    "years": "1955–1964",
+    "clubs": [
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "andriy-shevchenko",
+    "name": "Andriy Shevchenko",
+    "article": "Andriy_Shevchenko",
+    "nationality": "Ucrania",
+    "goals": 48,
+    "matches": 100,
+    "years": "1994–2012",
+    "clubs": [
+      "Dynamo Kyiv",
+      "AC Milan",
+      "Chelsea"
+    ]
+  },
+  {
+    "id": "zlatan-ibrahimovic",
+    "name": "Zlatan Ibrahimović",
+    "article": "Zlatan_Ibrahimović",
+    "nationality": "Suecia",
+    "goals": 48,
+    "matches": 124,
+    "years": "2001–2021",
+    "clubs": [
+      "Ajax",
+      "Juventus",
+      "Inter Milan",
+      "Barcelona",
+      "AC Milan",
+      "Paris Saint-Germain",
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "eusebio",
+    "name": "Eusébio",
+    "article": "Eusébio",
+    "nationality": "Portugal",
+    "goals": 46,
+    "matches": 65,
+    "years": "1961–1974",
+    "clubs": [
+      "Benfica"
+    ]
+  },
+  {
+    "id": "filippo-inzaghi",
+    "name": "Filippo Inzaghi",
+    "article": "Filippo_Inzaghi",
+    "nationality": "Italia",
+    "goals": 46,
+    "matches": 81,
+    "years": "1997–2012",
+    "clubs": [
+      "Juventus",
+      "AC Milan"
+    ]
+  },
+  {
+    "id": "didier-drogba",
+    "name": "Didier Drogba",
+    "article": "Didier_Drogba",
+    "nationality": "Ivory Coast",
+    "goals": 44,
+    "matches": 92,
+    "years": "2003–2015",
+    "clubs": [
+      "Marseille",
+      "Chelsea",
+      "Galatasaray"
+    ]
+  },
+  {
+    "id": "antoine-griezmann",
+    "name": "Antoine Griezmann",
+    "article": "Antoine_Griezmann",
+    "nationality": "Francia",
+    "goals": 44,
+    "matches": 120,
+    "years": "2014–",
+    "clubs": [
+      "Real Sociedad",
+      "Atlético Madrid",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "article": "Neymar",
+    "nationality": "Brasil",
+    "goals": 43,
+    "matches": 81,
+    "years": "2013–2022",
+    "clubs": [
+      "Barcelona",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "alessandro-del-piero",
+    "name": "Alessandro Del Piero",
+    "article": "Alessandro_Del_Piero",
+    "nationality": "Italia",
+    "goals": 42,
+    "matches": 89,
+    "years": "1995–2009",
+    "clubs": [
+      "Juventus"
+    ]
+  },
+  {
+    "id": "sergio-aguero",
+    "name": "Sergio Agüero",
+    "article": "Sergio_Agüero",
+    "nationality": "Argentina",
+    "goals": 41,
+    "matches": 79,
+    "years": "2008–2021",
+    "clubs": [
+      "Atlético Madrid",
+      "Manchester City",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "ferenc-puskas",
+    "name": "Ferenc Puskás",
+    "article": "Ferenc_Puskás",
+    "nationality": "Hungary",
+    "goals": 36,
+    "matches": 41,
+    "years": "1956–1966",
+    "clubs": [
+      "Budapest Honvéd",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "edinson-cavani",
+    "name": "Edinson Cavani",
+    "article": "Edinson_Cavani",
+    "nationality": "Uruguay",
+    "goals": 35,
+    "matches": 70,
+    "years": "2011–2022",
+    "clubs": [
+      "Napoli",
+      "Paris Saint-Germain",
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "gerd-muller",
+    "name": "Gerd Müller",
+    "article": "Gerd_Müller",
+    "nationality": "West Germany",
+    "goals": 34,
+    "matches": 35,
+    "years": "1969–1977",
+    "clubs": [
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "vinicius-junior",
+    "name": "Vinícius Júnior",
+    "article": "Vinícius_Júnior",
+    "nationality": "Brasil",
+    "goals": 34,
+    "matches": 84,
+    "years": "2018–",
+    "clubs": [
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "fernando-morientes",
+    "name": "Fernando Morientes",
+    "article": "Fernando_Morientes",
+    "nationality": "España",
+    "goals": 33,
+    "matches": 93,
+    "years": "1997–2009",
+    "clubs": [
+      "Real Madrid",
+      "Monaco",
+      "Liverpool",
+      "Valencia",
+      "Marseille"
+    ]
+  },
+  {
+    "id": "ousmane-dembele",
+    "name": "Ousmane Dembélé",
+    "article": "Ousmane_Dembélé",
+    "nationality": "Francia",
+    "goals": 31,
+    "matches": 81,
+    "years": "2016–",
+    "clubs": [
+      "Borussia Dortmund",
+      "Barcelona",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "arjen-robben",
+    "name": "Arjen Robben",
+    "article": "Arjen_Robben",
+    "nationality": "Países Bajos",
+    "goals": 31,
+    "matches": 110,
+    "years": "2002–2018",
+    "clubs": [
+      "PSV Eindhoven",
+      "Chelsea",
+      "Real Madrid",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "samuel-eto-o",
+    "name": "Samuel Eto'o",
+    "article": "Samuel_Eto'o",
+    "nationality": "Camerún",
+    "goals": 30,
+    "matches": 78,
+    "years": "1999–2014",
+    "clubs": [
+      "Real Madrid",
+      "Mallorca",
+      "Barcelona",
+      "Inter Milan",
+      "Chelsea"
+    ]
+  },
+  {
+    "id": "wayne-rooney",
+    "name": "Wayne Rooney",
+    "article": "Wayne_Rooney",
+    "nationality": "Inglaterra",
+    "goals": 30,
+    "matches": 85,
+    "years": "2004–2015",
+    "clubs": [
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "kaka",
+    "name": "Kaká",
+    "article": "Kaká",
+    "nationality": "Brasil",
+    "goals": 30,
+    "matches": 86,
+    "years": "2003–2014",
+    "clubs": [
+      "AC Milan",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "paco-gento",
+    "name": "Paco Gento",
+    "article": "Paco_Gento",
+    "nationality": "España",
+    "goals": 30,
+    "matches": 89,
+    "years": "1955–1969",
+    "clubs": [
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "david-trezeguet",
+    "name": "David Trezeguet",
+    "article": "David_Trezeguet",
+    "nationality": "Francia",
+    "goals": 29,
+    "matches": 58,
+    "years": "1997–2009",
+    "clubs": [
+      "Monaco",
+      "Juventus"
+    ]
+  },
+  {
+    "id": "roy-makaay",
+    "name": "Roy Makaay",
+    "article": "Roy_Makaay",
+    "nationality": "Países Bajos",
+    "goals": 29,
+    "matches": 61,
+    "years": "2000–2007",
+    "clubs": [
+      "Deportivo La Coruña",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "patrick-kluivert",
+    "name": "Patrick Kluivert",
+    "article": "Patrick_Kluivert",
+    "nationality": "Países Bajos",
+    "goals": 29,
+    "matches": 71,
+    "years": "1994–2006",
+    "clubs": [
+      "Ajax",
+      "Barcelona",
+      "PSV Eindhoven"
+    ]
+  },
+  {
+    "id": "edin-dzeko",
+    "name": "Edin Džeko",
+    "article": "Edin_Džeko",
+    "nationality": "Bosnia and Herzegovina",
+    "goals": 29,
+    "matches": 74,
+    "years": "2009–",
+    "clubs": [
+      "VfL Wolfsburg",
+      "Manchester City",
+      "Roma",
+      "Inter Milan"
+    ]
+  },
+  {
+    "id": "alvaro-morata",
+    "name": "Álvaro Morata",
+    "article": "Álvaro_Morata",
+    "nationality": "España",
+    "goals": 29,
+    "matches": 89,
+    "years": "2012–",
+    "clubs": [
+      "Real Madrid",
+      "Juventus",
+      "Chelsea",
+      "Atlético Madrid",
+      "AC Milan"
+    ]
+  },
+  {
+    "id": "jean-pierre-papin",
+    "name": "Jean-Pierre Papin",
+    "article": "Jean-Pierre_Papin",
+    "nationality": "Francia",
+    "goals": 28,
+    "matches": 37,
+    "years": "1989–1994",
+    "clubs": [
+      "Marseille",
+      "AC Milan",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "ryan-giggs",
+    "name": "Ryan Giggs",
+    "article": "Ryan_Giggs",
+    "nationality": "Gales",
+    "goals": 28,
+    "matches": 145,
+    "years": "1993–2014",
+    "clubs": [
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "gabriel-jesus",
+    "name": "Gabriel Jesus",
+    "article": "Gabriel_Jesus",
+    "nationality": "Brasil",
+    "goals": 27,
+    "matches": 59,
+    "years": "2017–",
+    "clubs": [
+      "Manchester City",
+      "Arsenal",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "sadio-mane",
+    "name": "Sadio Mané",
+    "article": "Sadio_Mané",
+    "nationality": "Senegal",
+    "goals": 27,
+    "matches": 63,
+    "years": "2017–2023",
+    "clubs": [
+      "Liverpool",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "lautaro-martinez",
+    "name": "Lautaro Martínez",
+    "article": "Lautaro_Martínez",
+    "nationality": "Argentina",
+    "goals": 27,
+    "matches": 68,
+    "years": "2019–",
+    "clubs": [
+      "Inter Milan"
+    ]
+  },
+  {
+    "id": "rivaldo",
+    "name": "Rivaldo",
+    "article": "Rivaldo",
+    "nationality": "Brasil",
+    "goals": 27,
+    "matches": 73,
+    "years": "1997–2007",
+    "clubs": [
+      "Barcelona",
+      "AC Milan",
+      "Olympiacos"
+    ]
+  },
+  {
+    "id": "luis-suarez",
+    "name": "Luis Suárez",
+    "article": "Luis_Suárez_(Uruguayan_footballer)",
+    "nationality": "Uruguay",
+    "goals": 27,
+    "matches": 73,
+    "years": "2010–2022",
+    "clubs": [
+      "Ajax",
+      "Barcelona",
+      "Atlético Madrid"
+    ]
+  },
+  {
+    "id": "raheem-sterling",
+    "name": "Raheem Sterling",
+    "article": "Raheem_Sterling",
+    "nationality": "Inglaterra",
+    "goals": 27,
+    "matches": 88,
+    "years": "2014–",
+    "clubs": [
+      "Liverpool",
+      "Manchester City",
+      "Chelsea",
+      "Arsenal"
+    ]
+  },
+  {
+    "id": "mario-gomez",
+    "name": "Mario Gómez",
+    "article": "Mario_Gómez",
+    "nationality": "Alemania",
+    "goals": 26,
+    "matches": 44,
+    "years": "2007–2013",
+    "clubs": [
+      "VfB Stuttgart",
+      "Bayern Munich"
+    ]
+  },
+  {
+    "id": "rodrygo",
+    "name": "Rodrygo",
+    "article": "Rodrygo",
+    "nationality": "Brasil",
+    "goals": 26,
+    "matches": 69,
+    "years": "2019–",
+    "clubs": [
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "julian-alvarez",
+    "name": "Julián Alvarez",
+    "article": "Julián_Alvarez",
+    "nationality": "Argentina",
+    "goals": 25,
+    "matches": 44,
+    "years": "2022–",
+    "clubs": [
+      "Manchester City",
+      "Atlético Madrid"
+    ]
+  },
+  {
+    "id": "mario-jardel",
+    "name": "Mário Jardel",
+    "article": "Mário_Jardel",
+    "nationality": "Brasil",
+    "goals": 25,
+    "matches": 46,
+    "years": "1996–2001",
+    "clubs": [
+      "Porto",
+      "Galatasaray"
+    ]
+  },
+  {
+    "id": "robin-van-persie",
+    "name": "Robin van Persie",
+    "article": "Robin_van_Persie",
+    "nationality": "Países Bajos",
+    "goals": 25,
+    "matches": 59,
+    "years": "2002–2014",
+    "clubs": [
+      "Feyenoord",
+      "Arsenal",
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "hernan-crespo",
+    "name": "Hernán Crespo",
+    "article": "Hernán_Crespo",
+    "nationality": "Argentina",
+    "goals": 25,
+    "matches": 65,
+    "years": "1997–2007",
+    "clubs": [
+      "Parma",
+      "Lazio",
+      "Inter Milan",
+      "Chelsea",
+      "AC Milan"
+    ]
+  }
+]

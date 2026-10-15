@@ -1,1 +1,151 @@
-[]
+[
+  {
+    "id": "ryan-giggs",
+    "name": "Ryan Giggs",
+    "article": "Ryan_Giggs",
+    "nationality": "Gales",
+    "assists": 41,
+    "matches": 141,
+    "years": "1993–2014",
+    "clubs": [
+      "Manchester United"
+    ]
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "article": "Cristiano_Ronaldo",
+    "nationality": "Portugal",
+    "assists": 40,
+    "matches": 183,
+    "years": "2003–2022",
+    "clubs": [
+      "Manchester United",
+      "Real Madrid",
+      "Juventus"
+    ]
+  },
+  {
+    "id": "lionel-messi",
+    "name": "Lionel Messi",
+    "article": "Lionel_Messi",
+    "nationality": "Argentina",
+    "assists": 39,
+    "matches": 163,
+    "years": "2005–2023",
+    "clubs": [
+      "Barcelona",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "angel-di-maria",
+    "name": "Ángel Di María",
+    "article": "Ángel_Di_María",
+    "nationality": "Argentina",
+    "assists": 38,
+    "matches": 116,
+    "years": "2007–2025",
+    "clubs": [
+      "Benfica",
+      "Real Madrid",
+      "Paris Saint-Germain",
+      "Juventus"
+    ]
+  },
+  {
+    "id": "david-beckham",
+    "name": "David Beckham",
+    "article": "David_Beckham",
+    "nationality": "Inglaterra",
+    "assists": 36,
+    "matches": 107,
+    "years": "1994–2013",
+    "clubs": [
+      "Manchester United",
+      "Real Madrid",
+      "Milan",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "luis-figo",
+    "name": "Luís Figo",
+    "article": "Luís_Figo",
+    "nationality": "Portugal",
+    "assists": 34,
+    "matches": 103,
+    "years": "1997–2009",
+    "clubs": [
+      "Barcelona",
+      "Real Madrid",
+      "Inter Milan"
+    ]
+  },
+  {
+    "id": "xavi",
+    "name": "Xavi",
+    "article": "Xavi_(footballer,_born_1980)",
+    "nationality": "España",
+    "assists": 31,
+    "matches": 151,
+    "years": "1998–2015",
+    "clubs": [
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "article": "Neymar",
+    "nationality": "Brasil",
+    "assists": 30,
+    "matches": 81,
+    "years": "2013–2023",
+    "clubs": [
+      "Barcelona",
+      "Paris Saint-Germain"
+    ]
+  },
+  {
+    "id": "kevin-de-bruyne",
+    "name": "Kevin De Bruyne",
+    "article": "Kevin_De_Bruyne",
+    "nationality": "Bélgica",
+    "assists": 27,
+    "matches": 84,
+    "years": "2011–",
+    "clubs": [
+      "Genk",
+      "Chelsea",
+      "Manchester City",
+      "Napoli"
+    ]
+  },
+  {
+    "id": "raul-gonzalez",
+    "name": "Raúl",
+    "article": "Raúl_(footballer)",
+    "nationality": "España",
+    "assists": 27,
+    "matches": 142,
+    "years": "1995–2011",
+    "clubs": [
+      "Real Madrid",
+      "Schalke 04"
+    ]
+  },
+  {
+    "id": "karim-benzema",
+    "name": "Karim Benzema",
+    "article": "Karim_Benzema",
+    "nationality": "Francia",
+    "assists": 27,
+    "matches": 152,
+    "years": "2005–2023",
+    "clubs": [
+      "Lyon",
+      "Real Madrid"
+    ]
+  }
+]
