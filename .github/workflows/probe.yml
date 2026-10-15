@@ -1,0 +1,25 @@
+name: Probe (temporal)
+on:
+  push:
+    branches: [claude/nifty-archimedes-bl6gsx]
+    paths: ['.github/workflows/probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar páginas de Wikipedia
+        run: |
+          mkdir -p probe-html
+          for p in List_of_European_Cup_and_UEFA_Champions_League_finals List_of_European_Cup_and_UEFA_Champions_League_top_scorers European_Cup_and_UEFA_Champions_League_records_and_statistics; do
+            curl -sS -A "champions-league-app (https://github.com/ReneM21/champions-league-app)" "https://en.wikipedia.org/api/rest_v1/page/html/$p" -o "probe-html/$p.html"
+            echo "$p $(wc -c < probe-html/$p.html)"
+          done
+      - run: |
+          git add probe-html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Páginas de Wikipedia (temporal)"
+          git push origin HEAD:${{ github.ref_name }}
