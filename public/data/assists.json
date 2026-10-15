@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T00:05:47.162Z",
+  "updatedAt": "2026-10-15T00:12:18.905Z",
   "source": "https://en.wikipedia.org/wiki/UEFA_Champions_League_records_and_statistics",
   "players": [
     {
@@ -16,7 +16,7 @@
     {
       "id": "cristiano-ronaldo",
       "name": "Cristiano Ronaldo",
-      "nationality": "Portugal (official)",
+      "nationality": "Portugal",
       "assists": 40,
       "matches": 183,
       "years": "2003–2022",
@@ -69,7 +69,7 @@
     {
       "id": "luis-figo",
       "name": "Luís Figo",
-      "nationality": "Portugal (official)",
+      "nationality": "Portugal",
       "assists": 34,
       "matches": 103,
       "years": "1997–2009",
@@ -105,7 +105,7 @@
     {
       "id": "kevin-de-bruyne",
       "name": "Kevin De Bruyne",
-      "nationality": "Belgium (civil)",
+      "nationality": "Bélgica",
       "assists": 27,
       "matches": 83,
       "years": "2011–",
