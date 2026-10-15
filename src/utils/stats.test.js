@@ -36,7 +36,7 @@ describe('summarizeSeasons', () => {
     expect(summary.totalGoals).toBe(25);
     expect(summary.totalMatches).toBe(15);
     expect(summary.totalAssists).toBe(2);
-    expect(formatRatio(summary.goalsPerMatch)).toBe('1.33');
+    expect(formatRatio(summary.perMatch)).toBe('1.33');
     expect(summary.mostEfficient.season).toBe('2011-12');
   });
 
@@ -45,11 +45,41 @@ describe('summarizeSeasons', () => {
     expect(summary.best).toBeNull();
     expect(summary.mostEfficient).toBeNull();
     expect(summary.totalMatches).toBeNull();
-    expect(formatRatio(summary.goalsPerMatch)).toBe('-');
+    expect(formatRatio(summary.perMatch)).toBe('-');
+  });
+});
+
+describe('summarizeSeasons por asistencias', () => {
+  const seasons = [
+    { season: '1999-00', club: 'A', goals: 3, matches: 10, assists: null },
+    { season: '2000-01', club: 'A', goals: 1, matches: 10, assists: 4 },
+    { season: '2001-02', club: 'B', goals: 6, matches: 4, assists: 2 },
+  ];
+
+  it('elige la mejor temporada y la eficiencia por asistencias e ignora las no registradas', () => {
+    const summary = summarizeSeasons(seasons, 'assists');
+    expect(summary.best.season).toBe('2000-01');
+    expect(summary.mostEfficient.season).toBe('2001-02');
+    expect(summary.totalAssists).toBe(6);
+    expect(formatRatio(summary.perMatch)).toBe('0.43');
+    expect(summarizeSeasons(seasons).best.season).toBe('2001-02');
   });
 });
 
 describe('teamBreakdown', () => {
+  it('ordena por la estadística elegida y calcula su porcentaje', () => {
+    const player = {
+      goals: 10,
+      assists: 8,
+      teams: [{ name: 'A', goals: 8, assists: 2 }, { name: 'B', goals: 2, assists: 6 }],
+      seasons: [{ club: 'A' }, { club: 'B' }],
+    };
+    expect(teamBreakdown(player, 'assists').map((t) => [t.name, t.share])).toEqual([
+      ['B', 75],
+      ['A', 25],
+    ]);
+  });
+
   it('cuenta temporadas y porcentaje de goles por equipo', () => {
     const player = {
       goals: 20,

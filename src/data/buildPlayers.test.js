@@ -1,4 +1,4 @@
-import { buildPlayers, withPhoto } from './buildPlayers';
+import { buildPlayers, buildTeams, mergeSeasons, withPhoto } from './buildPlayers';
 
 const ranking = {
   players: [
@@ -82,5 +82,55 @@ describe('buildPlayers', () => {
   it('withPhoto no toca a jugadores sin foto descargada', () => {
     const player = { id: 'x', name: 'X' };
     expect(withPhoto(player, photos)).toBe(player);
+  });
+});
+
+describe('temporadas de la UEFA', () => {
+  const uefa = [
+    { season: '2007-08', club: 'Manchester United', matches: 9, goals: 0, assists: 3 },
+    { season: '2008-09', club: 'Manchester United', matches: 8, goals: 1, assists: 2 },
+    { season: '1998-99', club: 'Manchester United', matches: 9, goals: 2, assists: null },
+  ];
+
+  it('mergeSeasons usa las cifras de la UEFA, el título manual y lo que la UEFA no tiene', () => {
+    const manual = [
+      { season: '2007-08', club: 'Man United', goals: 5, title: true },
+      { season: '1998-99', club: 'Manchester United', goals: 2, assists: 4 },
+      { season: '2015-16', club: 'Solo manual', goals: 1 },
+    ];
+    expect(mergeSeasons(manual, uefa)).toEqual([
+      { season: '1998-99', club: 'Manchester United', matches: 9, goals: 2, assists: 4 },
+      { season: '2007-08', club: 'Manchester United', matches: 9, goals: 0, assists: 3, title: true },
+      { season: '2008-09', club: 'Manchester United', matches: 8, goals: 1, assists: 2 },
+      { season: '2015-16', club: 'Solo manual', goals: 1 },
+    ]);
+  });
+
+  it('mergeSeasons respeta una temporada repartida a mano entre dos clubes', () => {
+    const manual = [
+      { season: '2008-09', club: 'Salzburg', goals: 1, matches: 6 },
+      { season: '2008-09', club: 'Dortmund', goals: 0, matches: 2 },
+    ];
+    const merged = mergeSeasons(manual, uefa).filter((s) => s.season === '2008-09');
+    expect(merged.map((s) => s.club)).toEqual(['Dortmund', 'Salzburg']);
+  });
+
+  it('buildTeams suma por club y respeta los goles manuales si no hay datos de la UEFA', () => {
+    const seasons = [...uefa, { season: '2014-15', club: 'Otro', matches: 2, goals: 0, assists: 1 }];
+    expect(buildTeams([{ name: 'Manchester United', goals: 10 }], seasons)).toEqual([
+      { name: 'Manchester United', matches: 26, goals: 10, assists: 5 },
+      { name: 'Otro', matches: 2, goals: 0, assists: 1 },
+    ]);
+    // Con temporadas de la UEFA, los goles salen de ellas
+    expect(buildTeams([{ name: 'Manchester United', goals: 10 }], seasons, true)[0].goals).toBe(3);
+    expect(buildTeams([{ name: 'Sin temporadas', goals: 4 }], [])).toEqual([{ name: 'Sin temporadas', matches: null, goals: 4, assists: null }]);
+  });
+
+  it('buildPlayers usa las temporadas de la UEFA', () => {
+    const { byId: withUefa } = buildPlayers({ ranking, assists, details, photos, profiles, allGoals, uefa: { asistidor: { seasons: uefa } } });
+    const player = withUefa.get('asistidor');
+    expect(player.seasons).toHaveLength(3);
+    expect(player.seasonsSource).toBe('uefa');
+    expect(player.teams).toEqual([{ name: 'Manchester United', matches: 26, goals: 3, assists: 5 }]);
   });
 });

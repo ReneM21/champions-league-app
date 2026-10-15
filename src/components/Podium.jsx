@@ -10,7 +10,8 @@ const MEDALS = [
 
 // Tarjetas con los tres primeros del ranking (por posición en la lista).
 // profileOf(player) devuelve la ficha a la que enlazar, o null.
-const Podium = ({ players, stat, statLabel, profileOf }) => (
+// linkQuery se añade al enlace de la ficha (p. ej. "?ranking=asistencias").
+const Podium = ({ players, stat, statLabel, profileOf, linkQuery = '' }) => (
   <div className="mb-8 grid gap-4 sm:grid-cols-3">
     {players.slice(0, 3).map((player, index) => {
       const profile = profileOf(player);
@@ -26,7 +27,7 @@ const Podium = ({ players, stat, statLabel, profileOf }) => (
               </Chip>
               <p className="truncate text-base font-semibold" title={shown.name}>
                 {profile ? (
-                  <Link href={`/jugadores/${profile.id}`} className="inline font-semibold text-foreground no-underline hover:text-accent">
+                  <Link href={`/jugadores/${profile.id}${linkQuery}`} className="inline font-semibold text-foreground no-underline hover:text-accent">
                     {shown.name}
                   </Link>
                 ) : (

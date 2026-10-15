@@ -2,16 +2,32 @@
 // (compstats.uefa.com): partidos, goles y asistencias de cada jugador en cada
 // temporada de la Champions League, con su club. update-uefa-stats.js hace las descargas.
 
-// Primera temporada de la Champions League (1992-93) y primera con asistencias
-// registradas por la UEFA (2000-01). Las temporadas se nombran por el año en
-// que terminan: seasonYear 2014 = 2013-14.
-const FIRST_SEASON_YEAR = 1993;
-const FIRST_ASSISTS_YEAR = 2001;
+// El parámetro seasonYear de la API cambia de criterio en 2007: hasta 2006 es
+// el año en que empieza la temporada (2006 = 2006-07) y desde 2008 el año en
+// que termina (2008 = 2007-08). 2007 no devuelve nada. Comprobado con las
+// temporadas reales de Cristiano Ronaldo, Messi y Raúl.
+const FIRST_SEASON_YEAR = 1992; // 1992-93, la primera Champions League
+const SKIPPED_YEARS = [2007];
+// La UEFA registra las asistencias desde la temporada 2001-02
+const FIRST_ASSISTS_START = 2001;
+
+// Año en que empieza la temporada de un seasonYear de la API
+const startYear = (year) => (year <= 2006 ? year : year - 1);
+
+// seasonYear de la API -> "2013-14"
+const seasonLabel = (year) => {
+  const start = startYear(year);
+  return `${start}-${String((start + 1) % 100).padStart(2, '0')}`;
+};
+
+// Todos los seasonYear que hay que pedir, de 1992-93 a la temporada lastYear
+const seasonYears = (lastYear) => {
+  const years = [];
+  for (let year = FIRST_SEASON_YEAR; year <= lastYear; year++) if (!SKIPPED_YEARS.includes(year)) years.push(year);
+  return years;
+};
 
 const STATS = ['matches_appearance', 'goals', 'assists'];
-
-// 2014 -> "2013-14"
-const seasonLabel = (year) => `${year - 1}-${String(year % 100).padStart(2, '0')}`;
 
 // Nombres cortos de la UEFA -> nombres que ya usa la app (players.json)
 const CLUB_NAMES = {
@@ -20,6 +36,7 @@ const CLUB_NAMES = {
   Paris: 'Paris Saint-Germain',
   'Paris Saint-Germain': 'Paris Saint-Germain',
   Dortmund: 'Borussia Dortmund',
+  'B. Dortmund': 'Borussia Dortmund',
   PSV: 'PSV Eindhoven',
   Leverkusen: 'Bayer Leverkusen',
   Atleti: 'Atlético de Madrid',
@@ -77,7 +94,7 @@ function seasonFromRow(row, year) {
     club: clubName(row.team),
     matches,
     goals: statValue(row, 'goals'),
-    assists: year >= FIRST_ASSISTS_YEAR ? statValue(row, 'assists') : null,
+    assists: startYear(year) >= FIRST_ASSISTS_START ? statValue(row, 'assists') : null,
   };
 }
 
@@ -91,10 +108,10 @@ function totals(seasons) {
 }
 
 module.exports = {
-  FIRST_SEASON_YEAR,
-  FIRST_ASSISTS_YEAR,
+  FIRST_ASSISTS_START,
   STATS,
   seasonLabel,
+  seasonYears,
   clubName,
   nameTokens,
   isoBirthdate,

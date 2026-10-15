@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -11,10 +11,21 @@ const row = (name, birthDate, team, stats) => ({
   statistics: Object.entries(stats).map(([statName, value]) => ({ name: statName, value: String(value) })),
 });
 
-test('seasonLabel nombra la temporada por los dos años', () => {
+test('seasonLabel sigue el cambio de criterio de la API en 2007', () => {
+  assert.equal(seasonLabel(1992), '1992-93');
+  assert.equal(seasonLabel(1999), '1999-00');
+  assert.equal(seasonLabel(2006), '2006-07');
+  assert.equal(seasonLabel(2008), '2007-08');
   assert.equal(seasonLabel(2014), '2013-14');
-  assert.equal(seasonLabel(2000), '1999-00');
-  assert.equal(seasonLabel(1993), '1992-93');
+});
+
+test('seasonYears no repite ni salta temporadas', () => {
+  const labels = seasonYears(2027).map(seasonLabel);
+  assert.equal(labels[0], '1992-93');
+  assert.equal(labels[labels.length - 1], '2026-27');
+  assert.equal(new Set(labels).size, labels.length);
+  assert.equal(labels.length, 2026 - 1992 + 1);
+  assert.ok(labels.includes('2006-07') && labels.includes('2007-08'));
 });
 
 test('clubName traduce los nombres cortos de la UEFA', () => {
@@ -39,7 +50,7 @@ test('isPlayer exige la misma fecha de nacimiento y una palabra del nombre en co
   assert.equal(isPlayer(row('Xavi', '1980-01-25', 'Barcelona', {}), { name: 'Xavi', birthdate: null }), false);
 });
 
-test('seasonFromRow convierte la fila y deja sin asistencias las temporadas anteriores a 2000-01', () => {
+test('seasonFromRow convierte la fila y deja sin asistencias las temporadas anteriores a 2001-02', () => {
   const stats = { matches_appearance: 12, goals: 3, assists: 4 };
   assert.deepEqual(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 2008), {
     season: '2007-08',
@@ -48,7 +59,8 @@ test('seasonFromRow convierte la fila y deja sin asistencias las temporadas ante
     goals: 3,
     assists: 4,
   });
-  assert.equal(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 1999).assists, null);
+  assert.equal(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 2000).assists, null);
+  assert.equal(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 2001).assists, 4);
   // Sin el dato, la UEFA quiere decir 0
   assert.equal(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', { matches_appearance: 5 }), 2008).assists, 0);
   // Convocado sin jugar: no cuenta como temporada

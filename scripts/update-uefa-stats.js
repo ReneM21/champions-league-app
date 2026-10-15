@@ -6,7 +6,7 @@
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { FIRST_SEASON_YEAR, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
@@ -68,8 +68,7 @@ async function main() {
   if (missingBirthdate.length) console.log(`Sin fecha de nacimiento (no se pueden identificar): ${missingBirthdate.map((p) => p.name).join(', ')}`);
 
   const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, seasons: [] }]));
-  const lastYear = new Date().getUTCFullYear() + 1;
-  for (let year = FIRST_SEASON_YEAR; year <= lastYear; year++) {
+  for (const year of seasonYears(new Date().getUTCFullYear() + 1)) {
     const rows = await seasonRows(year);
     let found = 0;
     for (const player of players) {
@@ -81,7 +80,7 @@ async function main() {
         found++;
       }
     }
-    console.log(`${year}: ${rows.length} jugadores, ${found} temporada(s) de los nuestros`);
+    console.log(`${seasonLabel(year)} (seasonYear ${year}): ${rows.length} jugadores, ${found} temporada(s) de los nuestros`);
   }
 
   // Resumen para comparar con los totales de los rankings de Wikipedia

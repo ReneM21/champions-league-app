@@ -8,6 +8,8 @@ import { rankPlayers } from '../utils/stats';
 // - profiles.json: fichas automáticas de Wikipedia/Wikidata para quien no
 //   tiene ficha manual. La ficha manual siempre tiene prioridad.
 // - photos.json: fotos de Wikimedia Commons para quien no tiene foto propia.
+// - uefa-seasons.json: partidos, goles y asistencias por temporada y club de
+//   la UEFA. Completa las temporadas manuales y crea las que faltan.
 //
 // Devuelve { scorers, assisters, byId }: los dos rankings con su posición y
 // un mapa con todos los jugadores que tienen página.
@@ -34,7 +36,57 @@ const fromProfile = (profile) =>
       }
     : {};
 
-export function buildPlayers({ ranking, assists, details = [], photos = {}, profiles = {}, allGoals = [], allAssists = [] }) {
+// Une las temporadas de la UEFA con las escritas a mano. Las cifras oficiales
+// de la UEFA mandan (sus totales coinciden con los rankings); de lo manual se
+// toma el título ("title") y los datos que la UEFA no tiene (asistencias antes
+// de 2001-02). Si a mano una temporada está repartida entre dos clubes
+// (fichaje en invierno), se respeta ese reparto. Las temporadas que solo
+// están a mano se mantienen.
+export function mergeSeasons(manual = [], uefa = []) {
+  const merged = [];
+  const covered = new Set();
+  for (const official of uefa) {
+    const rows = manual.filter((s) => s.season === official.season);
+    covered.add(official.season);
+    if (rows.length > 1) {
+      merged.push(...rows);
+      continue;
+    }
+    const [own = {}] = rows;
+    const season = { ...official };
+    for (const key of ['matches', 'goals', 'assists']) {
+      if (season[key] === undefined || season[key] === null) season[key] = own[key] ?? null;
+    }
+    if (own.title) season.title = true;
+    merged.push(season);
+  }
+  merged.push(...manual.filter((s) => !covered.has(s.season)));
+  return merged.sort((a, b) => a.season.localeCompare(b.season) || a.club.localeCompare(b.club));
+}
+
+const sumOrNull = (values) => {
+  const known = values.filter((v) => v !== undefined && v !== null);
+  return known.length ? known.reduce((total, v) => total + v, 0) : null;
+};
+
+// Equipos del jugador a partir de sus temporadas. Con temporadas de la UEFA
+// (completas) los goles salen de ellas; si solo hay temporadas escritas a
+// mano, mandan los goles por equipo escritos a mano.
+export function buildTeams(manualTeams = [], seasons = [], fromUefa = false) {
+  const names = [...new Set([...manualTeams.map((t) => t.name), ...seasons.map((s) => s.club)])];
+  return names.map((name) => {
+    const manual = manualTeams.find((t) => t.name === name) || {};
+    const clubSeasons = seasons.filter((s) => s.club === name);
+    return {
+      name,
+      matches: sumOrNull(clubSeasons.map((s) => s.matches)),
+      goals: fromUefa && clubSeasons.length ? sumOrNull(clubSeasons.map((s) => s.goals)) : manual.goals ?? sumOrNull(clubSeasons.map((s) => s.goals)),
+      assists: sumOrNull(clubSeasons.map((s) => s.assists)),
+    };
+  });
+}
+
+export function buildPlayers({ ranking, assists, details = [], photos = {}, profiles = {}, allGoals = [], allAssists = [], uefa = {} }) {
   const detailsById = indexById(details);
   const goalsById = indexById([...allGoals, ...ranking.players]);
   const assistsById = indexById([...allAssists, ...assists.players]);
@@ -63,6 +115,12 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
     };
     // Una biografía manual no lleva el enlace de la automática
     if (detail.biography) delete player.biographySource;
+    const official = uefa[id];
+    if (official && official.seasons.length) {
+      player.seasons = mergeSeasons(player.seasons, official.seasons);
+      player.seasonsSource = 'uefa';
+    }
+    player.teams = buildTeams(player.teams, player.seasons, player.seasonsSource === 'uefa');
     return withPhoto(player, photos);
   };
 

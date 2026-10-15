@@ -7,7 +7,8 @@ import { formatValue } from '../utils/stats';
 // - stat / statLabel: columna principal ("goals" / "Goles").
 // - profileOf(player): ficha a la que enlaza el jugador, o null si no tiene.
 // - actions(player): enlaces opcionales de la última columna.
-const RankingTable = ({ ariaLabel, players, stat, statLabel, profileOf, actions }) => (
+// - linkQuery: se añade al enlace de la ficha (p. ej. "?ranking=asistencias").
+const RankingTable = ({ ariaLabel, players, stat, statLabel, profileOf, actions, linkQuery = '' }) => (
   <Table>
     <Table.ScrollContainer>
       <Table.Content aria-label={ariaLabel} className="min-w-[640px]">
@@ -30,7 +31,7 @@ const RankingTable = ({ ariaLabel, players, stat, statLabel, profileOf, actions 
                   <div className="flex items-center gap-3">
                     <PlayerAvatar player={shown} className="size-10" />
                     {profile ? (
-                      <Link href={`/jugadores/${profile.id}`} className="font-medium text-foreground no-underline hover:text-accent">
+                      <Link href={`/jugadores/${profile.id}${linkQuery}`} className="font-medium text-foreground no-underline hover:text-accent">
                         {shown.name}
                       </Link>
                     ) : (

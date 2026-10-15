@@ -1,7 +1,8 @@
 # Actualiza los rankings de goleadores y asistidores desde Wikipedia todos los
 # días, descarga de Wikimedia Commons la foto de los jugadores que no tienen
 # una, crea la ficha (biografía, nacimiento, posición) de los que no tienen
-# ficha manual y, si algo cambió, lo commitea en master y vuelve a publicar la app.
+# ficha manual, descarga de la UEFA las temporadas (partidos, goles y
+# asistencias por club) de todos ellos y, si algo cambió, lo commitea en master y vuelve a publicar la app.
 # Si los datos de un ranking no pasan las comprobaciones, ese ranking no se
 # toca, el otro se actualiza igualmente y el workflow termina en error para
 # que GitHub avise por email.
@@ -55,18 +56,23 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: npm run update-profiles
 
+      # Después de las fichas: usa la fecha de nacimiento para identificar a cada jugador
+      - name: Temporadas y equipos (UEFA)
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run update-uefa-stats
+
       - name: Commit si hay cambios
         id: commit
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/images/players
+          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/images/players
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Actualizar datos desde Wikipedia"
+            git commit -m "Actualizar datos desde Wikipedia y la UEFA"
             git push origin HEAD:master
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

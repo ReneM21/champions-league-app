@@ -12,10 +12,15 @@ const SECTIONS = [
 ];
 
 const ChampionsLeagueHeader = () => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
-  // Las fichas de jugador cuelgan de la lista de goleadores
-  const isActive = (to) => (to === '/' ? pathname === '/' || pathname.startsWith('/jugadores') : pathname === to);
+  // Las fichas de jugador cuelgan de la lista de goleadores, o de la de
+  // asistidores si se abrieron desde ella (?ranking=asistencias)
+  const fromAssists = search.includes('ranking=asistencias');
+  const isActive = (to) => {
+    if (pathname.startsWith('/jugadores')) return to === (fromAssists ? '/asistencias' : '/');
+    return pathname === to;
+  };
 
   const links = SECTIONS.map(({ to, label }) => (
     <NavLink
