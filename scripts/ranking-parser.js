@@ -121,7 +121,8 @@ function nationFromCell($, cell) {
   const title = flag.find('a[title]').attr('title');
   if (title) return title;
   const src = flag.find('img').attr('src') || flag.find('img').attr('resource') || '';
-  const match = decodeURIComponent(src).match(/Flag_of_(?:the_)?([^./]+?)(?:_\(\d+\))?\.svg/);
+  // Quita sufijos de variante del archivo: Flag_of_Portugal_(official).svg, Flag_of_Belgium_(civil).svg...
+  const match = decodeURIComponent(src).match(/Flag_of_(?:the_)?([^./]+?)(?:_\([^)]*\))?\.svg/);
   if (match) return match[1].replace(/_/g, ' ');
   const code = cleanText($(cell).text()).match(/\(([A-Z]{3})\)/);
   return code ? code[1] : '';
