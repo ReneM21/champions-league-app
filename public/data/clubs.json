@@ -271,6 +271,23 @@
       }
     ]
   },
+  "Como": {
+    "logo": "images/clubs/como.png",
+    "topScorers": [
+      {
+        "name": "Assane Diao",
+        "goals": 2
+      },
+      {
+        "name": "Tasos Douvikas",
+        "goals": 2
+      },
+      {
+        "name": "Martin Baturina",
+        "goals": 1
+      }
+    ]
+  },
   "Dinamo Zagreb": {
     "logo": "images/clubs/dinamo-zagreb.png",
     "topScorers": [
@@ -455,6 +472,19 @@
       {
         "name": "Paulo Dybala",
         "goals": 18
+      }
+    ]
+  },
+  "LASK": {
+    "logo": "images/clubs/lask.png",
+    "topScorers": [
+      {
+        "name": "Florian Flecker",
+        "goals": 2
+      },
+      {
+        "name": "Robert Ljubičić",
+        "goals": 1
       }
     ]
   },
@@ -828,6 +858,23 @@
       }
     ]
   },
+  "Shakhtar": {
+    "logo": "images/clubs/shakhtar.png",
+    "topScorers": [
+      {
+        "name": "Luiz Adriano",
+        "goals": 20
+      },
+      {
+        "name": "Alex Teixeira",
+        "goals": 11
+      },
+      {
+        "name": "Jádson",
+        "goals": 9
+      }
+    ]
+  },
   "Shakhtar Donetsk": {
     "logo": "images/clubs/shakhtar-donetsk.png",
     "topScorers": [
@@ -858,6 +905,23 @@
       },
       {
         "name": "Nica Panduru",
+        "goals": 3
+      }
+    ]
+  },
+  "Stuttgart": {
+    "logo": "images/clubs/stuttgart.png",
+    "topScorers": [
+      {
+        "name": "Ermedin Demirović",
+        "goals": 5
+      },
+      {
+        "name": "Kevin Kuranyi",
+        "goals": 3
+      },
+      {
+        "name": "Mario Gomez",
         "goals": 3
       }
     ]
