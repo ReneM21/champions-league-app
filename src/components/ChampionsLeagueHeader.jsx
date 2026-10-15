@@ -54,7 +54,7 @@ const ChampionsLeagueHeader = () => {
           </span>
         </Link>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-3">
           <nav aria-label="Secciones" className="hidden items-center gap-1 xl:flex">
             {links}
           </nav>
