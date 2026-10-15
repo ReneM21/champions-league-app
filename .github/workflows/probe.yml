@@ -2,20 +2,23 @@ name: Probe (temporal)
 on:
   push:
     branches: [claude/nifty-archimedes-bl6gsx]
-    paths: ['.github/workflows/probe.yml']
+    paths: ['.github/workflows/probe.yml', 'scripts/update-uefa-stats.js', 'scripts/uefa-stats.js']
 jobs:
   probe:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - run: |
-          B="https://compstats.uefa.com/v1"
-          for y in 1993 1995 1997 1999 2000 2001 2002 2003 2004 2005 2026; do
-            echo "== $y: $(curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=2&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=$y&stats=assists" | jq -c '[.[] | {n:.player.internationalName, t:.team.internationalName, s:.statistics}]')"
-          done
-          echo "== multi"
-          curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=2&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2004&stats=assists,goals,matches_appearance,minutes_played_official" | jq -c '[.[] | {n:.player.internationalName, id:.playerId, s:[.statistics[]|{name,value}]}]'
-          echo "== count 2004 limit 1000"
-          curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=1000&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2004&stats=matches_appearance" | jq 'length'
-          for u in "$B/player-stats/250128377?competitionId=1&seasonYear=2024" "$B/player-stats?competitionId=1&seasonYear=2024&playerId=250128377" "$B/player-stats/250128377?competitionId=1" "$B/players/250128377/stats?competitionId=1"; do
-            echo "== $u"; curl -sS -m 30 -w "\nHTTP %{http_code}\n" "$u" | head -c 1500; echo
-          done
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/update-uefa-stats.js
+      - if: ${{ !cancelled() }}
+        run: |
+          git add public/data/uefa-seasons.json
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Datos de la UEFA por temporada (prueba)"
+          git push origin HEAD:${{ github.ref_name }}
