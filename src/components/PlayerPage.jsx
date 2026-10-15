@@ -4,6 +4,7 @@ import { buttonVariants } from '@heroui/react';
 import PlayerAvatar from './PlayerAvatar';
 import { usePlayer } from '../data/PlayersContext';
 import NotFoundPage from '../pages/NotFoundPage';
+import ShareButton from './ShareButton';
 import { useTitle } from '../utils/useTitle';
 
 const TABS = [
@@ -44,9 +45,12 @@ const PlayerPage = ({ children }) => {
         <Link to={fromAssists ? '/asistencias' : '/'} className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'text-muted' })}>
           ← {fromAssists ? 'Asistidores' : 'Goleadores'}
         </Link>
-        <Link to={`/comparar?a=${player.id}`} className={buttonVariants({ variant: 'secondary', size: 'sm' })}>
-          Comparar con otro jugador
-        </Link>
+        <div className="flex gap-2">
+          <ShareButton title={`${player.name} en la Champions League · Champions Stats`} variant="ghost" />
+          <Link to={`/comparar?a=${player.id}`} className={buttonVariants({ variant: 'secondary', size: 'sm' })}>
+            Comparar
+          </Link>
+        </div>
       </div>
 
       <section className="champions-hero mb-6 flex flex-col gap-6 rounded-3xl p-6 text-white sm:flex-row sm:items-center sm:p-8">

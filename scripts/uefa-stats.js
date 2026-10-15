@@ -179,6 +179,20 @@ function seasonLeaders(rows, year) {
   };
 }
 
+// Los n mejores de una temporada en goles o asistencias (con partidos)
+function seasonTop(rows, stat, n = 10) {
+  return rows
+    .map((row) => ({
+      name: row.player && row.player.internationalName,
+      club: clubName(row.team),
+      [stat]: statValue(row, stat),
+      matches: statValue(row, 'matches_appearance'),
+    }))
+    .filter((row) => row.name && row[stat] > 0)
+    .sort((a, b) => b[stat] - a[stat] || a.matches - b.matches || a.name.localeCompare(b.name))
+    .slice(0, n);
+}
+
 // Suma los goles de cada jugador en cada club (era Champions, desde 1992-93)
 function addClubGoals(totals, rows) {
   for (const row of rows) {
@@ -235,6 +249,7 @@ module.exports = {
   EXTRA_CLUBS,
   clubSlug,
   seasonLeaders,
+  seasonTop,
   addClubGoals,
   clubTopScorers,
   findUefaClub,

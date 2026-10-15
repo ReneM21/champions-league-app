@@ -64,6 +64,7 @@ export function PlayersProvider({ children }) {
           clubs,
           competition,
           seasonLeaders: uefaSeasons.leaders || {},
+          currentSeason: uefaSeasons.current || null,
         });
       })
       .catch((error) => {
@@ -97,8 +98,8 @@ export const useClubLogo = (name) => {
 
 // Datos de la competición (finales, títulos por club...) de public/data/competition.json
 export const useCompetition = () => {
-  const { competition, seasonLeaders, clubs } = usePlayers();
-  return { competition, seasonLeaders: seasonLeaders || {}, clubs: clubs || {} };
+  const { competition, seasonLeaders, clubs, currentSeason } = usePlayers();
+  return { competition, seasonLeaders: seasonLeaders || {}, clubs: clubs || {}, currentSeason };
 };
 
 const normalizeName = (name) =>

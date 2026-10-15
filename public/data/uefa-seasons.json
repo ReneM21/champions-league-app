@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T08:11:20.164Z",
+  "updatedAt": "2026-10-15T08:20:58.065Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -2530,5 +2530,132 @@
       ],
       "teams": 36
     }
+  },
+  "current": {
+    "season": "2026-27",
+    "scorers": [
+      {
+        "name": "Erling Haaland",
+        "club": "Manchester City",
+        "goals": 4,
+        "matches": 2
+      },
+      {
+        "name": "Ermedin Demirović",
+        "club": "Stuttgart",
+        "goals": 4,
+        "matches": 2
+      },
+      {
+        "name": "Nicolò Tresoldi",
+        "club": "Club Brugge",
+        "goals": 4,
+        "matches": 2
+      },
+      {
+        "name": "Bradley Barcola",
+        "club": "Liverpool",
+        "goals": 3,
+        "matches": 2
+      },
+      {
+        "name": "Ferran Torres",
+        "club": "Paris Saint-Germain",
+        "goals": 3,
+        "matches": 2
+      },
+      {
+        "name": "Harry Kane",
+        "club": "Bayern München",
+        "goals": 3,
+        "matches": 2
+      },
+      {
+        "name": "Nicolas Jackson",
+        "club": "Aston Villa",
+        "goals": 3,
+        "matches": 2
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "club": "Paris Saint-Germain",
+        "goals": 3,
+        "matches": 2
+      },
+      {
+        "name": "Raphinha",
+        "club": "Barcelona",
+        "goals": 2,
+        "matches": 1
+      },
+      {
+        "name": "Assane Diao",
+        "club": "Como",
+        "goals": 2,
+        "matches": 2
+      }
+    ],
+    "assisters": [
+      {
+        "name": "Lamine Yamal",
+        "club": "Barcelona",
+        "assists": 4,
+        "matches": 2
+      },
+      {
+        "name": "Yvan Dibango",
+        "club": "LASK",
+        "assists": 3,
+        "matches": 1
+      },
+      {
+        "name": "Carlos Forbs",
+        "club": "Club Brugge",
+        "assists": 3,
+        "matches": 2
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "club": "Paris Saint-Germain",
+        "assists": 3,
+        "matches": 2
+      },
+      {
+        "name": "Arda Güler",
+        "club": "Real Madrid",
+        "assists": 2,
+        "matches": 1
+      },
+      {
+        "name": "Angelo Stiller",
+        "club": "Stuttgart",
+        "assists": 2,
+        "matches": 2
+      },
+      {
+        "name": "Deniz Undav",
+        "club": "Stuttgart",
+        "assists": 2,
+        "matches": 2
+      },
+      {
+        "name": "Isaque",
+        "club": "Shakhtar",
+        "assists": 2,
+        "matches": 2
+      },
+      {
+        "name": "Jeremie Frimpong",
+        "club": "Liverpool",
+        "assists": 2,
+        "matches": 2
+      },
+      {
+        "name": "Kostas Tsimikas",
+        "club": "Liverpool",
+        "assists": 2,
+        "matches": 2
+      }
+    ]
   }
 }

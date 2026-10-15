@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, clubSlug, seasonLeaders, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, clubSlug, seasonLeaders, seasonTop, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -150,4 +150,17 @@ test('findUefaClub busca el nombre exacto o uno contenido', () => {
   assert.equal(findUefaClub('Malmö FF', names), 'Malmö');
   assert.equal(findUefaClub('Borussia Mönchengladbach', names), 'Mönchengladbach');
   assert.equal(findUefaClub('Reims', names), null);
+});
+
+test('seasonTop ordena por la estadística y, en empate, por menos partidos', () => {
+  const rows = [
+    row('A', 'x', 'Man Utd', { matches_appearance: 6, goals: 5 }),
+    row('B', 'x', 'Real Madrid', { matches_appearance: 4, goals: 5 }),
+    row('C', 'x', 'Real Madrid', { matches_appearance: 4, goals: 0 }),
+  ];
+  assert.deepEqual(seasonTop(rows, 'goals'), [
+    { name: 'B', club: 'Real Madrid', goals: 5, matches: 4 },
+    { name: 'A', club: 'Manchester United', goals: 5, matches: 6 },
+  ]);
+  assert.equal(seasonTop(rows, 'goals', 1).length, 1);
 });
