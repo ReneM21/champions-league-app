@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Chip, Table } from '@heroui/react';
+import ClubLogo from '../components/ClubLogo';
 import PlayerPage from '../components/PlayerPage';
 import StatCard from '../components/StatCard';
 import { formatRatio, formatValue, goalsPerMatch as perMatch, sortSeasonsDesc, STAT_LABELS, summarizeSeasons } from '../utils/stats';
@@ -18,7 +19,10 @@ const SeasonHighlight = ({ title, season, accentClass, figures }) => (
       <div>
         <p className="text-xs font-medium uppercase tracking-wide text-muted">{title}</p>
         <Card.Title className="text-xl">{season.season}</Card.Title>
-        <p className="text-sm text-muted">{season.club}</p>
+        <p className="flex items-center gap-2 text-sm text-muted">
+          <ClubLogo name={season.club} className="size-5" />
+          {season.club}
+        </p>
       </div>
       {season.title && (
         <Chip color="success" size="sm">
@@ -143,7 +147,12 @@ const PlayerSeasonsPage = () => (
                               )}
                             </span>
                           </Table.Cell>
-                          <Table.Cell className="text-muted">{season.club}</Table.Cell>
+                          <Table.Cell className="text-muted">
+                            <span className="inline-flex items-center gap-2">
+                              <ClubLogo name={season.club} className="size-5" />
+                              {season.club}
+                            </span>
+                          </Table.Cell>
                           <Table.Cell className="text-right tabular-nums text-muted">{formatValue(season.matches)}</Table.Cell>
                           <Table.Cell className={`text-right tabular-nums ${stat === 'goals' ? 'font-semibold text-accent' : 'text-muted'}`}>
                             {formatValue(season.goals)}

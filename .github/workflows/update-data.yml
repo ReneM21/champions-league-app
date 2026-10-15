@@ -65,7 +65,7 @@ jobs:
         id: commit
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/images/players
+          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/data/clubs.json public/images/players public/images/clubs
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"

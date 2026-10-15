@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Chip, Link } from '@heroui/react';
+import ClubLogo from '../components/ClubLogo';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
 import PageHeader from '../components/PageHeader';
@@ -142,7 +143,10 @@ const SeasonsPage = () => {
                 </div>
                 <div className="text-right">
                   <p className="text-xs font-medium uppercase tracking-wide text-white/70">Campeón</p>
-                  <p className="font-semibold text-champions-gold">🏆 {season.winner}</p>
+                  <p className="flex items-center justify-end gap-2 font-semibold text-champions-gold">
+                    <ClubLogo name={season.winner} className="size-6 rounded-full bg-white p-0.5" />
+                    {season.winner}
+                  </p>
                 </div>
               </div>
 
@@ -150,11 +154,17 @@ const SeasonsPage = () => {
                 <div>
                   <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Final · {season.finalVenue}</p>
                   <div className="flex items-center justify-between gap-3">
-                    <span className="flex-1 font-medium">{season.finalTeams[0]}</span>
+                    <span className="flex flex-1 items-center gap-2 font-medium">
+                      <ClubLogo name={season.finalTeams[0]} className="size-7" />
+                      {season.finalTeams[0]}
+                    </span>
                     <Chip color="accent" size="lg" className="font-bold tabular-nums">
                       {season.finalScore}
                     </Chip>
-                    <span className="flex-1 text-right font-medium">{season.finalTeams[1]}</span>
+                    <span className="flex flex-1 items-center justify-end gap-2 text-right font-medium">
+                      {season.finalTeams[1]}
+                      <ClubLogo name={season.finalTeams[1]} className="size-7" />
+                    </span>
                   </div>
                 </div>
 
@@ -177,7 +187,10 @@ const SeasonsPage = () => {
                         ) : (
                           <p className="truncate font-medium">{season.topScorer.name}</p>
                         )}
-                        <p className="truncate text-sm text-muted">{season.topScorer.team}</p>
+                        <p className="flex items-center gap-1.5 truncate text-sm text-muted">
+                          <ClubLogo name={season.topScorer.team} className="size-4" />
+                          {season.topScorer.team}
+                        </p>
                       </div>
                     </div>
                     <p className="shrink-0 text-2xl font-bold tabular-nums text-accent">{season.topScorer.goals}</p>

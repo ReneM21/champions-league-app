@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const H = { 'User-Agent': 'champions-league-app (https://github.com/ReneM21/champions-league-app)' };
 const api = async (host, params) => (await fetch(`https://${host}/w/api.php?${new URLSearchParams({ format: 'json', formatversion: '2', ...params })}`, { headers: H })).json();
-const PLAYERS = { 'ryan-giggs': ['Q10524', 1993, 2014], 'david-beckham': ['Q10520', 1994, 2013], 'luis-figo': ['Q483145', 1996, 2009], xavi: ['Q17500', 1998, 2015], neymar: ['Q142794', 2013, 2023], 'angel-di-maria': ['Q251683', 2007, 2025] };
-const OUT = 'probe-photos';
+const PLAYERS = { 'david-beckham': ['Q10520', 1994, 2013, ['David Beckham Real Madrid', 'David Beckham Galaxy', 'David Beckham Milan', 'David Beckham England', 'David Beckham PSG']], xavi: ['Q17500', 1998, 2015, ['Xavi Hernández Barcelona', 'Xavi Barcelona', 'Xavi Spain', 'Xavi Hernandez']] };
+const OUT = 'probe-photos2';
 
 async function filesIn(category, depth) {
   const files = new Set();
@@ -23,10 +23,15 @@ async function filesIn(category, depth) {
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
   const report = {};
-  for (const [id, [qid, from, to]] of Object.entries(PLAYERS)) {
+  for (const [id, [qid, from, to, searches]] of Object.entries(PLAYERS)) {
     const wd = await api('www.wikidata.org', { action: 'wbgetentities', ids: qid, props: 'claims' });
     const cat = wd.entities[qid].claims.P373?.[0]?.mainsnak?.datavalue?.value;
-    const files = [...(await filesIn(`Category:${cat}`, 1))].filter((f) => /\.jpe?g$/i.test(f));
+    const found = await filesIn(`Category:${cat}`, 2);
+    for (const q of searches) {
+      const r = await api('commons.wikimedia.org', { action: 'query', list: 'search', srnamespace: '6', srlimit: '100', srsearch: q });
+      for (const hit of r.query.search) found.add(hit.title);
+    }
+    const files = [...found].filter((f) => /\.jpe?g$/i.test(f));
     const infos = [];
     for (let i = 0; i < files.length; i += 40) {
       const r = await api('commons.wikimedia.org', { action: 'query', prop: 'imageinfo', iiprop: 'url|size|extmetadata', iiurlwidth: '300', titles: files.slice(i, i + 40).join('|') });
@@ -42,7 +47,7 @@ async function filesIn(category, depth) {
     }
     // Retratos primero (más alto que ancho), luego por tamaño
     infos.sort((a, b) => (b.h >= b.w * 0.9) - (a.h >= a.w * 0.9) || b.w * b.h - a.w * a.h);
-    const picks = infos.slice(0, 16);
+    const picks = infos.slice(0, 32);
     report[id] = { category: cat, total: files.length, inCareer: infos.length, picks: picks.map((p, i) => ({ n: i, ...p })) };
     fs.mkdirSync(path.join(OUT, id), { recursive: true });
     for (const [i, p] of picks.entries()) {

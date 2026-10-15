@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Chip, Link } from '@heroui/react';
+import ClubLogo from '../components/ClubLogo';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
 import PageHeader from '../components/PageHeader';
@@ -101,15 +102,6 @@ const SORTS = {
 
 const TEAMS_PER_PAGE = 4;
 
-const initials = (name) =>
-  name
-    .split(' ')
-    .filter((word) => word.length > 2)
-    .map((word) => word[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-
 const SORT_OPTIONS = [
   { id: 'all', label: 'Todos los equipos' },
   { id: 'titles', label: 'Más títulos' },
@@ -169,9 +161,7 @@ const TeamsPage = () => {
         {items.map((team) => (
           <Card key={team.id}>
             <Card.Header className="flex-row items-center gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-lg font-bold text-accent">
-                {initials(team.name)}
-              </div>
+              <ClubLogo name={team.name} className="size-12" />
               <div className="min-w-0 flex-1">
                 <Card.Title className="text-lg">{team.name}</Card.Title>
               </div>

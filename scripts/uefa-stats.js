@@ -148,6 +148,13 @@ function missingClubCandidates(seasons, wikiClubs = [], teamsByYear = {}) {
   return candidates;
 }
 
+// Clubes cuyo escudo se descarga aunque ningún jugador de los rankings haya
+// jugado en ellos: los que aparecen en las páginas Equipos y Temporadas.
+const EXTRA_CLUBS = ['Real Madrid', 'AC Milan', 'Bayern München', 'Liverpool', 'Barcelona', 'Ajax', 'Chelsea', 'Manchester City', 'Paris Saint-Germain', 'Tottenham Hotspur', 'Juventus', 'Borussia Dortmund', 'Inter de Milán', 'Manchester United'];
+
+// "Paris Saint-Germain" -> "paris-saint-germain" (nombre del archivo del escudo)
+const clubSlug = (name) => nameTokens(name).join('-');
+
 // Quita los campos internos antes de guardar
 const publicSeason = ({ year, teamId, ...season }) => season;
 
@@ -175,5 +182,7 @@ module.exports = {
   sameClub,
   missingClubCandidates,
   publicSeason,
+  EXTRA_CLUBS,
+  clubSlug,
   totals,
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Chip, Label, ProgressBar } from '@heroui/react';
+import ClubLogo from '../components/ClubLogo';
 import PlayerPage from '../components/PlayerPage';
 import { formatValue, STAT_LABELS, teamBreakdown } from '../utils/stats';
 
@@ -33,6 +34,7 @@ const PlayerTeamsPage = () => (
                 <div className="flex flex-wrap gap-2">
                   {clubs.map((club) => (
                     <Chip key={club} color="accent" variant="soft">
+                      <ClubLogo name={club} className="size-4" />
                       {club}
                     </Chip>
                   ))}
@@ -51,7 +53,10 @@ const PlayerTeamsPage = () => (
             {teams.map((team) => (
               <Card key={team.name}>
                 <Card.Header className="flex-row items-center justify-between">
-                  <Card.Title>{team.name}</Card.Title>
+                  <Card.Title className="flex items-center gap-3">
+                    <ClubLogo name={team.name} className="size-9" />
+                    {team.name}
+                  </Card.Title>
                   <span className="text-sm text-muted">
                     {team.seasons ? `${team.seasons} temporada${team.seasons === 1 ? '' : 's'}` : '-'}
                   </span>

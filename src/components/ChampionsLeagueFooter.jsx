@@ -22,9 +22,9 @@ const ChampionsLeagueFooter = () => {
             <Link href={source} target="_blank" rel="noopener noreferrer">
               Wikipedia
             </Link>{' '}
-            · Fotos adicionales:{' '}
-            <Link href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer">
-              Wikimedia Commons
+            y{' '}
+            <Link href="https://www.uefa.com/uefachampionsleague/history/" target="_blank" rel="noopener noreferrer">
+              UEFA
             </Link>
           </p>
         )}

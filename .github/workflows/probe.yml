@@ -15,11 +15,11 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: node .github/probe/era-photos.js
-      - name: Logos UEFA
-        run: for id in 50051 50080 50037 7889 50058 50143 52682; do echo "$id $(curl -s -o /dev/null -w '%{http_code} %{content_type} %{size_download}' https://img.uefa.com/imgml/TP/teams/logos/240x240/$id.png)"; done
+      - name: Datos UEFA y escudos
+        run: node scripts/update-uefa-stats.js
       - if: ${{ !cancelled() }}
         run: |
-          git add probe-photos
+          git add probe-photos2 public/data/uefa-seasons.json public/data/clubs.json public/images/clubs
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
