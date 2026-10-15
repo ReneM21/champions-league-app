@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T06:47:21.889Z",
+  "updatedAt": "2026-10-15T07:03:31.105Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -717,8 +717,15 @@
         {
           "season": "2019-20",
           "club": "Borussia Dortmund",
-          "matches": 8,
-          "goals": 10,
+          "matches": 2,
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "season": "2019-20",
+          "club": "Salzburg",
+          "matches": 6,
+          "goals": 8,
           "assists": 1
         },
         {
