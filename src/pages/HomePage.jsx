@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@heroui/react';
 import DataNote from '../components/DataNote';
 import PageHeader from '../components/PageHeader';
+import PlayerTabLinks from '../components/PlayerTabLinks';
 import QuickFacts from '../components/QuickFacts';
 import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
@@ -33,12 +34,7 @@ const HomePage = () => {
         stat="goals"
         statLabel="Goles"
         profileOf={self}
-        actions={(player) => (
-          <div className="flex justify-end gap-3 text-sm">
-            <Link href={`/jugadores/${player.id}/equipos`}>Equipos</Link>
-            <Link href={`/jugadores/${player.id}/temporadas`}>Temporadas</Link>
-          </div>
-        )}
+        actions={(player) => <PlayerTabLinks playerId={player.id} />}
       />
 
       <DataNote>
