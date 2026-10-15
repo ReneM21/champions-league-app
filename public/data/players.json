@@ -297,8 +297,8 @@
     ],
     "biography": "Erling Haaland, delantero noruego nacido el 21 de julio de 2000, es conocido por su increíble capacidad goleadora en la Champions League. Ha anotado 49 goles en 48 partidos, debutando con un hat-trick en su primer partido. Ganó la Champions League con el Manchester City en 2023 y ha establecido múltiples récords de precocidad en la competición.",
     "seasons": [
-      { "season": "2019-20", "club": "Salzburg", "goals": 8, "matches": 6 },
-      { "season": "2019-20", "club": "Borussia Dortmund", "goals": 2, "matches": 2 },
+      { "season": "2019-20", "club": "Salzburg", "goals": 8 },
+      { "season": "2019-20", "club": "Borussia Dortmund", "goals": 2 },
       { "season": "2020-21", "club": "Borussia Dortmund", "goals": 10, "matches": 8, "assists": 2 },
       { "season": "2021-22", "club": "Borussia Dortmund", "goals": 3 },
       { "season": "2022-23", "club": "Manchester City", "goals": 12, "matches": 11, "assists": 1, "title": true },
