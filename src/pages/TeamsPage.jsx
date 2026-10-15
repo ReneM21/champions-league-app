@@ -117,6 +117,48 @@ const TeamCard = ({ team }) => (
   </Card>
 );
 
+// Alemania Occidental cuenta como Alemania, como hace la UEFA
+const nation = (country) => (country === 'Alemania Occidental' ? 'Alemania' : country);
+
+// Títulos y finales por país, con barras (una sola serie: los títulos)
+const CountryTitles = ({ finals }) => {
+  const byCountry = new Map();
+  for (const final of finals) {
+    const winner = nation(final.winnerCountry);
+    const loser = nation(final.runnerUpCountry);
+    if (!byCountry.has(winner)) byCountry.set(winner, { country: winner, titles: 0, runnersUp: 0, clubs: new Set() });
+    if (!byCountry.has(loser)) byCountry.set(loser, { country: loser, titles: 0, runnersUp: 0, clubs: new Set() });
+    byCountry.get(winner).titles++;
+    byCountry.get(winner).clubs.add(final.winner);
+    byCountry.get(loser).runnersUp++;
+  }
+  const rows = [...byCountry.values()].filter((row) => row.titles > 0).sort((a, b) => b.titles - a.titles || b.runnersUp - a.runnersUp);
+  const max = rows[0] ? rows[0].titles : 1;
+  return (
+    <Card className="mb-8">
+      <Card.Header>
+        <Card.Title>Títulos por país</Card.Title>
+        <Card.Description>Copas de Europa ganadas por los clubes de cada país (Alemania incluye Alemania Occidental).</Card.Description>
+      </Card.Header>
+      <Card.Content>
+        <ul className="space-y-2">
+          {rows.map((row) => (
+            <li key={row.country} className="grid grid-cols-[7rem_minmax(0,1fr)_auto] items-center gap-3 text-sm sm:grid-cols-[9rem_minmax(0,1fr)_auto]">
+              <span className="truncate font-medium">{row.country}</span>
+              <span className="flex h-3 items-center" title={`${row.titles} títulos de ${row.clubs.size} club${row.clubs.size === 1 ? '' : 'es'}`}>
+                <span className="h-full rounded-r bg-accent" style={{ width: `${(row.titles / max) * 100}%` }} />
+              </span>
+              <span className="w-24 text-right tabular-nums text-muted">
+                <span className="font-semibold text-foreground">{row.titles}</span> · {row.clubs.size} club{row.clubs.size === 1 ? '' : 'es'}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Card.Content>
+    </Card>
+  );
+};
+
 const TeamsPage = () => {
   useTitle('Equipos');
   const { competition, clubs } = useCompetition();
@@ -156,6 +198,8 @@ const TeamsPage = () => {
           <SortSelect label="Ordenar por" value={sort} onChange={change(setSort)} options={SORT_OPTIONS} />
         </div>
       </PageHeader>
+
+      {page === 1 && <CountryTitles finals={competition.finals} />}
 
       <section className="grid gap-6 md:grid-cols-2">
         {items.map((team) => (

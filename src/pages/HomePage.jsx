@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@heroui/react';
 import DataNote from '../components/DataNote';
 import PageHeader from '../components/PageHeader';
+import QuickFacts from '../components/QuickFacts';
 import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
@@ -21,6 +22,8 @@ const HomePage = () => {
         title="Máximos goleadores"
         description="Los jugadores con más goles en la historia de la UEFA Champions League."
       />
+
+      <QuickFacts />
 
       <Podium players={players} stat="goals" statLabel="goles" profileOf={self} />
 
