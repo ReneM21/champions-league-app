@@ -9,20 +9,21 @@ import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // El resto de páginas se descargan al visitarlas: la portada carga antes
-const PlayerDetailPage = lazy(() => import('./pages/PlayerDetailPage'));
-const PlayerTeamsPage = lazy(() => import('./pages/PlayerTeamsPage'));
-const PlayerSeasonsPage = lazy(() => import('./pages/PlayerSeasonsPage'));
+const PlayerPage = lazy(() => import('./components/PlayerPage'));
 const TeamsPage = lazy(() => import('./pages/TeamsPage'));
 const SeasonsPage = lazy(() => import('./pages/SeasonsPage'));
 const AssistsPage = lazy(() => import('./pages/AssistsPage'));
 const ComparePage = lazy(() => import('./pages/ComparePage'));
 const RecordsPage = lazy(() => import('./pages/RecordsPage'));
 
+// Sube al principio al cambiar de página, pero no al cambiar de pestaña dentro
+// de la misma ficha de jugador
 const ScrollToTopOnNavigate = () => {
   const { pathname } = useLocation();
+  const page = pathname.match(/^\/jugadores\/[^/]+/) ? pathname.split('/').slice(0, 3).join('/') : pathname;
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [page]);
   return null;
 };
 
@@ -46,9 +47,7 @@ const App = () => {
           <Suspense fallback={<PageSkeleton />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/jugadores/:id" element={<PlayerDetailPage />} />
-              <Route path="/jugadores/:id/equipos" element={<PlayerTeamsPage />} />
-              <Route path="/jugadores/:id/temporadas" element={<PlayerSeasonsPage />} />
+              <Route path="/jugadores/:id/*" element={<PlayerPage />} />
               <Route path="/equipos" element={<TeamsPage />} />
               <Route path="/asistencias" element={<AssistsPage />} />
               <Route path="/temporadas" element={<SeasonsPage />} />
