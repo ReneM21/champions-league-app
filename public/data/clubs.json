@@ -1,0 +1,68 @@
+{
+  "AC Milan": {
+    "logo": "images/clubs/ac-milan.png"
+  },
+  "Ajax": {
+    "logo": "images/clubs/ajax.png"
+  },
+  "Barcelona": {
+    "logo": "images/clubs/barcelona.png"
+  },
+  "Bayern München": {
+    "logo": "images/clubs/bayern-munchen.png"
+  },
+  "Benfica": {
+    "logo": "images/clubs/benfica.png"
+  },
+  "Borussia Dortmund": {
+    "logo": "images/clubs/borussia-dortmund.png"
+  },
+  "Chelsea": {
+    "logo": "images/clubs/chelsea.png"
+  },
+  "Genk": {
+    "logo": "images/clubs/genk.png"
+  },
+  "Inter de Milán": {
+    "logo": "images/clubs/inter-de-milan.png"
+  },
+  "Juventus": {
+    "logo": "images/clubs/juventus.png"
+  },
+  "Liverpool": {
+    "logo": "images/clubs/liverpool.png"
+  },
+  "Lyon": {
+    "logo": "images/clubs/lyon.png"
+  },
+  "Manchester City": {
+    "logo": "images/clubs/manchester-city.png"
+  },
+  "Manchester United": {
+    "logo": "images/clubs/manchester-united.png"
+  },
+  "Monaco": {
+    "logo": "images/clubs/monaco.png"
+  },
+  "Napoli": {
+    "logo": "images/clubs/napoli.png"
+  },
+  "PSV Eindhoven": {
+    "logo": "images/clubs/psv-eindhoven.png"
+  },
+  "Paris Saint-Germain": {
+    "logo": "images/clubs/paris-saint-germain.png"
+  },
+  "Real Madrid": {
+    "logo": "images/clubs/real-madrid.png"
+  },
+  "Salzburg": {
+    "logo": "images/clubs/salzburg.png"
+  },
+  "Schalke": {
+    "logo": "images/clubs/schalke.png"
+  },
+  "Tottenham Hotspur": {
+    "logo": "images/clubs/tottenham-hotspur.png"
+  }
+}
