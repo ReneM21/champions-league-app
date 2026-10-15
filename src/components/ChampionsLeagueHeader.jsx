@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
 import ThemeToggle from './ThemeToggle';
-import { LOGO } from '../utils/asset';
+import { STARBALL } from '../utils/asset';
 
 const SECTIONS = [
   { to: '/', label: 'Goleadores' },
@@ -35,7 +35,7 @@ const ChampionsLeagueHeader = () => {
     <header className="sticky top-0 z-50 border-b border-separator bg-background/80 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={LOGO} alt="" className="size-9 rounded-full bg-white p-0.5 shadow-sm ring-1 ring-border" />
+          <img src={STARBALL} alt="" className="size-9 dark:brightness-0 dark:invert" />
           <span className="text-lg font-bold tracking-tight">
             Champions <span className="text-muted font-medium">Stats</span>
           </span>
