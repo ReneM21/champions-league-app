@@ -115,6 +115,39 @@ function splitCandidates(seasons) {
   return candidates;
 }
 
+// Desde 2018-19 un jugador puede jugar la Champions con dos clubes en la
+// misma temporada (antes no estaba permitido)
+const FIRST_SPLIT_START = 2018;
+
+const GENERIC_WORDS = new Set(['fc', 'cf', 'ac', 'sc', 'afc', 'club', 'de', 'del', 'the']);
+const clubTokens = (name) => nameTokens(name).filter((token) => !GENERIC_WORDS.has(token));
+
+// "Salzburg" (UEFA) es "Red Bull Salzburg" (Wikipedia): todas las palabras del
+// nombre de la UEFA están en el de Wikipedia
+function sameClub(wikiName, uefaName) {
+  const wiki = new Set(clubTokens(wikiName));
+  const uefa = clubTokens(uefaName);
+  return uefa.length > 0 && uefa.every((token) => wiki.has(token));
+}
+
+// Otra pista de cambio de club: un club de la lista de Wikipedia del jugador
+// que no aparece en ninguna de sus temporadas de la UEFA, pero sí jugó la
+// competición en una de sus temporadas desde 2018-19.
+// teamsByYear: { [seasonYear]: [{ id, name }] } con los equipos de cada temporada.
+function missingClubCandidates(seasons, wikiClubs = [], teamsByYear = {}) {
+  const missing = wikiClubs.filter((club) => !seasons.some((s) => sameClub(club, s.club)));
+  const candidates = [];
+  for (const season of seasons) {
+    if (Number(season.season.slice(0, 4)) < FIRST_SPLIT_START) continue;
+    for (const team of teamsByYear[season.year] || []) {
+      if (team.id !== season.teamId && missing.some((club) => sameClub(club, clubName({ internationalName: team.name })))) {
+        candidates.push({ season, teamId: team.id });
+      }
+    }
+  }
+  return candidates;
+}
+
 // Quita los campos internos antes de guardar
 const publicSeason = ({ year, teamId, ...season }) => season;
 
@@ -139,6 +172,8 @@ module.exports = {
   seasonFromRow,
   sortSeasons,
   splitCandidates,
+  sameClub,
+  missingClubCandidates,
   publicSeason,
   totals,
 };

@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, publicSeason, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -86,4 +86,24 @@ test('splitCandidates busca los clubes de las temporadas vecinas que no coincide
   const candidates = splitCandidates(seasons).map((c) => `${c.season.season}:${c.teamId}`);
   assert.deepEqual(candidates, ['2018-19:dortmund', '2019-20:salzburg', '2020-21:city', '2022-23:dortmund']);
   assert.deepEqual(splitCandidates([{ season: '2019-20', teamId: 'a' }, { season: '2020-21', teamId: 'a' }]), []);
+});
+
+test('sameClub compara nombres de club de Wikipedia y de la UEFA', () => {
+  assert.equal(sameClub('Red Bull Salzburg', 'Salzburg'), true);
+  assert.equal(sameClub('Borussia Dortmund', 'Borussia Dortmund'), true);
+  assert.equal(sameClub('Manchester United', 'Manchester City'), false);
+  assert.equal(sameClub('Inter Milan', 'Inter de Milán'), true);
+});
+
+test('missingClubCandidates busca un club de Wikipedia que falta en sus temporadas', () => {
+  const seasons = [
+    { season: '2019-20', year: 2020, club: 'Borussia Dortmund', teamId: 'bvb' },
+    { season: '2016-17', year: 2017, club: 'Borussia Dortmund', teamId: 'bvb' },
+  ];
+  const teamsByYear = {
+    2020: [{ id: 'bvb', name: 'B. Dortmund' }, { id: 'rbs', name: 'Salzburg' }, { id: 'mci', name: 'Man City' }],
+    2017: [{ id: 'rbs', name: 'Salzburg' }],
+  };
+  const candidates = missingClubCandidates(seasons, ['Red Bull Salzburg', 'Borussia Dortmund'], teamsByYear);
+  assert.deepEqual(candidates.map((c) => `${c.season.season}:${c.teamId}`), ['2019-20:rbs']);
 });

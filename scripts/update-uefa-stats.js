@@ -6,7 +6,7 @@
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, publicSeason, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
@@ -54,12 +54,15 @@ async function seasonRows(year, teamId) {
 function targets() {
   const rankings = [readJson(path.join(DATA, 'ranking.json'), { players: [] }), readJson(path.join(DATA, 'assists.json'), { players: [] })];
   const manual = new Map(readJson(path.join(DATA, 'players.json'), []).map((p) => [p.id, p]));
+  // Clubes de cada jugador según Wikipedia, para detectar cambios de club a mitad de temporada
+  const tables = [...readJson(path.join(DATA, 'all-goals.json'), []), ...readJson(path.join(DATA, 'all-assists.json'), [])];
+  const clubsOf = (id) => [...new Set(tables.concat(rankings.flatMap((r) => r.players)).filter((p) => p.id === id).flatMap((p) => p.clubs || []))];
   const profiles = readJson(path.join(DATA, 'profiles.json'), {});
   const byId = new Map();
   for (const row of rankings.flatMap((r) => r.players)) {
     if (byId.has(row.id)) continue;
     const birthdate = (manual.get(row.id) || {}).birthdate || (profiles[row.id] || {}).birthdate;
-    byId.set(row.id, { id: row.id, name: row.name, birthdate: isoBirthdate(birthdate) });
+    byId.set(row.id, { id: row.id, name: row.name, birthdate: isoBirthdate(birthdate), clubs: clubsOf(row.id) });
   }
   return [...byId.values()];
 }
@@ -70,8 +73,11 @@ async function main() {
   if (missingBirthdate.length) console.log(`Sin fecha de nacimiento (no se pueden identificar): ${missingBirthdate.map((p) => p.name).join(', ')}`);
 
   const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, seasons: [] }]));
+  const teamsByYear = {};
   for (const year of seasonYears(new Date().getUTCFullYear() + 1)) {
     const rows = await seasonRows(year);
+    const teams = new Map(rows.filter((r) => r.team).map((r) => [r.team.id, { id: r.team.id, name: r.team.internationalName }]));
+    teamsByYear[year] = [...teams.values()];
     let found = 0;
     for (const player of players) {
       for (const row of rows.filter((r) => isPlayer(r, player))) {
@@ -88,7 +94,12 @@ async function main() {
   // Jugadores que cambiaron de club a mitad de temporada: se separan las cifras
   for (const player of players) {
     const entry = result[player.id];
-    for (const { season, teamId } of splitCandidates(entry.seasons)) {
+    const candidates = [...splitCandidates(entry.seasons), ...missingClubCandidates(entry.seasons, player.clubs, teamsByYear)];
+    const seen = new Set();
+    for (const { season, teamId } of candidates) {
+      const key = `${season.season}-${teamId}`;
+      if (seen.has(key) || !entry.seasons.includes(season)) continue;
+      seen.add(key);
       const [other] = (await seasonRows(season.year, teamId)).filter((r) => isPlayer(r, player));
       const otherSeason = other && seasonFromRow(other, season.year);
       if (!otherSeason) continue;
