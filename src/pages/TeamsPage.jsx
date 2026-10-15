@@ -101,7 +101,12 @@ const TeamCard = ({ team }) => (
       )}
 
       <div>
-        <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Finales</p>
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted">Finales</p>
+          <Link href={`/temporadas?club=${encodeURIComponent(team.club)}`} className="text-xs">
+            Ver sus finales
+          </Link>
+        </div>
         <div className="flex flex-wrap gap-2">
           {[...team.wonYears.map((year) => ({ year, won: true })), ...team.lostYears.map((year) => ({ year, won: false }))]
             .sort((a, b) => a.year - b.year)

@@ -18,12 +18,16 @@
 [data-theme='light'] {
   --accent: #0e1e5b;
   --accent-foreground: #ffffff;
+  /* Gris del texto secundario algo más oscuro que el de HeroUI para llegar
+     al contraste AA (4,5:1) sobre el fondo claro */
+  --muted: oklch(50% 0.0138 285.94);
 }
 
 .dark,
 [data-theme='dark'] {
   --accent: #7c9cff;
   --accent-foreground: #0a0f24;
+  --muted: oklch(70.5% 0.015 286.067);
   color-scheme: dark;
 }
 

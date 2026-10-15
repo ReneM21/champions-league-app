@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Card, Chip, Link } from '@heroui/react';
 import ClubLogo from '../components/ClubLogo';
 import DataNote from '../components/DataNote';
@@ -126,9 +127,18 @@ const SeasonCard = ({ season }) => {
               {season.topAssists.length > 1 ? 'Máximos asistentes' : 'Máximo asistente'} (UEFA)
             </p>
             <div className="space-y-3">
-              {season.topAssists.map((player) => (
+              {season.topAssists.slice(0, 3).map((player) => (
                 <Leader key={player.name} player={player} value={player.assists} label="asist." />
               ))}
+              {season.topAssists.length > 3 && (
+                <p className="text-xs text-muted" title={season.topAssists.slice(3).map((p) => p.name).join(', ')}>
+                  y {season.topAssists.length - 3} más con {season.topAssists[0].assists} asistencias:{' '}
+                  {season.topAssists
+                    .slice(3)
+                    .map((p) => p.name)
+                    .join(', ')}
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -143,16 +153,28 @@ const SeasonsPage = () => {
   const [sort, setSort] = useState('recent');
   const [era, setEra] = useState('all');
   const [page, setPage] = useState(1);
+  // El club va en la URL (?club=...) para enlazarlo desde la página Equipos
+  const [params, setParams] = useSearchParams();
+  const club = params.get('club') || 'all';
+  const setClub = (value) => setParams(value === 'all' ? {} : { club: value }, { replace: true });
 
   const seasons = useMemo(() => {
     if (!competition) return [];
     const all = competition.finals.map((final) => toSeason(final, competition.topScorers || [], seasonLeaders));
-    const filtered = all.filter((s) => era === 'all' || (era === 'champions') === isChampionsEra(s));
+    const filtered = all.filter(
+      (s) => (era === 'all' || (era === 'champions') === isChampionsEra(s)) && (club === 'all' || s.winner === club || s.runnerUp === club)
+    );
     const topGoals = (s) => (s.topScorers[0] ? s.topScorers[0].goals : 0);
     if (sort === 'oldest') return filtered;
     if (sort === 'goals') return [...filtered].sort((a, b) => topGoals(b) - topGoals(a) || b.season.localeCompare(a.season));
     return [...filtered].reverse();
-  }, [competition, seasonLeaders, sort, era]);
+  }, [competition, seasonLeaders, sort, era, club]);
+
+  const clubOptions = useMemo(() => {
+    if (!competition) return [];
+    const names = [...new Set(competition.finals.flatMap((f) => [f.winner, f.runnerUp]))].sort((a, b) => a.localeCompare(b, 'es'));
+    return [{ id: 'all', label: 'Todos los clubes' }, ...names.map((name) => ({ id: name, label: name }))];
+  }, [competition]);
 
   if (!competition) return <PageSkeleton />;
 
@@ -167,12 +189,20 @@ const SeasonsPage = () => {
     <div className="animate-fadeIn">
       <PageHeader title="Temporadas históricas" description="Todas las ediciones desde 1955-56: la final, el campeón y los máximos goleadores.">
         <div className="flex flex-wrap gap-4">
+          <SortSelect label="Club" value={club} onChange={change(setClub)} options={clubOptions} />
           <SortSelect label="Época" value={era} onChange={change(setEra)} options={ERAS} />
           <SortSelect label="Ordenar por" value={sort} onChange={change(setSort)} options={SORT_OPTIONS} />
         </div>
       </PageHeader>
 
-      {next && (
+      {club !== 'all' && (
+        <p className="mb-4 text-sm text-muted">
+          {seasons.length} final{seasons.length === 1 ? '' : 'es'} de {club}:{' '}
+          {seasons.filter((s) => s.winner === club).length} ganada{seasons.filter((s) => s.winner === club).length === 1 ? '' : 's'}.
+        </p>
+      )}
+
+      {next && club === 'all' && (
         <Card className="mb-6">
           <Card.Content className="flex-row flex-wrap items-center gap-x-4 gap-y-1 p-5">
             <Chip color="warning" variant="soft" className="font-semibold">
