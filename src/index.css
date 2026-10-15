@@ -46,18 +46,6 @@ body {
     linear-gradient(135deg, #0a1338, #16246a);
 }
 
-/* Estrella decorativa del pie */
-.champions-star {
-  display: inline-block;
-  color: var(--color-champions-gold);
-  animation: star-twinkle 3s infinite ease-in-out;
-}
-
-@keyframes star-twinkle {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
-}
-
 /* Animaciones de entrada */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(8px); }
