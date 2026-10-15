@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Link, Table, Tabs } from '@heroui/react';
 import ClubLogo from '../components/ClubLogo';
 import DataNote from '../components/DataNote';
@@ -142,7 +142,9 @@ const SECTIONS = [
 const RecordsPage = () => {
   useTitle('Récords');
   const { competition } = useCompetition();
+  const [selected, setSelected] = useState(SECTIONS[0].id);
   if (!competition) return <PageSkeleton />;
+  const section = SECTIONS.find((s) => s.id === selected) || SECTIONS[0];
   const { records } = competition;
 
   return (
@@ -154,27 +156,29 @@ const RecordsPage = () => {
           <Card.Content className="p-8 text-center text-muted">Los récords se cargarán en la próxima actualización automática de los datos.</Card.Content>
         </Card>
       ) : (
-        <Tabs>
-          <Tabs.ListContainer className="mb-6 overflow-x-auto">
-            <Tabs.List aria-label="Récords">
-              {SECTIONS.map((section) => (
-                <Tabs.Tab key={section.id} id={section.id} className="whitespace-nowrap">
-                  {section.tab}
-                  <Tabs.Indicator />
-                </Tabs.Tab>
-              ))}
-            </Tabs.List>
-          </Tabs.ListContainer>
-          {SECTIONS.map((section) => (
-            <Tabs.Panel key={section.id} id={section.id}>
-              <h2 className="text-xl font-bold tracking-tight">{section.title}</h2>
-              {section.description && <p className="mb-4 mt-1 text-sm text-muted">{section.description}</p>}
-              <div className={section.description ? '' : 'mt-4'}>
-                <RecordTable label={section.title} rows={section.rows(records)} columns={section.columns} />
-              </div>
-            </Tabs.Panel>
-          ))}
-        </Tabs>
+        <>
+          {/* Solo la lista de pestañas va dentro de Tabs: sus paneles se pintan en
+              una segunda pasada y la tabla aparecía un instante después (parpadeo) */}
+          <Tabs selectedKey={selected} onSelectionChange={(key) => setSelected(String(key))}>
+            <Tabs.ListContainer className="mb-6 overflow-x-auto">
+              <Tabs.List aria-label="Récords">
+                {SECTIONS.map((s) => (
+                  <Tabs.Tab key={s.id} id={s.id} className="whitespace-nowrap">
+                    {s.tab}
+                    <Tabs.Indicator />
+                  </Tabs.Tab>
+                ))}
+              </Tabs.List>
+            </Tabs.ListContainer>
+          </Tabs>
+          <section aria-labelledby="record-title">
+            <h2 id="record-title" className="text-xl font-bold tracking-tight">{section.title}</h2>
+            {section.description && <p className="mb-4 mt-1 text-sm text-muted">{section.description}</p>}
+            <div className={section.description ? '' : 'mt-4'}>
+              <RecordTable key={section.id} label={section.title} rows={section.rows(records)} columns={section.columns} />
+            </div>
+          </section>
+        </>
       )}
 
       <DataNote>
