@@ -23,7 +23,7 @@ test('parseFinals lee todas las finales, de 1955-56 a 2025-26', () => {
     replay: false,
     runnerUp: 'Reims',
     runnerUpCountry: 'Francia',
-    venue: 'Parc des Princes, Paris, France',
+    venue: 'Parc des Princes, París, Francia',
     attendance: 38239,
   });
   const last = finals[finals.length - 1];
@@ -43,7 +43,7 @@ test('parseFinals entiende "1999–2000" y une la final repetida de 1974', () =>
 });
 
 test('parseUpcomingFinals lee los estadios de las próximas finales', () => {
-  assert.deepEqual(parseUpcomingFinals(finalsHtml)[0], { season: '2026-27', venue: 'Metropolitano Stadium, Madrid, Spain' });
+  assert.deepEqual(parseUpcomingFinals(finalsHtml)[0], { season: '2026-27', venue: 'Metropolitano Stadium, Madrid, España' });
 });
 
 test('parseClubTitles y parseAllTimeTable leen los clubes', () => {

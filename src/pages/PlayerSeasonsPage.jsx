@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Chip, Table } from '@heroui/react';
 import ClubLogo from '../components/ClubLogo';
 import PlayerPage from '../components/PlayerPage';
+import SeasonChart from '../components/SeasonChart';
 import StatCard from '../components/StatCard';
 import { formatRatio, formatValue, goalsPerMatch as perMatch, sortSeasonsDesc, STAT_LABELS, summarizeSeasons } from '../utils/stats';
 
@@ -109,6 +110,8 @@ const PlayerSeasonsPage = () => (
               />
             )}
           </div>
+
+          <SeasonChart seasons={player.seasons} stat={stat} />
 
           <Card>
             <Card.Header>

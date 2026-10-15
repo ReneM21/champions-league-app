@@ -63,6 +63,8 @@ Los datos se reparten en dos archivos que la app une por `id`:
 | `public/data/assists.json` | Top 10 histórico de asistencias y partidos | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/photos.json` | Fotos de Wikimedia Commons de los jugadores sin foto en su ficha, con autor y licencia | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/profiles.json` | Ficha automática de cada jugador de los rankings: biografía (Wikipedia en español), nacimiento y posición (Wikidata) | El workflow **Actualizar datos**. No se edita a mano |
+| `public/data/competition.json` | Todas las finales (campeón, resultado, estadio), el máximo goleador de cada temporada, títulos por club y la clasificación histórica | El workflow **Actualizar datos** (Wikipedia). No se edita a mano |
+| `public/data/clubs.json`, `public/images/clubs/` | Escudo de cada club y sus máximos goleadores desde 1992-93 | El workflow **Actualizar datos** (UEFA). No se edita a mano |
 | `public/data/uefa-seasons.json` | Partidos, goles y asistencias por temporada y club de cada jugador de los rankings, de la UEFA | El workflow **Actualizar datos**. No se edita a mano |
 | `public/data/all-goals.json`, `all-assists.json` | Tablas completas de Wikipedia, para conocer los goles de un asistidor y viceversa | El workflow **Actualizar datos** |
 | `public/data/players.json` | Biografía, foto, fecha de nacimiento, finales, títulos, goles por equipo y temporadas | A mano |
@@ -140,6 +142,7 @@ npm run update-data     # descarga el ranking de goleadores
 npm run update-assists  # descarga el ranking de asistidores
 npm run update-photos   # descarga las fotos que faltan
 npm run update-profiles # crea las fichas automáticas que faltan
+npm run update-competition # descarga las finales y los datos por club
 npm run update-uefa-stats # descarga las temporadas de la UEFA
 npm run build  # build de producción
 ```
@@ -153,7 +156,9 @@ El workflow `.github/workflows/update-data.yml` se ejecuta todos los días a las
 3. `npm run update-photos` busca, para cada jugador de los rankings sin foto propia, la imagen principal de su artículo de Wikipedia. Si es un archivo de Wikimedia Commons (licencia libre), la descarga a `public/images/players/` y guarda autor y licencia en `public/data/photos.json`. Las imágenes que no son de Commons (por ejemplo, "fair use") se ignoran y el jugador sigue con el logo.
 4. `npm run update-profiles` crea la ficha automática de cada jugador de los rankings que no la tenga: la introducción de su artículo en la Wikipedia en español como biografía, y su fecha de nacimiento y posición de Wikidata. Todos los jugadores de los dos rankings tienen así su página. Lo escrito a mano en `players.json` siempre tiene prioridad.
 5. `npm run update-uefa-stats` descarga de la UEFA (`compstats.uefa.com`, los mismos datos que las estadísticas de uefa.com) los partidos, goles y asistencias de cada temporada desde 1992-93 y se queda con los de los jugadores de los rankings, identificados por nombre y fecha de nacimiento. Con eso se rellenan las pestañas **Equipos** y **Temporadas** de todos los jugadores, también desde la lista de asistidores. La UEFA registra las asistencias desde la temporada 2001-02: en las anteriores se muestra "-". Las cifras oficiales de la UEFA mandan sobre las temporadas escritas a mano en `players.json` (sus totales coinciden con los rankings); de lo manual se conservan los títulos (`"title": true`), los datos que la UEFA no tiene y el reparto de una temporada entre dos clubes. La API numera las temporadas de forma distinta antes y después de 2007; el script lo corrige (ver `scripts/uefa-stats.js`).
-6. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
+6. `npm run update-competition` descarga de Wikipedia todas las finales, el máximo goleador de cada temporada, los títulos por club y la clasificación histórica (`public/data/competition.json`), que alimentan las páginas **Equipos** y **Temporadas**. Antes de guardar comprueba que cada título y subcampeonato por club coincide con la lista de finales.
+7. Con las temporadas de la UEFA y la lista de finales, los **títulos y finales de cada jugador se calculan solos** (una temporada en un club que ganó o perdió la final, como cuenta la UEFA); `titles`, `finals` y `titleSeasons` de `players.json` solo se usan para jugadores sin datos de la UEFA.
+8. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
 
 Para usar otra foto para un jugador, ponla en `public/images/players/` y añade `"image"` a su ficha en `players.json`: la foto de la ficha siempre tiene prioridad.
 

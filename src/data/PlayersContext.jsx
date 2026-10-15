@@ -37,8 +37,9 @@ export function PlayersProvider({ children }) {
       optional('data/all-assists.json', []),
       optional('data/uefa-seasons.json', { players: {} }),
       optional('data/clubs.json', {}),
+      optional('data/competition.json', null),
     ])
-      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists, uefaSeasons, clubs]) => {
+      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists, uefaSeasons, clubs, competition]) => {
         if (cancelled) return;
         const { scorers, assisters, byId } = buildPlayers({
           ranking,
@@ -49,6 +50,7 @@ export function PlayersProvider({ children }) {
           allGoals,
           allAssists,
           uefa: uefaSeasons.players,
+          finals: (competition && competition.finals) || [],
         });
         setState({
           status: 'ready',
@@ -60,6 +62,8 @@ export function PlayersProvider({ children }) {
           uefaUpdatedAt: uefaSeasons.updatedAt || null,
           uefaSource: uefaSeasons.source || null,
           clubs,
+          competition,
+          seasonLeaders: uefaSeasons.leaders || {},
         });
       })
       .catch((error) => {
@@ -89,6 +93,12 @@ export const useClubLogo = (name) => {
   const { clubs } = usePlayers();
   const club = clubs && (clubs[name] || clubs[CLUB_ALIASES[name]]);
   return club ? club.logo : null;
+};
+
+// Datos de la competición (finales, títulos por club...) de public/data/competition.json
+export const useCompetition = () => {
+  const { competition, seasonLeaders, clubs } = usePlayers();
+  return { competition, seasonLeaders: seasonLeaders || {}, clubs: clubs || {} };
 };
 
 export const usePlayerByName = () => {

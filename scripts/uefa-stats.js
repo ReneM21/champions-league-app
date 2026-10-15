@@ -50,6 +50,8 @@ const CLUB_NAMES = {
   Hamburg: 'Hamburgo',
   'Crvena Zvezda': 'Estrella Roja',
   FCSB: 'Steaua de Bucarest',
+  'GNK Dinamo': 'Dinamo Zagreb',
+  'D. Zagreb': 'Dinamo Zagreb',
   Inter: 'Inter de Milán',
   Milan: 'AC Milan',
 };

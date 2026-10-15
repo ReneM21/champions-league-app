@@ -1,115 +1,48 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Card, Chip, Link } from '@heroui/react';
 import ClubLogo from '../components/ClubLogo';
+import DataNote from '../components/DataNote';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
 import PageHeader from '../components/PageHeader';
+import PageSkeleton from '../components/PageSkeleton';
 import SortSelect from '../components/SortSelect';
-import { usePlayerByName } from '../data/PlayersContext';
+import { useCompetition, usePlayerByName } from '../data/PlayersContext';
+import { formatDate } from '../utils/stats';
 import { useTitle } from '../utils/useTitle';
 
-const TEAMS = [
-  {
-    id: 1,
-    name: 'Real Madrid',
-    titles: 14,
-    matches: 480,
-    goals: 1053,
-    goalsPerMatch: 2.19,
-    topScorers: [
-      { name: 'Cristiano Ronaldo', goals: 105 },
-      { name: 'Karim Benzema', goals: 78 },
-      { name: 'Raúl González', goals: 66 }
-    ],
-    titleYears: ['1956', '1957', '1958', '1959', '1960', '1966', '1998', '2000', '2002', '2014', '2016', '2017', '2018', '2022']
-  },
-  {
-    id: 2,
-    name: 'AC Milan',
-    titles: 7,
-    matches: 362,
-    goals: 768,
-    goalsPerMatch: 2.12,
-    topScorers: [
-      { name: 'Andriy Shevchenko', goals: 48 },
-      { name: 'Filippo Inzaghi', goals: 41 },
-      { name: 'Kaká', goals: 30 }
-    ],
-    titleYears: ['1963', '1969', '1989', '1990', '1994', '2003', '2007']
-  },
-  {
-    id: 3,
-    name: 'Bayern Munich',
-    titles: 6,
-    matches: 394,
-    goals: 842,
-    goalsPerMatch: 2.14,
-    topScorers: [
-      { name: 'Robert Lewandowski', goals: 69 },
-      { name: 'Thomas Müller', goals: 52 },
-      { name: 'Gerd Müller', goals: 34 }
-    ],
-    titleYears: ['1974', '1975', '1976', '2001', '2013', '2020']
-  },
-  {
-    id: 4,
-    name: 'Liverpool',
-    titles: 6,
-    matches: 310,
-    goals: 650,
-    goalsPerMatch: 2.10,
-    topScorers: [
-      { name: 'Mohamed Salah', goals: 42 },
-      { name: 'Steven Gerrard', goals: 30 },
-      { name: 'Sadio Mané', goals: 26 }
-    ],
-    titleYears: ['1977', '1978', '1981', '1984', '2005', '2019']
-  },
-  {
-    id: 5,
-    name: 'FC Barcelona',
-    titles: 5,
-    matches: 358,
-    goals: 780,
-    goalsPerMatch: 2.18,
-    topScorers: [
-      { name: 'Lionel Messi', goals: 120 },
-      { name: 'Luis Suárez', goals: 20 },
-      { name: 'Rivaldo', goals: 16 }
-    ],
-    titleYears: ['1992', '2006', '2009', '2011', '2015']
-  },
-  {
-    id: 6,
-    name: 'Ajax',
-    titles: 4,
-    matches: 248,
-    goals: 520,
-    goalsPerMatch: 2.10,
-    topScorers: [
-      { name: 'Jari Litmanen', goals: 24 },
-      { name: 'Sören Lerby', goals: 15 },
-      { name: 'Johan Cruyff', goals: 14 }
-    ],
-    titleYears: ['1971', '1972', '1973', '1995']
-  }
-];
+const TEAMS_PER_PAGE = 8;
 
 const SORTS = {
-  all: (teams) => teams,
-  titles: (teams) => [...teams].sort((a, b) => b.titles - a.titles),
-  goals: (teams) => [...teams].sort((a, b) => b.goals - a.goals),
+  titles: (a, b) => b.titles - a.titles || b.finals - a.finals,
+  finals: (a, b) => b.finals - a.finals || b.titles - a.titles,
+  played: (a, b) => (b.stats ? b.stats.played : -1) - (a.stats ? a.stats.played : -1) || b.titles - a.titles,
+  recent: (a, b) => Math.max(0, ...b.wonYears, ...b.lostYears) - Math.max(0, ...a.wonYears, ...a.lostYears),
 };
 
-const TEAMS_PER_PAGE = 4;
-
 const SORT_OPTIONS = [
-  { id: 'all', label: 'Todos los equipos' },
   { id: 'titles', label: 'Más títulos' },
-  { id: 'goals', label: 'Más goles' },
+  { id: 'finals', label: 'Más finales' },
+  { id: 'played', label: 'Más partidos' },
+  { id: 'recent', label: 'Última final' },
 ];
 
-// Los goleadores que están en la lista principal enlazan a su ficha
+const FILTERS = [
+  { id: 'champions', label: 'Campeones' },
+  { id: 'all', label: 'Todos los finalistas' },
+];
+
+// "1956" -> "1955-56"
+const seasonOfFinal = (year) => `${year - 1}-${String(year % 100).padStart(2, '0')}`;
+
+const Figure = ({ value, label }) => (
+  <div>
+    <p className="text-xl font-bold tabular-nums">{value}</p>
+    <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
+  </div>
+);
+
+// Los goleadores que están en los rankings de la app enlazan a su ficha
 const Scorer = ({ scorer }) => {
   const player = usePlayerByName()(scorer.name);
   return (
@@ -129,81 +62,120 @@ const Scorer = ({ scorer }) => {
   );
 };
 
-const Figure = ({ value, label }) => (
-  <div>
-    <p className="text-xl font-bold tabular-nums">{value}</p>
-    <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
-  </div>
+const TeamCard = ({ team }) => (
+  <Card>
+    <Card.Header className="flex-row items-center gap-4">
+      <ClubLogo name={team.club} className="size-12" />
+      <div className="min-w-0 flex-1">
+        <Card.Title className="text-lg">{team.club}</Card.Title>
+        <p className="text-sm text-muted">
+          {team.finals} final{team.finals === 1 ? '' : 'es'} · {team.runnersUp} subcampeonato{team.runnersUp === 1 ? '' : 's'}
+        </p>
+      </div>
+      <Chip color="warning" variant="soft" className="shrink-0 font-bold">
+        🏆 {team.titles}
+      </Chip>
+    </Card.Header>
+
+    <Card.Content className="gap-5">
+      {team.stats && (
+        <div className="grid grid-cols-3 gap-4 rounded-2xl bg-surface-secondary p-4">
+          <Figure value={team.stats.played} label="Partidos" />
+          <Figure value={team.stats.won} label="Ganados" />
+          <Figure value={team.stats.drawn} label="Empates" />
+          <Figure value={team.stats.lost} label="Perdidos" />
+          <Figure value={team.stats.goalsFor} label="Goles" />
+          <Figure value={(team.stats.goalsFor / team.stats.played).toFixed(2)} label="Goles/partido" />
+        </div>
+      )}
+
+      {team.topScorers && team.topScorers.length > 0 && (
+        <div>
+          <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Máximos goleadores (desde 1992-93)</p>
+          <ul className="space-y-3">
+            {team.topScorers.map((scorer) => (
+              <Scorer key={scorer.name} scorer={scorer} />
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div>
+        <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Finales</p>
+        <div className="flex flex-wrap gap-2">
+          {[...team.wonYears.map((year) => ({ year, won: true })), ...team.lostYears.map((year) => ({ year, won: false }))]
+            .sort((a, b) => a.year - b.year)
+            .map(({ year, won }) => (
+              <Chip key={year} size="sm" color={won ? 'success' : 'default'} variant={won ? 'soft' : 'secondary'} title={seasonOfFinal(year)}>
+                {won ? '🏆 ' : ''}
+                {year}
+              </Chip>
+            ))}
+        </div>
+      </div>
+    </Card.Content>
+  </Card>
 );
 
 const TeamsPage = () => {
-  useTitle('Equipos legendarios');
-  const [sort, setSort] = useState('all');
+  useTitle('Equipos');
+  const { competition, clubs } = useCompetition();
+  const [sort, setSort] = useState('titles');
+  const [filter, setFilter] = useState('champions');
   const [page, setPage] = useState(1);
-  const { items, pageCount } = paginate(SORTS[sort](TEAMS), page, TEAMS_PER_PAGE);
+
+  const teams = useMemo(() => {
+    if (!competition) return [];
+    return competition.clubs
+      .map((club) => ({
+        ...club,
+        finals: club.titles + club.runnersUp,
+        stats: competition.allTime.find((row) => row.club === club.club) || null,
+        topScorers: clubs[club.club] && clubs[club.club].topScorers,
+      }))
+      .filter((team) => filter === 'all' || team.titles > 0)
+      .sort(SORTS[sort]);
+  }, [competition, clubs, sort, filter]);
+
+  if (!competition) return <PageSkeleton />;
+
+  const { items, pageCount } = paginate(teams, page, TEAMS_PER_PAGE);
+  const change = (setter) => (value) => {
+    setter(value);
+    setPage(1);
+  };
 
   return (
     <div className="animate-fadeIn">
       <PageHeader
-        title="Equipos legendarios"
-        description="Los clubes más exitosos de la competición: estadísticas, máximos goleadores y títulos."
+        title="Equipos"
+        description="Los clubes que han llegado a la final de la Copa de Europa y la Champions League: títulos, finales y cifras históricas."
       >
-        <SortSelect
-          label="Ordenar por"
-          value={sort}
-          onChange={(value) => {
-            setSort(value);
-            setPage(1);
-          }}
-          options={SORT_OPTIONS}
-        />
+        <div className="flex flex-wrap gap-4">
+          <SortSelect label="Mostrar" value={filter} onChange={change(setFilter)} options={FILTERS} />
+          <SortSelect label="Ordenar por" value={sort} onChange={change(setSort)} options={SORT_OPTIONS} />
+        </div>
       </PageHeader>
 
       <section className="grid gap-6 md:grid-cols-2">
         {items.map((team) => (
-          <Card key={team.id}>
-            <Card.Header className="flex-row items-center gap-4">
-              <ClubLogo name={team.name} className="size-12" />
-              <div className="min-w-0 flex-1">
-                <Card.Title className="text-lg">{team.name}</Card.Title>
-              </div>
-              <Chip color="warning" variant="soft" className="font-bold">
-                🏆 {team.titles}
-              </Chip>
-            </Card.Header>
-
-            <Card.Content className="gap-5">
-              <div className="grid grid-cols-3 gap-4 rounded-2xl bg-surface-secondary p-4">
-                <Figure value={team.matches} label="Partidos" />
-                <Figure value={team.goals} label="Goles" />
-                <Figure value={team.goalsPerMatch.toFixed(2)} label="Goles/partido" />
-              </div>
-
-              <div>
-                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Máximos goleadores</p>
-                <ul className="space-y-3">
-                  {team.topScorers.map((scorer) => (
-                    <Scorer key={scorer.name} scorer={scorer} />
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Títulos</p>
-                <div className="flex flex-wrap gap-2">
-                  {team.titleYears.map((year) => (
-                    <Chip key={year} size="sm" variant="secondary">
-                      {year}
-                    </Chip>
-                  ))}
-                </div>
-              </div>
-            </Card.Content>
-          </Card>
+          <TeamCard key={team.club} team={team} />
         ))}
       </section>
 
       <Pagination page={page} pageCount={pageCount} onChange={setPage} />
+
+      <DataNote>
+        <p>
+          Títulos, finales y clasificación histórica de{' '}
+          <Link href={competition.sources[1] || competition.sources[0]} target="_blank" rel="noopener noreferrer">
+            Wikipedia
+          </Link>{' '}
+          (CC BY-SA), actualizados automáticamente el <strong>{formatDate(competition.updatedAt)}</strong>. Partidos, victorias y
+          goles incluyen las rondas previas y solo se muestran para los 25 primeros de la clasificación histórica.
+        </p>
+        <p>Los máximos goleadores de cada club son datos oficiales de la UEFA desde la temporada 1992-93.</p>
+      </DataNote>
     </div>
   );
 };

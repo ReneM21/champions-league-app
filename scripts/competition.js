@@ -26,8 +26,43 @@ const COUNTRIES = {
   Serbia: 'Serbia',
 };
 
+// Ciudades y países de los estadios en español
+const PLACES = {
+  Paris: 'París',
+  Brussels: 'Bruselas',
+  Bern: 'Berna',
+  London: 'Londres',
+  Vienna: 'Viena',
+  Milan: 'Milán',
+  Lisbon: 'Lisboa',
+  Belgrade: 'Belgrado',
+  Rome: 'Roma',
+  Munich: 'Múnich',
+  Athens: 'Atenas',
+  Seville: 'Sevilla',
+  Istanbul: 'Estambul',
+  Moscow: 'Moscú',
+  Berlin: 'Berlín',
+  Kyiv: 'Kiev',
+  Switzerland: 'Suiza',
+  Austria: 'Austria',
+  'SFR Yugoslavia': 'Yugoslavia',
+  Turkey: 'Turquía',
+  Russia: 'Rusia',
+  Wales: 'Gales',
+  Ukraine: 'Ucrania',
+  Hungary: 'Hungría',
+};
+
 const clubName = (name) => CLUB_NAMES[name] || name;
 const country = (name) => COUNTRIES[name] || translateNation(name);
+
+// "Allianz Arena, Munich, Germany" -> "Allianz Arena, Múnich, Alemania"
+const venueName = (text) =>
+  text
+    .split(',')
+    .map((part, i) => (i === 0 ? part.trim() : PLACES[part.trim()] || country(part.trim())))
+    .join(', ');
 
 // "1955–56" -> "1955-56"; "1999–2000" -> "1999-00"
 const seasonLabel = (text) => {
@@ -79,7 +114,7 @@ function parseFinals(html) {
       replay: raw.includes('&'),
       runnerUp: clubName(row.text(col('runners-up'))),
       runnerUpCountry: country(row.text(5)),
-      venue: row.text(col('venue')),
+      venue: venueName(row.text(col('venue'))),
       attendance: toInt(row.text(col('attendance'))) || null,
     };
     // Final repetida (1974): una sola entrada con el resultado del desempate
@@ -96,7 +131,7 @@ function parseUpcomingFinals(html) {
   const table = findTable($, ['season', 'finalist', 'venue']);
   if (!table) return [];
   return rowsOf($, table)
-    .map((row) => ({ season: seasonLabel(row.text(0)), venue: row.text(row.header.length - 1) }))
+    .map((row) => ({ season: seasonLabel(row.text(0)), venue: venueName(row.text(row.header.length - 1)) }))
     .filter((final) => /^\d{4}-\d{2}$/.test(final.season) && final.venue);
 }
 

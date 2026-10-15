@@ -16,7 +16,7 @@
       "replay": false,
       "runnerUp": "Reims",
       "runnerUpCountry": "Francia",
-      "venue": "Parc des Princes, Paris, France",
+      "venue": "Parc des Princes, París, Francia",
       "attendance": 38239
     },
     {
@@ -29,7 +29,7 @@
       "replay": false,
       "runnerUp": "Fiorentina",
       "runnerUpCountry": "Italia",
-      "venue": "Santiago Bernabéu, Madrid, Spain",
+      "venue": "Santiago Bernabéu, Madrid, España",
       "attendance": 124000
     },
     {
@@ -42,7 +42,7 @@
       "replay": false,
       "runnerUp": "AC Milan",
       "runnerUpCountry": "Italia",
-      "venue": "Heysel Stadium, Brussels, Belgium",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
       "attendance": 67000
     },
     {
@@ -55,7 +55,7 @@
       "replay": false,
       "runnerUp": "Reims",
       "runnerUpCountry": "Francia",
-      "venue": "Neckarstadion, Stuttgart, West Germany",
+      "venue": "Neckarstadion, Stuttgart, Alemania Occidental",
       "attendance": 72000
     },
     {
@@ -68,7 +68,7 @@
       "replay": false,
       "runnerUp": "Eintracht Frankfurt",
       "runnerUpCountry": "Alemania Occidental",
-      "venue": "Hampden Park, Glasgow, Scotland",
+      "venue": "Hampden Park, Glasgow, Escocia",
       "attendance": 127621
     },
     {
@@ -81,7 +81,7 @@
       "replay": false,
       "runnerUp": "Barcelona",
       "runnerUpCountry": "España",
-      "venue": "Wankdorf Stadium, Bern, Switzerland",
+      "venue": "Wankdorf Stadium, Berna, Suiza",
       "attendance": 26732
     },
     {
@@ -94,7 +94,7 @@
       "replay": false,
       "runnerUp": "Real Madrid",
       "runnerUpCountry": "España",
-      "venue": "Olympisch Stadion, Amsterdam, Netherlands",
+      "venue": "Olympisch Stadion, Amsterdam, Países Bajos",
       "attendance": 61257
     },
     {
@@ -107,7 +107,7 @@
       "replay": false,
       "runnerUp": "Benfica",
       "runnerUpCountry": "Portugal",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 45715
     },
     {
@@ -120,7 +120,7 @@
       "replay": false,
       "runnerUp": "Real Madrid",
       "runnerUpCountry": "España",
-      "venue": "Praterstadion, Vienna, Austria",
+      "venue": "Praterstadion, Viena, Austria",
       "attendance": 71333
     },
     {
@@ -133,7 +133,7 @@
       "replay": false,
       "runnerUp": "Benfica",
       "runnerUpCountry": "Portugal",
-      "venue": "San Siro, Milan, Italy",
+      "venue": "San Siro, Milán, Italia",
       "attendance": 89000
     },
     {
@@ -146,7 +146,7 @@
       "replay": false,
       "runnerUp": "Partizan",
       "runnerUpCountry": "Yugoslavia",
-      "venue": "Heysel Stadium, Brussels, Belgium",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
       "attendance": 46745
     },
     {
@@ -159,7 +159,7 @@
       "replay": false,
       "runnerUp": "Inter de Milán",
       "runnerUpCountry": "Italia",
-      "venue": "Estádio Nacional, Lisbon, Portugal",
+      "venue": "Estádio Nacional, Lisboa, Portugal",
       "attendance": 45000
     },
     {
@@ -172,7 +172,7 @@
       "replay": false,
       "runnerUp": "Benfica",
       "runnerUpCountry": "Portugal",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 92225
     },
     {
@@ -185,7 +185,7 @@
       "replay": false,
       "runnerUp": "Ajax",
       "runnerUpCountry": "Países Bajos",
-      "venue": "Santiago Bernabéu, Madrid, Spain",
+      "venue": "Santiago Bernabéu, Madrid, España",
       "attendance": 31782
     },
     {
@@ -198,7 +198,7 @@
       "replay": false,
       "runnerUp": "Celtic",
       "runnerUpCountry": "Escocia",
-      "venue": "San Siro, Milan, Italy",
+      "venue": "San Siro, Milán, Italia",
       "attendance": 53187
     },
     {
@@ -211,7 +211,7 @@
       "replay": false,
       "runnerUp": "Panathinaikos",
       "runnerUpCountry": "Grecia",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 83179
     },
     {
@@ -224,7 +224,7 @@
       "replay": false,
       "runnerUp": "Inter de Milán",
       "runnerUpCountry": "Italia",
-      "venue": "De Kuip, Rotterdam, Netherlands",
+      "venue": "De Kuip, Rotterdam, Países Bajos",
       "attendance": 61354
     },
     {
@@ -237,7 +237,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Red Star Stadium, Belgrade, SFR Yugoslavia",
+      "venue": "Red Star Stadium, Belgrado, Yugoslavia",
       "attendance": 89484
     },
     {
@@ -250,7 +250,7 @@
       "replay": true,
       "runnerUp": "Atlético de Madrid",
       "runnerUpCountry": "España",
-      "venue": "Heysel Stadium, Brussels, Belgium",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
       "attendance": 23325,
       "firstScore": "1–1"
     },
@@ -264,7 +264,7 @@
       "replay": false,
       "runnerUp": "Leeds United",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Parc des Princes, Paris, France",
+      "venue": "Parc des Princes, París, Francia",
       "attendance": 48374
     },
     {
@@ -277,7 +277,7 @@
       "replay": false,
       "runnerUp": "Saint-Étienne",
       "runnerUpCountry": "Francia",
-      "venue": "Hampden Park, Glasgow, Scotland",
+      "venue": "Hampden Park, Glasgow, Escocia",
       "attendance": 54864
     },
     {
@@ -290,7 +290,7 @@
       "replay": false,
       "runnerUp": "Borussia Mönchengladbach",
       "runnerUpCountry": "Alemania Occidental",
-      "venue": "Stadio Olimpico, Rome, Italy",
+      "venue": "Stadio Olimpico, Roma, Italia",
       "attendance": 57000
     },
     {
@@ -303,7 +303,7 @@
       "replay": false,
       "runnerUp": "Club Brugge",
       "runnerUpCountry": "Bélgica",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 92500
     },
     {
@@ -316,7 +316,7 @@
       "replay": false,
       "runnerUp": "Malmö FF",
       "runnerUpCountry": "Suecia",
-      "venue": "Olympiastadion, Munich, West Germany",
+      "venue": "Olympiastadion, Múnich, Alemania Occidental",
       "attendance": 57500
     },
     {
@@ -329,7 +329,7 @@
       "replay": false,
       "runnerUp": "Hamburgo",
       "runnerUpCountry": "Alemania Occidental",
-      "venue": "Santiago Bernabéu, Madrid, Spain",
+      "venue": "Santiago Bernabéu, Madrid, España",
       "attendance": 51000
     },
     {
@@ -342,7 +342,7 @@
       "replay": false,
       "runnerUp": "Real Madrid",
       "runnerUpCountry": "España",
-      "venue": "Parc des Princes, Paris, France",
+      "venue": "Parc des Princes, París, Francia",
       "attendance": 48360
     },
     {
@@ -355,7 +355,7 @@
       "replay": false,
       "runnerUp": "Bayern München",
       "runnerUpCountry": "Alemania Occidental",
-      "venue": "De Kuip, Rotterdam, Netherlands",
+      "venue": "De Kuip, Rotterdam, Países Bajos",
       "attendance": 46000
     },
     {
@@ -368,7 +368,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Olympic Stadium, Athens, Greece",
+      "venue": "Olympic Stadium, Atenas, Grecia",
       "attendance": 73500
     },
     {
@@ -381,7 +381,7 @@
       "replay": false,
       "runnerUp": "Roma",
       "runnerUpCountry": "Italia",
-      "venue": "Stadio Olimpico, Rome, Italy",
+      "venue": "Stadio Olimpico, Roma, Italia",
       "attendance": 69693
     },
     {
@@ -394,7 +394,7 @@
       "replay": false,
       "runnerUp": "Liverpool",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Heysel Stadium, Brussels, Belgium",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
       "attendance": 58000
     },
     {
@@ -407,7 +407,7 @@
       "replay": false,
       "runnerUp": "Barcelona",
       "runnerUpCountry": "España",
-      "venue": "Ramón Sánchez Pizjuán, Seville, Spain",
+      "venue": "Ramón Sánchez Pizjuán, Sevilla, España",
       "attendance": 70000
     },
     {
@@ -420,7 +420,7 @@
       "replay": false,
       "runnerUp": "Bayern München",
       "runnerUpCountry": "Alemania Occidental",
-      "venue": "Praterstadion, Vienna, Austria",
+      "venue": "Praterstadion, Viena, Austria",
       "attendance": 57500
     },
     {
@@ -433,7 +433,7 @@
       "replay": false,
       "runnerUp": "Benfica",
       "runnerUpCountry": "Portugal",
-      "venue": "Neckarstadion, Stuttgart, West Germany",
+      "venue": "Neckarstadion, Stuttgart, Alemania Occidental",
       "attendance": 68000
     },
     {
@@ -446,7 +446,7 @@
       "replay": false,
       "runnerUp": "Steaua de Bucarest",
       "runnerUpCountry": "Rumanía",
-      "venue": "Camp Nou, Barcelona, Spain",
+      "venue": "Camp Nou, Barcelona, España",
       "attendance": 97000
     },
     {
@@ -459,7 +459,7 @@
       "replay": false,
       "runnerUp": "Benfica",
       "runnerUpCountry": "Portugal",
-      "venue": "Praterstadion, Vienna, Austria",
+      "venue": "Praterstadion, Viena, Austria",
       "attendance": 57558
     },
     {
@@ -472,7 +472,7 @@
       "replay": false,
       "runnerUp": "Marseille",
       "runnerUpCountry": "Francia",
-      "venue": "Stadio San Nicola, Bari, Italy",
+      "venue": "Stadio San Nicola, Bari, Italia",
       "attendance": 56000
     },
     {
@@ -485,7 +485,7 @@
       "replay": false,
       "runnerUp": "Sampdoria",
       "runnerUpCountry": "Italia",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 70827
     },
     {
@@ -498,7 +498,7 @@
       "replay": false,
       "runnerUp": "AC Milan",
       "runnerUpCountry": "Italia",
-      "venue": "Olympiastadion, Munich, Germany",
+      "venue": "Olympiastadion, Múnich, Alemania",
       "attendance": 64400
     },
     {
@@ -511,7 +511,7 @@
       "replay": false,
       "runnerUp": "Barcelona",
       "runnerUpCountry": "España",
-      "venue": "Olympic Stadium, Athens, Greece",
+      "venue": "Olympic Stadium, Atenas, Grecia",
       "attendance": 70000
     },
     {
@@ -524,7 +524,7 @@
       "replay": false,
       "runnerUp": "AC Milan",
       "runnerUpCountry": "Italia",
-      "venue": "Ernst-Happel-Stadion, Vienna, Austria",
+      "venue": "Ernst-Happel-Stadion, Viena, Austria",
       "attendance": 49730
     },
     {
@@ -537,7 +537,7 @@
       "replay": false,
       "runnerUp": "Ajax",
       "runnerUpCountry": "Países Bajos",
-      "venue": "Stadio Olimpico, Rome, Italy",
+      "venue": "Stadio Olimpico, Roma, Italia",
       "attendance": 70000
     },
     {
@@ -550,7 +550,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Olympiastadion, Munich, Germany",
+      "venue": "Olympiastadion, Múnich, Alemania",
       "attendance": 59000
     },
     {
@@ -563,7 +563,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Amsterdam Arena, Amsterdam, Netherlands",
+      "venue": "Amsterdam Arena, Amsterdam, Países Bajos",
       "attendance": 48500
     },
     {
@@ -576,7 +576,7 @@
       "replay": false,
       "runnerUp": "Bayern München",
       "runnerUpCountry": "Alemania",
-      "venue": "Camp Nou, Barcelona, Spain",
+      "venue": "Camp Nou, Barcelona, España",
       "attendance": 90245
     },
     {
@@ -589,7 +589,7 @@
       "replay": false,
       "runnerUp": "Valencia",
       "runnerUpCountry": "España",
-      "venue": "Stade de France, Saint-Denis, France",
+      "venue": "Stade de France, Saint-Denis, Francia",
       "attendance": 80000
     },
     {
@@ -602,7 +602,7 @@
       "replay": false,
       "runnerUp": "Valencia",
       "runnerUpCountry": "España",
-      "venue": "San Siro, Milan, Italy",
+      "venue": "San Siro, Milán, Italia",
       "attendance": 79000
     },
     {
@@ -615,7 +615,7 @@
       "replay": false,
       "runnerUp": "Bayer Leverkusen",
       "runnerUpCountry": "Alemania",
-      "venue": "Hampden Park, Glasgow, Scotland",
+      "venue": "Hampden Park, Glasgow, Escocia",
       "attendance": 50499
     },
     {
@@ -628,7 +628,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Old Trafford, Manchester, England",
+      "venue": "Old Trafford, Manchester, Inglaterra",
       "attendance": 62315
     },
     {
@@ -641,7 +641,7 @@
       "replay": false,
       "runnerUp": "Monaco",
       "runnerUpCountry": "Francia",
-      "venue": "Arena AufSchalke, Gelsenkirchen, Germany",
+      "venue": "Arena AufSchalke, Gelsenkirchen, Alemania",
       "attendance": 53053
     },
     {
@@ -654,7 +654,7 @@
       "replay": false,
       "runnerUp": "AC Milan",
       "runnerUpCountry": "Italia",
-      "venue": "Atatürk Olympic Stadium, Istanbul, Turkey",
+      "venue": "Atatürk Olympic Stadium, Estambul, Turquía",
       "attendance": 69000
     },
     {
@@ -667,7 +667,7 @@
       "replay": false,
       "runnerUp": "Arsenal",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Stade de France, Saint-Denis, France",
+      "venue": "Stade de France, Saint-Denis, Francia",
       "attendance": 79610
     },
     {
@@ -680,7 +680,7 @@
       "replay": false,
       "runnerUp": "Liverpool",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Olympic Stadium, Athens, Greece",
+      "venue": "Olympic Stadium, Atenas, Grecia",
       "attendance": 63000
     },
     {
@@ -693,7 +693,7 @@
       "replay": false,
       "runnerUp": "Chelsea",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Luzhniki Stadium, Moscow, Russia",
+      "venue": "Luzhniki Stadium, Moscú, Rusia",
       "attendance": 67310
     },
     {
@@ -706,7 +706,7 @@
       "replay": false,
       "runnerUp": "Manchester United",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Stadio Olimpico, Rome, Italy",
+      "venue": "Stadio Olimpico, Roma, Italia",
       "attendance": 62467
     },
     {
@@ -719,7 +719,7 @@
       "replay": false,
       "runnerUp": "Bayern München",
       "runnerUpCountry": "Alemania",
-      "venue": "Santiago Bernabéu, Madrid, Spain",
+      "venue": "Santiago Bernabéu, Madrid, España",
       "attendance": 73490
     },
     {
@@ -732,7 +732,7 @@
       "replay": false,
       "runnerUp": "Manchester United",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 87695
     },
     {
@@ -745,7 +745,7 @@
       "replay": false,
       "runnerUp": "Bayern München",
       "runnerUpCountry": "Alemania",
-      "venue": "Allianz Arena, Munich, Germany",
+      "venue": "Allianz Arena, Múnich, Alemania",
       "attendance": 62500
     },
     {
@@ -758,7 +758,7 @@
       "replay": false,
       "runnerUp": "Borussia Dortmund",
       "runnerUpCountry": "Alemania",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 86298
     },
     {
@@ -771,7 +771,7 @@
       "replay": false,
       "runnerUp": "Atlético de Madrid",
       "runnerUpCountry": "España",
-      "venue": "Estádio da Luz, Lisbon, Portugal",
+      "venue": "Estádio da Luz, Lisboa, Portugal",
       "attendance": 60976
     },
     {
@@ -784,7 +784,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Olympiastadion, Berlin, Germany",
+      "venue": "Olympiastadion, Berlín, Alemania",
       "attendance": 70442
     },
     {
@@ -797,7 +797,7 @@
       "replay": false,
       "runnerUp": "Atlético de Madrid",
       "runnerUpCountry": "España",
-      "venue": "San Siro, Milan, Italy",
+      "venue": "San Siro, Milán, Italia",
       "attendance": 71942
     },
     {
@@ -810,7 +810,7 @@
       "replay": false,
       "runnerUp": "Juventus",
       "runnerUpCountry": "Italia",
-      "venue": "Millennium Stadium, Cardiff, Wales",
+      "venue": "Millennium Stadium, Cardiff, Gales",
       "attendance": 65842
     },
     {
@@ -823,7 +823,7 @@
       "replay": false,
       "runnerUp": "Liverpool",
       "runnerUpCountry": "Inglaterra",
-      "venue": "NSC Olimpiyskiy Stadium, Kyiv, Ukraine",
+      "venue": "NSC Olimpiyskiy Stadium, Kiev, Ucrania",
       "attendance": 61561
     },
     {
@@ -836,7 +836,7 @@
       "replay": false,
       "runnerUp": "Tottenham Hotspur",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Metropolitano Stadium, Madrid, Spain",
+      "venue": "Metropolitano Stadium, Madrid, España",
       "attendance": 63272
     },
     {
@@ -849,7 +849,7 @@
       "replay": false,
       "runnerUp": "Paris Saint-Germain",
       "runnerUpCountry": "Francia",
-      "venue": "Estádio da Luz, Lisbon, Portugal",
+      "venue": "Estádio da Luz, Lisboa, Portugal",
       "attendance": null
     },
     {
@@ -875,7 +875,7 @@
       "replay": false,
       "runnerUp": "Liverpool",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Stade de France, Saint-Denis, France",
+      "venue": "Stade de France, Saint-Denis, Francia",
       "attendance": 75000
     },
     {
@@ -888,7 +888,7 @@
       "replay": false,
       "runnerUp": "Inter de Milán",
       "runnerUpCountry": "Italia",
-      "venue": "Atatürk Olympic Stadium, Istanbul, Turkey",
+      "venue": "Atatürk Olympic Stadium, Estambul, Turquía",
       "attendance": 71412
     },
     {
@@ -901,7 +901,7 @@
       "replay": false,
       "runnerUp": "Borussia Dortmund",
       "runnerUpCountry": "Alemania",
-      "venue": "Wembley Stadium, London, England",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
       "attendance": 86212
     },
     {
@@ -914,7 +914,7 @@
       "replay": false,
       "runnerUp": "Inter de Milán",
       "runnerUpCountry": "Italia",
-      "venue": "Allianz Arena, Munich, Germany",
+      "venue": "Allianz Arena, Múnich, Alemania",
       "attendance": 64327
     },
     {
@@ -927,22 +927,22 @@
       "replay": false,
       "runnerUp": "Arsenal",
       "runnerUpCountry": "Inglaterra",
-      "venue": "Puskás Aréna, Budapest, Hungary",
+      "venue": "Puskás Aréna, Budapest, Hungría",
       "attendance": 61035
     }
   ],
   "upcoming": [
     {
       "season": "2026-27",
-      "venue": "Metropolitano Stadium, Madrid, Spain"
+      "venue": "Metropolitano Stadium, Madrid, España"
     },
     {
       "season": "2027-28",
-      "venue": "Allianz Arena, Munich, Germany"
+      "venue": "Allianz Arena, Múnich, Alemania"
     },
     {
       "season": "2028-29",
-      "venue": "Camp Nou, Barcelona, Spain"
+      "venue": "Camp Nou, Barcelona, España"
     }
   ],
   "clubs": [
