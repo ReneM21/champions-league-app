@@ -28,11 +28,11 @@ const App = () => {
   if (status === 'loading') return <LoadingScreen />;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <ScrollToTopOnNavigate />
       <ChampionsLeagueHeader />
 
-      <main className="grow">
+      <main className="mx-auto w-full max-w-6xl grow px-4 py-8">
         {status === 'error' ? (
           <NotFoundPage
             title="No se pudieron cargar los datos"

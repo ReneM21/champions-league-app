@@ -10,7 +10,7 @@ Una aplicación web desarrollada con React, [HeroUI](https://heroui.com) y Tailw
 - Ficha de cada jugador con su perfil, sus equipos y sus temporadas
 - Páginas de equipos legendarios y de temporadas históricas
 - Rutas propias para cada vista (`#/jugadores/cristiano-ronaldo/temporadas`): se pueden compartir y el botón "atrás" funciona
-- Diseño responsive para dispositivos móviles y de escritorio
+- Diseño responsive para dispositivos móviles y de escritorio, con modo claro y oscuro
 
 ## Estructura del Proyecto
 
@@ -143,12 +143,14 @@ Notas:
 ## Tecnologías Utilizadas
 
 - React 19 y React Router 7
-- [HeroUI v3](https://heroui.com) (sobre React Aria): Table, Card, Avatar, Select, Pagination, Chip, Button, Link, Spinner
+- [HeroUI v3](https://heroui.com) (sobre React Aria): Table, Card, Avatar, Select, Pagination, Chip, Alert, ProgressBar, Button, Link, Spinner y useTheme
 - Tailwind CSS 4
 - Vite y Vitest
 
-### Estilos y tema
+### Estilos, tema y modo oscuro
 
-- Los colores de marca están en `src/index.css`: `@theme` define `champions-blue` y `champions-gold` para Tailwind, y `:root` asigna `--accent` (azul) y `--warning` (dorado) al tema de HeroUI.
+- La interfaz usa los colores semánticos de HeroUI (`bg-background`, `bg-surface`, `text-foreground`, `text-muted`, `text-accent`…), así que cada componente cambia solo entre modo claro y oscuro. No uses colores fijos como `text-gray-500` o `bg-white`.
+- El color de acento de HeroUI (`--accent`) es el azul Champions en claro y un azul más luminoso en oscuro; está en `src/index.css`. El dorado (`champions-gold`) y el fondo de portada (`.champions-hero`) son iguales en los dos temas.
+- El botón de la cabecera (`ThemeToggle`) usa `useTheme` de HeroUI: por defecto sigue el tema del sistema y guarda la elección en `localStorage` (`heroui-theme`). Un script en `index.html` aplica el tema antes de pintar para que no parpadee.
 - `@import "@heroui/styles"` tiene que ir siempre después de `@import "tailwindcss"`.
-- Los enlaces de navegación que no son componentes de HeroUI usan su aspecto con `buttonVariants` (por ejemplo, la cabecera).
+- Los enlaces de navegación que no son componentes de HeroUI usan su aspecto con `buttonVariants` (cabecera y pestañas de la ficha).

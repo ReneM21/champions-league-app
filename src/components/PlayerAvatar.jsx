@@ -15,7 +15,7 @@ const initials = (name) =>
 
 // Si no hay foto o no carga, HeroUI muestra las iniciales del jugador
 const PlayerAvatar = ({ player, className = 'size-12' }) => (
-  <Avatar color="accent" variant="soft" className={`rounded-full ring-2 ring-champions-blue ${className}`}>
+  <Avatar color="accent" variant="soft" className={`rounded-full ring-2 ring-surface shadow-sm ${className}`}>
     {player.image && (
       <Avatar.Image
         src={asset(player.image)}
