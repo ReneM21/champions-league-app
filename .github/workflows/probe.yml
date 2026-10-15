@@ -8,8 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          get() { echo "=== $1"; curl -sS -m 30 -A "Mozilla/5.0" -w "\nHTTP %{http_code}\n" "$1" | head -c 2500; echo; }
-          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2024&stats=assists"
-          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=1994&stats=assists"
-          get "https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=3&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=ALL&stats=assists"
-          get "https://comp.uefa.com/v2/players?competitionId=1&name=Giggs"
+          B="https://compstats.uefa.com/v1"
+          for y in 1993 1995 1997 1999 2000 2001 2002 2003 2004 2005 2026; do
+            echo "== $y: $(curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=2&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=$y&stats=assists" | jq -c '[.[] | {n:.player.internationalName, t:.team.internationalName, s:.statistics}]')"
+          done
+          echo "== multi"
+          curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=2&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2004&stats=assists,goals,matches_appearance,minutes_played_official" | jq -c '[.[] | {n:.player.internationalName, id:.playerId, s:[.statistics[]|{name,value}]}]'
+          echo "== count 2004 limit 1000"
+          curl -sS -m 30 "$B/player-ranking?competitionId=1&limit=1000&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2004&stats=matches_appearance" | jq 'length'
+          for u in "$B/player-stats/250128377?competitionId=1&seasonYear=2024" "$B/player-stats?competitionId=1&seasonYear=2024&playerId=250128377" "$B/player-stats/250128377?competitionId=1" "$B/players/250128377/stats?competitionId=1"; do
+            echo "== $u"; curl -sS -m 30 -w "\nHTTP %{http_code}\n" "$u" | head -c 1500; echo
+          done
