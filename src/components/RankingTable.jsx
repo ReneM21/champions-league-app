@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Table } from '@heroui/react';
+import { Chip, Link, Table } from '@heroui/react';
 import PlayerAvatar from './PlayerAvatar';
 import { formatValue } from '../utils/stats';
 
@@ -36,6 +36,11 @@ const RankingTable = ({ ariaLabel, players, stat, statLabel, profileOf, actions,
                       </Link>
                     ) : (
                       <span className="font-medium">{shown.name}</span>
+                    )}
+                    {shown.active && (
+                      <Chip size="sm" color="success" variant="soft" title="Ha jugado la Champions League esta temporada">
+                        En activo
+                      </Chip>
                     )}
                   </div>
                 </Table.Cell>

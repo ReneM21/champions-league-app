@@ -2601,5 +2601,997 @@
         }
       ]
     }
-  ]
+  ],
+  "records": {
+    "mostTitles": [
+      {
+        "player": "Paco Gento",
+        "titles": 6,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960, 1966"
+          }
+        ]
+      },
+      {
+        "player": "Toni Kroos",
+        "titles": 6,
+        "clubs": [
+          {
+            "club": "Bayern München",
+            "detail": "2013"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "2016, 2017, 2018, 2022, 2024"
+          }
+        ]
+      },
+      {
+        "player": "Dani Carvajal",
+        "titles": 6,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022, 2024"
+          }
+        ]
+      },
+      {
+        "player": "Luka Modrić",
+        "titles": 6,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022, 2024"
+          }
+        ]
+      },
+      {
+        "player": "Nacho",
+        "titles": 6,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022, 2024"
+          }
+        ]
+      },
+      {
+        "player": "Juan Alonso",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Rafael Lesmes",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Marquitos",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Héctor Rial",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Alfredo Di Stéfano",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "José María Zárraga",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Alessandro Costacurta",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "AC Milan",
+            "detail": "1989, 1990, 1994, 2003, 2007"
+          }
+        ]
+      },
+      {
+        "player": "Paolo Maldini",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "AC Milan",
+            "detail": "1989, 1990, 1994, 2003, 2007"
+          }
+        ]
+      },
+      {
+        "player": "Cristiano Ronaldo",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Manchester United",
+            "detail": "2008"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018"
+          }
+        ]
+      },
+      {
+        "player": "Gareth Bale",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022"
+          }
+        ]
+      },
+      {
+        "player": "Karim Benzema",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022"
+          }
+        ]
+      },
+      {
+        "player": "Casemiro",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022"
+          }
+        ]
+      },
+      {
+        "player": "Marcelo",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018, 2022"
+          }
+        ]
+      },
+      {
+        "player": "Lucas Vázquez",
+        "titles": 5,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2016, 2017, 2018, 2022, 2024"
+          }
+        ]
+      },
+      {
+        "player": "Joseíto",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1956, 1957, 1958, 1959"
+          }
+        ]
+      },
+      {
+        "player": "Enrique Mateos",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "Juan Santisteban",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1957, 1958, 1959, 1960"
+          }
+        ]
+      },
+      {
+        "player": "José Santamaría",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "1958, 1959, 1960, 1966"
+          }
+        ]
+      },
+      {
+        "player": "Phil Neal",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Liverpool",
+            "detail": "1977, 1978, 1981, 1984"
+          }
+        ]
+      },
+      {
+        "player": "Clarence Seedorf",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Ajax",
+            "detail": "1995"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "1998"
+          },
+          {
+            "club": "AC Milan",
+            "detail": "2003, 2007"
+          }
+        ]
+      },
+      {
+        "player": "Andrés Iniesta",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": "2006, 2009, 2011, 2015"
+          }
+        ]
+      },
+      {
+        "player": "Lionel Messi",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": "2006, 2009, 2011, 2015"
+          }
+        ]
+      },
+      {
+        "player": "Xavi",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": "2006, 2009, 2011, 2015"
+          }
+        ]
+      },
+      {
+        "player": "Gerard Piqué",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Manchester United",
+            "detail": "2008"
+          },
+          {
+            "club": "Barcelona",
+            "detail": "2009, 2011, 2015"
+          }
+        ]
+      },
+      {
+        "player": "Sergio Ramos",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018"
+          }
+        ]
+      },
+      {
+        "player": "Isco",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018"
+          }
+        ]
+      },
+      {
+        "player": "Raphaël Varane",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2014, 2016, 2017, 2018"
+          }
+        ]
+      },
+      {
+        "player": "Mateo Kovačić",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "2016, 2017, 2018"
+          },
+          {
+            "club": "Chelsea",
+            "detail": "2021"
+          }
+        ]
+      },
+      {
+        "player": "David Alaba",
+        "titles": 4,
+        "clubs": [
+          {
+            "club": "Bayern München",
+            "detail": "2013, 2020"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "2022, 2024"
+          }
+        ]
+      }
+    ],
+    "appearances": [
+      {
+        "rank": 1,
+        "player": "Cristiano Ronaldo",
+        "nation": "Portugal",
+        "apps": 183,
+        "years": "2003-2022",
+        "clubs": [
+          {
+            "club": "Manchester United",
+            "detail": "59"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "101"
+          },
+          {
+            "club": "Juventus",
+            "detail": "23"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "player": "Iker Casillas",
+        "nation": "España",
+        "apps": 177,
+        "years": "1999-2019",
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "150"
+          },
+          {
+            "club": "Porto",
+            "detail": "27"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "player": "Lionel Messi",
+        "nation": "Argentina",
+        "apps": 163,
+        "years": "2004-2023",
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": "149"
+          },
+          {
+            "club": "Paris Saint-Germain",
+            "detail": "14"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "player": "Thomas Müller",
+        "nation": "Alemania",
+        "apps": 163,
+        "years": "2009-2025",
+        "clubs": [
+          {
+            "club": "Bayern München",
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "player": "Manuel Neuer",
+        "nation": "Alemania",
+        "apps": 162,
+        "years": "2007-",
+        "clubs": [
+          {
+            "club": "Schalke 04",
+            "detail": "22"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "140"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "player": "Karim Benzema",
+        "nation": "Francia",
+        "apps": 152,
+        "years": "2005-2023",
+        "clubs": [
+          {
+            "club": "Lyon",
+            "detail": "19"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "133"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "player": "Xavi",
+        "nation": "España",
+        "apps": 151,
+        "years": "1998-2015",
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "player": "Toni Kroos",
+        "nation": "Alemania",
+        "apps": 151,
+        "years": "2008-2024",
+        "clubs": [
+          {
+            "club": "Bayern München",
+            "detail": "41"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "110"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "player": "Robert Lewandowski",
+        "nation": "Polonia",
+        "apps": 144,
+        "years": "2011-2026",
+        "clubs": [
+          {
+            "club": "Borussia Dortmund",
+            "detail": "28"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "78"
+          },
+          {
+            "club": "Barcelona",
+            "detail": "38"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "player": "Raúl",
+        "nation": "España",
+        "apps": 142,
+        "years": "1995-2011",
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "130"
+          },
+          {
+            "club": "Schalke 04",
+            "detail": "12"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "player": "Sergio Ramos",
+        "nation": "España",
+        "apps": 142,
+        "years": "2005-2023",
+        "clubs": [
+          {
+            "club": "Real Madrid",
+            "detail": "129"
+          },
+          {
+            "club": "Paris Saint-Germain",
+            "detail": "8"
+          },
+          {
+            "club": "Sevilla",
+            "detail": "5"
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "player": "Luka Modrić",
+        "nation": "Croacia",
+        "apps": 142,
+        "years": "2010-2025",
+        "clubs": [
+          {
+            "club": "Tottenham Hotspur",
+            "detail": "8"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "134"
+          }
+        ]
+      }
+    ],
+    "seasonGoals": [
+      {
+        "rank": 1,
+        "player": "Cristiano Ronaldo",
+        "season": "2013-14",
+        "goals": 17
+      },
+      {
+        "rank": 2,
+        "player": "Cristiano Ronaldo",
+        "season": "2015-16",
+        "goals": 16
+      },
+      {
+        "rank": 3,
+        "player": "Cristiano Ronaldo",
+        "season": "2017-18",
+        "goals": 15
+      },
+      {
+        "rank": 3,
+        "player": "Robert Lewandowski",
+        "season": "2019-20",
+        "goals": 15
+      },
+      {
+        "rank": 3,
+        "player": "Karim Benzema",
+        "season": "2021-22",
+        "goals": 15
+      },
+      {
+        "rank": 3,
+        "player": "Kylian Mbappé",
+        "season": "2025-26",
+        "goals": 15
+      },
+      {
+        "rank": 7,
+        "player": "José Altafini",
+        "season": "1962-63",
+        "goals": 14
+      },
+      {
+        "rank": 7,
+        "player": "Lionel Messi",
+        "season": "2011-12",
+        "goals": 14
+      },
+      {
+        "rank": 7,
+        "player": "Harry Kane",
+        "season": "2025-26",
+        "goals": 14
+      },
+      {
+        "rank": 10,
+        "player": "Robert Lewandowski",
+        "season": "2021-22",
+        "goals": 13
+      },
+      {
+        "rank": 10,
+        "player": "Serhou Guirassy",
+        "season": "2024-25",
+        "goals": 13
+      },
+      {
+        "rank": 10,
+        "player": "Raphinha",
+        "season": "2024-25",
+        "goals": 13
+      },
+      {
+        "rank": 13,
+        "player": "Ferenc Puskás",
+        "season": "1959-60",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Gerd Müller",
+        "season": "1972-73",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Ruud van Nistelrooy",
+        "season": "2002-03",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Lionel Messi",
+        "season": "2010-11",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Mario Gómez",
+        "season": "2011-12",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Cristiano Ronaldo",
+        "season": "2012-13",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Cristiano Ronaldo",
+        "season": "2016-17",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Lionel Messi",
+        "season": "2018-19",
+        "goals": 12
+      },
+      {
+        "rank": 13,
+        "player": "Erling Haaland",
+        "season": "2022-23",
+        "goals": 12
+      }
+    ],
+    "seasonAssists": [
+      {
+        "rank": 1,
+        "player": "Luís Figo",
+        "season": "1999-00",
+        "assists": 9
+      },
+      {
+        "rank": 2,
+        "player": "David Beckham",
+        "season": "1998-99",
+        "assists": 8
+      },
+      {
+        "rank": 2,
+        "player": "Gaizka Mendieta",
+        "season": "2000-01",
+        "assists": 8
+      },
+      {
+        "rank": 2,
+        "player": "Neymar",
+        "season": "2016-17",
+        "assists": 8
+      },
+      {
+        "rank": 2,
+        "player": "James Milner",
+        "season": "2017-18",
+        "assists": 8
+      },
+      {
+        "rank": 2,
+        "player": "Raphinha",
+        "season": "2024-25",
+        "assists": 8
+      }
+    ],
+    "managers": [
+      {
+        "rank": 1,
+        "manager": "Carlo Ancelotti",
+        "nation": "Italia",
+        "matches": 218,
+        "years": "1997-2025",
+        "clubs": [
+          {
+            "club": "Parma",
+            "detail": "6"
+          },
+          {
+            "club": "Juventus",
+            "detail": "10"
+          },
+          {
+            "club": "AC Milan",
+            "detail": "73"
+          },
+          {
+            "club": "Chelsea",
+            "detail": "18"
+          },
+          {
+            "club": "Paris Saint-Germain",
+            "detail": "10"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "77"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "12"
+          },
+          {
+            "club": "Napoli",
+            "detail": "12"
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "manager": "Alex Ferguson",
+        "nation": "Escocia",
+        "matches": 202,
+        "years": "1980-2013",
+        "clubs": [
+          {
+            "club": "Aberdeen",
+            "detail": "12"
+          },
+          {
+            "club": "Manchester United",
+            "detail": "190"
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "manager": "Pep Guardiola",
+        "nation": "España",
+        "matches": 191,
+        "years": "2008-2026",
+        "clubs": [
+          {
+            "club": "Barcelona",
+            "detail": "50"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "36"
+          },
+          {
+            "club": "Manchester City",
+            "detail": "105"
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "manager": "Arsène Wenger",
+        "nation": "Francia",
+        "matches": 190,
+        "years": "1988-2017",
+        "clubs": [
+          {
+            "club": "Monaco",
+            "detail": "13"
+          },
+          {
+            "club": "Arsenal",
+            "detail": "177"
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "manager": "José Mourinho",
+        "nation": "Portugal",
+        "matches": 156,
+        "years": "2001-",
+        "clubs": [
+          {
+            "club": "Porto",
+            "detail": "17"
+          },
+          {
+            "club": "Chelsea",
+            "detail": "57"
+          },
+          {
+            "club": "Inter de Milán",
+            "detail": "21"
+          },
+          {
+            "club": "Real Madrid",
+            "detail": "35"
+          },
+          {
+            "club": "Manchester United",
+            "detail": "14"
+          },
+          {
+            "club": "Tottenham Hotspur",
+            "detail": "4"
+          },
+          {
+            "club": "Benfica",
+            "detail": "8"
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "manager": "Diego Simeone",
+        "nation": "Argentina",
+        "matches": 129,
+        "years": "2013-",
+        "clubs": [
+          {
+            "club": "Atlético de Madrid",
+            "detail": "129"
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "manager": "Mircea Lucescu",
+        "nation": "Rumanía",
+        "matches": 115,
+        "years": "1998-2022",
+        "clubs": [
+          {
+            "club": "Inter de Milán",
+            "detail": "3"
+          },
+          {
+            "club": "Galatasaray",
+            "detail": "26"
+          },
+          {
+            "club": "Beşiktaş",
+            "detail": "6"
+          },
+          {
+            "club": "Shakhtar Donetsk",
+            "detail": "68"
+          },
+          {
+            "club": "Dynamo Kyiv",
+            "detail": "12"
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "manager": "Massimiliano Allegri",
+        "nation": "Italia",
+        "matches": 102,
+        "years": "2010-",
+        "clubs": [
+          {
+            "club": "AC Milan",
+            "detail": "32"
+          },
+          {
+            "club": "Juventus",
+            "detail": "68"
+          },
+          {
+            "club": "Napoli",
+            "detail": "2"
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "manager": "Jürgen Klopp",
+        "nation": "Alemania",
+        "matches": 100,
+        "years": "2011-2023",
+        "clubs": [
+          {
+            "club": "Borussia Dortmund",
+            "detail": "35"
+          },
+          {
+            "club": "Liverpool",
+            "detail": "65"
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "manager": "",
+        "nation": "",
+        "matches": null,
+        "years": "",
+        "clubs": []
+      },
+      {
+        "rank": 10,
+        "manager": "Ottmar Hitzfeld",
+        "nation": "Alemania",
+        "matches": 97,
+        "years": "1990-2004",
+        "clubs": [
+          {
+            "club": "Grasshopper",
+            "detail": "2"
+          },
+          {
+            "club": "Borussia Dortmund",
+            "detail": "19"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "76"
+          }
+        ]
+      }
+    ]
+  }
 }

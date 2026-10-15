@@ -141,6 +141,7 @@ describe('temporadas de la UEFA', () => {
     expect(player.titleSeasons).toBeUndefined();
     expect(player.seasons).toHaveLength(3);
     expect(player.seasonsSource).toBe('uefa');
+    expect(player.active).toBe(true); // 2008-09 es la temporada más reciente de los datos
     expect(player.teams).toEqual([{ name: 'Manchester United', matches: 26, goals: 3, assists: 5 }]);
     // Ya tenía goles por la tabla completa; un jugador sin ellos los toma de la UEFA
     expect(player.goals).toBe(29);
@@ -152,7 +153,7 @@ describe('temporadas de la UEFA', () => {
 describe('títulos y finales calculados', () => {
   const finals = [
     { season: '2007-08', winner: 'Manchester United', runnerUp: 'Chelsea' },
-    { season: '2008-09', winner: 'Barcelona', runnerUp: 'Manchester United' },
+    { season: '2008-09', winner: 'Barcelona', runnerUp: 'Manchester United', score: '2–0' },
     { season: '2019-20', winner: 'Bayern München', runnerUp: 'Paris Saint-Germain' },
   ];
   const seasons = [
@@ -166,6 +167,11 @@ describe('títulos y finales calculados', () => {
     const result = titlesFromFinals(seasons, finals);
     expect([result.titles, result.finals]).toEqual([1, 2]);
     expect(seasons.filter(result.isWin).map((s) => s.season)).toEqual(['2007-08']);
+    expect(result.list[0].score).toBe('0–2');
+    expect(result.list.map((f) => [f.season, f.won, f.opponent])).toEqual([
+      ['2008-09', false, 'Barcelona'],
+      ['2007-08', true, 'Chelsea'],
+    ]);
   });
 
   it('buildPlayers los usa en lugar de los manuales cuando hay datos de la UEFA', () => {

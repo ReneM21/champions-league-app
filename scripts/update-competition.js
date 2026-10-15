@@ -6,7 +6,7 @@
 // npm run update-competition
 const fs = require('fs');
 const path = require('path');
-const { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, validateCompetition } = require('./competition');
+const { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, parseRecords, validateCompetition } = require('./competition');
 
 const OUTPUT = path.join(__dirname, '..', 'public', 'data', 'competition.json');
 const PAGES = {
@@ -31,6 +31,7 @@ async function main() {
     clubs: parseClubTitles(recordsHtml),
     allTime: parseAllTimeTable(recordsHtml),
     topScorers: parseSeasonTopScorers(scorersHtml),
+    records: parseRecords(recordsHtml),
   };
   validateCompetition(data);
   const last = data.finals[data.finals.length - 1];

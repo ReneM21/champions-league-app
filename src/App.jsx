@@ -13,6 +13,7 @@ import TeamsPage from './pages/TeamsPage';
 import SeasonsPage from './pages/SeasonsPage';
 import AssistsPage from './pages/AssistsPage';
 import ComparePage from './pages/ComparePage';
+import RecordsPage from './pages/RecordsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const ScrollToTopOnNavigate = () => {
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/asistencias" element={<AssistsPage />} />
             <Route path="/temporadas" element={<SeasonsPage />} />
             <Route path="/comparar" element={<ComparePage />} />
+            <Route path="/records" element={<RecordsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         )}

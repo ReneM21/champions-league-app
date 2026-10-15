@@ -10,6 +10,7 @@ const SECTIONS = [
   { to: '/asistencias', label: 'Asistencias' },
   { to: '/equipos', label: 'Equipos' },
   { to: '/temporadas', label: 'Temporadas' },
+  { to: '/records', label: 'Récords' },
   { to: '/comparar', label: 'Comparar' },
 ];
 

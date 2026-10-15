@@ -96,11 +96,26 @@ export function titlesFromFinals(seasons, finals = []) {
   const bySeason = new Map(finals.map((final) => [final.season, final]));
   const isWin = (s) => bySeason.has(s.season) && bySeason.get(s.season).winner === s.club;
   const reached = seasons.filter((s) => bySeason.has(s.season) && [bySeason.get(s.season).winner, bySeason.get(s.season).runnerUp].includes(s.club));
-  return { titles: seasons.filter(isWin).length, finals: reached.length, isWin };
+  // Cada final con el rival y el resultado, de la más reciente a la más antigua
+  const list = reached
+    .map((s) => {
+      const final = bySeason.get(s.season);
+      const won = final.winner === s.club;
+      // El resultado, contado desde el equipo del jugador ("0–2" si perdió 2–0)
+      const score = won ? final.score : final.score.split(/([–-])/).reverse().join('');
+      return { ...final, club: s.club, won, opponent: won ? final.runnerUp : final.winner, score };
+    })
+    .sort((a, b) => b.season.localeCompare(a.season));
+  return { titles: seasons.filter(isWin).length, finals: reached.length, isWin, list };
 }
 
 export function buildPlayers({ ranking, assists, details = [], photos = {}, profiles = {}, allGoals = [], allAssists = [], uefa = {}, finals = [] }) {
   const detailsById = indexById(details);
+  // Temporada en curso: la más reciente de los datos de la UEFA
+  const currentSeason = Object.values(uefa)
+    .flatMap((p) => p.seasons.map((s) => s.season))
+    .sort()
+    .pop();
   const goalsById = indexById([...allGoals, ...ranking.players]);
   const assistsById = indexById([...allAssists, ...assists.players]);
 
@@ -132,6 +147,8 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
     if (official && official.seasons.length) {
       player.seasons = mergeSeasons(player.seasons, official.seasons);
       player.seasonsSource = 'uefa';
+      // En activo: ha jugado la Champions esta temporada
+      player.active = official.seasons.some((s) => s.season === currentSeason);
       // Asistidores que no están en la tabla de goleadores: goles de la UEFA
       if (player.goals === null) player.goals = sumOrNull(player.seasons.map((s) => s.goals));
     }
@@ -141,6 +158,7 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
       const computed = titlesFromFinals(player.seasons, finals);
       player.titles = computed.titles;
       player.finals = computed.finals;
+      player.finalsList = computed.list;
       player.seasons = player.seasons.map((season) => ({ ...season, title: computed.isWin(season) }));
     } else if (detail.titleSeasons) {
       // Temporadas ganadas indicadas a mano con "titleSeasons"
