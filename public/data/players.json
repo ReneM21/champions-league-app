@@ -318,6 +318,7 @@
   {
     "id": "ryan-giggs",
     "name": "Ryan Giggs",
+    "photoFile": "File:Ryan Giggs in 2008.jpg",
     "titles": 2,
     "finals": 4,
     "titleSeasons": ["1998-99", "2007-08"],
@@ -336,6 +337,7 @@
   {
     "id": "david-beckham",
     "name": "David Beckham",
+    "photoFile": "File:David Beckham Nov 11 2007.jpg",
     "titles": 1,
     "finals": 1,
     "titleSeasons": ["1998-99"],
@@ -345,6 +347,7 @@
   {
     "id": "luis-figo",
     "name": "Luís Figo",
+    "photoFile": "File:Luis Figo-2009.jpg",
     "titles": 1,
     "finals": 1,
     "titleSeasons": ["2001-02"],
@@ -354,6 +357,7 @@
   {
     "id": "xavi",
     "name": "Xavi",
+    "photoFile": "File:Xavi Hernández Spain 2009.jpg",
     "titles": 4,
     "finals": 4,
     "titleSeasons": ["2005-06", "2008-09", "2010-11", "2014-15"],
@@ -363,6 +367,7 @@
   {
     "id": "neymar",
     "name": "Neymar",
+    "photoFile": "File:Neymar (16245492137) (cropped).jpg",
     "titles": 1,
     "finals": 2,
     "titleSeasons": ["2014-15"],

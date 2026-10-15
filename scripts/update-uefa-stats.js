@@ -1,15 +1,18 @@
 // Descarga de la UEFA (compstats.uefa.com, los datos de uefa.com) los
 // partidos, goles y asistencias por temporada y club de todos los jugadores
-// de los rankings, y los guarda en public/data/uefa-seasons.json.
+// de los rankings, y los guarda en public/data/uefa-seasons.json. También
+// descarga el escudo de sus clubes a public/images/clubs/ (public/data/clubs.json).
 // La app los usa para las vistas Equipos y Temporadas de cada jugador.
 // Lo ejecuta el workflow .github/workflows/update-data.yml; en local:
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, EXTRA_CLUBS, clubName, clubSlug, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
+const CLUBS_FILE = path.join(DATA, 'clubs.json');
+const LOGOS_DIR = path.join(__dirname, '..', 'public', 'images', 'clubs');
 const API = 'https://compstats.uefa.com/v1/player-ranking';
 const PAGE_SIZE = 100;
 const HEADERS = { 'User-Agent': 'champions-league-app (https://github.com/ReneM21/champions-league-app)' };
@@ -74,10 +77,15 @@ async function main() {
 
   const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, seasons: [] }]));
   const teamsByYear = {};
+  const logos = new Map(); // nombre del club -> URL del escudo (el más reciente)
   for (const year of seasonYears(new Date().getUTCFullYear() + 1)) {
     const rows = await seasonRows(year);
     const teams = new Map(rows.filter((r) => r.team).map((r) => [r.team.id, { id: r.team.id, name: r.team.internationalName }]));
     teamsByYear[year] = [...teams.values()];
+    for (const row of rows) {
+      const logo = row.team && (row.team.mediumLogoUrl || row.team.logoUrl);
+      if (logo) logos.set(clubName(row.team), logo);
+    }
     let found = 0;
     for (const player of players) {
       for (const row of rows.filter((r) => isPlayer(r, player))) {
@@ -144,10 +152,40 @@ async function main() {
     console.log(`Guardado ${path.relative(process.cwd(), OUTPUT)}.`);
   }
 
+  await saveLogos(result, logos);
+
   if (notFound.length) {
     console.error(`No encontrados en la UEFA: ${notFound.join(', ')}`);
     process.exit(1);
   }
+}
+
+// Escudos de los clubes de los jugadores y de las páginas Equipos y Temporadas.
+// Solo se descargan los que faltan.
+async function saveLogos(result, logos) {
+  const wanted = new Set([...Object.values(result).flatMap((p) => p.seasons.map((s) => s.club)), ...EXTRA_CLUBS]);
+  const clubs = readJson(CLUBS_FILE, {});
+  fs.mkdirSync(LOGOS_DIR, { recursive: true });
+  for (const name of [...wanted].sort()) {
+    const url = logos.get(name);
+    if (!url) {
+      console.log(`Sin escudo: ${name}`);
+      continue;
+    }
+    const file = `${clubSlug(name)}.png`;
+    if (!fs.existsSync(path.join(LOGOS_DIR, file))) {
+      const response = await fetch(url, { headers: HEADERS });
+      if (!response.ok || !(response.headers.get('content-type') || '').startsWith('image/')) {
+        console.log(`No se pudo descargar el escudo de ${name}: ${response.status}`);
+        continue;
+      }
+      fs.writeFileSync(path.join(LOGOS_DIR, file), Buffer.from(await response.arrayBuffer()));
+      console.log(`Escudo descargado: ${name}`);
+    }
+    clubs[name] = { logo: `images/clubs/${file}` };
+  }
+  const sorted = Object.fromEntries(Object.keys(clubs).sort().map((name) => [name, clubs[name]]));
+  fs.writeFileSync(CLUBS_FILE, `${JSON.stringify(sorted, null, 2)}\n`);
 }
 
 main().catch((error) => {

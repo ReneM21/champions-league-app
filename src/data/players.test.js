@@ -32,6 +32,10 @@ function problemsOf(player) {
       });
   }
 
+  if (player.photoFile !== undefined && !/^File:.+\.(jpe?g|png|webp)$/i.test(player.photoFile)) {
+    add('"photoFile" debe ser un archivo de Wikimedia Commons, por ejemplo "File:Ryan Giggs in 2008.jpg"');
+  }
+
   if (player.titleSeasons !== undefined) {
     if (!Array.isArray(player.titleSeasons)) add('"titleSeasons" debe ser una lista');
     else {

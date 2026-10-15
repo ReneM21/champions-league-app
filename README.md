@@ -112,6 +112,7 @@ Rellena solo lo que sepas: lo que se quede en `null` o vacío se muestra como "-
 | `titles` | Champions League ganadas (número, sin comillas) | `2` |
 | `finals` | Finales disputadas (no puede ser menor que `titles`) | `4` |
 | `teams` | Goles en la Champions por club; activa la pestaña Equipos con porcentajes | `[{ "name": "Manchester United", "goals": 29 }]` |
+| `photoFile` | Foto de Wikimedia Commons elegida a mano (por ejemplo, una de cuando jugaba); el workflow la descarga con su autor y licencia | `"File:Ryan Giggs in 2008.jpg"` |
 | `titleSeasons` | Temporadas en que ganó la Champions; las marca como "Campeón" en la pestaña Temporadas (que se rellena sola con los datos de la UEFA) | `["1998-99", "2007-08"]` |
 | `seasons` | Una línea por temporada, solo si quieres corregir o completar los datos de la UEFA | ver abajo |
 

@@ -22,8 +22,27 @@ async function getJson(url) {
   return response.json();
 }
 
+// Datos de un archivo de Commons: URL de la miniatura, autor y licencia
+async function commonsPhoto(fileTitle) {
+  const infoParams = new URLSearchParams({
+    action: 'query',
+    format: 'json',
+    prop: 'imageinfo',
+    iiprop: 'url|extmetadata',
+    iiurlwidth: '400',
+    titles: fileTitle,
+  });
+  return photoFromImageInfo(await getJson(`https://commons.wikimedia.org/w/api.php?${infoParams}`));
+}
+
 // Devuelve { photo } o { reason } con el motivo por el que no hay foto
 async function findPhoto(player) {
+  // Foto elegida a mano en players.json
+  if (player.photoFile) {
+    const photo = await commonsPhoto(player.photoFile);
+    return photo ? { photo: { ...photo, file: player.photoFile } } : { reason: `"${player.photoFile}" no está en Commons o no tiene licencia` };
+  }
+
   const pageParams = new URLSearchParams({
     action: 'query',
     format: 'json',
@@ -40,15 +59,7 @@ async function findPhoto(player) {
 
   // Las imágenes libres pueden estar en Commons o subidas a la Wikipedia en inglés;
   // solo se usan las de Commons, que traen autor y licencia.
-  const infoParams = new URLSearchParams({
-    action: 'query',
-    format: 'json',
-    prop: 'imageinfo',
-    iiprop: 'url|extmetadata',
-    iiurlwidth: '400',
-    titles: `File:${fileName}`,
-  });
-  const photo = photoFromImageInfo(await getJson(`https://commons.wikimedia.org/w/api.php?${infoParams}`));
+  const photo = await commonsPhoto(`File:${fileName}`);
   return photo ? { photo } : { reason: `"${fileName}" no está en Commons o no tiene licencia` };
 }
 

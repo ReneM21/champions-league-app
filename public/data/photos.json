@@ -8,10 +8,11 @@
   },
   "david-beckham": {
     "image": "images/players/david-beckham.jpg",
-    "author": "Soccer Aid for Unicef",
-    "license": "CC BY 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:David_Beckham_UNICEF_(cropped2).jpg"
+    "author": "Calebrw (talk) at en.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:David_Beckham_Nov_11_2007.jpg",
+    "file": "File:David Beckham Nov 11 2007.jpg"
   },
   "harry-kane": {
     "image": "images/players/harry-kane.jpg",
@@ -29,30 +30,34 @@
   },
   "luis-figo": {
     "image": "images/players/luis-figo.jpg",
-    "author": "Žan Kolman",
-    "license": "Public domain",
-    "licenseUrl": null,
-    "source": "https://commons.wikimedia.org/wiki/File:Luis_Figo_2023.jpg"
+    "author": "Paul Blank",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Luis_Figo-2009.jpg",
+    "file": "File:Luis Figo-2009.jpg"
   },
   "neymar": {
     "image": "images/players/neymar.jpg",
-    "author": "Bryan Berlin",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg"
+    "author": "Alex Fau",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Neymar_(16245492137)_(cropped).jpg",
+    "file": "File:Neymar (16245492137) (cropped).jpg"
   },
   "ryan-giggs": {
     "image": "images/players/ryan-giggs.jpg",
-    "author": "Дмитрий Голубович",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ryan_Giggs_2015_(cropped).jpg"
+    "author": "James Adams",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ryan_Giggs_in_2008.jpg",
+    "file": "File:Ryan Giggs in 2008.jpg"
   },
   "xavi": {
     "image": "images/players/xavi.jpg",
-    "author": "Meysam Mehabadi",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Xavi,_Persepolis_vs._Al_Sadd,_20190520_02_(cropped).jpg"
+    "author": "Steindy (talk) 13:11, 13 July 2010 (UTC)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Xavi_Hern%C3%A1ndez_Spain_2009.jpg",
+    "file": "File:Xavi Hernández Spain 2009.jpg"
   }
 }

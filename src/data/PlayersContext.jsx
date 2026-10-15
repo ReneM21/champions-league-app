@@ -36,8 +36,9 @@ export function PlayersProvider({ children }) {
       optional('data/all-goals.json', []),
       optional('data/all-assists.json', []),
       optional('data/uefa-seasons.json', { players: {} }),
+      optional('data/clubs.json', {}),
     ])
-      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists, uefaSeasons]) => {
+      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists, uefaSeasons, clubs]) => {
         if (cancelled) return;
         const { scorers, assisters, byId } = buildPlayers({
           ranking,
@@ -58,6 +59,7 @@ export function PlayersProvider({ children }) {
           assists: { ...assists, players: assisters },
           uefaUpdatedAt: uefaSeasons.updatedAt || null,
           uefaSource: uefaSeasons.source || null,
+          clubs,
         });
       })
       .catch((error) => {
@@ -79,6 +81,14 @@ export const usePlayers = () => useContext(PlayersContext);
 export const usePlayer = (id) => {
   const { byId } = usePlayers();
   return byId ? byId.get(id) : undefined;
+};
+
+// Escudo de un club por su nombre (public/data/clubs.json)
+const CLUB_ALIASES = { 'Bayern Munich': 'Bayern München', 'FC Barcelona': 'Barcelona', 'Inter Milan': 'Inter de Milán' };
+export const useClubLogo = (name) => {
+  const { clubs } = usePlayers();
+  const club = clubs && (clubs[name] || clubs[CLUB_ALIASES[name]]);
+  return club ? club.logo : null;
 };
 
 export const usePlayerByName = () => {

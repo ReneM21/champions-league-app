@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, clubSlug, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -106,4 +106,10 @@ test('missingClubCandidates busca un club de Wikipedia que falta en sus temporad
   };
   const candidates = missingClubCandidates(seasons, ['Red Bull Salzburg', 'Borussia Dortmund'], teamsByYear);
   assert.deepEqual(candidates.map((c) => `${c.season.season}:${c.teamId}`), ['2019-20:rbs']);
+});
+
+test('clubSlug da un nombre de archivo sin tildes ni espacios', () => {
+  assert.equal(clubSlug('Paris Saint-Germain'), 'paris-saint-germain');
+  assert.equal(clubSlug('Atlético de Madrid'), 'atletico-de-madrid');
+  assert.equal(clubSlug('Bayern München'), 'bayern-munchen');
 });
