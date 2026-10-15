@@ -13,16 +13,21 @@ const normalize = (text) =>
 
 const contains = (text, input) => normalize(text).includes(normalize(input));
 
-// Buscador de jugadores (goleadores y asistidores): al elegir uno, abre su ficha
-const PlayerSearch = ({ className = '' }) => {
+// Buscador de jugadores (goleadores y asistidores). Por defecto, al elegir uno
+// abre su ficha; con onSelect(id) hace otra cosa (por ejemplo, en el comparador).
+const PlayerSearch = ({ className = '', onSelect, placeholder = 'Buscar jugador…', label = 'Buscar jugador', exclude = [] }) => {
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const { byId } = usePlayers();
-  const players = useMemo(() => (byId ? [...byId.values()].sort((a, b) => a.name.localeCompare(b.name)) : []), [byId]);
+  const players = useMemo(
+    () => (byId ? [...byId.values()].filter((p) => !exclude.includes(p.id)).sort((a, b) => a.name.localeCompare(b.name)) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [byId, exclude.join(',')]
+  );
 
   return (
     <ComboBox
-      aria-label="Buscar jugador"
+      aria-label={label}
       menuTrigger="input"
       defaultFilter={contains}
       allowsEmptyCollection
@@ -32,12 +37,15 @@ const PlayerSearch = ({ className = '' }) => {
       onSelectionChange={(id) => {
         if (!id) return;
         setQuery('');
-        navigate(`/jugadores/${id}`);
+        // Cierra la lista: sin foco, el campo vacío no la vuelve a abrir
+        if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+        if (onSelect) onSelect(id);
+        else navigate(`/jugadores/${id}`);
       }}
       className={className}
     >
       <ComboBox.InputGroup>
-        <Input placeholder="Buscar jugador…" />
+        <Input placeholder={placeholder} />
         <ComboBox.Trigger />
       </ComboBox.InputGroup>
       <ComboBox.Popover>

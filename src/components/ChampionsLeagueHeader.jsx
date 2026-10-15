@@ -10,6 +10,7 @@ const SECTIONS = [
   { to: '/asistencias', label: 'Asistencias' },
   { to: '/equipos', label: 'Equipos' },
   { to: '/temporadas', label: 'Temporadas' },
+  { to: '/comparar', label: 'Comparar' },
 ];
 
 const ChampionsLeagueHeader = () => {
@@ -48,16 +49,16 @@ const ChampionsLeagueHeader = () => {
         </Link>
 
         <div className="flex items-center gap-1">
-          <nav aria-label="Secciones" className="hidden items-center gap-1 md:flex">
+          <nav aria-label="Secciones" className="hidden items-center gap-1 xl:flex">
             {links}
           </nav>
-          <PlayerSearch className="hidden w-48 sm:block lg:w-56" />
+          <PlayerSearch className="hidden w-56 sm:block" />
           <ThemeToggle />
         </div>
       </div>
 
       {/* En pantallas pequeñas el menú va en una segunda fila con scroll horizontal */}
-      <div className="border-t border-separator md:hidden">
+      <div className="border-t border-separator xl:hidden">
         <nav aria-label="Secciones" className="flex gap-1 overflow-x-auto px-3 py-2">
           {links}
         </nav>
