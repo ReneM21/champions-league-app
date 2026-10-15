@@ -1,0 +1,27 @@
+name: Probe (temporal)
+on:
+  push:
+    branches: [claude/nifty-archimedes-bl6gsx]
+    paths: ['.github/workflows/probe.yml', '.github/probe/**']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node .github/probe/era-photos.js
+      - name: Logos UEFA
+        run: for id in 50051 50080 50037 7889 50058 50143 52682; do echo "$id $(curl -s -o /dev/null -w '%{http_code} %{content_type} %{size_download}' https://img.uefa.com/imgml/TP/teams/logos/240x240/$id.png)"; done
+      - if: ${{ !cancelled() }}
+        run: |
+          git add probe-photos
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Candidatas de fotos (temporal)"
+          git push origin HEAD:${{ github.ref_name }}
