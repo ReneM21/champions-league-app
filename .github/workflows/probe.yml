@@ -13,8 +13,8 @@ jobs:
       - name: Descargar páginas de Wikipedia
         run: |
           mkdir -p probe-html
-          for p in List_of_European_Cup_and_UEFA_Champions_League_finals List_of_European_Cup_and_UEFA_Champions_League_top_scorers European_Cup_and_UEFA_Champions_League_records_and_statistics; do
-            curl -sS -A "champions-league-app (https://github.com/ReneM21/champions-league-app)" "https://en.wikipedia.org/api/rest_v1/page/html/$p" -o "probe-html/$p.html"
+          for p in List_of_UEFA_Champions_League_top_scorers European_Cup_and_UEFA_Champions_League_top_scorers_by_season List_of_European_Cup_and_UEFA_Champions_League_top_scorers_by_season; do
+            curl -sSL -A "champions-league-app (https://github.com/ReneM21/champions-league-app)" "https://en.wikipedia.org/api/rest_v1/page/html/$p" -o "probe-html/$p.html"
             echo "$p $(wc -c < probe-html/$p.html)"
           done
       - run: |
