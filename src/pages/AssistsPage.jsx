@@ -21,7 +21,7 @@ const AssistsPage = () => {
   const profileOf = (player) => player;
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader
         title="Máximos asistidores"
         description="Los jugadores que más goles han dado a sus compañeros en la historia de la competición."

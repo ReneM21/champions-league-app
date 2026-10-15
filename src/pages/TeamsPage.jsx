@@ -193,7 +193,7 @@ const TeamsPage = () => {
   };
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader
         title="Equipos"
         description="Los clubes que han llegado a la final de la Copa de Europa y la Champions League: títulos, finales y cifras históricas."

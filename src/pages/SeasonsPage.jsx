@@ -186,7 +186,7 @@ const SeasonsPage = () => {
   };
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader title="Temporadas históricas" description="Todas las ediciones desde 1955-56: la final, el campeón y los máximos goleadores.">
         <div className="flex flex-wrap gap-4">
           <SortSelect label="Club" value={club} onChange={change(setClub)} options={clubOptions} />

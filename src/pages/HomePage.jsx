@@ -17,7 +17,7 @@ const HomePage = () => {
   useTitle('Máximos goleadores');
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader
         title="Máximos goleadores"
         description="Los jugadores con más goles en la historia de la UEFA Champions League."

@@ -43,7 +43,7 @@ const PlayerPage = () => {
   const headline = fromAssists ? { value: player.assists, label: 'asistencias' } : { value: player.goals, label: 'goles' };
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <div className="mb-4 flex items-center justify-between gap-2">
         <Link to={fromAssists ? '/asistencias' : '/'} className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'text-muted' })}>
           ← {fromAssists ? 'Asistidores' : 'Goleadores'}

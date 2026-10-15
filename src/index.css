@@ -56,13 +56,3 @@ body {
   opacity: 0.9;
 }
 
-/* Animaciones de entrada */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
