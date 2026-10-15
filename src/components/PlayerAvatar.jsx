@@ -13,13 +13,14 @@ const initials = (name) =>
     .join('')
     .toUpperCase();
 
-// Si no hay foto o no carga, HeroUI muestra las iniciales del jugador
+// Si no hay foto o no carga, HeroUI muestra las iniciales del jugador.
+// La foto es decorativa (alt vacío): el nombre siempre aparece al lado.
 const PlayerAvatar = ({ player, className = 'size-12' }) => (
   <Avatar color="accent" variant="soft" className={`rounded-full ring-2 ring-surface shadow-sm ${className}`}>
     {player.image && (
       <Avatar.Image
         src={asset(player.image)}
-        alt={player.name}
+        alt=""
         title={player.photoCredit ? creditText(player.photoCredit) : undefined}
         className="object-cover object-top"
       />
