@@ -14,7 +14,6 @@ const ChampionsLeagueFooter = () => {
           <img src={LOGO} alt="UEFA Champions League" className="h-12 w-auto shrink-0 dark:brightness-0 dark:invert" />
           <p>
             © {currentYear} Champions Stats · Estadísticas históricas de la UEFA Champions League
-            <span className="champions-star ml-2" aria-hidden="true">★</span>
           </p>
         </div>
         {source && (
