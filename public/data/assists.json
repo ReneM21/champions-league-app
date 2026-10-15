@@ -1,10 +1,11 @@
 {
-  "updatedAt": "2026-10-15T00:12:18.905Z",
+  "updatedAt": "2026-10-15T03:52:41.139Z",
   "source": "https://en.wikipedia.org/wiki/UEFA_Champions_League_records_and_statistics",
   "players": [
     {
       "id": "ryan-giggs",
       "name": "Ryan Giggs",
+      "article": "Ryan_Giggs",
       "nationality": "Gales",
       "assists": 41,
       "matches": 141,
@@ -16,6 +17,7 @@
     {
       "id": "cristiano-ronaldo",
       "name": "Cristiano Ronaldo",
+      "article": "Cristiano_Ronaldo",
       "nationality": "Portugal",
       "assists": 40,
       "matches": 183,
@@ -29,6 +31,7 @@
     {
       "id": "lionel-messi",
       "name": "Lionel Messi",
+      "article": "Lionel_Messi",
       "nationality": "Argentina",
       "assists": 39,
       "matches": 163,
@@ -41,6 +44,7 @@
     {
       "id": "angel-di-maria",
       "name": "Ángel Di María",
+      "article": "Ángel_Di_María",
       "nationality": "Argentina",
       "assists": 38,
       "matches": 116,
@@ -55,6 +59,7 @@
     {
       "id": "david-beckham",
       "name": "David Beckham",
+      "article": "David_Beckham",
       "nationality": "Inglaterra",
       "assists": 36,
       "matches": 107,
@@ -69,6 +74,7 @@
     {
       "id": "luis-figo",
       "name": "Luís Figo",
+      "article": "Luís_Figo",
       "nationality": "Portugal",
       "assists": 34,
       "matches": 103,
@@ -82,6 +88,7 @@
     {
       "id": "xavi",
       "name": "Xavi",
+      "article": "Xavi_(footballer,_born_1980)",
       "nationality": "España",
       "assists": 31,
       "matches": 151,
@@ -93,6 +100,7 @@
     {
       "id": "neymar",
       "name": "Neymar",
+      "article": "Neymar",
       "nationality": "Brasil",
       "assists": 30,
       "matches": 81,
@@ -105,9 +113,10 @@
     {
       "id": "kevin-de-bruyne",
       "name": "Kevin De Bruyne",
+      "article": "Kevin_De_Bruyne",
       "nationality": "Bélgica",
       "assists": 27,
-      "matches": 83,
+      "matches": 84,
       "years": "2011–",
       "clubs": [
         "Genk",
@@ -119,6 +128,7 @@
     {
       "id": "raul-gonzalez",
       "name": "Raúl",
+      "article": "Raúl_(footballer)",
       "nationality": "España",
       "assists": 27,
       "matches": 142,
@@ -131,6 +141,7 @@
     {
       "id": "karim-benzema",
       "name": "Karim Benzema",
+      "article": "Karim_Benzema",
       "nationality": "Francia",
       "assists": 27,
       "matches": 152,
