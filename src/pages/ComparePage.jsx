@@ -4,6 +4,7 @@ import { Button, Card, Link } from '@heroui/react';
 import PageHeader from '../components/PageHeader';
 import PlayerAvatar from '../components/PlayerAvatar';
 import PlayerSearch from '../components/PlayerSearch';
+import ShareButton from '../components/ShareButton';
 import { usePlayer, usePlayers } from '../data/PlayersContext';
 import { formatRatio, goalsPerMatch, summarizeSeasons } from '../utils/stats';
 import { useTitle } from '../utils/useTitle';
@@ -111,7 +112,13 @@ const ComparePage = () => {
 
   return (
     <div className="animate-fadeIn">
-      <PageHeader title="Comparar jugadores" description="Elige dos jugadores de los rankings y compara sus cifras en la Champions League." />
+      <PageHeader title="Comparar jugadores" description="Elige dos jugadores de los rankings y compara sus cifras en la Champions League.">
+        {left && right && (
+          <div>
+            <ShareButton title={`${left.name} vs ${right.name} · Champions Stats`} />
+          </div>
+        )}
+      </PageHeader>
 
       <Card>
         <Card.Content className="gap-6 p-4 sm:p-8">

@@ -166,7 +166,7 @@ async function main() {
     console.log(`Guardado ${path.relative(process.cwd(), OUTPUT)}.`);
   }
 
-  await saveClubs(result, logos, clubGoals);
+  await saveClubs(result, logos, clubGoals, current);
 
   if (notFound.length) {
     console.error(`No encontrados en la UEFA: ${notFound.join(', ')}`);
@@ -177,7 +177,7 @@ async function main() {
 // Clubes de los jugadores, de las finales y de la clasificación histórica
 // (public/data/competition.json): escudo y máximos goleadores en la era
 // Champions. Solo se descargan los escudos que faltan.
-async function saveClubs(result, logos, clubGoals) {
+async function saveClubs(result, logos, clubGoals, current) {
   const competition = readJson(path.join(DATA, 'competition.json'), { finals: [], allTime: [] });
   const wanted = new Set([
     ...Object.values(result).flatMap((p) => p.seasons.map((s) => s.club)),
@@ -185,6 +185,7 @@ async function saveClubs(result, logos, clubGoals) {
     ...competition.finals.flatMap((f) => [f.winner, f.runnerUp]),
     ...competition.allTime.map((c) => c.club),
     ...Object.values(competition.records || {}).flatMap((rows) => rows.flatMap((row) => (row.clubs || []).map((c) => c.club))),
+    ...(current ? [...current.scorers, ...current.assisters].map((row) => row.club) : []),
   ]);
   const uefaNames = [...logos.keys()];
   const clubs = {};
