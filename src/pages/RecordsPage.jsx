@@ -165,7 +165,8 @@ const RecordsPage = () => {
                 {SECTIONS.map((s) => (
                   <Tabs.Tab key={s.id} id={s.id} className="whitespace-nowrap">
                     {s.tab}
-                    <Tabs.Indicator />
+                    {/* Sin deslizamiento: al moverse tapaba el texto de las otras pestañas */}
+                    <Tabs.Indicator className="transition-none" />
                   </Tabs.Tab>
                 ))}
               </Tabs.List>
