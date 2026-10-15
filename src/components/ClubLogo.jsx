@@ -14,7 +14,7 @@ const initials = (name) =>
 // Escudo de un club; si no hay escudo descargado, sus iniciales
 const ClubLogo = ({ name, className = 'size-6' }) => {
   const logo = useClubLogo(name);
-  if (logo) return <img src={asset(logo)} alt="" loading="lazy" className={`shrink-0 object-contain ${className}`} />;
+  if (logo) return <img src={asset(logo)} alt="" className={`shrink-0 object-contain ${className}`} />;
   return (
     <span
       aria-hidden="true"

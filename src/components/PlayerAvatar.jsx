@@ -26,8 +26,9 @@ const PlayerAvatar = ({ player, className = 'size-12' }) => (
       />
     )}
     {/* Con foto, las iniciales solo salen si la foto tarda: así no parpadean
-        mientras carga una foto que ya está en la caché */}
-    <Avatar.Fallback delayMs={player.image ? 800 : 0} className="rounded-full font-semibold">
+        mientras carga una foto que ya está en la caché. Sin foto, sin retraso
+        (ni siquiera 0 ms, que deja un fotograma vacío) */}
+    <Avatar.Fallback delayMs={player.image ? 800 : undefined} className="rounded-full font-semibold">
       {initials(player.name)}
     </Avatar.Fallback>
   </Avatar>
