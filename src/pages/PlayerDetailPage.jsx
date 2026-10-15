@@ -11,12 +11,15 @@ const InfoRow = ({ label, children }) => (
   </div>
 );
 
+const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+
 const PlayerDetailPage = () => (
   <PlayerPage>
     {(player) => (
       <div className="grid gap-6">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <StatCard label="Goles" value={player.goals} highlight />
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+          <StatCard label="Goles" value={player.goals} note={player.goalsPosition ? `${player.goalsPosition}º del ranking` : null} highlight />
+          <StatCard label="Asistencias" value={player.assists} note={player.assistsPosition ? `${player.assistsPosition}º del ranking` : null} />
           <StatCard label="Partidos" value={player.matches} />
           <StatCard label="Finales" value={player.finals} />
           <StatCard label="Títulos" value={player.titles} />
@@ -29,8 +32,8 @@ const PlayerDetailPage = () => (
             </Card.Header>
             <Card.Content>
               <dl className="text-sm">
-                <InfoRow label="Ranking">{player.position}º</InfoRow>
                 <InfoRow label="Nacionalidad">{formatValue(player.nationality)}</InfoRow>
+                <InfoRow label="Posición">{formatValue(player.role ? capitalize(player.role) : null)}</InfoRow>
                 <InfoRow label="Nacimiento">{formatValue(player.birthdate)}</InfoRow>
                 <InfoRow label="Años">{formatValue(player.years || null)}</InfoRow>
                 <InfoRow label="Equipos">{(player.clubs || player.teams.map((t) => t.name)).join(', ') || '-'}</InfoRow>
@@ -54,6 +57,11 @@ const PlayerDetailPage = () => (
             </Card.Header>
             <Card.Content>
               <p className="leading-relaxed text-muted">{player.biography || 'Todavía no hay biografía para este jugador.'}</p>
+              {player.biographySource && (
+                <Link href={player.biographySource} target="_blank" rel="noopener noreferrer" className="mt-4 text-sm">
+                  Leer más en Wikipedia
+                </Link>
+              )}
             </Card.Content>
           </Card>
         </div>

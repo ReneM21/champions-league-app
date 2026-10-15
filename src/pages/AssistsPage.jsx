@@ -8,12 +8,12 @@ import { usePlayers } from '../data/PlayersContext';
 import { formatDate } from '../utils/stats';
 
 const AssistsPage = () => {
-  const { players: scorers, assists } = usePlayers();
+  const { assists } = usePlayers();
   const { players, updatedAt, source } = assists;
   const updatedLabel = formatDate(updatedAt);
 
-  // Si también está entre los goleadores, se usa su foto y se enlaza a su ficha
-  const profileOf = (player) => scorers.find((scorer) => scorer.id === player.id) || null;
+  // Todos los asistidores tienen ficha (manual o automática)
+  const profileOf = (player) => player;
 
   return (
     <div className="animate-fadeIn">
@@ -49,7 +49,10 @@ const AssistsPage = () => {
             'El ranking de asistencias todavía no se ha actualizado automáticamente.'
           )}
         </p>
-        <p>Los jugadores que también están entre los máximos goleadores enlazan a su ficha.</p>
+        <p>
+          Las fichas de los jugadores sin ficha propia se crean automáticamente con su biografía de la Wikipedia en
+          español y sus datos de Wikidata.
+        </p>
       </DataNote>
     </div>
   );
