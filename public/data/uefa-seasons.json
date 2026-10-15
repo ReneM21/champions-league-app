@@ -1,0 +1,1799 @@
+{
+  "updatedAt": "2026-10-15T07:03:31.105Z",
+  "source": "https://www.uefa.com/uefachampionsleague/history/",
+  "players": {
+    "cristiano-ronaldo": {
+      "uefaId": "63706",
+      "seasons": [
+        {
+          "season": "2003-04",
+          "club": "Manchester United",
+          "matches": 5,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2004-05",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2005-06",
+          "club": "Manchester United",
+          "matches": 6,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 3,
+          "assists": 5
+        },
+        {
+          "season": "2007-08",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 8,
+          "assists": 1
+        },
+        {
+          "season": "2008-09",
+          "club": "Manchester United",
+          "matches": 12,
+          "goals": 4,
+          "assists": 2
+        },
+        {
+          "season": "2009-10",
+          "club": "Real Madrid",
+          "matches": 6,
+          "goals": 7,
+          "assists": 0
+        },
+        {
+          "season": "2010-11",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 6,
+          "assists": 2
+        },
+        {
+          "season": "2011-12",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 10,
+          "assists": 3
+        },
+        {
+          "season": "2012-13",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 12,
+          "assists": 1
+        },
+        {
+          "season": "2013-14",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 17,
+          "assists": 5
+        },
+        {
+          "season": "2014-15",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 10,
+          "assists": 4
+        },
+        {
+          "season": "2015-16",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 16,
+          "assists": 4
+        },
+        {
+          "season": "2016-17",
+          "club": "Real Madrid",
+          "matches": 13,
+          "goals": 12,
+          "assists": 6
+        },
+        {
+          "season": "2017-18",
+          "club": "Real Madrid",
+          "matches": 13,
+          "goals": 15,
+          "assists": 2
+        },
+        {
+          "season": "2018-19",
+          "club": "Juventus",
+          "matches": 9,
+          "goals": 6,
+          "assists": 2
+        },
+        {
+          "season": "2019-20",
+          "club": "Juventus",
+          "matches": 8,
+          "goals": 4,
+          "assists": 1
+        },
+        {
+          "season": "2020-21",
+          "club": "Juventus",
+          "matches": 6,
+          "goals": 4,
+          "assists": 2
+        },
+        {
+          "season": "2021-22",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 6,
+          "assists": 0
+        }
+      ]
+    },
+    "lionel-messi": {
+      "uefaId": "95803",
+      "seasons": [
+        {
+          "season": "2004-05",
+          "club": "Barcelona",
+          "matches": 1,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2005-06",
+          "club": "Barcelona",
+          "matches": 6,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2006-07",
+          "club": "Barcelona",
+          "matches": 5,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "season": "2007-08",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 6,
+          "assists": 1
+        },
+        {
+          "season": "2008-09",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 9,
+          "assists": 5
+        },
+        {
+          "season": "2009-10",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2010-11",
+          "club": "Barcelona",
+          "matches": 13,
+          "goals": 12,
+          "assists": 3
+        },
+        {
+          "season": "2011-12",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 14,
+          "assists": 5
+        },
+        {
+          "season": "2012-13",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 8,
+          "assists": 3
+        },
+        {
+          "season": "2013-14",
+          "club": "Barcelona",
+          "matches": 7,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2014-15",
+          "club": "Barcelona",
+          "matches": 13,
+          "goals": 10,
+          "assists": 6
+        },
+        {
+          "season": "2015-16",
+          "club": "Barcelona",
+          "matches": 7,
+          "goals": 6,
+          "assists": 1
+        },
+        {
+          "season": "2016-17",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 11,
+          "assists": 2
+        },
+        {
+          "season": "2017-18",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 6,
+          "assists": 2
+        },
+        {
+          "season": "2018-19",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 12,
+          "assists": 3
+        },
+        {
+          "season": "2019-20",
+          "club": "Barcelona",
+          "matches": 8,
+          "goals": 3,
+          "assists": 3
+        },
+        {
+          "season": "2020-21",
+          "club": "Barcelona",
+          "matches": 6,
+          "goals": 5,
+          "assists": 1
+        },
+        {
+          "season": "2021-22",
+          "club": "Paris Saint-Germain",
+          "matches": 7,
+          "goals": 5,
+          "assists": 0
+        },
+        {
+          "season": "2022-23",
+          "club": "Paris Saint-Germain",
+          "matches": 7,
+          "goals": 4,
+          "assists": 4
+        }
+      ]
+    },
+    "robert-lewandowski": {
+      "uefaId": "250002096",
+      "seasons": [
+        {
+          "season": "2011-12",
+          "club": "Borussia Dortmund",
+          "matches": 6,
+          "goals": 1,
+          "assists": 2
+        },
+        {
+          "season": "2012-13",
+          "club": "Borussia Dortmund",
+          "matches": 13,
+          "goals": 10,
+          "assists": 2
+        },
+        {
+          "season": "2013-14",
+          "club": "Borussia Dortmund",
+          "matches": 9,
+          "goals": 6,
+          "assists": 3
+        },
+        {
+          "season": "2014-15",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 6,
+          "assists": 3
+        },
+        {
+          "season": "2015-16",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 9,
+          "assists": 0
+        },
+        {
+          "season": "2016-17",
+          "club": "Bayern München",
+          "matches": 9,
+          "goals": 8,
+          "assists": 1
+        },
+        {
+          "season": "2017-18",
+          "club": "Bayern München",
+          "matches": 11,
+          "goals": 5,
+          "assists": 2
+        },
+        {
+          "season": "2018-19",
+          "club": "Bayern München",
+          "matches": 8,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2019-20",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 15,
+          "assists": 6
+        },
+        {
+          "season": "2020-21",
+          "club": "Bayern München",
+          "matches": 6,
+          "goals": 5,
+          "assists": 0
+        },
+        {
+          "season": "2021-22",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 13,
+          "assists": 3
+        },
+        {
+          "season": "2022-23",
+          "club": "Barcelona",
+          "matches": 5,
+          "goals": 5,
+          "assists": 0
+        },
+        {
+          "season": "2023-24",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "season": "2024-25",
+          "club": "Barcelona",
+          "matches": 13,
+          "goals": 11,
+          "assists": 0
+        },
+        {
+          "season": "2025-26",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 4,
+          "assists": 0
+        }
+      ]
+    },
+    "karim-benzema": {
+      "uefaId": "93321",
+      "seasons": [
+        {
+          "season": "2005-06",
+          "club": "Lyon",
+          "matches": 1,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Lyon",
+          "matches": 3,
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "season": "2007-08",
+          "club": "Lyon",
+          "matches": 7,
+          "goals": 4,
+          "assists": 0
+        },
+        {
+          "season": "2008-09",
+          "club": "Lyon",
+          "matches": 8,
+          "goals": 5,
+          "assists": 2
+        },
+        {
+          "season": "2009-10",
+          "club": "Real Madrid",
+          "matches": 5,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2010-11",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 6,
+          "assists": 1
+        },
+        {
+          "season": "2011-12",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 7,
+          "assists": 5
+        },
+        {
+          "season": "2012-13",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 5,
+          "assists": 5
+        },
+        {
+          "season": "2013-14",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 5,
+          "assists": 5
+        },
+        {
+          "season": "2014-15",
+          "club": "Real Madrid",
+          "matches": 9,
+          "goals": 6,
+          "assists": 2
+        },
+        {
+          "season": "2015-16",
+          "club": "Real Madrid",
+          "matches": 9,
+          "goals": 4,
+          "assists": 0
+        },
+        {
+          "season": "2016-17",
+          "club": "Real Madrid",
+          "matches": 13,
+          "goals": 5,
+          "assists": 2
+        },
+        {
+          "season": "2017-18",
+          "club": "Real Madrid",
+          "matches": 9,
+          "goals": 5,
+          "assists": 0
+        },
+        {
+          "season": "2018-19",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 4,
+          "assists": 2
+        },
+        {
+          "season": "2019-20",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 5,
+          "assists": 2
+        },
+        {
+          "season": "2020-21",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 6,
+          "assists": 0
+        },
+        {
+          "season": "2021-22",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 15,
+          "assists": 1
+        },
+        {
+          "season": "2022-23",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 4,
+          "assists": 1
+        }
+      ]
+    },
+    "kylian-mbappe": {
+      "uefaId": "250076574",
+      "seasons": [
+        {
+          "season": "2016-17",
+          "club": "Monaco",
+          "matches": 9,
+          "goals": 6,
+          "assists": 0
+        },
+        {
+          "season": "2017-18",
+          "club": "Paris Saint-Germain",
+          "matches": 8,
+          "goals": 4,
+          "assists": 3
+        },
+        {
+          "season": "2018-19",
+          "club": "Paris Saint-Germain",
+          "matches": 8,
+          "goals": 4,
+          "assists": 4
+        },
+        {
+          "season": "2019-20",
+          "club": "Paris Saint-Germain",
+          "matches": 10,
+          "goals": 5,
+          "assists": 5
+        },
+        {
+          "season": "2020-21",
+          "club": "Paris Saint-Germain",
+          "matches": 10,
+          "goals": 8,
+          "assists": 3
+        },
+        {
+          "season": "2021-22",
+          "club": "Paris Saint-Germain",
+          "matches": 8,
+          "goals": 6,
+          "assists": 4
+        },
+        {
+          "season": "2022-23",
+          "club": "Paris Saint-Germain",
+          "matches": 8,
+          "goals": 7,
+          "assists": 3
+        },
+        {
+          "season": "2023-24",
+          "club": "Paris Saint-Germain",
+          "matches": 12,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2024-25",
+          "club": "Real Madrid",
+          "matches": 14,
+          "goals": 7,
+          "assists": 2
+        },
+        {
+          "season": "2025-26",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 15,
+          "assists": 1
+        },
+        {
+          "season": "2026-27",
+          "club": "Real Madrid",
+          "matches": 2,
+          "goals": 2,
+          "assists": 0
+        }
+      ]
+    },
+    "raul-gonzalez": {
+      "uefaId": "26583",
+      "seasons": [
+        {
+          "season": "1995-96",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 6,
+          "assists": null
+        },
+        {
+          "season": "1997-98",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "1998-99",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 3,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "Real Madrid",
+          "matches": 15,
+          "goals": 10,
+          "assists": null
+        },
+        {
+          "season": "2000-01",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 7,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 6,
+          "assists": 3
+        },
+        {
+          "season": "2002-03",
+          "club": "Real Madrid",
+          "matches": 12,
+          "goals": 9,
+          "assists": 5
+        },
+        {
+          "season": "2003-04",
+          "club": "Real Madrid",
+          "matches": 9,
+          "goals": 2,
+          "assists": 1
+        },
+        {
+          "season": "2004-05",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 4,
+          "assists": 0
+        },
+        {
+          "season": "2005-06",
+          "club": "Real Madrid",
+          "matches": 6,
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 5,
+          "assists": 0
+        },
+        {
+          "season": "2007-08",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 5,
+          "assists": 2
+        },
+        {
+          "season": "2008-09",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 3,
+          "assists": 1
+        },
+        {
+          "season": "2009-10",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 2,
+          "assists": 2
+        },
+        {
+          "season": "2010-11",
+          "club": "Schalke",
+          "matches": 12,
+          "goals": 5,
+          "assists": 2
+        }
+      ]
+    },
+    "erling-haaland": {
+      "uefaId": "250103758",
+      "seasons": [
+        {
+          "season": "2019-20",
+          "club": "Borussia Dortmund",
+          "matches": 2,
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "season": "2019-20",
+          "club": "Salzburg",
+          "matches": 6,
+          "goals": 8,
+          "assists": 1
+        },
+        {
+          "season": "2020-21",
+          "club": "Borussia Dortmund",
+          "matches": 8,
+          "goals": 10,
+          "assists": 2
+        },
+        {
+          "season": "2021-22",
+          "club": "Borussia Dortmund",
+          "matches": 3,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "season": "2022-23",
+          "club": "Manchester City",
+          "matches": 11,
+          "goals": 12,
+          "assists": 1
+        },
+        {
+          "season": "2023-24",
+          "club": "Manchester City",
+          "matches": 9,
+          "goals": 6,
+          "assists": 1
+        },
+        {
+          "season": "2024-25",
+          "club": "Manchester City",
+          "matches": 9,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2025-26",
+          "club": "Manchester City",
+          "matches": 10,
+          "goals": 8,
+          "assists": 0
+        },
+        {
+          "season": "2026-27",
+          "club": "Manchester City",
+          "matches": 2,
+          "goals": 4,
+          "assists": 0
+        }
+      ]
+    },
+    "harry-kane": {
+      "uefaId": "250016833",
+      "seasons": [
+        {
+          "season": "2016-17",
+          "club": "Tottenham Hotspur",
+          "matches": 3,
+          "goals": 2,
+          "assists": 0
+        },
+        {
+          "season": "2017-18",
+          "club": "Tottenham Hotspur",
+          "matches": 7,
+          "goals": 7,
+          "assists": 1
+        },
+        {
+          "season": "2018-19",
+          "club": "Tottenham Hotspur",
+          "matches": 9,
+          "goals": 5,
+          "assists": 1
+        },
+        {
+          "season": "2019-20",
+          "club": "Tottenham Hotspur",
+          "matches": 5,
+          "goals": 6,
+          "assists": 0
+        },
+        {
+          "season": "2022-23",
+          "club": "Tottenham Hotspur",
+          "matches": 8,
+          "goals": 1,
+          "assists": 2
+        },
+        {
+          "season": "2023-24",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 8,
+          "assists": 4
+        },
+        {
+          "season": "2024-25",
+          "club": "Bayern München",
+          "matches": 13,
+          "goals": 11,
+          "assists": 2
+        },
+        {
+          "season": "2025-26",
+          "club": "Bayern München",
+          "matches": 13,
+          "goals": 14,
+          "assists": 2
+        },
+        {
+          "season": "2026-27",
+          "club": "Bayern München",
+          "matches": 2,
+          "goals": 3,
+          "assists": 1
+        }
+      ]
+    },
+    "thomas-muller": {
+      "uefaId": "250003318",
+      "seasons": [
+        {
+          "season": "2008-09",
+          "club": "Bayern München",
+          "matches": 1,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "season": "2009-10",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2010-11",
+          "club": "Bayern München",
+          "matches": 8,
+          "goals": 3,
+          "assists": 2
+        },
+        {
+          "season": "2011-12",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 2,
+          "assists": 1
+        },
+        {
+          "season": "2012-13",
+          "club": "Bayern München",
+          "matches": 13,
+          "goals": 8,
+          "assists": 2
+        },
+        {
+          "season": "2013-14",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 5,
+          "assists": 1
+        },
+        {
+          "season": "2014-15",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 7,
+          "assists": 3
+        },
+        {
+          "season": "2015-16",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 8,
+          "assists": 3
+        },
+        {
+          "season": "2016-17",
+          "club": "Bayern München",
+          "matches": 9,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "season": "2017-18",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 3,
+          "assists": 2
+        },
+        {
+          "season": "2018-19",
+          "club": "Bayern München",
+          "matches": 6,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2019-20",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 4,
+          "assists": 3
+        },
+        {
+          "season": "2020-21",
+          "club": "Bayern München",
+          "matches": 9,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2021-22",
+          "club": "Bayern München",
+          "matches": 10,
+          "goals": 4,
+          "assists": 3
+        },
+        {
+          "season": "2022-23",
+          "club": "Bayern München",
+          "matches": 8,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2023-24",
+          "club": "Bayern München",
+          "matches": 9,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2024-25",
+          "club": "Bayern München",
+          "matches": 12,
+          "goals": 3,
+          "assists": 1
+        }
+      ]
+    },
+    "ruud-van-nistelrooy": {
+      "uefaId": "38901",
+      "seasons": [
+        {
+          "season": "1998-99",
+          "club": "PSV Eindhoven",
+          "matches": 5,
+          "goals": 5,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "PSV Eindhoven",
+          "matches": 6,
+          "goals": 3,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Manchester United",
+          "matches": 14,
+          "goals": 10,
+          "assists": 5
+        },
+        {
+          "season": "2002-03",
+          "club": "Manchester United",
+          "matches": 9,
+          "goals": 12,
+          "assists": 3
+        },
+        {
+          "season": "2003-04",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 4,
+          "assists": 2
+        },
+        {
+          "season": "2004-05",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 8,
+          "assists": 1
+        },
+        {
+          "season": "2005-06",
+          "club": "Manchester United",
+          "matches": 6,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 6,
+          "assists": 2
+        },
+        {
+          "season": "2007-08",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 4,
+          "assists": 3
+        },
+        {
+          "season": "2008-09",
+          "club": "Real Madrid",
+          "matches": 4,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "season": "2009-10",
+          "club": "Real Madrid",
+          "matches": 1,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    "ryan-giggs": {
+      "uefaId": "11369",
+      "seasons": [
+        {
+          "season": "1993-94",
+          "club": "Manchester United",
+          "matches": 4,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "1994-95",
+          "club": "Manchester United",
+          "matches": 3,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "1996-97",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "1997-98",
+          "club": "Manchester United",
+          "matches": 5,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "1998-99",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 4,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "2000-01",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Manchester United",
+          "matches": 13,
+          "goals": 2,
+          "assists": 2
+        },
+        {
+          "season": "2002-03",
+          "club": "Manchester United",
+          "matches": 13,
+          "goals": 5,
+          "assists": 1
+        },
+        {
+          "season": "2003-04",
+          "club": "Manchester United",
+          "matches": 8,
+          "goals": 1,
+          "assists": 4
+        },
+        {
+          "season": "2004-05",
+          "club": "Manchester United",
+          "matches": 5,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2005-06",
+          "club": "Manchester United",
+          "matches": 4,
+          "goals": 1,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Manchester United",
+          "matches": 8,
+          "goals": 2,
+          "assists": 7
+        },
+        {
+          "season": "2007-08",
+          "club": "Manchester United",
+          "matches": 9,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2008-09",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 1,
+          "assists": 3
+        },
+        {
+          "season": "2009-10",
+          "club": "Manchester United",
+          "matches": 3,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2010-11",
+          "club": "Manchester United",
+          "matches": 8,
+          "goals": 1,
+          "assists": 5
+        },
+        {
+          "season": "2011-12",
+          "club": "Manchester United",
+          "matches": 3,
+          "goals": 1,
+          "assists": 2
+        },
+        {
+          "season": "2012-13",
+          "club": "Manchester United",
+          "matches": 5,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2013-14",
+          "club": "Manchester United",
+          "matches": 7,
+          "goals": 0,
+          "assists": 1
+        }
+      ]
+    },
+    "angel-di-maria": {
+      "uefaId": "1905153",
+      "seasons": [
+        {
+          "season": "2007-08",
+          "club": "Benfica",
+          "matches": 6,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2010-11",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 3,
+          "assists": 3
+        },
+        {
+          "season": "2011-12",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 2,
+          "assists": 1
+        },
+        {
+          "season": "2012-13",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 0,
+          "assists": 5
+        },
+        {
+          "season": "2013-14",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 3,
+          "assists": 6
+        },
+        {
+          "season": "2015-16",
+          "club": "Paris Saint-Germain",
+          "matches": 10,
+          "goals": 3,
+          "assists": 3
+        },
+        {
+          "season": "2016-17",
+          "club": "Paris Saint-Germain",
+          "matches": 7,
+          "goals": 4,
+          "assists": 1
+        },
+        {
+          "season": "2017-18",
+          "club": "Paris Saint-Germain",
+          "matches": 5,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2018-19",
+          "club": "Paris Saint-Germain",
+          "matches": 8,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2019-20",
+          "club": "Paris Saint-Germain",
+          "matches": 9,
+          "goals": 3,
+          "assists": 6
+        },
+        {
+          "season": "2020-21",
+          "club": "Paris Saint-Germain",
+          "matches": 10,
+          "goals": 1,
+          "assists": 4
+        },
+        {
+          "season": "2021-22",
+          "club": "Paris Saint-Germain",
+          "matches": 5,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2022-23",
+          "club": "Juventus",
+          "matches": 3,
+          "goals": 0,
+          "assists": 3
+        },
+        {
+          "season": "2023-24",
+          "club": "Benfica",
+          "matches": 5,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2024-25",
+          "club": "Benfica",
+          "matches": 9,
+          "goals": 1,
+          "assists": 2
+        }
+      ]
+    },
+    "david-beckham": {
+      "uefaId": "14670",
+      "seasons": [
+        {
+          "season": "1994-95",
+          "club": "Manchester United",
+          "matches": 1,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "1996-97",
+          "club": "Manchester United",
+          "matches": 10,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "1997-98",
+          "club": "Manchester United",
+          "matches": 8,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "1998-99",
+          "club": "Manchester United",
+          "matches": 10,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "Manchester United",
+          "matches": 12,
+          "goals": 2,
+          "assists": null
+        },
+        {
+          "season": "2000-01",
+          "club": "Manchester United",
+          "matches": 12,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Manchester United",
+          "matches": 13,
+          "goals": 5,
+          "assists": 4
+        },
+        {
+          "season": "2002-03",
+          "club": "Manchester United",
+          "matches": 11,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2003-04",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 1,
+          "assists": 2
+        },
+        {
+          "season": "2004-05",
+          "club": "Real Madrid",
+          "matches": 6,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2005-06",
+          "club": "Real Madrid",
+          "matches": 7,
+          "goals": 1,
+          "assists": 3
+        },
+        {
+          "season": "2006-07",
+          "club": "Real Madrid",
+          "matches": 6,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2009-10",
+          "club": "AC Milan",
+          "matches": 2,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2012-13",
+          "club": "Paris Saint-Germain",
+          "matches": 2,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    "luis-figo": {
+      "uefaId": "4065",
+      "seasons": [
+        {
+          "season": "1997-98",
+          "club": "Barcelona",
+          "matches": 5,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "1998-99",
+          "club": "Barcelona",
+          "matches": 6,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "Barcelona",
+          "matches": 13,
+          "goals": 5,
+          "assists": null
+        },
+        {
+          "season": "2000-01",
+          "club": "Real Madrid",
+          "matches": 14,
+          "goals": 5,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Real Madrid",
+          "matches": 11,
+          "goals": 3,
+          "assists": 1
+        },
+        {
+          "season": "2002-03",
+          "club": "Real Madrid",
+          "matches": 15,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2003-04",
+          "club": "Real Madrid",
+          "matches": 10,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2004-05",
+          "club": "Real Madrid",
+          "matches": 8,
+          "goals": 4,
+          "assists": 5
+        },
+        {
+          "season": "2005-06",
+          "club": "Inter de Milán",
+          "matches": 8,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2006-07",
+          "club": "Inter de Milán",
+          "matches": 7,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2007-08",
+          "club": "Inter de Milán",
+          "matches": 3,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2008-09",
+          "club": "Inter de Milán",
+          "matches": 3,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    "xavi": {
+      "uefaId": "35018",
+      "seasons": [
+        {
+          "season": "1998-99",
+          "club": "Barcelona",
+          "matches": 6,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "1999-00",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 1,
+          "assists": null
+        },
+        {
+          "season": "2000-01",
+          "club": "Barcelona",
+          "matches": 3,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
+          "club": "Barcelona",
+          "matches": 14,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2002-03",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 1,
+          "assists": 4
+        },
+        {
+          "season": "2004-05",
+          "club": "Barcelona",
+          "matches": 8,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2005-06",
+          "club": "Barcelona",
+          "matches": 4,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2006-07",
+          "club": "Barcelona",
+          "matches": 7,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2007-08",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2008-09",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 2,
+          "assists": 7
+        },
+        {
+          "season": "2009-10",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 1,
+          "assists": 3
+        },
+        {
+          "season": "2010-11",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 2,
+          "assists": 3
+        },
+        {
+          "season": "2011-12",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2012-13",
+          "club": "Barcelona",
+          "matches": 11,
+          "goals": 1,
+          "assists": 4
+        },
+        {
+          "season": "2013-14",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 1,
+          "assists": 3
+        },
+        {
+          "season": "2014-15",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    },
+    "neymar": {
+      "uefaId": "250039508",
+      "seasons": [
+        {
+          "season": "2013-14",
+          "club": "Barcelona",
+          "matches": 10,
+          "goals": 4,
+          "assists": 3
+        },
+        {
+          "season": "2014-15",
+          "club": "Barcelona",
+          "matches": 12,
+          "goals": 10,
+          "assists": 1
+        },
+        {
+          "season": "2015-16",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 3,
+          "assists": 5
+        },
+        {
+          "season": "2016-17",
+          "club": "Barcelona",
+          "matches": 9,
+          "goals": 4,
+          "assists": 8
+        },
+        {
+          "season": "2017-18",
+          "club": "Paris Saint-Germain",
+          "matches": 7,
+          "goals": 6,
+          "assists": 4
+        },
+        {
+          "season": "2018-19",
+          "club": "Paris Saint-Germain",
+          "matches": 6,
+          "goals": 5,
+          "assists": 1
+        },
+        {
+          "season": "2019-20",
+          "club": "Paris Saint-Germain",
+          "matches": 7,
+          "goals": 3,
+          "assists": 4
+        },
+        {
+          "season": "2020-21",
+          "club": "Paris Saint-Germain",
+          "matches": 9,
+          "goals": 6,
+          "assists": 3
+        },
+        {
+          "season": "2021-22",
+          "club": "Paris Saint-Germain",
+          "matches": 6,
+          "goals": 0,
+          "assists": 1
+        },
+        {
+          "season": "2022-23",
+          "club": "Paris Saint-Germain",
+          "matches": 6,
+          "goals": 2,
+          "assists": 3
+        }
+      ]
+    },
+    "kevin-de-bruyne": {
+      "uefaId": "250008901",
+      "seasons": [
+        {
+          "season": "2011-12",
+          "club": "Genk",
+          "matches": 4,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2013-14",
+          "club": "Chelsea",
+          "matches": 3,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2015-16",
+          "club": "Manchester City",
+          "matches": 10,
+          "goals": 3,
+          "assists": 0
+        },
+        {
+          "season": "2016-17",
+          "club": "Manchester City",
+          "matches": 6,
+          "goals": 1,
+          "assists": 1
+        },
+        {
+          "season": "2017-18",
+          "club": "Manchester City",
+          "matches": 8,
+          "goals": 1,
+          "assists": 4
+        },
+        {
+          "season": "2018-19",
+          "club": "Manchester City",
+          "matches": 4,
+          "goals": 0,
+          "assists": 4
+        },
+        {
+          "season": "2019-20",
+          "club": "Manchester City",
+          "matches": 7,
+          "goals": 2,
+          "assists": 2
+        },
+        {
+          "season": "2020-21",
+          "club": "Manchester City",
+          "matches": 8,
+          "goals": 3,
+          "assists": 4
+        },
+        {
+          "season": "2021-22",
+          "club": "Manchester City",
+          "matches": 10,
+          "goals": 2,
+          "assists": 4
+        },
+        {
+          "season": "2022-23",
+          "club": "Manchester City",
+          "matches": 10,
+          "goals": 2,
+          "assists": 7
+        },
+        {
+          "season": "2023-24",
+          "club": "Manchester City",
+          "matches": 2,
+          "goals": 2,
+          "assists": 1
+        },
+        {
+          "season": "2024-25",
+          "club": "Manchester City",
+          "matches": 7,
+          "goals": 0,
+          "assists": 0
+        },
+        {
+          "season": "2025-26",
+          "club": "Napoli",
+          "matches": 3,
+          "goals": 0,
+          "assists": 2
+        },
+        {
+          "season": "2026-27",
+          "club": "Napoli",
+          "matches": 2,
+          "goals": 0,
+          "assists": 0
+        }
+      ]
+    }
+  }
+}

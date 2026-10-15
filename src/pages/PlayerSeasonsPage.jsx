@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Chip, Table } from '@heroui/react';
 import PlayerPage from '../components/PlayerPage';
 import StatCard from '../components/StatCard';
-import { formatRatio, formatValue, goalsPerMatch, sortSeasonsDesc, summarizeSeasons } from '../utils/stats';
+import { formatRatio, formatValue, goalsPerMatch as perMatch, sortSeasonsDesc, STAT_LABELS, summarizeSeasons } from '../utils/stats';
 
 const Figure = ({ value, label }) => (
   <div>
@@ -36,9 +36,11 @@ const SeasonHighlight = ({ title, season, accentClass, figures }) => (
 
 const PlayerSeasonsPage = () => (
   <PlayerPage>
-    {(player) => {
-      const summary = summarizeSeasons(player.seasons);
+    {(player, stat) => {
+      const summary = summarizeSeasons(player.seasons, stat);
       const { best, mostEfficient } = summary;
+      const labels = STAT_LABELS[stat];
+      const fromUefa = player.seasonsSource === 'uefa';
 
       if (summary.count === 0) {
         return (
@@ -63,10 +65,12 @@ const PlayerSeasonsPage = () => (
                   ? summary.titleSeasons.length > 0
                     ? `Campeón en ${summary.titleSeasons.join(', ')}`
                     : null
-                  : 'Aún sin títulos'
+                  : player.titles === 0
+                    ? 'Aún sin títulos'
+                    : null
               }
             />
-            <StatCard label="Goles por partido" value={formatRatio(summary.goalsPerMatch)} highlight />
+            <StatCard label={`${labels.title} por partido`} value={formatRatio(summary.perMatch)} highlight />
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
@@ -76,10 +80,12 @@ const PlayerSeasonsPage = () => (
                 season={best}
                 accentClass="border-l-champions-gold"
                 figures={[
-                  { label: 'Goles', value: best.goals },
+                  { label: labels.title, value: best[stat] },
                   { label: 'Partidos', value: formatValue(best.matches) },
-                  { label: 'Asistencias', value: formatValue(best.assists) },
-                  { label: 'Goles/partido', value: formatRatio(goalsPerMatch(best.goals, best.matches)) },
+                  stat === 'goals'
+                    ? { label: 'Asistencias', value: formatValue(best.assists) }
+                    : { label: 'Goles', value: formatValue(best.goals) },
+                  { label: labels.perMatch, value: formatRatio(perMatch(best[stat], best.matches)) },
                 ]}
               />
             )}
@@ -89,10 +95,12 @@ const PlayerSeasonsPage = () => (
                 season={mostEfficient}
                 accentClass="border-l-success"
                 figures={[
-                  { label: 'Goles/partido', value: formatRatio(goalsPerMatch(mostEfficient.goals, mostEfficient.matches)) },
-                  { label: 'Goles', value: mostEfficient.goals },
+                  { label: labels.perMatch, value: formatRatio(perMatch(mostEfficient[stat], mostEfficient.matches)) },
+                  { label: labels.title, value: mostEfficient[stat] },
                   { label: 'Partidos', value: mostEfficient.matches },
-                  { label: 'Asistencias', value: formatValue(mostEfficient.assists) },
+                  stat === 'goals'
+                    ? { label: 'Asistencias', value: formatValue(mostEfficient.assists) }
+                    : { label: 'Goles', value: formatValue(mostEfficient.goals) },
                 ]}
               />
             )}
@@ -102,21 +110,25 @@ const PlayerSeasonsPage = () => (
             <Card.Header>
               <Card.Title>Todas las temporadas</Card.Title>
               <Card.Description>
-                Suma: {summary.totalGoals} goles en {formatValue(summary.totalMatches)} partidos y{' '}
-                {formatValue(summary.totalAssists)} asistencias. Se actualiza a mano y puede no incluir la temporada en curso;
-                el promedio solo cuenta las temporadas con partidos registrados.
+                Suma: {summary.totalGoals} goles y {formatValue(summary.totalAssists)} asistencias en{' '}
+                {formatValue(summary.totalMatches)} partidos.{' '}
+                {fromUefa
+                  ? 'Datos oficiales de la UEFA, actualizados automáticamente. La UEFA registra las asistencias desde la temporada 2001-02 ("-" en las anteriores).'
+                  : 'Se actualiza a mano y puede no incluir la temporada en curso.'}{' '}
+                El promedio solo cuenta las temporadas con partidos registrados.
               </Card.Description>
             </Card.Header>
             <Card.Content>
               <Table>
                 <Table.ScrollContainer>
-                  <Table.Content aria-label={`Temporadas de ${player.name}`} className="min-w-[520px]">
+                  <Table.Content aria-label={`Temporadas de ${player.name}`} className="min-w-[620px]">
                     <Table.Header>
                       <Table.Column isRowHeader>Temporada</Table.Column>
                       <Table.Column>Equipo</Table.Column>
                       <Table.Column className="text-right">Partidos</Table.Column>
                       <Table.Column className="text-right">Goles</Table.Column>
-                      <Table.Column className="text-right">Promedio</Table.Column>
+                      <Table.Column className="text-right">Asistencias</Table.Column>
+                      <Table.Column className="text-right">{labels.perMatch}</Table.Column>
                     </Table.Header>
                     <Table.Body>
                       {sortSeasonsDesc(player.seasons).map((season) => (
@@ -133,9 +145,14 @@ const PlayerSeasonsPage = () => (
                           </Table.Cell>
                           <Table.Cell className="text-muted">{season.club}</Table.Cell>
                           <Table.Cell className="text-right tabular-nums text-muted">{formatValue(season.matches)}</Table.Cell>
-                          <Table.Cell className="text-right font-semibold tabular-nums text-accent">{season.goals}</Table.Cell>
+                          <Table.Cell className={`text-right tabular-nums ${stat === 'goals' ? 'font-semibold text-accent' : 'text-muted'}`}>
+                            {formatValue(season.goals)}
+                          </Table.Cell>
+                          <Table.Cell className={`text-right tabular-nums ${stat === 'assists' ? 'font-semibold text-accent' : 'text-muted'}`}>
+                            {formatValue(season.assists)}
+                          </Table.Cell>
                           <Table.Cell className="text-right tabular-nums text-muted">
-                            {formatRatio(goalsPerMatch(season.goals, season.matches))}
+                            {season[stat] === null || season[stat] === undefined ? '-' : formatRatio(perMatch(season[stat], season.matches))}
                           </Table.Cell>
                         </Table.Row>
                       ))}

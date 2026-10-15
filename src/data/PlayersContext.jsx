@@ -35,10 +35,20 @@ export function PlayersProvider({ children }) {
       optional('data/profiles.json', {}),
       optional('data/all-goals.json', []),
       optional('data/all-assists.json', []),
+      optional('data/uefa-seasons.json', { players: {} }),
     ])
-      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists]) => {
+      .then(([ranking, details, assists, photos, profiles, allGoals, allAssists, uefaSeasons]) => {
         if (cancelled) return;
-        const { scorers, assisters, byId } = buildPlayers({ ranking, assists, details, photos, profiles, allGoals, allAssists });
+        const { scorers, assisters, byId } = buildPlayers({
+          ranking,
+          assists,
+          details,
+          photos,
+          profiles,
+          allGoals,
+          allAssists,
+          uefa: uefaSeasons.players,
+        });
         setState({
           status: 'ready',
           players: scorers,
@@ -46,6 +56,8 @@ export function PlayersProvider({ children }) {
           updatedAt: ranking.updatedAt,
           source: ranking.source,
           assists: { ...assists, players: assisters },
+          uefaUpdatedAt: uefaSeasons.updatedAt || null,
+          uefaSource: uefaSeasons.source || null,
         });
       })
       .catch((error) => {

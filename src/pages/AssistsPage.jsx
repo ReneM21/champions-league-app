@@ -7,6 +7,9 @@ import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
 import { formatDate } from '../utils/stats';
 
+// Las fichas abiertas desde aquí destacan las asistencias
+const QUERY = '?ranking=asistencias';
+
 const AssistsPage = () => {
   const { assists } = usePlayers();
   const { players, updatedAt, source } = assists;
@@ -30,8 +33,21 @@ const AssistsPage = () => {
         </Card>
       ) : (
         <>
-          <Podium players={players} stat="assists" statLabel="asistencias" profileOf={profileOf} />
-          <RankingTable ariaLabel="Máximos asistidores" players={players} stat="assists" statLabel="Asistencias" profileOf={profileOf} />
+          <Podium players={players} stat="assists" statLabel="asistencias" profileOf={profileOf} linkQuery={QUERY} />
+          <RankingTable
+            ariaLabel="Máximos asistidores"
+            players={players}
+            stat="assists"
+            statLabel="Asistencias"
+            profileOf={profileOf}
+            linkQuery={QUERY}
+            actions={(player) => (
+              <div className="flex justify-end gap-3 text-sm">
+                <Link href={`/jugadores/${player.id}/equipos${QUERY}`}>Equipos</Link>
+                <Link href={`/jugadores/${player.id}/temporadas${QUERY}`}>Temporadas</Link>
+              </div>
+            )}
+          />
         </>
       )}
 
@@ -48,6 +64,10 @@ const AssistsPage = () => {
           ) : (
             'El ranking de asistencias todavía no se ha actualizado automáticamente.'
           )}
+        </p>
+        <p>
+          Las asistencias por equipo y por temporada son datos oficiales de la UEFA, que las registra desde la temporada
+          2001-02: en las anteriores aparecen como "-", por eso su suma puede ser menor que el total del ranking.
         </p>
         <p>
           Las fichas de los jugadores sin ficha propia se crean automáticamente con su biografía de la Wikipedia en

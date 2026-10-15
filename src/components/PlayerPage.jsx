@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useParams, useSearchParams } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
 import PlayerAvatar from './PlayerAvatar';
 import { usePlayer } from '../data/PlayersContext';
@@ -13,8 +13,12 @@ const TABS = [
 
 // Marco común de las fichas de jugador: busca el jugador de la URL y pinta
 // la portada y el submenú Perfil / Equipos / Temporadas.
+// Desde la lista de asistidores se llega con ?ranking=asistencias: entonces
+// las vistas destacan las asistencias en lugar de los goles.
+// children(player, stat) recibe la estadística destacada: 'goals' o 'assists'.
 const PlayerPage = ({ children }) => {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
   const player = usePlayer(id);
 
   if (!player) {
@@ -22,11 +26,13 @@ const PlayerPage = ({ children }) => {
   }
 
   // Los asistidores que no están entre los goleadores vuelven a su ranking
-  const fromAssists = !player.goalsPosition;
-  const rankLine = player.goalsPosition
-    ? `${player.goalsPosition}º máximo goleador de la historia`
-    : `${player.assistsPosition}º máximo asistidor de la historia`;
-  const headline = player.goals !== null && !fromAssists ? { value: player.goals, label: 'goles' } : { value: player.assists, label: 'asistencias' };
+  const fromAssists = Boolean(player.assistsPosition) && (searchParams.get('ranking') === 'asistencias' || !player.goalsPosition);
+  const stat = fromAssists ? 'assists' : 'goals';
+  const query = fromAssists ? '?ranking=asistencias' : '';
+  const rankLine = fromAssists
+    ? `${player.assistsPosition}º máximo asistidor de la historia`
+    : `${player.goalsPosition}º máximo goleador de la historia`;
+  const headline = fromAssists ? { value: player.assists, label: 'asistencias' } : { value: player.goals, label: 'goles' };
 
   return (
     <div className="animate-fadeIn">
@@ -53,7 +59,7 @@ const PlayerPage = ({ children }) => {
         {TABS.map(({ path, label }) => (
           <NavLink
             key={label}
-            to={`/jugadores/${player.id}${path}`}
+            to={`/jugadores/${player.id}${path}${query}`}
             end
             className={({ isActive }) =>
               buttonVariants({
@@ -68,7 +74,7 @@ const PlayerPage = ({ children }) => {
         ))}
       </nav>
 
-      {children(player)}
+      {children(player, stat)}
     </div>
   );
 };
