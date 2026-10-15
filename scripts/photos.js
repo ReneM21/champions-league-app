@@ -2,19 +2,13 @@
 // extraer su crédito. update-photos.js hace las descargas.
 const cheerio = require('cheerio');
 
-const COMMONS_PREFIX = 'https://upload.wikimedia.org/wikipedia/commons/';
-
-// Imagen principal del artículo (API REST /page/summary). Solo se aceptan
-// archivos de Commons, que tienen licencia libre; las imágenes subidas a la
-// Wikipedia en inglés suelen ser "fair use" y no se pueden reutilizar.
-function commonsFileFromSummary(summary) {
-  const url = (summary && (summary.originalimage || summary.thumbnail) || {}).source;
-  if (!url || !url.startsWith(COMMONS_PREFIX)) return null;
-
-  // .../commons/a/ab/Nombre.jpg  o  .../commons/thumb/a/ab/Nombre.jpg/320px-Nombre.jpg
-  const parts = url.slice(COMMONS_PREFIX.length).split('/');
-  const fileName = parts[0] === 'thumb' ? parts[3] : parts[2];
-  return fileName ? decodeURIComponent(fileName) : null;
+// Imagen principal del artículo según la API de MediaWiki
+// (prop=pageimages&pilicense=free: solo devuelve imágenes con licencia libre).
+// Admite formatversion=1 (pages como objeto) y 2 (pages como lista).
+function pageImageFromQuery(response) {
+  const pages = Object.values((response && response.query && response.query.pages) || {});
+  const page = pages.find((p) => p && p.pageimage);
+  return page ? page.pageimage : null;
 }
 
 const htmlToText = (html) => cheerio.load(`<div>${html || ''}</div>`)('div').text().replace(/\s+/g, ' ').trim();
@@ -58,4 +52,4 @@ function playersWithoutPhoto(rankings, details, photos) {
   return result;
 }
 
-module.exports = { commonsFileFromSummary, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto };
+module.exports = { pageImageFromQuery, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto };

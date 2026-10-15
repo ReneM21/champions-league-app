@@ -4,7 +4,7 @@
 // npm run update-photos
 const fs = require('fs');
 const path = require('path');
-const { commonsFileFromSummary, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto } = require('./photos');
+const { pageImageFromQuery, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto } = require('./photos');
 
 const ROOT = path.join(__dirname, '..', 'public');
 const DATA = path.join(ROOT, 'data');
@@ -22,12 +22,25 @@ async function getJson(url) {
   return response.json();
 }
 
+// Devuelve { photo } o { reason } con el motivo por el que no hay foto
 async function findPhoto(player) {
-  const summary = await getJson(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(player.article)}`);
-  const fileName = commonsFileFromSummary(summary);
-  if (!fileName) return null;
+  const pageParams = new URLSearchParams({
+    action: 'query',
+    format: 'json',
+    formatversion: '2',
+    prop: 'pageimages',
+    piprop: 'name',
+    pilicense: 'free',
+    redirects: '1',
+    titles: player.article,
+  });
+  const page = await getJson(`https://en.wikipedia.org/w/api.php?${pageParams}`);
+  const fileName = pageImageFromQuery(page);
+  if (!fileName) return { reason: `el artículo "${player.article}" no tiene imagen libre (${JSON.stringify(page && page.query)})` };
 
-  const params = new URLSearchParams({
+  // Las imágenes libres pueden estar en Commons o subidas a la Wikipedia en inglés;
+  // solo se usan las de Commons, que traen autor y licencia.
+  const infoParams = new URLSearchParams({
     action: 'query',
     format: 'json',
     prop: 'imageinfo',
@@ -35,7 +48,8 @@ async function findPhoto(player) {
     iiurlwidth: '400',
     titles: `File:${fileName}`,
   });
-  return photoFromImageInfo(await getJson(`https://commons.wikimedia.org/w/api.php?${params}`));
+  const photo = photoFromImageInfo(await getJson(`https://commons.wikimedia.org/w/api.php?${infoParams}`));
+  return photo ? { photo } : { reason: `"${fileName}" no está en Commons o no tiene licencia` };
 }
 
 async function download(url, file) {
@@ -62,9 +76,9 @@ async function main() {
   const errors = [];
   for (const player of pending) {
     try {
-      const photo = await findPhoto(player);
+      const { photo, reason } = await findPhoto(player);
       if (!photo) {
-        console.log(`- ${player.name}: el artículo no tiene una foto libre en Commons.`);
+        console.log(`- ${player.name}: ${reason}`);
         continue;
       }
       const image = `images/players/${player.id}${extensionFromUrl(photo.url)}`;
