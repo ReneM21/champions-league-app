@@ -1,33 +1,33 @@
 {
-  "updatedAt": "2026-10-15T06:42:58.098Z",
+  "updatedAt": "2026-10-15T06:47:21.889Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
       "uefaId": "63706",
       "seasons": [
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Manchester United",
           "matches": 5,
           "goals": 0,
           "assists": 0
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Manchester United",
           "matches": 7,
           "goals": 0,
           "assists": 2
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Manchester United",
           "matches": 6,
           "goals": 0,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Manchester United",
           "matches": 11,
           "goals": 3,
@@ -144,21 +144,21 @@
       "uefaId": "95803",
       "seasons": [
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Barcelona",
           "matches": 1,
           "goals": 0,
           "assists": 0
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Barcelona",
           "matches": 6,
           "goals": 1,
           "assists": 1
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Barcelona",
           "matches": 5,
           "goals": 1,
@@ -283,21 +283,21 @@
       "seasons": [
         {
           "season": "2011-12",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 6,
           "goals": 1,
           "assists": 2
         },
         {
           "season": "2012-13",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 13,
           "goals": 10,
           "assists": 2
         },
         {
           "season": "2013-14",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 9,
           "goals": 6,
           "assists": 3
@@ -392,14 +392,14 @@
       "uefaId": "93321",
       "seasons": [
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Lyon",
           "matches": 1,
           "goals": 1,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Lyon",
           "matches": 3,
           "goals": 2,
@@ -605,77 +605,77 @@
       "uefaId": "26583",
       "seasons": [
         {
-          "season": "1994-95",
+          "season": "1995-96",
           "club": "Real Madrid",
           "matches": 8,
           "goals": 6,
           "assists": null
         },
         {
-          "season": "1996-97",
+          "season": "1997-98",
           "club": "Real Madrid",
           "matches": 11,
           "goals": 2,
           "assists": null
         },
         {
-          "season": "1997-98",
+          "season": "1998-99",
           "club": "Real Madrid",
           "matches": 8,
           "goals": 3,
           "assists": null
         },
         {
-          "season": "1998-99",
+          "season": "1999-00",
           "club": "Real Madrid",
           "matches": 15,
           "goals": 10,
           "assists": null
         },
         {
-          "season": "1999-00",
+          "season": "2000-01",
           "club": "Real Madrid",
           "matches": 12,
           "goals": 7,
           "assists": null
         },
         {
-          "season": "2000-01",
+          "season": "2001-02",
           "club": "Real Madrid",
           "matches": 12,
           "goals": 6,
           "assists": 3
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Real Madrid",
           "matches": 12,
           "goals": 9,
           "assists": 5
         },
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Real Madrid",
           "matches": 9,
           "goals": 2,
           "assists": 1
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Real Madrid",
           "matches": 8,
           "goals": 4,
           "assists": 0
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Real Madrid",
           "matches": 6,
           "goals": 2,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Real Madrid",
           "matches": 7,
           "goals": 5,
@@ -716,21 +716,21 @@
       "seasons": [
         {
           "season": "2019-20",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 8,
           "goals": 10,
           "assists": 1
         },
         {
           "season": "2020-21",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 8,
           "goals": 10,
           "assists": 2
         },
         {
           "season": "2021-22",
-          "club": "B. Dortmund",
+          "club": "Borussia Dortmund",
           "matches": 3,
           "goals": 3,
           "assists": 0
@@ -968,56 +968,56 @@
       "uefaId": "38901",
       "seasons": [
         {
-          "season": "1997-98",
+          "season": "1998-99",
           "club": "PSV Eindhoven",
           "matches": 5,
           "goals": 5,
           "assists": null
         },
         {
-          "season": "1998-99",
+          "season": "1999-00",
           "club": "PSV Eindhoven",
           "matches": 6,
           "goals": 3,
           "assists": null
         },
         {
-          "season": "2000-01",
+          "season": "2001-02",
           "club": "Manchester United",
           "matches": 14,
           "goals": 10,
           "assists": 5
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Manchester United",
           "matches": 9,
           "goals": 12,
           "assists": 3
         },
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Manchester United",
           "matches": 7,
           "goals": 4,
           "assists": 2
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Manchester United",
           "matches": 7,
           "goals": 8,
           "assists": 1
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Manchester United",
           "matches": 6,
           "goals": 1,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Real Madrid",
           "matches": 7,
           "goals": 6,
@@ -1050,91 +1050,91 @@
       "uefaId": "11369",
       "seasons": [
         {
-          "season": "1992-93",
+          "season": "1993-94",
           "club": "Manchester United",
           "matches": 4,
           "goals": 0,
           "assists": null
         },
         {
-          "season": "1993-94",
+          "season": "1994-95",
           "club": "Manchester United",
           "matches": 3,
           "goals": 2,
           "assists": null
         },
         {
-          "season": "1995-96",
+          "season": "1996-97",
           "club": "Manchester United",
           "matches": 7,
           "goals": 2,
           "assists": null
         },
         {
-          "season": "1996-97",
+          "season": "1997-98",
           "club": "Manchester United",
           "matches": 5,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1997-98",
+          "season": "1998-99",
           "club": "Manchester United",
           "matches": 7,
           "goals": 4,
           "assists": null
         },
         {
-          "season": "1998-99",
+          "season": "1999-00",
           "club": "Manchester United",
           "matches": 11,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1999-00",
+          "season": "2000-01",
           "club": "Manchester United",
           "matches": 11,
           "goals": 2,
           "assists": null
         },
         {
-          "season": "2000-01",
+          "season": "2001-02",
           "club": "Manchester United",
           "matches": 13,
           "goals": 2,
           "assists": 2
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Manchester United",
           "matches": 13,
           "goals": 5,
           "assists": 1
         },
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Manchester United",
           "matches": 8,
           "goals": 1,
           "assists": 4
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Manchester United",
           "matches": 5,
           "goals": 1,
           "assists": 1
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Manchester United",
           "matches": 4,
           "goals": 1,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Manchester United",
           "matches": 8,
           "goals": 2,
@@ -1305,37 +1305,30 @@
       "uefaId": "14670",
       "seasons": [
         {
-          "season": "1993-94",
+          "season": "1994-95",
           "club": "Manchester United",
           "matches": 1,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1995-96",
+          "season": "1996-97",
           "club": "Manchester United",
           "matches": 10,
           "goals": 2,
           "assists": null
         },
         {
-          "season": "1996-97",
+          "season": "1997-98",
           "club": "Manchester United",
           "matches": 8,
           "goals": 0,
           "assists": null
         },
         {
-          "season": "1997-98",
-          "club": "Manchester United",
-          "matches": 10,
-          "goals": 2,
-          "assists": null
-        },
-        {
           "season": "1998-99",
           "club": "Manchester United",
-          "matches": 12,
+          "matches": 10,
           "goals": 2,
           "assists": null
         },
@@ -1343,46 +1336,53 @@
           "season": "1999-00",
           "club": "Manchester United",
           "matches": 12,
-          "goals": 0,
+          "goals": 2,
           "assists": null
         },
         {
           "season": "2000-01",
+          "club": "Manchester United",
+          "matches": 12,
+          "goals": 0,
+          "assists": null
+        },
+        {
+          "season": "2001-02",
           "club": "Manchester United",
           "matches": 13,
           "goals": 5,
           "assists": 4
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Manchester United",
           "matches": 11,
           "goals": 2,
           "assists": 3
         },
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Real Madrid",
           "matches": 7,
           "goals": 1,
           "assists": 2
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Real Madrid",
           "matches": 6,
           "goals": 0,
           "assists": 2
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Real Madrid",
           "matches": 7,
           "goals": 1,
           "assists": 3
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Real Madrid",
           "matches": 6,
           "goals": 0,
@@ -1408,70 +1408,70 @@
       "uefaId": "4065",
       "seasons": [
         {
-          "season": "1996-97",
+          "season": "1997-98",
           "club": "Barcelona",
           "matches": 5,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1997-98",
+          "season": "1998-99",
           "club": "Barcelona",
           "matches": 6,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1998-99",
+          "season": "1999-00",
           "club": "Barcelona",
           "matches": 13,
           "goals": 5,
           "assists": null
         },
         {
-          "season": "1999-00",
+          "season": "2000-01",
           "club": "Real Madrid",
           "matches": 14,
           "goals": 5,
           "assists": null
         },
         {
-          "season": "2000-01",
+          "season": "2001-02",
           "club": "Real Madrid",
           "matches": 11,
           "goals": 3,
           "assists": 1
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Real Madrid",
           "matches": 15,
           "goals": 2,
           "assists": 3
         },
         {
-          "season": "2002-03",
+          "season": "2003-04",
           "club": "Real Madrid",
           "matches": 10,
           "goals": 2,
           "assists": 3
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Real Madrid",
           "matches": 8,
           "goals": 4,
           "assists": 5
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Inter de Milán",
           "matches": 8,
           "goals": 1,
           "assists": 1
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Inter de Milán",
           "matches": 7,
           "goals": 0,
@@ -1497,56 +1497,56 @@
       "uefaId": "35018",
       "seasons": [
         {
-          "season": "1997-98",
+          "season": "1998-99",
           "club": "Barcelona",
           "matches": 6,
           "goals": 0,
           "assists": null
         },
         {
-          "season": "1998-99",
+          "season": "1999-00",
           "club": "Barcelona",
           "matches": 10,
           "goals": 1,
           "assists": null
         },
         {
-          "season": "1999-00",
+          "season": "2000-01",
           "club": "Barcelona",
           "matches": 3,
           "goals": 0,
           "assists": null
         },
         {
-          "season": "2000-01",
+          "season": "2001-02",
           "club": "Barcelona",
           "matches": 14,
           "goals": 0,
           "assists": 2
         },
         {
-          "season": "2001-02",
+          "season": "2002-03",
           "club": "Barcelona",
           "matches": 12,
           "goals": 1,
           "assists": 4
         },
         {
-          "season": "2003-04",
+          "season": "2004-05",
           "club": "Barcelona",
           "matches": 8,
           "goals": 0,
           "assists": 1
         },
         {
-          "season": "2004-05",
+          "season": "2005-06",
           "club": "Barcelona",
           "matches": 4,
           "goals": 0,
           "assists": 0
         },
         {
-          "season": "2005-06",
+          "season": "2006-07",
           "club": "Barcelona",
           "matches": 7,
           "goals": 0,
