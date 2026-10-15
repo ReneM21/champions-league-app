@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-10-15T07:55:06.782Z",
+  "updatedAt": "2026-10-15T08:11:20.164Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
       "uefaId": "63706",
+      "name": "Cristiano Ronaldo",
       "seasons": [
         {
           "season": "2003-04",
@@ -142,6 +143,7 @@
     },
     "lionel-messi": {
       "uefaId": "95803",
+      "name": "Lionel Messi",
       "seasons": [
         {
           "season": "2004-05",
@@ -280,6 +282,7 @@
     },
     "robert-lewandowski": {
       "uefaId": "250002096",
+      "name": "Robert Lewandowski",
       "seasons": [
         {
           "season": "2011-12",
@@ -390,6 +393,7 @@
     },
     "karim-benzema": {
       "uefaId": "93321",
+      "name": "Karim Benzema",
       "seasons": [
         {
           "season": "2005-06",
@@ -521,6 +525,7 @@
     },
     "kylian-mbappe": {
       "uefaId": "250076574",
+      "name": "Kylian Mbappé",
       "seasons": [
         {
           "season": "2016-17",
@@ -603,6 +608,7 @@
     },
     "raul-gonzalez": {
       "uefaId": "26583",
+      "name": "Raúl González",
       "seasons": [
         {
           "season": "1995-96",
@@ -713,6 +719,7 @@
     },
     "erling-haaland": {
       "uefaId": "250103758",
+      "name": "Erling Haaland",
       "seasons": [
         {
           "season": "2019-20",
@@ -781,6 +788,7 @@
     },
     "harry-kane": {
       "uefaId": "250016833",
+      "name": "Harry Kane",
       "seasons": [
         {
           "season": "2016-17",
@@ -849,6 +857,7 @@
     },
     "thomas-muller": {
       "uefaId": "250003318",
+      "name": "Thomas Müller",
       "seasons": [
         {
           "season": "2008-09",
@@ -973,6 +982,7 @@
     },
     "ruud-van-nistelrooy": {
       "uefaId": "38901",
+      "name": "Ruud van Nistelrooy",
       "seasons": [
         {
           "season": "1998-99",
@@ -1055,6 +1065,7 @@
     },
     "ryan-giggs": {
       "uefaId": "11369",
+      "name": "Ryan Giggs",
       "seasons": [
         {
           "season": "1993-94",
@@ -1200,6 +1211,7 @@
     },
     "angel-di-maria": {
       "uefaId": "1905153",
+      "name": "Ángel Di María",
       "seasons": [
         {
           "season": "2007-08",
@@ -1310,6 +1322,7 @@
     },
     "david-beckham": {
       "uefaId": "14670",
+      "name": "David Beckham",
       "seasons": [
         {
           "season": "1994-95",
@@ -1413,6 +1426,7 @@
     },
     "luis-figo": {
       "uefaId": "4065",
+      "name": "Luís Figo",
       "seasons": [
         {
           "season": "1997-98",
@@ -1502,6 +1516,7 @@
     },
     "xavi": {
       "uefaId": "35018",
+      "name": "Xavi Hernández",
       "seasons": [
         {
           "season": "1998-99",
@@ -1619,6 +1634,7 @@
     },
     "neymar": {
       "uefaId": "250039508",
+      "name": "Neymar",
       "seasons": [
         {
           "season": "2013-14",
@@ -1694,6 +1710,7 @@
     },
     "kevin-de-bruyne": {
       "uefaId": "250008901",
+      "name": "Kevin De Bruyne",
       "seasons": [
         {
           "season": "2011-12",
