@@ -40,9 +40,14 @@ const PlayerPage = ({ children }) => {
 
   return (
     <div className="animate-fadeIn">
-      <Link to={fromAssists ? '/asistencias' : '/'} className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'mb-4 text-muted' })}>
-        ← {fromAssists ? 'Asistidores' : 'Goleadores'}
-      </Link>
+      <div className="mb-4 flex items-center justify-between gap-2">
+        <Link to={fromAssists ? '/asistencias' : '/'} className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'text-muted' })}>
+          ← {fromAssists ? 'Asistidores' : 'Goleadores'}
+        </Link>
+        <Link to={`/comparar?a=${player.id}`} className={buttonVariants({ variant: 'secondary', size: 'sm' })}>
+          Comparar con otro jugador
+        </Link>
+      </div>
 
       <section className="champions-hero mb-6 flex flex-col gap-6 rounded-3xl p-6 text-white sm:flex-row sm:items-center sm:p-8">
         <PlayerAvatar player={player} className="size-24 ring-4 ring-white/20" />
