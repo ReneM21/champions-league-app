@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Card, Chip, Link } from '@heroui/react';
 import ClubLogo from '../components/ClubLogo';
+import CurrentSeason from '../components/CurrentSeason';
 import DataNote from '../components/DataNote';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
@@ -179,7 +180,6 @@ const SeasonsPage = () => {
   if (!competition) return <PageSkeleton />;
 
   const { items, pageCount } = paginate(seasons, page, SEASONS_PER_PAGE);
-  const next = (competition.upcoming || [])[0];
   const change = (setter) => (value) => {
     setter(value);
     setPage(1);
@@ -202,17 +202,7 @@ const SeasonsPage = () => {
         </p>
       )}
 
-      {next && club === 'all' && (
-        <Card className="mb-6">
-          <Card.Content className="flex-row flex-wrap items-center gap-x-4 gap-y-1 p-5">
-            <Chip color="warning" variant="soft" className="font-semibold">
-              Próxima final
-            </Chip>
-            <p className="font-medium">{next.season}</p>
-            <p className="text-muted">{next.venue}</p>
-          </Card.Content>
-        </Card>
-      )}
+      {club === 'all' && page === 1 && <CurrentSeason />}
 
       <section className="grid gap-6 md:grid-cols-2">
         {items.map((season) => (

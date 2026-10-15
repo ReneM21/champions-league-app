@@ -7,7 +7,7 @@
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, EXTRA_CLUBS, clubName, clubSlug, seasonLeaders, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, EXTRA_CLUBS, clubName, clubSlug, seasonLeaders, seasonTop, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
@@ -80,6 +80,7 @@ async function main() {
   const logos = new Map(); // nombre del club -> URL del escudo (el más reciente)
   const leaders = {}; // temporada -> máximo goleador, máximo asistente y equipos
   const clubGoals = new Map(); // club -> goles de cada jugador en la era Champions
+  let current = null; // temporada en curso: los 10 mejores goleadores y asistentes
   for (const year of seasonYears(new Date().getUTCFullYear() + 1)) {
     const rows = await seasonRows(year);
     const teams = new Map(rows.filter((r) => r.team).map((r) => [r.team.id, { id: r.team.id, name: r.team.internationalName }]));
@@ -88,7 +89,10 @@ async function main() {
       const logo = row.team && (row.team.mediumLogoUrl || row.team.logoUrl);
       if (logo) logos.set(clubName(row.team), logo);
     }
-    if (rows.length) leaders[seasonLabel(year)] = seasonLeaders(rows, year);
+    if (rows.length) {
+      leaders[seasonLabel(year)] = seasonLeaders(rows, year);
+      current = { season: seasonLabel(year), scorers: seasonTop(rows, 'goals'), assisters: seasonTop(rows, 'assists') };
+    }
     addClubGoals(clubGoals, rows);
     let found = 0;
     for (const player of players) {
@@ -149,8 +153,13 @@ async function main() {
   }
 
   const previous = readJson(OUTPUT, null);
-  const output = { source: 'https://www.uefa.com/uefachampionsleague/history/', players: result, leaders };
-  if (previous && JSON.stringify(previous.players) === JSON.stringify(result) && JSON.stringify(previous.leaders) === JSON.stringify(leaders)) {
+  const output = { source: 'https://www.uefa.com/uefachampionsleague/history/', players: result, leaders, current };
+  if (
+    previous &&
+    JSON.stringify(previous.players) === JSON.stringify(result) &&
+    JSON.stringify(previous.leaders) === JSON.stringify(leaders) &&
+    JSON.stringify(previous.current) === JSON.stringify(current)
+  ) {
     console.log('Sin cambios.');
   } else {
     fs.writeFileSync(OUTPUT, `${JSON.stringify({ updatedAt: new Date().toISOString(), ...output }, null, 2)}\n`);
