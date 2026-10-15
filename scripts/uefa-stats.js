@@ -90,6 +90,8 @@ function seasonFromRow(row, year) {
   const matches = statValue(row, 'matches_appearance');
   if (!matches) return null;
   return {
+    year,
+    teamId: row.team && row.team.id,
     season: seasonLabel(year),
     club: clubName(row.team),
     matches,
@@ -97,6 +99,24 @@ function seasonFromRow(row, year) {
     assists: startYear(year) >= FIRST_ASSISTS_START ? statValue(row, 'assists') : null,
   };
 }
+
+// La clasificación de una temporada da una fila por jugador, con el último
+// club en el que jugó: si cambió de club a mitad de temporada (permitido
+// desde 2018-19), suma lo de los dos. Para detectarlo se buscan los clubes
+// de la temporada anterior y la siguiente que no coinciden con el de esta;
+// la API permite filtrar por club (teamId) para separar las cifras.
+function splitCandidates(seasons) {
+  const sorted = sortSeasons(seasons);
+  const candidates = [];
+  sorted.forEach((season, i) => {
+    const neighbours = [sorted[i - 1], sorted[i + 1]].filter((s) => s && s.teamId !== season.teamId);
+    for (const teamId of new Set(neighbours.map((s) => s.teamId))) candidates.push({ season, teamId });
+  });
+  return candidates;
+}
+
+// Quita los campos internos antes de guardar
+const publicSeason = ({ year, teamId, ...season }) => season;
 
 const sortSeasons = (seasons) =>
   [...seasons].sort((a, b) => a.season.localeCompare(b.season) || a.club.localeCompare(b.club));
@@ -118,5 +138,7 @@ module.exports = {
   isPlayer,
   seasonFromRow,
   sortSeasons,
+  splitCandidates,
+  publicSeason,
   totals,
 };

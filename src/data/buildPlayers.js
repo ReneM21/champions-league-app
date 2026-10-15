@@ -43,21 +43,23 @@ const fromProfile = (profile) =>
 // (fichaje en invierno), se respeta ese reparto.
 export function mergeSeasons(manual = [], uefa = []) {
   const merged = [];
-  const covered = new Set();
-  for (const official of uefa) {
-    const rows = manual.filter((s) => s.season === official.season);
-    covered.add(official.season);
-    if (rows.length > 1) {
-      merged.push(...rows);
+  for (const label of new Set(uefa.map((s) => s.season))) {
+    const official = uefa.filter((s) => s.season === label);
+    const own = manual.filter((s) => s.season === label);
+    // Reparto entre dos clubes escrito a mano que la UEFA no separa
+    if (official.length === 1 && own.length > 1) {
+      merged.push(...own);
       continue;
     }
-    const [own = {}] = rows;
-    const season = { ...official };
-    for (const key of ['matches', 'goals', 'assists']) {
-      if (season[key] === undefined || season[key] === null) season[key] = own[key] ?? null;
+    for (const season of official) {
+      const match = own.find((s) => s.club === season.club) || (own.length === 1 && official.length === 1 ? own[0] : {});
+      const filled = { ...season };
+      for (const key of ['matches', 'goals', 'assists']) {
+        if (filled[key] === undefined || filled[key] === null) filled[key] = match[key] ?? null;
+      }
+      if (match.title) filled.title = true;
+      merged.push(filled);
     }
-    if (own.title) season.title = true;
-    merged.push(season);
   }
   // Las temporadas que solo están a mano se mantienen si no hay datos de la
   // UEFA; si los hay, la UEFA tiene todas y lo demás son errores de escritura

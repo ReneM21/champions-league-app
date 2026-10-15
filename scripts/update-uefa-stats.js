@@ -6,7 +6,7 @@
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, publicSeason, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
@@ -26,8 +26,9 @@ async function getJson(url, attempt = 1) {
   throw new Error(`${response.status} en ${url}: ${(await response.text()).slice(0, 200)}`);
 }
 
-// Todos los jugadores que jugaron una temporada (la API pagina de 100 en 100)
-async function seasonRows(year) {
+// Todos los jugadores que jugaron una temporada (la API pagina de 100 en 100).
+// Con teamId, solo los de ese club.
+async function seasonRows(year, teamId) {
   const rows = new Map();
   for (let offset = 0; ; offset += PAGE_SIZE) {
     const params = new URLSearchParams({
@@ -39,6 +40,7 @@ async function seasonRows(year) {
       phase: 'TOURNAMENT',
       seasonYear: String(year),
       stats: STATS.join(','),
+      ...(teamId ? { teamId } : {}),
     });
     const page = await getJson(`${API}?${params}`);
     if (!Array.isArray(page)) throw new Error(`Respuesta inesperada en ${year}: ${JSON.stringify(page).slice(0, 200)}`);
@@ -83,13 +85,28 @@ async function main() {
     console.log(`${seasonLabel(year)} (seasonYear ${year}): ${rows.length} jugadores, ${found} temporada(s) de los nuestros`);
   }
 
+  // Jugadores que cambiaron de club a mitad de temporada: se separan las cifras
+  for (const player of players) {
+    const entry = result[player.id];
+    for (const { season, teamId } of splitCandidates(entry.seasons)) {
+      const [other] = (await seasonRows(season.year, teamId)).filter((r) => isPlayer(r, player));
+      const otherSeason = other && seasonFromRow(other, season.year);
+      if (!otherSeason) continue;
+      const [own] = (await seasonRows(season.year, season.teamId)).filter((r) => isPlayer(r, player));
+      const ownSeason = own && seasonFromRow(own, season.year);
+      if (!ownSeason) continue;
+      console.log(`${player.name} ${season.season}: ${otherSeason.club} (${otherSeason.matches} partidos) + ${ownSeason.club} (${ownSeason.matches} partidos)`);
+      entry.seasons = entry.seasons.filter((s) => s !== season).concat(otherSeason, ownSeason);
+    }
+  }
+
   // Resumen para comparar con los totales de los rankings de Wikipedia
   const goals = new Map(readJson(path.join(DATA, 'all-goals.json'), []).map((p) => [p.id, p]));
   const assists = new Map(readJson(path.join(DATA, 'all-assists.json'), []).map((p) => [p.id, p]));
   const notFound = [];
   for (const player of players) {
     const entry = result[player.id];
-    entry.seasons = sortSeasons(entry.seasons);
+    entry.seasons = sortSeasons(entry.seasons).map(publicSeason);
     if (!entry.seasons.length) {
       notFound.push(player.name);
       continue;

@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, publicSeason, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -52,7 +52,7 @@ test('isPlayer exige la misma fecha de nacimiento y una palabra del nombre en co
 
 test('seasonFromRow convierte la fila y deja sin asistencias las temporadas anteriores a 2001-02', () => {
   const stats = { matches_appearance: 12, goals: 3, assists: 4 };
-  assert.deepEqual(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 2008), {
+  assert.deepEqual(publicSeason(seasonFromRow(row('Ryan Giggs', '1973-11-29', 'Man Utd', stats), 2008)), {
     season: '2007-08',
     club: 'Manchester United',
     matches: 12,
@@ -74,4 +74,16 @@ test('sortSeasons y totals', () => {
   ];
   assert.deepEqual(sortSeasons(seasons).map((s) => s.season), ['2008-09', '2009-10']);
   assert.deepEqual(totals(seasons), { matches: 5, goals: 1, assists: 2 });
+});
+
+test('splitCandidates busca los clubes de las temporadas vecinas que no coinciden', () => {
+  const seasons = [
+    { season: '2018-19', teamId: 'salzburg' },
+    { season: '2019-20', teamId: 'dortmund' },
+    { season: '2020-21', teamId: 'dortmund' },
+    { season: '2022-23', teamId: 'city' },
+  ];
+  const candidates = splitCandidates(seasons).map((c) => `${c.season.season}:${c.teamId}`);
+  assert.deepEqual(candidates, ['2018-19:dortmund', '2019-20:salzburg', '2020-21:city', '2022-23:dortmund']);
+  assert.deepEqual(splitCandidates([{ season: '2019-20', teamId: 'a' }, { season: '2020-21', teamId: 'a' }]), []);
 });

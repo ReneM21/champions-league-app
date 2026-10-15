@@ -2,7 +2,7 @@ name: Probe (temporal)
 on:
   push:
     branches: [claude/nifty-archimedes-bl6gsx]
-    paths: ['.github/workflows/probe.yml']
+    paths: ['.github/workflows/probe.yml', 'scripts/update-uefa-stats.js', 'scripts/uefa-stats.js']
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -13,15 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Filtro por equipo
-        run: |
-          B="https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=100&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2020&stats=matches_appearance,goals,assists"
-          for o in 0 100 200 300 400 500 600 700 800; do curl -sS "$B&offset=$o" | jq -r '.[] | select(.team.internationalName | test("Salzburg|Dortmund")) | .team.id + " " + .team.internationalName'; done | sort -u
-          for id in $(for o in 0 100 200 300 400 500 600 700 800; do curl -sS "$B&offset=$o" | jq -r '.[] | select(.team.internationalName | test("Salzburg|Dortmund")) | .team.id'; done | sort -u); do
-            echo "== teamId=$id"; curl -sS "$B&offset=0&teamId=$id" | jq -c 'map(select(.player.internationalName|test("Haaland"))) | map({n:.player.internationalName, t:.team.internationalName, s:[.statistics[]|{name,value}]})'
-          done
-      - if: false
-        run: node scripts/update-uefa-stats.js
+      - run: node scripts/update-uefa-stats.js
       - if: ${{ !cancelled() }}
         run: |
           git add public/data/uefa-seasons.json

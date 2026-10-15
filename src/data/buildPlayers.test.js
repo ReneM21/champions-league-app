@@ -114,6 +114,12 @@ describe('temporadas de la UEFA', () => {
     ];
     const merged = mergeSeasons(manual, uefa).filter((s) => s.season === '2008-09');
     expect(merged.map((s) => s.club)).toEqual(['Dortmund', 'Salzburg']);
+    // Si la UEFA ya lo separa, se usan sus cifras para cada club
+    const split = [
+      { season: '2008-09', club: 'Salzburg', matches: 6, goals: 8, assists: 1 },
+      { season: '2008-09', club: 'Dortmund', matches: 2, goals: 2, assists: 0 },
+    ];
+    expect(mergeSeasons(manual, split)).toEqual([split[1], split[0]]);
   });
 
   it('buildTeams suma por club y respeta los goles manuales si no hay datos de la UEFA', () => {
