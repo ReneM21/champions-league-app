@@ -174,6 +174,7 @@ async function saveClubs(result, logos, clubGoals) {
     ...EXTRA_CLUBS,
     ...competition.finals.flatMap((f) => [f.winner, f.runnerUp]),
     ...competition.allTime.map((c) => c.club),
+    ...Object.values(competition.records || {}).flatMap((rows) => rows.flatMap((row) => (row.clubs || []).map((c) => c.club))),
   ]);
   const uefaNames = [...logos.keys()];
   const clubs = {};

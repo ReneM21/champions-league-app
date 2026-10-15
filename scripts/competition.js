@@ -194,6 +194,77 @@ function parseSeasonTopScorers(html) {
   return [...bySeason.entries()].map(([season, players]) => ({ season, players }));
 }
 
+// "Bayern Munich (2013)Real Madrid (2016, 2017)" -> [{ club, detail }]
+function clubList(text) {
+  const clubs = [];
+  for (const match of cleanText(text).matchAll(/([^()]+?)\s*\(([^)]*)\)/g)) {
+    clubs.push({ club: clubName(match[1].replace(/^[,;\s]+/, '').trim()), detail: match[2].replace(/\s+,/g, ',').trim() });
+  }
+  if (!clubs.length && cleanText(text)) clubs.push({ club: clubName(cleanText(text)), detail: '' });
+  return clubs;
+}
+
+// Filas de una tabla como objetos con las cabeceras como claves
+function tableObjects($, table) {
+  return rowsOf($, table).map((row) => Object.fromEntries(row.header.map((h, i) => [h.toLowerCase(), row.text(i)])));
+}
+
+// Récords de jugadores y entrenadores de la página de récords
+function parseRecords(html) {
+  const $ = cheerio.load(html);
+  const table = (words) => {
+    const found = findTable($, words);
+    if (!found) throw new Error(`No se encontró la tabla de récords con ${words.join(', ')}`);
+    return tableObjects($, found);
+  };
+  const raw = (row, name) => row[Object.keys(row).find((key) => key.startsWith(name))] || '';
+  // La columna de clubes se lee del HTML para separar cada club
+  const clubsOf = (words) => {
+    const found = findTable($, words);
+    return rowsOf($, found).map((row) => {
+      const index = row.header.findIndex((h) => h.toLowerCase().startsWith('club'));
+      const cell = row.cells[index];
+      if (!cell) return [];
+      cell.find('br').replaceWith(';');
+      cell.find('a').each((_, a) => $(a).after(' '));
+      return clubList(cell.text());
+    });
+  };
+
+  const winsClubs = clubsOf(['no. of wins', 'player']);
+  const mostTitles = table(['no. of wins', 'player']).map((row, i) => ({
+    player: raw(row, 'player'),
+    titles: toInt(raw(row, 'no. of wins')),
+    clubs: winsClubs[i],
+  }));
+  const appsClubs = clubsOf(['rank', 'player', 'apps']);
+  const appearances = table(['rank', 'player', 'apps']).map((row, i) => ({
+    rank: toInt(raw(row, 'rank')),
+    player: raw(row, 'player'),
+    nation: country(raw(row, 'nation')),
+    apps: toInt(raw(row, 'apps')),
+    years: raw(row, 'years').replace(/[–—]/g, '-'),
+    clubs: appsClubs[i],
+  }));
+  const single = (stat) =>
+    table(['rank', 'player', 'season', stat]).map((row) => ({
+      rank: toInt(raw(row, 'rank')),
+      player: raw(row, 'player'),
+      season: seasonLabel(raw(row, 'season')),
+      [stat]: toInt(raw(row, stat)),
+    }));
+  const managerClubs = clubsOf(['rank', 'manager', 'matches']);
+  const managers = table(['rank', 'manager', 'matches']).map((row, i) => ({
+    rank: toInt(raw(row, 'rank')),
+    manager: raw(row, 'manager'),
+    nation: country(raw(row, 'nation')),
+    matches: toInt(raw(row, 'matches').replace(/\[.*?\]/g, '')),
+    years: raw(row, 'years').replace(/[–—]/g, '-'),
+    clubs: managerClubs[i],
+  }));
+  return { mostTitles, appearances, seasonGoals: single('goals'), seasonAssists: single('assists'), managers };
+}
+
 // Comprobaciones antes de guardar: si Wikipedia cambia el formato, no se toca nada
 function validateCompetition({ finals, clubs, allTime, topScorers = null }) {
   const problems = [];
@@ -220,4 +291,4 @@ function validateCompetition({ finals, clubs, allTime, topScorers = null }) {
   if (problems.length) throw new Error(`Datos de la competición no válidos: ${problems.join('; ')}`);
 }
 
-module.exports = { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, validateCompetition, clubName };
+module.exports = { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, parseRecords, validateCompetition, clubName };

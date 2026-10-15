@@ -3,7 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
-const { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, validateCompetition } = require('./competition');
+const { parseFinals, parseUpcomingFinals, parseClubTitles, parseAllTimeTable, parseSeasonTopScorers, parseRecords, validateCompetition } = require('./competition');
 
 // Tablas reales de Wikipedia (octubre de 2026), recortadas
 const finalsHtml = fs.readFileSync(path.join(__dirname, '__fixtures__', 'wikipedia-finals.html'), 'utf8');
@@ -86,4 +86,23 @@ test('parseSeasonTopScorers lee el máximo goleador de cada temporada, con empat
   ]);
   assert.equal(seasons[seasons.length - 1].season, '2025-26');
   assert.equal(seasons.length, 71);
+});
+
+test('parseRecords lee los récords de jugadores y entrenadores', () => {
+  const records = parseRecords(recordsHtml);
+  assert.deepEqual(records.mostTitles[1], {
+    player: 'Toni Kroos',
+    titles: 6,
+    clubs: [
+      { club: 'Bayern München', detail: '2013' },
+      { club: 'Real Madrid', detail: '2016, 2017, 2018, 2022, 2024' },
+    ],
+  });
+  assert.equal(records.appearances[0].player, 'Cristiano Ronaldo');
+  assert.equal(records.appearances[0].apps, 183);
+  assert.deepEqual(records.seasonGoals[0], { rank: 1, player: 'Cristiano Ronaldo', season: '2013-14', goals: 17 });
+  assert.deepEqual(records.seasonAssists[0], { rank: 1, player: 'Luís Figo', season: '1999-00', assists: 9 });
+  assert.equal(records.managers[0].manager, 'Carlo Ancelotti');
+  assert.equal(records.managers[0].matches, 218);
+  assert.equal(records.managers[0].clubs.length, 8);
 });
