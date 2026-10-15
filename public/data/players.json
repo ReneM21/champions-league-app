@@ -12,7 +12,6 @@
       { "name": "Real Madrid", "goals": 105 },
       { "name": "Juventus", "goals": 14 }
     ],
-    "biography": "Cristiano Ronaldo, delantero portugués, es considerado uno de los mejores futbolistas de todos los tiempos. Ha ganado la Champions League cinco veces (una con Manchester United y cuatro con Real Madrid) y es el máximo goleador histórico de la competición.",
     "seasons": [
       { "season": "2003-04", "club": "Manchester United", "goals": 4, "matches": 8, "assists": 2 },
       { "season": "2004-05", "club": "Manchester United", "goals": 1, "matches": 6, "assists": 1 },
@@ -41,13 +40,12 @@
     "nationality": "Argentina",
     "birthdate": "24/06/1987",
     "image": "images/players/2.jpg",
-    "finals": 5,
+    "finals": 4,
     "titles": 4,
     "teams": [
       { "name": "Barcelona", "goals": 120 },
       { "name": "Paris Saint-Germain", "goals": 9 }
     ],
-    "biography": "Lionel Messi, delantero argentino, es famoso por su habilidad y visión excepcionales. Ganó cuatro títulos de la Champions League con el Barcelona y ahora juega en el Paris Saint-Germain.",
     "seasons": [
       { "season": "2004-05", "club": "Barcelona", "goals": 1, "matches": 1, "assists": 0 },
       { "season": "2005-06", "club": "Barcelona", "goals": 1, "matches": 6, "assists": 1, "title": true },
@@ -76,14 +74,13 @@
     "nationality": "Polonia",
     "birthdate": "21/08/1988",
     "image": "images/players/3.avif",
-    "finals": 3,
+    "finals": 2,
     "titles": 1,
     "teams": [
       { "name": "Borussia Dortmund", "goals": 17 },
       { "name": "Bayern München", "goals": 69 },
       { "name": "Barcelona", "goals": 8 }
     ],
-    "biography": "Robert Lewandowski, delantero polaco, es uno de los goleadores más prolíficos del fútbol moderno. Ganó la Champions League con el Bayern Munich en 2020 y actualmente juega en el Barcelona.",
     "seasons": [
       { "season": "2011-12", "club": "Borussia Dortmund", "goals": 1 },
       { "season": "2012-13", "club": "Borussia Dortmund", "goals": 10, "matches": 13, "assists": 1 },
@@ -113,7 +110,6 @@
       { "name": "Lyon", "goals": 12 },
       { "name": "Real Madrid", "goals": 78 }
     ],
-    "biography": "Karim Benzema, delantero francés, ha sido clave en el éxito del Real Madrid, ganando cinco títulos de la Champions League. Es conocido por sus goles decisivos.",
     "seasons": [
       { "season": "2005-06", "club": "Lyon", "goals": 1 },
       { "season": "2006-07", "club": "Lyon", "goals": 2 },
@@ -149,7 +145,6 @@
       { "name": "Real Madrid", "goals": 66 },
       { "name": "Schalke", "goals": 5 }
     ],
-    "biography": "Raúl González, delantero español, es una leyenda del Real Madrid, donde ganó tres títulos de la Champions League. También destacó en el Schalke 04.",
     "seasons": [
       { "season": "1995-96", "club": "Real Madrid", "goals": 1 },
       { "season": "1997-98", "club": "Real Madrid", "goals": 2 },
@@ -175,12 +170,11 @@
     "nationality": "Alemania",
     "birthdate": "13/09/1989",
     "image": "images/players/7.webp",
-    "finals": 3,
+    "finals": 4,
     "titles": 2,
     "teams": [
       { "name": "Bayern München", "goals": 56 }
     ],
-    "biography": "Thomas Müller, delantero alemán, es conocido por su versatilidad e inteligencia en el campo. Ha ganado la Champions League dos veces con el Bayern Munich.",
     "seasons": [
       { "season": "2009-10", "club": "Bayern München", "goals": 2 },
       { "season": "2010-11", "club": "Bayern München", "goals": 3 },
@@ -212,7 +206,6 @@
       { "name": "Manchester United", "goals": 35 },
       { "name": "Real Madrid", "goals": 13 }
     ],
-    "biography": "Ruud van Nistelrooy, delantero holandés, fue un goleador prolífico en varios clubes importantes. Aunque nunca ganó la Champions League, dejó una marca significativa.",
     "seasons": [
       { "season": "1998-99", "club": "PSV Eindhoven", "goals": 1 },
       { "season": "1999-00", "club": "PSV Eindhoven", "goals": 2 },
@@ -240,7 +233,6 @@
       { "name": "Paris Saint-Germain", "goals": 42 },
       { "name": "Real Madrid", "goals": 7 }
     ],
-    "biography": "Kylian Mbappé, delantero francés, es uno de los jugadores más talentosos y prometedores de su generación. Ha destacado en el Monaco, Paris Saint-Germain y recientemente en el Real Madrid, aunque aún no ha ganado la Champions League.",
     "seasons": [
       { "season": "2016-17", "club": "Monaco", "goals": 6 },
       { "season": "2017-18", "club": "Paris Saint-Germain", "goals": 4 },
@@ -266,7 +258,6 @@
       { "name": "Arsenal", "goals": 35 },
       { "name": "Barcelona", "goals": 10 }
     ],
-    "biography": "Thierry Henry, delantero francés, ganó la Champions League con el Barcelona en 2009. Fue una estrella destacada en el Arsenal y en la competición.",
     "seasons": [
       { "season": "1997-98", "club": "Monaco", "goals": 4 },
       { "season": "1998-99", "club": "Monaco", "goals": 1 },
@@ -295,7 +286,6 @@
       { "name": "Borussia Dortmund", "goals": 15 },
       { "name": "Manchester City", "goals": 26 }
     ],
-    "biography": "Erling Haaland, delantero noruego nacido el 21 de julio de 2000, es conocido por su increíble capacidad goleadora en la Champions League. Ha anotado 49 goles en 48 partidos, debutando con un hat-trick en su primer partido. Ganó la Champions League con el Manchester City en 2023 y ha establecido múltiples récords de precocidad en la competición.",
     "seasons": [
       { "season": "2019-20", "club": "Salzburg", "goals": 8 },
       { "season": "2019-20", "club": "Borussia Dortmund", "goals": 2 },

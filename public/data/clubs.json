@@ -1,68 +1,797 @@
 {
   "AC Milan": {
-    "logo": "images/clubs/ac-milan.png"
+    "logo": "images/clubs/ac-milan.png",
+    "topScorers": [
+      {
+        "name": "Andriy Shevchenko",
+        "goals": 29
+      },
+      {
+        "name": "Filippo Inzaghi",
+        "goals": 29
+      },
+      {
+        "name": "Kaká",
+        "goals": 25
+      }
+    ]
   },
   "Ajax": {
-    "logo": "images/clubs/ajax.png"
+    "logo": "images/clubs/ajax.png",
+    "topScorers": [
+      {
+        "name": "Jari Litmanen",
+        "goals": 20
+      },
+      {
+        "name": "Sébastien Haller",
+        "goals": 11
+      },
+      {
+        "name": "Dušan Tadić",
+        "goals": 10
+      }
+    ]
+  },
+  "Anderlecht": {
+    "logo": "images/clubs/anderlecht.png",
+    "topScorers": [
+      {
+        "name": "Luc Nilis",
+        "goals": 7
+      },
+      {
+        "name": "Tomasz Radzinski",
+        "goals": 5
+      },
+      {
+        "name": "Alin Stoica",
+        "goals": 4
+      }
+    ]
+  },
+  "Arsenal": {
+    "logo": "images/clubs/arsenal.png",
+    "topScorers": [
+      {
+        "name": "Thierry Henry",
+        "goals": 35
+      },
+      {
+        "name": "Robin van Persie",
+        "goals": 18
+      },
+      {
+        "name": "Theo Walcott",
+        "goals": 15
+      }
+    ]
+  },
+  "Aston Villa": {
+    "logo": "images/clubs/aston-villa.png",
+    "topScorers": [
+      {
+        "name": "John McGinn",
+        "goals": 4
+      },
+      {
+        "name": "Morgan Rogers",
+        "goals": 4
+      },
+      {
+        "name": "Jhon Durán",
+        "goals": 3
+      }
+    ]
+  },
+  "Atlético de Madrid": {
+    "logo": "images/clubs/atletico-de-madrid.png",
+    "topScorers": [
+      {
+        "name": "Antoine Griezmann",
+        "goals": 40
+      },
+      {
+        "name": "Julián Alvarez",
+        "goals": 17
+      },
+      {
+        "name": "Saúl Ñíguez",
+        "goals": 11
+      }
+    ]
   },
   "Barcelona": {
-    "logo": "images/clubs/barcelona.png"
+    "logo": "images/clubs/barcelona.png",
+    "topScorers": [
+      {
+        "name": "Lionel Messi",
+        "goals": 120
+      },
+      {
+        "name": "Luis Suárez",
+        "goals": 25
+      },
+      {
+        "name": "Robert Lewandowski",
+        "goals": 23
+      }
+    ]
+  },
+  "Bayer Leverkusen": {
+    "logo": "images/clubs/bayer-leverkusen.png",
+    "topScorers": [
+      {
+        "name": "Michael Ballack",
+        "goals": 9
+      },
+      {
+        "name": "Ulf Kirsten",
+        "goals": 9
+      },
+      {
+        "name": "Oliver Neuville",
+        "goals": 8
+      }
+    ]
   },
   "Bayern München": {
-    "logo": "images/clubs/bayern-munchen.png"
+    "logo": "images/clubs/bayern-munchen.png",
+    "topScorers": [
+      {
+        "name": "Robert Lewandowski",
+        "goals": 69
+      },
+      {
+        "name": "Thomas Müller",
+        "goals": 57
+      },
+      {
+        "name": "Harry Kane",
+        "goals": 36
+      }
+    ]
   },
   "Benfica": {
-    "logo": "images/clubs/benfica.png"
+    "logo": "images/clubs/benfica.png",
+    "topScorers": [
+      {
+        "name": "Óscar Cardozo",
+        "goals": 11
+      },
+      {
+        "name": "Rafa Silva",
+        "goals": 10
+      },
+      {
+        "name": "João Mário",
+        "goals": 9
+      }
+    ]
   },
   "Borussia Dortmund": {
-    "logo": "images/clubs/borussia-dortmund.png"
+    "logo": "images/clubs/borussia-dortmund.png",
+    "topScorers": [
+      {
+        "name": "Marco Reus",
+        "goals": 24
+      },
+      {
+        "name": "Erling Haaland",
+        "goals": 23
+      },
+      {
+        "name": "Serhou Guirassy",
+        "goals": 19
+      }
+    ]
+  },
+  "Borussia Mönchengladbach": {
+    "logo": "images/clubs/borussia-monchengladbach.png",
+    "topScorers": [
+      {
+        "name": "Lars Stindl",
+        "goals": 7
+      },
+      {
+        "name": "Alassane Pléa",
+        "goals": 5
+      },
+      {
+        "name": "Raffael",
+        "goals": 3
+      }
+    ]
+  },
+  "Celtic": {
+    "logo": "images/clubs/celtic.png",
+    "topScorers": [
+      {
+        "name": "Chris Sutton",
+        "goals": 6
+      },
+      {
+        "name": "Daizen Maeda",
+        "goals": 4
+      },
+      {
+        "name": "Giorgios Samaras",
+        "goals": 4
+      }
+    ]
   },
   "Chelsea": {
-    "logo": "images/clubs/chelsea.png"
+    "logo": "images/clubs/chelsea.png",
+    "topScorers": [
+      {
+        "name": "Didier Drogba",
+        "goals": 36
+      },
+      {
+        "name": "Frank Lampard",
+        "goals": 23
+      },
+      {
+        "name": "Nicolas Anelka",
+        "goals": 12
+      }
+    ]
+  },
+  "Club Brugge": {
+    "logo": "images/clubs/club-brugge.png",
+    "topScorers": [
+      {
+        "name": "Hans Vanaken",
+        "goals": 12
+      },
+      {
+        "name": "Nicolò Tresoldi",
+        "goals": 7
+      },
+      {
+        "name": "Gert Verheyen",
+        "goals": 6
+      }
+    ]
+  },
+  "Dynamo Kyiv": {
+    "logo": "images/clubs/dynamo-kyiv.png",
+    "topScorers": [
+      {
+        "name": "Serhiy Rebrov",
+        "goals": 21
+      },
+      {
+        "name": "Andriy Shevchenko",
+        "goals": 15
+      },
+      {
+        "name": "Maksim Shatskikh",
+        "goals": 11
+      }
+    ]
+  },
+  "Eintracht Frankfurt": {
+    "logo": "images/clubs/eintracht-frankfurt.png",
+    "topScorers": [
+      {
+        "name": "Daichi Kamada",
+        "goals": 3
+      },
+      {
+        "name": "Ansgar Knauff",
+        "goals": 2
+      },
+      {
+        "name": "Can Uzun",
+        "goals": 2
+      }
+    ]
+  },
+  "Estrella Roja": {
+    "logo": "images/clubs/estrella-roja.png",
+    "topScorers": [
+      {
+        "name": "Cherif Ndiaye",
+        "goals": 3
+      },
+      {
+        "name": "Nemanja Radonjić",
+        "goals": 3
+      },
+      {
+        "name": "Felício Milson",
+        "goals": 2
+      }
+    ]
+  },
+  "Feyenoord": {
+    "logo": "images/clubs/feyenoord.png",
+    "topScorers": [
+      {
+        "name": "Jon Dahl Tomasson",
+        "goals": 7
+      },
+      {
+        "name": "Julio Cruz",
+        "goals": 6
+      },
+      {
+        "name": "Anis Hadj Moussa",
+        "goals": 4
+      }
+    ]
+  },
+  "Fiorentina": {
+    "logo": "images/clubs/fiorentina.png",
+    "topScorers": [
+      {
+        "name": "Alberto Gilardino",
+        "goals": 7
+      },
+      {
+        "name": "Gabriel Batistuta",
+        "goals": 6
+      },
+      {
+        "name": "Abel Balbo",
+        "goals": 4
+      }
+    ]
+  },
+  "Galatasaray": {
+    "logo": "images/clubs/galatasaray.png",
+    "topScorers": [
+      {
+        "name": "Hakan Şükür",
+        "goals": 13
+      },
+      {
+        "name": "Burak Yılmaz",
+        "goals": 10
+      },
+      {
+        "name": "Victor Osimhen",
+        "goals": 7
+      }
+    ]
   },
   "Genk": {
-    "logo": "images/clubs/genk.png"
+    "logo": "images/clubs/genk.png",
+    "topScorers": [
+      {
+        "name": "Mbwana Ally Samatta",
+        "goals": 3
+      },
+      {
+        "name": "Jelle Vossen",
+        "goals": 2
+      },
+      {
+        "name": "Jhon Lucumi",
+        "goals": 1
+      }
+    ]
+  },
+  "Hamburgo": {
+    "logo": "images/clubs/hamburgo.png",
+    "topScorers": [
+      {
+        "name": "Rafael van der Vaart",
+        "goals": 3
+      },
+      {
+        "name": "Anthony Yeboah",
+        "goals": 2
+      },
+      {
+        "name": "Boubacar Sanogo",
+        "goals": 2
+      }
+    ]
   },
   "Inter de Milán": {
-    "logo": "images/clubs/inter-de-milan.png"
+    "logo": "images/clubs/inter-de-milan.png",
+    "topScorers": [
+      {
+        "name": "Lautaro Martínez",
+        "goals": 27
+      },
+      {
+        "name": "Adriano",
+        "goals": 14
+      },
+      {
+        "name": "Julio Cruz",
+        "goals": 13
+      }
+    ]
   },
   "Juventus": {
-    "logo": "images/clubs/juventus.png"
+    "logo": "images/clubs/juventus.png",
+    "topScorers": [
+      {
+        "name": "Alessandro Del Piero",
+        "goals": 41
+      },
+      {
+        "name": "David Trezeguet",
+        "goals": 25
+      },
+      {
+        "name": "Paulo Dybala",
+        "goals": 18
+      }
+    ]
+  },
+  "Leeds United": {
+    "logo": "images/clubs/leeds-united.png",
+    "topScorers": [
+      {
+        "name": "Lee Bowyer",
+        "goals": 6
+      },
+      {
+        "name": "Alan Smith",
+        "goals": 5
+      },
+      {
+        "name": "Mark Viduka",
+        "goals": 4
+      }
+    ]
   },
   "Liverpool": {
-    "logo": "images/clubs/liverpool.png"
+    "logo": "images/clubs/liverpool.png",
+    "topScorers": [
+      {
+        "name": "Mohamed Salah",
+        "goals": 47
+      },
+      {
+        "name": "Sadio Mané",
+        "goals": 24
+      },
+      {
+        "name": "Roberto Firmino",
+        "goals": 22
+      }
+    ]
   },
   "Lyon": {
-    "logo": "images/clubs/lyon.png"
+    "logo": "images/clubs/lyon.png",
+    "topScorers": [
+      {
+        "name": "Pernambucano Juninho",
+        "goals": 18
+      },
+      {
+        "name": "Karim Benzema",
+        "goals": 12
+      },
+      {
+        "name": "Sidney Govou",
+        "goals": 10
+      }
+    ]
+  },
+  "Malmö FF": {
+    "logo": "images/clubs/malmo-ff.png",
+    "topScorers": [
+      {
+        "name": "Markus Rosenberg",
+        "goals": 4
+      },
+      {
+        "name": "Simon Kroon",
+        "goals": 1
+      },
+      {
+        "name": "Søren Rieks",
+        "goals": 1
+      }
+    ]
   },
   "Manchester City": {
-    "logo": "images/clubs/manchester-city.png"
+    "logo": "images/clubs/manchester-city.png",
+    "topScorers": [
+      {
+        "name": "Erling Haaland",
+        "goals": 38
+      },
+      {
+        "name": "Sergio Agüero",
+        "goals": 36
+      },
+      {
+        "name": "Raheem Sterling",
+        "goals": 24
+      }
+    ]
   },
   "Manchester United": {
-    "logo": "images/clubs/manchester-united.png"
+    "logo": "images/clubs/manchester-united.png",
+    "topScorers": [
+      {
+        "name": "Ruud van Nistelrooy",
+        "goals": 35
+      },
+      {
+        "name": "Wayne Rooney",
+        "goals": 30
+      },
+      {
+        "name": "Ryan Giggs",
+        "goals": 28
+      }
+    ]
+  },
+  "Marseille": {
+    "logo": "images/clubs/marseille.png",
+    "topScorers": [
+      {
+        "name": "Alen Bokšić",
+        "goals": 6
+      },
+      {
+        "name": "André Ayew",
+        "goals": 6
+      },
+      {
+        "name": "Franck Sauzée",
+        "goals": 6
+      }
+    ]
   },
   "Monaco": {
-    "logo": "images/clubs/monaco.png"
+    "logo": "images/clubs/monaco.png",
+    "topScorers": [
+      {
+        "name": "Fernando Morientes",
+        "goals": 9
+      },
+      {
+        "name": "Radamel Falcao",
+        "goals": 8
+      },
+      {
+        "name": "Dado Pršo",
+        "goals": 7
+      }
+    ]
   },
   "Napoli": {
-    "logo": "images/clubs/napoli.png"
+    "logo": "images/clubs/napoli.png",
+    "topScorers": [
+      {
+        "name": "Dries Mertens",
+        "goals": 16
+      },
+      {
+        "name": "Lorenzo Insigne",
+        "goals": 11
+      },
+      {
+        "name": "Arkadiusz Milik",
+        "goals": 7
+      }
+    ]
   },
   "PSV Eindhoven": {
-    "logo": "images/clubs/psv-eindhoven.png"
+    "logo": "images/clubs/psv-eindhoven.png",
+    "topScorers": [
+      {
+        "name": "Luuk de Jong",
+        "goals": 11
+      },
+      {
+        "name": "Ruud van Nistelrooy",
+        "goals": 8
+      },
+      {
+        "name": "Ismael Saibari",
+        "goals": 7
+      }
+    ]
+  },
+  "Panathinaikos": {
+    "logo": "images/clubs/panathinaikos.png",
+    "topScorers": [
+      {
+        "name": "Michalis Konstantinou",
+        "goals": 9
+      },
+      {
+        "name": "Krzysztof Warzycha",
+        "goals": 8
+      },
+      {
+        "name": "Giorgos Karagounis",
+        "goals": 6
+      }
+    ]
   },
   "Paris Saint-Germain": {
-    "logo": "images/clubs/paris-saint-germain.png"
+    "logo": "images/clubs/paris-saint-germain.png",
+    "topScorers": [
+      {
+        "name": "Kylian Mbappé",
+        "goals": 42
+      },
+      {
+        "name": "Edinson Cavani",
+        "goals": 30
+      },
+      {
+        "name": "Neymar",
+        "goals": 22
+      }
+    ]
+  },
+  "Partizan": {
+    "logo": "images/clubs/partizan.png",
+    "topScorers": [
+      {
+        "name": "Andrija Delibašić",
+        "goals": 3
+      },
+      {
+        "name": "Cléo",
+        "goals": 2
+      }
+    ]
+  },
+  "Porto": {
+    "logo": "images/clubs/porto.png",
+    "topScorers": [
+      {
+        "name": "Jardel",
+        "goals": 19
+      },
+      {
+        "name": "Lisandro",
+        "goals": 13
+      },
+      {
+        "name": "Lucho González",
+        "goals": 13
+      }
+    ]
+  },
+  "Rangers": {
+    "logo": "images/clubs/rangers.png",
+    "topScorers": [
+      {
+        "name": "Ian Durrant",
+        "goals": 5
+      },
+      {
+        "name": "Mark Hateley",
+        "goals": 5
+      },
+      {
+        "name": "Michael Mols",
+        "goals": 5
+      }
+    ]
   },
   "Real Madrid": {
-    "logo": "images/clubs/real-madrid.png"
+    "logo": "images/clubs/real-madrid.png",
+    "topScorers": [
+      {
+        "name": "Cristiano Ronaldo",
+        "goals": 105
+      },
+      {
+        "name": "Karim Benzema",
+        "goals": 78
+      },
+      {
+        "name": "Raúl González",
+        "goals": 66
+      }
+    ]
+  },
+  "Roma": {
+    "logo": "images/clubs/roma.png",
+    "topScorers": [
+      {
+        "name": "Francesco Totti",
+        "goals": 17
+      },
+      {
+        "name": "Edin Džeko",
+        "goals": 15
+      },
+      {
+        "name": "Daniele De Rossi",
+        "goals": 8
+      }
+    ]
   },
   "Salzburg": {
-    "logo": "images/clubs/salzburg.png"
+    "logo": "images/clubs/salzburg.png",
+    "topScorers": [
+      {
+        "name": "Noah Okafor",
+        "goals": 6
+      },
+      {
+        "name": "Karim Adeyemi",
+        "goals": 4
+      },
+      {
+        "name": "Mergim Berisha",
+        "goals": 4
+      }
+    ]
   },
   "Schalke": {
-    "logo": "images/clubs/schalke.png"
+    "logo": "images/clubs/schalke.png",
+    "topScorers": [
+      {
+        "name": "Klaas Jan Huntelaar",
+        "goals": 13
+      },
+      {
+        "name": "Benedikt Höwedes",
+        "goals": 5
+      },
+      {
+        "name": "Jefferson Farfán",
+        "goals": 5
+      }
+    ]
+  },
+  "Steaua de Bucarest": {
+    "logo": "images/clubs/steaua-de-bucarest.png",
+    "topScorers": [
+      {
+        "name": "Nicolae Dică",
+        "goals": 4
+      },
+      {
+        "name": "Adrian Ilie",
+        "goals": 3
+      },
+      {
+        "name": "Nica Panduru",
+        "goals": 3
+      }
+    ]
   },
   "Tottenham Hotspur": {
-    "logo": "images/clubs/tottenham-hotspur.png"
+    "logo": "images/clubs/tottenham-hotspur.png",
+    "topScorers": [
+      {
+        "name": "Harry Kane",
+        "goals": 21
+      },
+      {
+        "name": "Heung-Min Son",
+        "goals": 16
+      },
+      {
+        "name": "Lucas Moura",
+        "goals": 6
+      }
+    ]
+  },
+  "Valencia": {
+    "logo": "images/clubs/valencia.png",
+    "topScorers": [
+      {
+        "name": "Roberto Soldado",
+        "goals": 15
+      },
+      {
+        "name": "Juan Sánchez",
+        "goals": 9
+      },
+      {
+        "name": "John Carew",
+        "goals": 8
+      }
+    ]
   }
 }

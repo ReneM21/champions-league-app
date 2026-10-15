@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T07:03:31.105Z",
+  "updatedAt": "2026-10-15T07:55:06.782Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -1794,6 +1794,724 @@
           "assists": 0
         }
       ]
+    }
+  },
+  "leaders": {
+    "1992-93": {
+      "topScorers": [
+        {
+          "name": "Romário",
+          "club": "PSV Eindhoven",
+          "goals": 7
+        }
+      ],
+      "topAssists": null,
+      "teams": 32
+    },
+    "1993-94": {
+      "topScorers": [
+        {
+          "name": "Wynton Rufer",
+          "club": "Bremen",
+          "goals": 8
+        }
+      ],
+      "topAssists": null,
+      "teams": 32
+    },
+    "1994-95": {
+      "topScorers": [
+        {
+          "name": "George Weah",
+          "club": "Paris Saint-Germain",
+          "goals": 7
+        }
+      ],
+      "topAssists": null,
+      "teams": 16
+    },
+    "1995-96": {
+      "topScorers": [
+        {
+          "name": "Jari Litmanen",
+          "club": "Ajax",
+          "goals": 9
+        }
+      ],
+      "topAssists": null,
+      "teams": 16
+    },
+    "1996-97": {
+      "topScorers": [
+        {
+          "name": "Milinko Pantić",
+          "club": "Atlético de Madrid",
+          "goals": 5
+        }
+      ],
+      "topAssists": null,
+      "teams": 16
+    },
+    "1997-98": {
+      "topScorers": [
+        {
+          "name": "Alessandro Del Piero",
+          "club": "Juventus",
+          "goals": 10
+        }
+      ],
+      "topAssists": null,
+      "teams": 24
+    },
+    "1998-99": {
+      "topScorers": [
+        {
+          "name": "Andriy Shevchenko",
+          "club": "Dynamo Kyiv",
+          "goals": 8
+        },
+        {
+          "name": "Dwight Yorke",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ],
+      "topAssists": null,
+      "teams": 24
+    },
+    "1999-00": {
+      "topScorers": [
+        {
+          "name": "Jardel",
+          "club": "Porto",
+          "goals": 10
+        },
+        {
+          "name": "Raúl González",
+          "club": "Real Madrid",
+          "goals": 10
+        },
+        {
+          "name": "Rivaldo",
+          "club": "Barcelona",
+          "goals": 10
+        }
+      ],
+      "topAssists": null,
+      "teams": 32
+    },
+    "2000-01": {
+      "topScorers": [
+        {
+          "name": "Raúl González",
+          "club": "Real Madrid",
+          "goals": 7
+        }
+      ],
+      "topAssists": null,
+      "teams": 32
+    },
+    "2001-02": {
+      "topScorers": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 10
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Bernd Schneider",
+          "club": "Bayer Leverkusen",
+          "assists": 5
+        },
+        {
+          "name": "Hasan Salihamidžić",
+          "club": "Bayern München",
+          "assists": 5
+        },
+        {
+          "name": "Juan Verón",
+          "club": "Manchester United",
+          "assists": 5
+        },
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2002-03": {
+      "topScorers": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Pablo Aimar",
+          "club": "Valencia",
+          "assists": 5
+        },
+        {
+          "name": "Raúl González",
+          "club": "Real Madrid",
+          "assists": 5
+        },
+        {
+          "name": "Rui Costa",
+          "club": "AC Milan",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2003-04": {
+      "topScorers": [
+        {
+          "name": "Fernando Morientes",
+          "club": "Monaco",
+          "goals": 9
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Deco",
+          "club": "Porto",
+          "assists": 6
+        },
+        {
+          "name": "Jérôme Rothen",
+          "club": "Monaco",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2004-05": {
+      "topScorers": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Damien Duff",
+          "club": "Chelsea",
+          "assists": 5
+        },
+        {
+          "name": "Kaká",
+          "club": "AC Milan",
+          "assists": 5
+        },
+        {
+          "name": "Luís Figo",
+          "club": "Real Madrid",
+          "assists": 5
+        },
+        {
+          "name": "Sidney Govou",
+          "club": "Lyon",
+          "assists": 5
+        },
+        {
+          "name": "Sylvain Wiltord",
+          "club": "Lyon",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2005-06": {
+      "topScorers": [
+        {
+          "name": "Andriy Shevchenko",
+          "club": "AC Milan",
+          "goals": 9
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Johan Micoud",
+          "club": "Bremen",
+          "assists": 4
+        },
+        {
+          "name": "Ronaldinho",
+          "club": "Barcelona",
+          "assists": 4
+        },
+        {
+          "name": "Samuel Eto'o",
+          "club": "Barcelona",
+          "assists": 4
+        },
+        {
+          "name": "Steven Pienaar",
+          "club": "Ajax",
+          "assists": 4
+        }
+      ],
+      "teams": 32
+    },
+    "2006-07": {
+      "topScorers": [
+        {
+          "name": "Kaká",
+          "club": "AC Milan",
+          "goals": 10
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Ryan Giggs",
+          "club": "Manchester United",
+          "assists": 7
+        }
+      ],
+      "teams": 32
+    },
+    "2007-08": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Alex",
+          "club": "Fenerbahçe",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2008-09": {
+      "topScorers": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 9
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Xavi Hernández",
+          "club": "Barcelona",
+          "assists": 7
+        }
+      ],
+      "teams": 32
+    },
+    "2009-10": {
+      "topScorers": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 8
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Wesley Sneijder",
+          "club": "Inter de Milán",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2010-11": {
+      "topScorers": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Mesut Özil",
+          "club": "Real Madrid",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2011-12": {
+      "topScorers": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 14
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Franck Ribéry",
+          "club": "Bayern München",
+          "assists": 5
+        },
+        {
+          "name": "Kaká",
+          "club": "Real Madrid",
+          "assists": 5
+        },
+        {
+          "name": "Karim Benzema",
+          "club": "Real Madrid",
+          "assists": 5
+        },
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "assists": 5
+        },
+        {
+          "name": "Nicolás Gaitán",
+          "club": "Benfica",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2012-13": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Zlatan Ibrahimović",
+          "club": "Paris Saint-Germain",
+          "assists": 7
+        }
+      ],
+      "teams": 32
+    },
+    "2013-14": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 17
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Wayne Rooney",
+          "club": "Manchester United",
+          "assists": 8
+        }
+      ],
+      "teams": 32
+    },
+    "2014-15": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 10
+        },
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 10
+        },
+        {
+          "name": "Neymar",
+          "club": "Barcelona",
+          "goals": 10
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2015-16": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 16
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Alexis Sánchez",
+          "club": "Arsenal",
+          "assists": 5
+        },
+        {
+          "name": "Kingsley Coman",
+          "club": "Bayern München",
+          "assists": 5
+        },
+        {
+          "name": "Neymar",
+          "club": "Barcelona",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2016-17": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Neymar",
+          "club": "Barcelona",
+          "assists": 8
+        }
+      ],
+      "teams": 32
+    },
+    "2017-18": {
+      "topScorers": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "James Milner",
+          "club": "Liverpool",
+          "assists": 9
+        }
+      ],
+      "teams": 32
+    },
+    "2018-19": {
+      "topScorers": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Dušan Tadić",
+          "club": "Ajax",
+          "assists": 5
+        },
+        {
+          "name": "Jordi Alba",
+          "club": "Barcelona",
+          "assists": 5
+        },
+        {
+          "name": "Leroy Sané",
+          "club": "Manchester City",
+          "assists": 5
+        },
+        {
+          "name": "Luis Suárez",
+          "club": "Barcelona",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2019-20": {
+      "topScorers": [
+        {
+          "name": "Robert Lewandowski",
+          "club": "Bayern München",
+          "goals": 15
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Ángel Di María",
+          "club": "Paris Saint-Germain",
+          "assists": 6
+        },
+        {
+          "name": "Robert Lewandowski",
+          "club": "Bayern München",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2020-21": {
+      "topScorers": [
+        {
+          "name": "Erling Haaland",
+          "club": "Borussia Dortmund",
+          "goals": 10
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Juan Cuadrado",
+          "club": "Juventus",
+          "assists": 6
+        }
+      ],
+      "teams": 32
+    },
+    "2021-22": {
+      "topScorers": [
+        {
+          "name": "Karim Benzema",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Bruno Fernandes",
+          "club": "Manchester United",
+          "assists": 7
+        }
+      ],
+      "teams": 32
+    },
+    "2022-23": {
+      "topScorers": [
+        {
+          "name": "Erling Haaland",
+          "club": "Manchester City",
+          "goals": 12
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Kevin De Bruyne",
+          "club": "Manchester City",
+          "assists": 7
+        }
+      ],
+      "teams": 32
+    },
+    "2023-24": {
+      "topScorers": [
+        {
+          "name": "Harry Kane",
+          "club": "Bayern München",
+          "goals": 8
+        },
+        {
+          "name": "Kylian Mbappé",
+          "club": "Paris Saint-Germain",
+          "goals": 8
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Jude Bellingham",
+          "club": "Real Madrid",
+          "assists": 5
+        },
+        {
+          "name": "Marcel Sabitzer",
+          "club": "Borussia Dortmund",
+          "assists": 5
+        },
+        {
+          "name": "Vinícius Júnior",
+          "club": "Real Madrid",
+          "assists": 5
+        }
+      ],
+      "teams": 32
+    },
+    "2024-25": {
+      "topScorers": [
+        {
+          "name": "Raphinha",
+          "club": "Barcelona",
+          "goals": 13
+        },
+        {
+          "name": "Serhou Guirassy",
+          "club": "Borussia Dortmund",
+          "goals": 13
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Raphinha",
+          "club": "Barcelona",
+          "assists": 9
+        }
+      ],
+      "teams": 36
+    },
+    "2025-26": {
+      "topScorers": [
+        {
+          "name": "Kylian Mbappé",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Michael Olise",
+          "club": "Bayern München",
+          "assists": 8
+        },
+        {
+          "name": "Vinícius Júnior",
+          "club": "Real Madrid",
+          "assists": 8
+        }
+      ],
+      "teams": 36
+    },
+    "2026-27": {
+      "topScorers": [
+        {
+          "name": "Erling Haaland",
+          "club": "Manchester City",
+          "goals": 4
+        },
+        {
+          "name": "Ermedin Demirović",
+          "club": "Stuttgart",
+          "goals": 4
+        },
+        {
+          "name": "Nicolò Tresoldi",
+          "club": "Club Brugge",
+          "goals": 4
+        }
+      ],
+      "topAssists": [
+        {
+          "name": "Lamine Yamal",
+          "club": "Barcelona",
+          "assists": 4
+        }
+      ],
+      "teams": 36
     }
   }
 }

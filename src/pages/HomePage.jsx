@@ -6,12 +6,14 @@ import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
 import { formatDate } from '../utils/stats';
+import { useTitle } from '../utils/useTitle';
 
 const self = (player) => player;
 
 const HomePage = () => {
   const { players, updatedAt, source } = usePlayers();
   const updatedLabel = formatDate(updatedAt);
+  useTitle('Máximos goleadores');
 
   return (
     <div className="animate-fadeIn">

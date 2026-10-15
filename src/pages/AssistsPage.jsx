@@ -6,6 +6,7 @@ import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
 import { formatDate } from '../utils/stats';
+import { useTitle } from '../utils/useTitle';
 
 // Las fichas abiertas desde aquí destacan las asistencias
 const QUERY = '?ranking=asistencias';
@@ -14,6 +15,7 @@ const AssistsPage = () => {
   const { assists } = usePlayers();
   const { players, updatedAt, source } = assists;
   const updatedLabel = formatDate(updatedAt);
+  useTitle('Máximos asistidores');
 
   // Todos los asistidores tienen ficha (manual o automática)
   const profileOf = (player) => player;

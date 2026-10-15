@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, NavLink, useParams, useSearchParams } from 'react-router-dom';
+import { Link, NavLink, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
 import PlayerAvatar from './PlayerAvatar';
 import { usePlayer } from '../data/PlayersContext';
 import NotFoundPage from '../pages/NotFoundPage';
+import { useTitle } from '../utils/useTitle';
 
 const TABS = [
   { path: '', label: 'Perfil' },
@@ -20,6 +21,9 @@ const PlayerPage = ({ children }) => {
   const { id } = useParams();
   const [searchParams] = useSearchParams();
   const player = usePlayer(id);
+  const { pathname } = useLocation();
+  const tab = TABS.find(({ path }) => path && pathname.endsWith(path));
+  useTitle(player ? `${player.name}${tab ? ` · ${tab.label}` : ''}` : null);
 
   if (!player) {
     return <NotFoundPage title="Jugador no encontrado" message="El jugador que buscas no está en los rankings de goleadores ni de asistidores." />;

@@ -7,7 +7,7 @@
 // npm run update-uefa-stats
 const fs = require('fs');
 const path = require('path');
-const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, EXTRA_CLUBS, clubName, clubSlug, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, STATS, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, missingClubCandidates, publicSeason, EXTRA_CLUBS, clubName, clubSlug, seasonLeaders, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
 
 const DATA = path.join(__dirname, '..', 'public', 'data');
 const OUTPUT = path.join(DATA, 'uefa-seasons.json');
@@ -78,6 +78,8 @@ async function main() {
   const result = Object.fromEntries(players.map((p) => [p.id, { uefaId: null, seasons: [] }]));
   const teamsByYear = {};
   const logos = new Map(); // nombre del club -> URL del escudo (el más reciente)
+  const leaders = {}; // temporada -> máximo goleador, máximo asistente y equipos
+  const clubGoals = new Map(); // club -> goles de cada jugador en la era Champions
   for (const year of seasonYears(new Date().getUTCFullYear() + 1)) {
     const rows = await seasonRows(year);
     const teams = new Map(rows.filter((r) => r.team).map((r) => [r.team.id, { id: r.team.id, name: r.team.internationalName }]));
@@ -86,6 +88,8 @@ async function main() {
       const logo = row.team && (row.team.mediumLogoUrl || row.team.logoUrl);
       if (logo) logos.set(clubName(row.team), logo);
     }
+    if (rows.length) leaders[seasonLabel(year)] = seasonLeaders(rows, year);
+    addClubGoals(clubGoals, rows);
     let found = 0;
     for (const player of players) {
       for (const row of rows.filter((r) => isPlayer(r, player))) {
@@ -144,15 +148,15 @@ async function main() {
   }
 
   const previous = readJson(OUTPUT, null);
-  const output = { source: 'https://www.uefa.com/uefachampionsleague/history/', players: result };
-  if (previous && JSON.stringify(previous.players) === JSON.stringify(result)) {
+  const output = { source: 'https://www.uefa.com/uefachampionsleague/history/', players: result, leaders };
+  if (previous && JSON.stringify(previous.players) === JSON.stringify(result) && JSON.stringify(previous.leaders) === JSON.stringify(leaders)) {
     console.log('Sin cambios.');
   } else {
     fs.writeFileSync(OUTPUT, `${JSON.stringify({ updatedAt: new Date().toISOString(), ...output }, null, 2)}\n`);
     console.log(`Guardado ${path.relative(process.cwd(), OUTPUT)}.`);
   }
 
-  await saveLogos(result, logos);
+  await saveClubs(result, logos, clubGoals);
 
   if (notFound.length) {
     console.error(`No encontrados en la UEFA: ${notFound.join(', ')}`);
@@ -160,32 +164,43 @@ async function main() {
   }
 }
 
-// Escudos de los clubes de los jugadores y de las páginas Equipos y Temporadas.
-// Solo se descargan los que faltan.
-async function saveLogos(result, logos) {
-  const wanted = new Set([...Object.values(result).flatMap((p) => p.seasons.map((s) => s.club)), ...EXTRA_CLUBS]);
-  const clubs = readJson(CLUBS_FILE, {});
+// Clubes de los jugadores, de las finales y de la clasificación histórica
+// (public/data/competition.json): escudo y máximos goleadores en la era
+// Champions. Solo se descargan los escudos que faltan.
+async function saveClubs(result, logos, clubGoals) {
+  const competition = readJson(path.join(DATA, 'competition.json'), { finals: [], allTime: [] });
+  const wanted = new Set([
+    ...Object.values(result).flatMap((p) => p.seasons.map((s) => s.club)),
+    ...EXTRA_CLUBS,
+    ...competition.finals.flatMap((f) => [f.winner, f.runnerUp]),
+    ...competition.allTime.map((c) => c.club),
+  ]);
+  const uefaNames = [...logos.keys()];
+  const clubs = {};
   fs.mkdirSync(LOGOS_DIR, { recursive: true });
   for (const name of [...wanted].sort()) {
-    const url = logos.get(name);
-    if (!url) {
-      console.log(`Sin escudo: ${name}`);
+    const uefaName = findUefaClub(name, uefaNames);
+    if (!uefaName) {
+      console.log(`Sin datos de la UEFA (no ha jugado la Champions desde 1992): ${name}`);
       continue;
     }
+    const club = {};
     const file = `${clubSlug(name)}.png`;
     if (!fs.existsSync(path.join(LOGOS_DIR, file))) {
-      const response = await fetch(url, { headers: HEADERS });
-      if (!response.ok || !(response.headers.get('content-type') || '').startsWith('image/')) {
+      const response = await fetch(logos.get(uefaName), { headers: HEADERS });
+      if (response.ok && (response.headers.get('content-type') || '').startsWith('image/')) {
+        fs.writeFileSync(path.join(LOGOS_DIR, file), Buffer.from(await response.arrayBuffer()));
+        console.log(`Escudo descargado: ${name}${uefaName !== name ? ` (${uefaName})` : ''}`);
+      } else {
         console.log(`No se pudo descargar el escudo de ${name}: ${response.status}`);
-        continue;
       }
-      fs.writeFileSync(path.join(LOGOS_DIR, file), Buffer.from(await response.arrayBuffer()));
-      console.log(`Escudo descargado: ${name}`);
     }
-    clubs[name] = { logo: `images/clubs/${file}` };
+    if (fs.existsSync(path.join(LOGOS_DIR, file))) club.logo = `images/clubs/${file}`;
+    const scorers = clubTopScorers(clubGoals, uefaName);
+    if (scorers.length) club.topScorers = scorers;
+    clubs[name] = club;
   }
-  const sorted = Object.fromEntries(Object.keys(clubs).sort().map((name) => [name, clubs[name]]));
-  fs.writeFileSync(CLUBS_FILE, `${JSON.stringify(sorted, null, 2)}\n`);
+  fs.writeFileSync(CLUBS_FILE, `${JSON.stringify(clubs, null, 2)}\n`);
 }
 
 main().catch((error) => {

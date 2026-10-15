@@ -1,0 +1,2605 @@
+{
+  "updatedAt": "2026-10-15T07:52:54.154Z",
+  "sources": [
+    "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
+    "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
+    "https://en.wikipedia.org/wiki/List_of_UEFA_Champions_League_top_scorers"
+  ],
+  "finals": [
+    {
+      "season": "1955-56",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "4–3",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Reims",
+      "runnerUpCountry": "Francia",
+      "venue": "Parc des Princes, París, Francia",
+      "attendance": 38239
+    },
+    {
+      "season": "1956-57",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Fiorentina",
+      "runnerUpCountry": "Italia",
+      "venue": "Santiago Bernabéu, Madrid, España",
+      "attendance": 124000
+    },
+    {
+      "season": "1957-58",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "3–2",
+      "extraTime": true,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "AC Milan",
+      "runnerUpCountry": "Italia",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
+      "attendance": 67000
+    },
+    {
+      "season": "1958-59",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Reims",
+      "runnerUpCountry": "Francia",
+      "venue": "Neckarstadion, Stuttgart, Alemania Occidental",
+      "attendance": 72000
+    },
+    {
+      "season": "1959-60",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "7–3",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Eintracht Frankfurt",
+      "runnerUpCountry": "Alemania Occidental",
+      "venue": "Hampden Park, Glasgow, Escocia",
+      "attendance": 127621
+    },
+    {
+      "season": "1960-61",
+      "winner": "Benfica",
+      "winnerCountry": "Portugal",
+      "score": "3–2",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Barcelona",
+      "runnerUpCountry": "España",
+      "venue": "Wankdorf Stadium, Berna, Suiza",
+      "attendance": 26732
+    },
+    {
+      "season": "1961-62",
+      "winner": "Benfica",
+      "winnerCountry": "Portugal",
+      "score": "5–3",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Real Madrid",
+      "runnerUpCountry": "España",
+      "venue": "Olympisch Stadion, Amsterdam, Países Bajos",
+      "attendance": 61257
+    },
+    {
+      "season": "1962-63",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Benfica",
+      "runnerUpCountry": "Portugal",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 45715
+    },
+    {
+      "season": "1963-64",
+      "winner": "Inter de Milán",
+      "winnerCountry": "Italia",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Real Madrid",
+      "runnerUpCountry": "España",
+      "venue": "Praterstadion, Viena, Austria",
+      "attendance": 71333
+    },
+    {
+      "season": "1964-65",
+      "winner": "Inter de Milán",
+      "winnerCountry": "Italia",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Benfica",
+      "runnerUpCountry": "Portugal",
+      "venue": "San Siro, Milán, Italia",
+      "attendance": 89000
+    },
+    {
+      "season": "1965-66",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Partizan",
+      "runnerUpCountry": "Yugoslavia",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
+      "attendance": 46745
+    },
+    {
+      "season": "1966-67",
+      "winner": "Celtic",
+      "winnerCountry": "Escocia",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Inter de Milán",
+      "runnerUpCountry": "Italia",
+      "venue": "Estádio Nacional, Lisboa, Portugal",
+      "attendance": 45000
+    },
+    {
+      "season": "1967-68",
+      "winner": "Manchester United",
+      "winnerCountry": "Inglaterra",
+      "score": "4–1",
+      "extraTime": true,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Benfica",
+      "runnerUpCountry": "Portugal",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 92225
+    },
+    {
+      "season": "1968-69",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "4–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Ajax",
+      "runnerUpCountry": "Países Bajos",
+      "venue": "Santiago Bernabéu, Madrid, España",
+      "attendance": 31782
+    },
+    {
+      "season": "1969-70",
+      "winner": "Feyenoord",
+      "winnerCountry": "Países Bajos",
+      "score": "2–1",
+      "extraTime": true,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Celtic",
+      "runnerUpCountry": "Escocia",
+      "venue": "San Siro, Milán, Italia",
+      "attendance": 53187
+    },
+    {
+      "season": "1970-71",
+      "winner": "Ajax",
+      "winnerCountry": "Países Bajos",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Panathinaikos",
+      "runnerUpCountry": "Grecia",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 83179
+    },
+    {
+      "season": "1971-72",
+      "winner": "Ajax",
+      "winnerCountry": "Países Bajos",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Inter de Milán",
+      "runnerUpCountry": "Italia",
+      "venue": "De Kuip, Rotterdam, Países Bajos",
+      "attendance": 61354
+    },
+    {
+      "season": "1972-73",
+      "winner": "Ajax",
+      "winnerCountry": "Países Bajos",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Red Star Stadium, Belgrado, Yugoslavia",
+      "attendance": 89484
+    },
+    {
+      "season": "1973-74",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania Occidental",
+      "score": "4–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": true,
+      "runnerUp": "Atlético de Madrid",
+      "runnerUpCountry": "España",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
+      "attendance": 23325,
+      "firstScore": "1–1"
+    },
+    {
+      "season": "1974-75",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania Occidental",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Leeds United",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Parc des Princes, París, Francia",
+      "attendance": 48374
+    },
+    {
+      "season": "1975-76",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania Occidental",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Saint-Étienne",
+      "runnerUpCountry": "Francia",
+      "venue": "Hampden Park, Glasgow, Escocia",
+      "attendance": 54864
+    },
+    {
+      "season": "1976-77",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Borussia Mönchengladbach",
+      "runnerUpCountry": "Alemania Occidental",
+      "venue": "Stadio Olimpico, Roma, Italia",
+      "attendance": 57000
+    },
+    {
+      "season": "1977-78",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Club Brugge",
+      "runnerUpCountry": "Bélgica",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 92500
+    },
+    {
+      "season": "1978-79",
+      "winner": "Nottingham Forest",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Malmö FF",
+      "runnerUpCountry": "Suecia",
+      "venue": "Olympiastadion, Múnich, Alemania Occidental",
+      "attendance": 57500
+    },
+    {
+      "season": "1979-80",
+      "winner": "Nottingham Forest",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Hamburgo",
+      "runnerUpCountry": "Alemania Occidental",
+      "venue": "Santiago Bernabéu, Madrid, España",
+      "attendance": 51000
+    },
+    {
+      "season": "1980-81",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Real Madrid",
+      "runnerUpCountry": "España",
+      "venue": "Parc des Princes, París, Francia",
+      "attendance": 48360
+    },
+    {
+      "season": "1981-82",
+      "winner": "Aston Villa",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Bayern München",
+      "runnerUpCountry": "Alemania Occidental",
+      "venue": "De Kuip, Rotterdam, Países Bajos",
+      "attendance": 46000
+    },
+    {
+      "season": "1982-83",
+      "winner": "Hamburgo",
+      "winnerCountry": "Alemania Occidental",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Olympic Stadium, Atenas, Grecia",
+      "attendance": 73500
+    },
+    {
+      "season": "1983-84",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Roma",
+      "runnerUpCountry": "Italia",
+      "venue": "Stadio Olimpico, Roma, Italia",
+      "attendance": 69693
+    },
+    {
+      "season": "1984-85",
+      "winner": "Juventus",
+      "winnerCountry": "Italia",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Liverpool",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Heysel Stadium, Bruselas, Bélgica",
+      "attendance": 58000
+    },
+    {
+      "season": "1985-86",
+      "winner": "Steaua de Bucarest",
+      "winnerCountry": "Rumanía",
+      "score": "0–0",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Barcelona",
+      "runnerUpCountry": "España",
+      "venue": "Ramón Sánchez Pizjuán, Sevilla, España",
+      "attendance": 70000
+    },
+    {
+      "season": "1986-87",
+      "winner": "Porto",
+      "winnerCountry": "Portugal",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Bayern München",
+      "runnerUpCountry": "Alemania Occidental",
+      "venue": "Praterstadion, Viena, Austria",
+      "attendance": 57500
+    },
+    {
+      "season": "1987-88",
+      "winner": "PSV Eindhoven",
+      "winnerCountry": "Países Bajos",
+      "score": "0–0",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Benfica",
+      "runnerUpCountry": "Portugal",
+      "venue": "Neckarstadion, Stuttgart, Alemania Occidental",
+      "attendance": 68000
+    },
+    {
+      "season": "1988-89",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "4–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Steaua de Bucarest",
+      "runnerUpCountry": "Rumanía",
+      "venue": "Camp Nou, Barcelona, España",
+      "attendance": 97000
+    },
+    {
+      "season": "1989-90",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Benfica",
+      "runnerUpCountry": "Portugal",
+      "venue": "Praterstadion, Viena, Austria",
+      "attendance": 57558
+    },
+    {
+      "season": "1990-91",
+      "winner": "Estrella Roja",
+      "winnerCountry": "Yugoslavia",
+      "score": "0–0",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Marseille",
+      "runnerUpCountry": "Francia",
+      "venue": "Stadio San Nicola, Bari, Italia",
+      "attendance": 56000
+    },
+    {
+      "season": "1991-92",
+      "winner": "Barcelona",
+      "winnerCountry": "España",
+      "score": "1–0",
+      "extraTime": true,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Sampdoria",
+      "runnerUpCountry": "Italia",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 70827
+    },
+    {
+      "season": "1992-93",
+      "winner": "Marseille",
+      "winnerCountry": "Francia",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "AC Milan",
+      "runnerUpCountry": "Italia",
+      "venue": "Olympiastadion, Múnich, Alemania",
+      "attendance": 64400
+    },
+    {
+      "season": "1993-94",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "4–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Barcelona",
+      "runnerUpCountry": "España",
+      "venue": "Olympic Stadium, Atenas, Grecia",
+      "attendance": 70000
+    },
+    {
+      "season": "1994-95",
+      "winner": "Ajax",
+      "winnerCountry": "Países Bajos",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "AC Milan",
+      "runnerUpCountry": "Italia",
+      "venue": "Ernst-Happel-Stadion, Viena, Austria",
+      "attendance": 49730
+    },
+    {
+      "season": "1995-96",
+      "winner": "Juventus",
+      "winnerCountry": "Italia",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Ajax",
+      "runnerUpCountry": "Países Bajos",
+      "venue": "Stadio Olimpico, Roma, Italia",
+      "attendance": 70000
+    },
+    {
+      "season": "1996-97",
+      "winner": "Borussia Dortmund",
+      "winnerCountry": "Alemania",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Olympiastadion, Múnich, Alemania",
+      "attendance": 59000
+    },
+    {
+      "season": "1997-98",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Amsterdam Arena, Amsterdam, Países Bajos",
+      "attendance": 48500
+    },
+    {
+      "season": "1998-99",
+      "winner": "Manchester United",
+      "winnerCountry": "Inglaterra",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Bayern München",
+      "runnerUpCountry": "Alemania",
+      "venue": "Camp Nou, Barcelona, España",
+      "attendance": 90245
+    },
+    {
+      "season": "1999-00",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "3–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Valencia",
+      "runnerUpCountry": "España",
+      "venue": "Stade de France, Saint-Denis, Francia",
+      "attendance": 80000
+    },
+    {
+      "season": "2000-01",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Valencia",
+      "runnerUpCountry": "España",
+      "venue": "San Siro, Milán, Italia",
+      "attendance": 79000
+    },
+    {
+      "season": "2001-02",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Bayer Leverkusen",
+      "runnerUpCountry": "Alemania",
+      "venue": "Hampden Park, Glasgow, Escocia",
+      "attendance": 50499
+    },
+    {
+      "season": "2002-03",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "0–0",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Old Trafford, Manchester, Inglaterra",
+      "attendance": 62315
+    },
+    {
+      "season": "2003-04",
+      "winner": "Porto",
+      "winnerCountry": "Portugal",
+      "score": "3–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Monaco",
+      "runnerUpCountry": "Francia",
+      "venue": "Arena AufSchalke, Gelsenkirchen, Alemania",
+      "attendance": 53053
+    },
+    {
+      "season": "2004-05",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "3–3",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "AC Milan",
+      "runnerUpCountry": "Italia",
+      "venue": "Atatürk Olympic Stadium, Estambul, Turquía",
+      "attendance": 69000
+    },
+    {
+      "season": "2005-06",
+      "winner": "Barcelona",
+      "winnerCountry": "España",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Arsenal",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Stade de France, Saint-Denis, Francia",
+      "attendance": 79610
+    },
+    {
+      "season": "2006-07",
+      "winner": "AC Milan",
+      "winnerCountry": "Italia",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Liverpool",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Olympic Stadium, Atenas, Grecia",
+      "attendance": 63000
+    },
+    {
+      "season": "2007-08",
+      "winner": "Manchester United",
+      "winnerCountry": "Inglaterra",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Chelsea",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Luzhniki Stadium, Moscú, Rusia",
+      "attendance": 67310
+    },
+    {
+      "season": "2008-09",
+      "winner": "Barcelona",
+      "winnerCountry": "España",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Manchester United",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Stadio Olimpico, Roma, Italia",
+      "attendance": 62467
+    },
+    {
+      "season": "2009-10",
+      "winner": "Inter de Milán",
+      "winnerCountry": "Italia",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Bayern München",
+      "runnerUpCountry": "Alemania",
+      "venue": "Santiago Bernabéu, Madrid, España",
+      "attendance": 73490
+    },
+    {
+      "season": "2010-11",
+      "winner": "Barcelona",
+      "winnerCountry": "España",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Manchester United",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 87695
+    },
+    {
+      "season": "2011-12",
+      "winner": "Chelsea",
+      "winnerCountry": "Inglaterra",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Bayern München",
+      "runnerUpCountry": "Alemania",
+      "venue": "Allianz Arena, Múnich, Alemania",
+      "attendance": 62500
+    },
+    {
+      "season": "2012-13",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania",
+      "score": "2–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Borussia Dortmund",
+      "runnerUpCountry": "Alemania",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 86298
+    },
+    {
+      "season": "2013-14",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "4–1",
+      "extraTime": true,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Atlético de Madrid",
+      "runnerUpCountry": "España",
+      "venue": "Estádio da Luz, Lisboa, Portugal",
+      "attendance": 60976
+    },
+    {
+      "season": "2014-15",
+      "winner": "Barcelona",
+      "winnerCountry": "España",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Olympiastadion, Berlín, Alemania",
+      "attendance": 70442
+    },
+    {
+      "season": "2015-16",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Atlético de Madrid",
+      "runnerUpCountry": "España",
+      "venue": "San Siro, Milán, Italia",
+      "attendance": 71942
+    },
+    {
+      "season": "2016-17",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "4–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Juventus",
+      "runnerUpCountry": "Italia",
+      "venue": "Millennium Stadium, Cardiff, Gales",
+      "attendance": 65842
+    },
+    {
+      "season": "2017-18",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "3–1",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Liverpool",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "NSC Olimpiyskiy Stadium, Kiev, Ucrania",
+      "attendance": 61561
+    },
+    {
+      "season": "2018-19",
+      "winner": "Liverpool",
+      "winnerCountry": "Inglaterra",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Tottenham Hotspur",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Metropolitano Stadium, Madrid, España",
+      "attendance": 63272
+    },
+    {
+      "season": "2019-20",
+      "winner": "Bayern München",
+      "winnerCountry": "Alemania",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Paris Saint-Germain",
+      "runnerUpCountry": "Francia",
+      "venue": "Estádio da Luz, Lisboa, Portugal",
+      "attendance": null
+    },
+    {
+      "season": "2020-21",
+      "winner": "Chelsea",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Manchester City",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Estádio do Dragão, Porto, Portugal",
+      "attendance": 14110
+    },
+    {
+      "season": "2021-22",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Liverpool",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Stade de France, Saint-Denis, Francia",
+      "attendance": 75000
+    },
+    {
+      "season": "2022-23",
+      "winner": "Manchester City",
+      "winnerCountry": "Inglaterra",
+      "score": "1–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Inter de Milán",
+      "runnerUpCountry": "Italia",
+      "venue": "Atatürk Olympic Stadium, Estambul, Turquía",
+      "attendance": 71412
+    },
+    {
+      "season": "2023-24",
+      "winner": "Real Madrid",
+      "winnerCountry": "España",
+      "score": "2–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Borussia Dortmund",
+      "runnerUpCountry": "Alemania",
+      "venue": "Wembley Stadium, Londres, Inglaterra",
+      "attendance": 86212
+    },
+    {
+      "season": "2024-25",
+      "winner": "Paris Saint-Germain",
+      "winnerCountry": "Francia",
+      "score": "5–0",
+      "extraTime": false,
+      "penalties": false,
+      "replay": false,
+      "runnerUp": "Inter de Milán",
+      "runnerUpCountry": "Italia",
+      "venue": "Allianz Arena, Múnich, Alemania",
+      "attendance": 64327
+    },
+    {
+      "season": "2025-26",
+      "winner": "Paris Saint-Germain",
+      "winnerCountry": "Francia",
+      "score": "1–1",
+      "extraTime": false,
+      "penalties": true,
+      "replay": false,
+      "runnerUp": "Arsenal",
+      "runnerUpCountry": "Inglaterra",
+      "venue": "Puskás Aréna, Budapest, Hungría",
+      "attendance": 61035
+    }
+  ],
+  "upcoming": [
+    {
+      "season": "2026-27",
+      "venue": "Metropolitano Stadium, Madrid, España"
+    },
+    {
+      "season": "2027-28",
+      "venue": "Allianz Arena, Múnich, Alemania"
+    },
+    {
+      "season": "2028-29",
+      "venue": "Camp Nou, Barcelona, España"
+    }
+  ],
+  "clubs": [
+    {
+      "club": "Real Madrid",
+      "titles": 15,
+      "runnersUp": 3,
+      "wonYears": [
+        1956,
+        1957,
+        1958,
+        1959,
+        1960,
+        1966,
+        1998,
+        2000,
+        2002,
+        2014,
+        2016,
+        2017,
+        2018,
+        2022,
+        2024
+      ],
+      "lostYears": [
+        1962,
+        1964,
+        1981
+      ]
+    },
+    {
+      "club": "AC Milan",
+      "titles": 7,
+      "runnersUp": 4,
+      "wonYears": [
+        1963,
+        1969,
+        1989,
+        1990,
+        1994,
+        2003,
+        2007
+      ],
+      "lostYears": [
+        1958,
+        1993,
+        1995,
+        2005
+      ]
+    },
+    {
+      "club": "Bayern München",
+      "titles": 6,
+      "runnersUp": 5,
+      "wonYears": [
+        1974,
+        1975,
+        1976,
+        2001,
+        2013,
+        2020
+      ],
+      "lostYears": [
+        1982,
+        1987,
+        1999,
+        2010,
+        2012
+      ]
+    },
+    {
+      "club": "Liverpool",
+      "titles": 6,
+      "runnersUp": 4,
+      "wonYears": [
+        1977,
+        1978,
+        1981,
+        1984,
+        2005,
+        2019
+      ],
+      "lostYears": [
+        1985,
+        2007,
+        2018,
+        2022
+      ]
+    },
+    {
+      "club": "Barcelona",
+      "titles": 5,
+      "runnersUp": 3,
+      "wonYears": [
+        1992,
+        2006,
+        2009,
+        2011,
+        2015
+      ],
+      "lostYears": [
+        1961,
+        1986,
+        1994
+      ]
+    },
+    {
+      "club": "Ajax",
+      "titles": 4,
+      "runnersUp": 2,
+      "wonYears": [
+        1971,
+        1972,
+        1973,
+        1995
+      ],
+      "lostYears": [
+        1969,
+        1996
+      ]
+    },
+    {
+      "club": "Inter de Milán",
+      "titles": 3,
+      "runnersUp": 4,
+      "wonYears": [
+        1964,
+        1965,
+        2010
+      ],
+      "lostYears": [
+        1967,
+        1972,
+        2023,
+        2025
+      ]
+    },
+    {
+      "club": "Manchester United",
+      "titles": 3,
+      "runnersUp": 2,
+      "wonYears": [
+        1968,
+        1999,
+        2008
+      ],
+      "lostYears": [
+        2009,
+        2011
+      ]
+    },
+    {
+      "club": "Juventus",
+      "titles": 2,
+      "runnersUp": 7,
+      "wonYears": [
+        1985,
+        1996
+      ],
+      "lostYears": [
+        1973,
+        1983,
+        1997,
+        1998,
+        2003,
+        2015,
+        2017
+      ]
+    },
+    {
+      "club": "Benfica",
+      "titles": 2,
+      "runnersUp": 5,
+      "wonYears": [
+        1961,
+        1962
+      ],
+      "lostYears": [
+        1963,
+        1965,
+        1968,
+        1988,
+        1990
+      ]
+    },
+    {
+      "club": "Chelsea",
+      "titles": 2,
+      "runnersUp": 1,
+      "wonYears": [
+        2012,
+        2021
+      ],
+      "lostYears": [
+        2008
+      ]
+    },
+    {
+      "club": "Paris Saint-Germain",
+      "titles": 2,
+      "runnersUp": 1,
+      "wonYears": [
+        2025,
+        2026
+      ],
+      "lostYears": [
+        2020
+      ]
+    },
+    {
+      "club": "Nottingham Forest",
+      "titles": 2,
+      "runnersUp": 0,
+      "wonYears": [
+        1979,
+        1980
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "Porto",
+      "titles": 2,
+      "runnersUp": 0,
+      "wonYears": [
+        1987,
+        2004
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "Borussia Dortmund",
+      "titles": 1,
+      "runnersUp": 2,
+      "wonYears": [
+        1997
+      ],
+      "lostYears": [
+        2013,
+        2024
+      ]
+    },
+    {
+      "club": "Celtic",
+      "titles": 1,
+      "runnersUp": 1,
+      "wonYears": [
+        1967
+      ],
+      "lostYears": [
+        1970
+      ]
+    },
+    {
+      "club": "Hamburgo",
+      "titles": 1,
+      "runnersUp": 1,
+      "wonYears": [
+        1983
+      ],
+      "lostYears": [
+        1980
+      ]
+    },
+    {
+      "club": "Steaua de Bucarest",
+      "titles": 1,
+      "runnersUp": 1,
+      "wonYears": [
+        1986
+      ],
+      "lostYears": [
+        1989
+      ]
+    },
+    {
+      "club": "Marseille",
+      "titles": 1,
+      "runnersUp": 1,
+      "wonYears": [
+        1993
+      ],
+      "lostYears": [
+        1991
+      ]
+    },
+    {
+      "club": "Manchester City",
+      "titles": 1,
+      "runnersUp": 1,
+      "wonYears": [
+        2023
+      ],
+      "lostYears": [
+        2021
+      ]
+    },
+    {
+      "club": "Feyenoord",
+      "titles": 1,
+      "runnersUp": 0,
+      "wonYears": [
+        1970
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "Aston Villa",
+      "titles": 1,
+      "runnersUp": 0,
+      "wonYears": [
+        1982
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "PSV Eindhoven",
+      "titles": 1,
+      "runnersUp": 0,
+      "wonYears": [
+        1988
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "Estrella Roja",
+      "titles": 1,
+      "runnersUp": 0,
+      "wonYears": [
+        1991
+      ],
+      "lostYears": []
+    },
+    {
+      "club": "Atlético de Madrid",
+      "titles": 0,
+      "runnersUp": 3,
+      "wonYears": [],
+      "lostYears": [
+        1974,
+        2014,
+        2016
+      ]
+    },
+    {
+      "club": "Reims",
+      "titles": 0,
+      "runnersUp": 2,
+      "wonYears": [],
+      "lostYears": [
+        1956,
+        1959
+      ]
+    },
+    {
+      "club": "Valencia",
+      "titles": 0,
+      "runnersUp": 2,
+      "wonYears": [],
+      "lostYears": [
+        2000,
+        2001
+      ]
+    },
+    {
+      "club": "Arsenal",
+      "titles": 0,
+      "runnersUp": 2,
+      "wonYears": [],
+      "lostYears": [
+        2006,
+        2026
+      ]
+    },
+    {
+      "club": "Fiorentina",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1957
+      ]
+    },
+    {
+      "club": "Eintracht Frankfurt",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1960
+      ]
+    },
+    {
+      "club": "Partizan",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1966
+      ]
+    },
+    {
+      "club": "Panathinaikos",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1971
+      ]
+    },
+    {
+      "club": "Leeds United",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1975
+      ]
+    },
+    {
+      "club": "Saint-Étienne",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1976
+      ]
+    },
+    {
+      "club": "Borussia Mönchengladbach",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1977
+      ]
+    },
+    {
+      "club": "Club Brugge",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1978
+      ]
+    },
+    {
+      "club": "Malmö FF",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1979
+      ]
+    },
+    {
+      "club": "Roma",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1984
+      ]
+    },
+    {
+      "club": "Sampdoria",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        1992
+      ]
+    },
+    {
+      "club": "Bayer Leverkusen",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        2002
+      ]
+    },
+    {
+      "club": "Monaco",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        2004
+      ]
+    },
+    {
+      "club": "Tottenham Hotspur",
+      "titles": 0,
+      "runnersUp": 1,
+      "wonYears": [],
+      "lostYears": [
+        2019
+      ]
+    }
+  ],
+  "allTime": [
+    {
+      "rank": 1,
+      "club": "Real Madrid",
+      "seasons": 57,
+      "played": 519,
+      "won": 313,
+      "drawn": 85,
+      "lost": 121,
+      "goalsFor": 1143,
+      "goalsAgainst": 582,
+      "points": 711
+    },
+    {
+      "rank": 2,
+      "club": "Bayern München",
+      "seasons": 43,
+      "played": 424,
+      "won": 256,
+      "drawn": 83,
+      "lost": 85,
+      "goalsFor": 907,
+      "goalsAgainst": 427,
+      "points": 595
+    },
+    {
+      "rank": 3,
+      "club": "Barcelona",
+      "seasons": 37,
+      "played": 377,
+      "won": 221,
+      "drawn": 81,
+      "lost": 75,
+      "goalsFor": 771,
+      "goalsAgainst": 403,
+      "points": 523
+    },
+    {
+      "rank": 4,
+      "club": "Juventus",
+      "seasons": 39,
+      "played": 321,
+      "won": 161,
+      "drawn": 77,
+      "lost": 83,
+      "goalsFor": 510,
+      "goalsAgainst": 329,
+      "points": 399
+    },
+    {
+      "rank": 5,
+      "club": "Manchester United",
+      "seasons": 31,
+      "played": 301,
+      "won": 162,
+      "drawn": 70,
+      "lost": 69,
+      "goalsFor": 549,
+      "goalsAgainst": 301,
+      "points": 394
+    },
+    {
+      "rank": 6,
+      "club": "Liverpool",
+      "seasons": 30,
+      "played": 272,
+      "won": 159,
+      "drawn": 50,
+      "lost": 63,
+      "goalsFor": 522,
+      "goalsAgainst": 251,
+      "points": 368
+    },
+    {
+      "rank": 7,
+      "club": "Benfica",
+      "seasons": 45,
+      "played": 319,
+      "won": 142,
+      "drawn": 71,
+      "lost": 106,
+      "goalsFor": 519,
+      "goalsAgainst": 379,
+      "points": 355
+    },
+    {
+      "rank": 8,
+      "club": "AC Milan",
+      "seasons": 32,
+      "played": 283,
+      "won": 138,
+      "drawn": 71,
+      "lost": 74,
+      "goalsFor": 457,
+      "goalsAgainst": 272,
+      "points": 347
+    },
+    {
+      "rank": 9,
+      "club": "Porto",
+      "seasons": 39,
+      "played": 279,
+      "won": 126,
+      "drawn": 61,
+      "lost": 92,
+      "goalsFor": 413,
+      "goalsAgainst": 318,
+      "points": 313
+    },
+    {
+      "rank": 10,
+      "club": "Arsenal",
+      "seasons": 25,
+      "played": 242,
+      "won": 128,
+      "drawn": 51,
+      "lost": 63,
+      "goalsFor": 416,
+      "goalsAgainst": 243,
+      "points": 307
+    },
+    {
+      "rank": 11,
+      "club": "Inter de Milán",
+      "seasons": 28,
+      "played": 240,
+      "won": 117,
+      "drawn": 60,
+      "lost": 63,
+      "goalsFor": 347,
+      "goalsAgainst": 245,
+      "points": 294
+    },
+    {
+      "rank": 12,
+      "club": "Ajax",
+      "seasons": 40,
+      "played": 255,
+      "won": 114,
+      "drawn": 64,
+      "lost": 77,
+      "goalsFor": 404,
+      "goalsAgainst": 303,
+      "points": 292
+    },
+    {
+      "rank": 13,
+      "club": "Dynamo Kyiv",
+      "seasons": 41,
+      "played": 264,
+      "won": 109,
+      "drawn": 57,
+      "lost": 98,
+      "goalsFor": 369,
+      "goalsAgainst": 324,
+      "points": 275
+    },
+    {
+      "rank": 14,
+      "club": "Chelsea",
+      "seasons": 20,
+      "played": 211,
+      "won": 109,
+      "drawn": 54,
+      "lost": 48,
+      "goalsFor": 361,
+      "goalsAgainst": 199,
+      "points": 272
+    },
+    {
+      "rank": 15,
+      "club": "Celtic",
+      "seasons": 41,
+      "played": 242,
+      "won": 106,
+      "drawn": 46,
+      "lost": 90,
+      "goalsFor": 361,
+      "goalsAgainst": 307,
+      "points": 258
+    },
+    {
+      "rank": 16,
+      "club": "Paris Saint-Germain",
+      "seasons": 20,
+      "played": 191,
+      "won": 105,
+      "drawn": 35,
+      "lost": 51,
+      "goalsFor": 395,
+      "goalsAgainst": 222,
+      "points": 245
+    },
+    {
+      "rank": 17,
+      "club": "Borussia Dortmund",
+      "seasons": 25,
+      "played": 209,
+      "won": 101,
+      "drawn": 40,
+      "lost": 68,
+      "goalsFor": 360,
+      "goalsAgainst": 268,
+      "points": 242
+    },
+    {
+      "rank": 18,
+      "club": "Atlético de Madrid",
+      "seasons": 22,
+      "played": 198,
+      "won": 97,
+      "drawn": 47,
+      "lost": 54,
+      "goalsFor": 309,
+      "goalsAgainst": 209,
+      "points": 241
+    },
+    {
+      "rank": 19,
+      "club": "PSV Eindhoven",
+      "seasons": 34,
+      "played": 221,
+      "won": 81,
+      "drawn": 55,
+      "lost": 85,
+      "goalsFor": 312,
+      "goalsAgainst": 298,
+      "points": 217
+    },
+    {
+      "rank": 20,
+      "club": "Manchester City",
+      "seasons": 17,
+      "played": 151,
+      "won": 83,
+      "drawn": 29,
+      "lost": 39,
+      "goalsFor": 314,
+      "goalsAgainst": 182,
+      "points": 195
+    },
+    {
+      "rank": 21,
+      "club": "Estrella Roja",
+      "seasons": 32,
+      "played": 177,
+      "won": 78,
+      "drawn": 36,
+      "lost": 63,
+      "goalsFor": 322,
+      "goalsAgainst": 251,
+      "points": 192
+    },
+    {
+      "rank": 22,
+      "club": "Dinamo Zagreb",
+      "seasons": 27,
+      "played": 176,
+      "won": 75,
+      "drawn": 37,
+      "lost": 64,
+      "goalsFor": 270,
+      "goalsAgainst": 249,
+      "points": 187
+    },
+    {
+      "rank": 23,
+      "club": "Anderlecht",
+      "seasons": 34,
+      "played": 200,
+      "won": 70,
+      "drawn": 44,
+      "lost": 86,
+      "goalsFor": 282,
+      "goalsAgainst": 320,
+      "points": 184
+    },
+    {
+      "rank": 24,
+      "club": "Galatasaray",
+      "seasons": 31,
+      "played": 205,
+      "won": 68,
+      "drawn": 47,
+      "lost": 90,
+      "goalsFor": 258,
+      "goalsAgainst": 328,
+      "points": 183
+    },
+    {
+      "rank": 25,
+      "club": "Rangers",
+      "seasons": 35,
+      "played": 185,
+      "won": 67,
+      "drawn": 45,
+      "lost": 73,
+      "goalsFor": 257,
+      "goalsAgainst": 272,
+      "points": 179
+    }
+  ],
+  "topScorers": [
+    {
+      "season": "1955-56",
+      "players": [
+        {
+          "name": "Miloš Milutinović",
+          "club": "Partizan",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1956-57",
+      "players": [
+        {
+          "name": "Dennis Viollet",
+          "club": "Manchester United",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "1957-58",
+      "players": [
+        {
+          "name": "Alfredo Di Stéfano",
+          "club": "Real Madrid",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1958-59",
+      "players": [
+        {
+          "name": "Just Fontaine",
+          "club": "Reims",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1959-60",
+      "players": [
+        {
+          "name": "Ferenc Puskás",
+          "club": "Real Madrid",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "1960-61",
+      "players": [
+        {
+          "name": "José Águas",
+          "club": "Benfica",
+          "goals": 11
+        }
+      ]
+    },
+    {
+      "season": "1961-62",
+      "players": [
+        {
+          "name": "Heinz Strehl",
+          "club": "1. FC Nürnberg",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1962-63",
+      "players": [
+        {
+          "name": "José Altafini",
+          "club": "AC Milan",
+          "goals": 14
+        }
+      ]
+    },
+    {
+      "season": "1963-64",
+      "players": [
+        {
+          "name": "Vladica Kovačević",
+          "club": "Partizan",
+          "goals": 7
+        },
+        {
+          "name": "Sandro Mazzola",
+          "club": "Inter de Milán",
+          "goals": 7
+        },
+        {
+          "name": "Ferenc Puskás",
+          "club": "Real Madrid",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1964-65",
+      "players": [
+        {
+          "name": "José Torres",
+          "club": "Benfica",
+          "goals": 11
+        }
+      ]
+    },
+    {
+      "season": "1965-66",
+      "players": [
+        {
+          "name": "Flórián Albert",
+          "club": "Ferencváros",
+          "goals": 7
+        },
+        {
+          "name": "Eusébio",
+          "club": "Benfica",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1966-67",
+      "players": [
+        {
+          "name": "Jürgen Piepenburg",
+          "club": "Vorwärts Berlin",
+          "goals": 6
+        },
+        {
+          "name": "Paul Van Himst",
+          "club": "Anderlecht",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1967-68",
+      "players": [
+        {
+          "name": "Eusébio",
+          "club": "Benfica",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1968-69",
+      "players": [
+        {
+          "name": "Denis Law",
+          "club": "Manchester United",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "1969-70",
+      "players": [
+        {
+          "name": "Mick Jones",
+          "club": "Leeds United",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1970-71",
+      "players": [
+        {
+          "name": "Antonis Antoniadis",
+          "club": "Panathinaikos",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1971-72",
+      "players": [
+        {
+          "name": "Johan Cruyff",
+          "club": "Ajax",
+          "goals": 5
+        },
+        {
+          "name": "Antal Dunai",
+          "club": "Újpest",
+          "goals": 5
+        },
+        {
+          "name": "Lou Macari",
+          "club": "Celtic",
+          "goals": 5
+        },
+        {
+          "name": "Silvester Takač",
+          "club": "Standard Liège",
+          "goals": 5
+        }
+      ]
+    },
+    {
+      "season": "1972-73",
+      "players": [
+        {
+          "name": "Gerd Müller",
+          "club": "Bayern München",
+          "goals": 11
+        }
+      ]
+    },
+    {
+      "season": "1973-74",
+      "players": [
+        {
+          "name": "Gerd Müller",
+          "club": "Bayern München",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1974-75",
+      "players": [
+        {
+          "name": "Gerd Müller",
+          "club": "Bayern München",
+          "goals": 5
+        },
+        {
+          "name": "Eduard Markarov",
+          "club": "Ararat Yerevan",
+          "goals": 5
+        }
+      ]
+    },
+    {
+      "season": "1975-76",
+      "players": [
+        {
+          "name": "Jupp Heynckes",
+          "club": "Borussia Mönchengladbach",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1976-77",
+      "players": [
+        {
+          "name": "Gerd Müller",
+          "club": "Bayern München",
+          "goals": 5
+        },
+        {
+          "name": "Franco Cucinotta",
+          "club": "Zürich",
+          "goals": 5
+        }
+      ]
+    },
+    {
+      "season": "1977-78",
+      "players": [
+        {
+          "name": "Allan Simonsen",
+          "club": "Borussia Mönchengladbach",
+          "goals": 5
+        }
+      ]
+    },
+    {
+      "season": "1978-79",
+      "players": [
+        {
+          "name": "Claudio Sulser",
+          "club": "Grasshopper",
+          "goals": 11
+        }
+      ]
+    },
+    {
+      "season": "1979-80",
+      "players": [
+        {
+          "name": "Søren Lerby",
+          "club": "Ajax",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1980-81",
+      "players": [
+        {
+          "name": "Terry McDermott",
+          "club": "Liverpool",
+          "goals": 6
+        },
+        {
+          "name": "Graeme Souness",
+          "club": "Liverpool",
+          "goals": 6
+        },
+        {
+          "name": "Karl-Heinz Rummenigge",
+          "club": "Bayern München",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1981-82",
+      "players": [
+        {
+          "name": "Dieter Hoeneß",
+          "club": "Bayern München",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1982-83",
+      "players": [
+        {
+          "name": "Paolo Rossi",
+          "club": "Juventus",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1983-84",
+      "players": [
+        {
+          "name": "Viktor Sokol",
+          "club": "Dinamo Minsk",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1984-85",
+      "players": [
+        {
+          "name": "Torbjörn Nilsson",
+          "club": "IFK Göteborg",
+          "goals": 7
+        },
+        {
+          "name": "Michel Platini",
+          "club": "Juventus",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1985-86",
+      "players": [
+        {
+          "name": "Torbjörn Nilsson",
+          "club": "IFK Göteborg",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1986-87",
+      "players": [
+        {
+          "name": "Borislav Cvetković",
+          "club": "Estrella Roja",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1987-88",
+      "players": [
+        {
+          "name": "Gheorghe Hagi",
+          "club": "Steaua de Bucarest",
+          "goals": 4
+        },
+        {
+          "name": "Petar Novák",
+          "club": "Sparta Prague",
+          "goals": 4
+        },
+        {
+          "name": "René van der Gijp",
+          "club": "Neuchâtel Xamax",
+          "goals": 4
+        },
+        {
+          "name": "Rabah Madjer",
+          "club": "Porto",
+          "goals": 4
+        },
+        {
+          "name": "Ally McCoist",
+          "club": "Rangers",
+          "goals": 4
+        },
+        {
+          "name": "Míchel",
+          "club": "Real Madrid",
+          "goals": 4
+        },
+        {
+          "name": "Rui Águas",
+          "club": "Benfica",
+          "goals": 4
+        }
+      ]
+    },
+    {
+      "season": "1988-89",
+      "players": [
+        {
+          "name": "Marco van Basten",
+          "club": "AC Milan",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1989-90",
+      "players": [
+        {
+          "name": "Romário",
+          "club": "PSV Eindhoven",
+          "goals": 6
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "club": "Marseille",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1990-91",
+      "players": [
+        {
+          "name": "Peter Pacult",
+          "club": "Tirol Innsbruck",
+          "goals": 6
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "club": "Marseille",
+          "goals": 6
+        }
+      ]
+    },
+    {
+      "season": "1991-92",
+      "players": [
+        {
+          "name": "Sergei Yuran",
+          "club": "Benfica",
+          "goals": 7
+        },
+        {
+          "name": "Jean-Pierre Papin",
+          "club": "Marseille",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1992-93",
+      "players": [
+        {
+          "name": "Romário",
+          "club": "PSV Eindhoven",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1993-94",
+      "players": [
+        {
+          "name": "Ronald Koeman",
+          "club": "Barcelona",
+          "goals": 8
+        },
+        {
+          "name": "Wynton Rufer",
+          "club": "Werder Bremen",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1994-95",
+      "players": [
+        {
+          "name": "George Weah",
+          "club": "Paris Saint-Germain",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "1995-96",
+      "players": [
+        {
+          "name": "Jari Litmanen",
+          "club": "Ajax",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "1996-97",
+      "players": [
+        {
+          "name": "Milinko Pantić",
+          "club": "Atlético de Madrid",
+          "goals": 5
+        }
+      ]
+    },
+    {
+      "season": "1997-98",
+      "players": [
+        {
+          "name": "Alessandro Del Piero",
+          "club": "Juventus",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "1998-99",
+      "players": [
+        {
+          "name": "Andriy Shevchenko",
+          "club": "Dynamo Kyiv",
+          "goals": 8
+        },
+        {
+          "name": "Dwight Yorke",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "1999-00",
+      "players": [
+        {
+          "name": "Mário Jardel",
+          "club": "Porto",
+          "goals": 10
+        },
+        {
+          "name": "Rivaldo",
+          "club": "Barcelona",
+          "goals": 10
+        },
+        {
+          "name": "Raúl",
+          "club": "Real Madrid",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "2000-01",
+      "players": [
+        {
+          "name": "Raúl",
+          "club": "Real Madrid",
+          "goals": 7
+        }
+      ]
+    },
+    {
+      "season": "2001-02",
+      "players": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "2002-03",
+      "players": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2003-04",
+      "players": [
+        {
+          "name": "Fernando Morientes",
+          "club": "Monaco",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "2004-05",
+      "players": [
+        {
+          "name": "Ruud van Nistelrooy",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "2005-06",
+      "players": [
+        {
+          "name": "Andriy Shevchenko",
+          "club": "AC Milan",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "2006-07",
+      "players": [
+        {
+          "name": "Kaká",
+          "club": "AC Milan",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "2007-08",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Manchester United",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "2008-09",
+      "players": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 9
+        }
+      ]
+    },
+    {
+      "season": "2009-10",
+      "players": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "2010-11",
+      "players": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2011-12",
+      "players": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 14
+        }
+      ]
+    },
+    {
+      "season": "2012-13",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2013-14",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 17
+        }
+      ]
+    },
+    {
+      "season": "2014-15",
+      "players": [
+        {
+          "name": "Neymar",
+          "club": "Barcelona",
+          "goals": 10
+        },
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 10
+        },
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "2015-16",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 16
+        }
+      ]
+    },
+    {
+      "season": "2016-17",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2017-18",
+      "players": [
+        {
+          "name": "Cristiano Ronaldo",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ]
+    },
+    {
+      "season": "2018-19",
+      "players": [
+        {
+          "name": "Lionel Messi",
+          "club": "Barcelona",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2019-20",
+      "players": [
+        {
+          "name": "Robert Lewandowski",
+          "club": "Bayern München",
+          "goals": 15
+        }
+      ]
+    },
+    {
+      "season": "2020-21",
+      "players": [
+        {
+          "name": "Erling Haaland",
+          "club": "Borussia Dortmund",
+          "goals": 10
+        }
+      ]
+    },
+    {
+      "season": "2021-22",
+      "players": [
+        {
+          "name": "Karim Benzema",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ]
+    },
+    {
+      "season": "2022-23",
+      "players": [
+        {
+          "name": "Erling Haaland",
+          "club": "Manchester City",
+          "goals": 12
+        }
+      ]
+    },
+    {
+      "season": "2023-24",
+      "players": [
+        {
+          "name": "Harry Kane",
+          "club": "Bayern München",
+          "goals": 8
+        },
+        {
+          "name": "Kylian Mbappé",
+          "club": "Paris Saint-Germain",
+          "goals": 8
+        }
+      ]
+    },
+    {
+      "season": "2024-25",
+      "players": [
+        {
+          "name": "Serhou Guirassy",
+          "club": "Borussia Dortmund",
+          "goals": 13
+        },
+        {
+          "name": "Raphinha",
+          "club": "Barcelona",
+          "goals": 13
+        }
+      ]
+    },
+    {
+      "season": "2025-26",
+      "players": [
+        {
+          "name": "Kylian Mbappé",
+          "club": "Real Madrid",
+          "goals": 15
+        }
+      ]
+    }
+  ]
+}

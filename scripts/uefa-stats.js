@@ -47,6 +47,11 @@ const CLUB_NAMES = {
   Bayern: 'Bayern München',
   'Salzburg': 'Salzburg',
   'Olympique Lyonnais': 'Lyon',
+  Hamburg: 'Hamburgo',
+  'Crvena Zvezda': 'Estrella Roja',
+  FCSB: 'Steaua de Bucarest',
+  'GNK Dinamo': 'Dinamo Zagreb',
+  'D. Zagreb': 'Dinamo Zagreb',
   Inter: 'Inter de Milán',
   Milan: 'AC Milan',
 };
@@ -60,7 +65,7 @@ const clubName = (team) => {
 const nameTokens = (name) =>
   (name || '')
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .split(/[^a-z]+/)
     .filter((token) => token.length > 1);
@@ -155,6 +160,51 @@ const EXTRA_CLUBS = ['Real Madrid', 'AC Milan', 'Bayern München', 'Liverpool', 
 // "Paris Saint-Germain" -> "paris-saint-germain" (nombre del archivo del escudo)
 const clubSlug = (name) => nameTokens(name).join('-');
 
+// Líderes de una temporada: máximo goleador y máximo asistente (con empates)
+// y número de equipos de la fase final
+function seasonLeaders(rows, year) {
+  const best = (stat) => {
+    const values = rows.map((row) => ({ row, value: statValue(row, stat) }));
+    const max = Math.max(0, ...values.map((v) => v.value));
+    if (!max) return [];
+    return values
+      .filter((v) => v.value === max)
+      .map(({ row, value }) => ({ name: row.player.internationalName, club: clubName(row.team), [stat]: value }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  };
+  return {
+    topScorers: best('goals'),
+    topAssists: startYear(year) >= FIRST_ASSISTS_START ? best('assists') : null,
+    teams: new Set(rows.filter((row) => row.team && statValue(row, 'matches_appearance')).map((row) => row.team.id)).size,
+  };
+}
+
+// Suma los goles de cada jugador en cada club (era Champions, desde 1992-93)
+function addClubGoals(totals, rows) {
+  for (const row of rows) {
+    const goals = statValue(row, 'goals');
+    if (!goals || !row.team || !row.player) continue;
+    const club = clubName(row.team);
+    if (!totals.has(club)) totals.set(club, new Map());
+    const players = totals.get(club);
+    const current = players.get(row.playerId) || { name: row.player.internationalName, goals: 0 };
+    current.goals += goals;
+    players.set(row.playerId, current);
+  }
+  return totals;
+}
+
+// Los n máximos goleadores de un club
+const clubTopScorers = (totals, club, n = 3) =>
+  [...((totals.get(club) || new Map()).values())].sort((a, b) => b.goals - a.goals || a.name.localeCompare(b.name)).slice(0, n);
+
+// Nombre de la UEFA que corresponde a un club de la app: el mismo, o uno cuyas
+// palabras están todas en el nombre ("Malmö" para "Malmö FF")
+function findUefaClub(name, uefaNames) {
+  if (uefaNames.includes(name)) return name;
+  return uefaNames.find((uefaName) => sameClub(name, uefaName)) || null;
+}
+
 // Quita los campos internos antes de guardar
 const publicSeason = ({ year, teamId, ...season }) => season;
 
@@ -184,5 +234,9 @@ module.exports = {
   publicSeason,
   EXTRA_CLUBS,
   clubSlug,
+  seasonLeaders,
+  addClubGoals,
+  clubTopScorers,
+  findUefaClub,
   totals,
 };

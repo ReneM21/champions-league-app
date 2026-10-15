@@ -1,4 +1,4 @@
-import { buildPlayers, buildTeams, mergeSeasons, withPhoto } from './buildPlayers';
+import { buildPlayers, buildTeams, mergeSeasons, titlesFromFinals, withPhoto } from './buildPlayers';
 
 const ranking = {
   players: [
@@ -146,5 +146,33 @@ describe('temporadas de la UEFA', () => {
     expect(player.goals).toBe(29);
     const { byId: other } = buildPlayers({ ranking, assists, details, photos, profiles, uefa: { asistidor: { seasons: uefa } } });
     expect(other.get('asistidor').goals).toBe(3);
+  });
+});
+
+describe('títulos y finales calculados', () => {
+  const finals = [
+    { season: '2007-08', winner: 'Manchester United', runnerUp: 'Chelsea' },
+    { season: '2008-09', winner: 'Barcelona', runnerUp: 'Manchester United' },
+    { season: '2019-20', winner: 'Bayern München', runnerUp: 'Paris Saint-Germain' },
+  ];
+  const seasons = [
+    { season: '2007-08', club: 'Manchester United' },
+    { season: '2008-09', club: 'Manchester United' },
+    { season: '2019-20', club: 'Salzburg' },
+    { season: '2019-20', club: 'Borussia Dortmund' },
+  ];
+
+  it('titlesFromFinals cuenta títulos y finales por club y temporada', () => {
+    const result = titlesFromFinals(seasons, finals);
+    expect([result.titles, result.finals]).toEqual([1, 2]);
+    expect(seasons.filter(result.isWin).map((s) => s.season)).toEqual(['2007-08']);
+  });
+
+  it('buildPlayers los usa en lugar de los manuales cuando hay datos de la UEFA', () => {
+    const withTitles = [...details, { id: 'asistidor', name: 'Asistidor', titles: 9, finals: 9, titleSeasons: ['2019-20'] }];
+    const { byId: built } = buildPlayers({ ranking, assists, details: withTitles, photos, profiles, allGoals, uefa: { asistidor: { seasons } }, finals });
+    const player = built.get('asistidor');
+    expect([player.titles, player.finals]).toEqual([1, 2]);
+    expect(player.seasons.filter((s) => s.title).map((s) => `${s.season} ${s.club}`)).toEqual(['2007-08 Manchester United']);
   });
 });

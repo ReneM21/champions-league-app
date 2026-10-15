@@ -46,6 +46,12 @@ body {
     linear-gradient(135deg, #0a1338, #16246a);
 }
 
+/* Barras del gráfico por temporada sin datos (asistencias antes de 2001-02) */
+.season-bar-missing {
+  background: repeating-linear-gradient(135deg, var(--color-separator, rgba(127, 127, 127, 0.25)) 0 2px, transparent 2px 6px);
+  opacity: 0.9;
+}
+
 /* Animaciones de entrada */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(8px); }

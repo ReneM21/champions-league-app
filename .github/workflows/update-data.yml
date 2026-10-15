@@ -56,6 +56,10 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: npm run update-profiles
 
+      - name: Finales y clubes
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run update-competition
+
       # Después de las fichas: usa la fecha de nacimiento para identificar a cada jugador
       - name: Temporadas y equipos (UEFA)
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
@@ -65,7 +69,7 @@ jobs:
         id: commit
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/data/clubs.json public/images/players public/images/clubs
+          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/data/clubs.json public/data/competition.json public/images/players public/images/clubs
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"

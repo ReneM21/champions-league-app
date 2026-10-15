@@ -1,7 +1,7 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, clubSlug, totals } = require('./uefa-stats');
+const { seasonLabel, seasonYears, clubName, nameTokens, isoBirthdate, isPlayer, seasonFromRow, sortSeasons, splitCandidates, sameClub, missingClubCandidates, publicSeason, clubSlug, seasonLeaders, addClubGoals, clubTopScorers, findUefaClub, totals } = require('./uefa-stats');
 
 // Fila con la forma real de compstats.uefa.com/v1/player-ranking
 const row = (name, birthDate, team, stats) => ({
@@ -112,4 +112,42 @@ test('clubSlug da un nombre de archivo sin tildes ni espacios', () => {
   assert.equal(clubSlug('Paris Saint-Germain'), 'paris-saint-germain');
   assert.equal(clubSlug('Atlético de Madrid'), 'atletico-de-madrid');
   assert.equal(clubSlug('Bayern München'), 'bayern-munchen');
+});
+
+test('seasonLeaders da el máximo goleador y asistente, con empates', () => {
+  const rows = [
+    row('A', '1990-01-01', 'Man Utd', { matches_appearance: 10, goals: 8, assists: 2 }),
+    row('B', '1990-01-01', 'Real Madrid', { matches_appearance: 9, goals: 8, assists: 5 }),
+    row('C', '1990-01-01', 'Real Madrid', { matches_appearance: 1, goals: 0 }),
+  ];
+  rows[1].team.id = '10';
+  assert.deepEqual(seasonLeaders(rows, 2014), {
+    topScorers: [
+      { name: 'A', club: 'Manchester United', goals: 8 },
+      { name: 'B', club: 'Real Madrid', goals: 8 },
+    ],
+    topAssists: [{ name: 'B', club: 'Real Madrid', assists: 5 }],
+    teams: 2,
+  });
+  assert.equal(seasonLeaders(rows, 1999).topAssists, null);
+});
+
+test('addClubGoals y clubTopScorers suman goles por club', () => {
+  const season1 = [row('A', 'x', 'Man Utd', { goals: 3 }), row('B', 'x', 'Man Utd', { goals: 5 })];
+  season1[1].playerId = '2';
+  const season2 = [row('A', 'x', 'Man Utd', { goals: 4 })];
+  const totals = addClubGoals(addClubGoals(new Map(), season1), season2);
+  assert.deepEqual(clubTopScorers(totals, 'Manchester United'), [
+    { name: 'A', goals: 7 },
+    { name: 'B', goals: 5 },
+  ]);
+  assert.deepEqual(clubTopScorers(totals, 'Otro'), []);
+});
+
+test('findUefaClub busca el nombre exacto o uno contenido', () => {
+  const names = ['Malmö', 'Real Madrid', 'Mönchengladbach'];
+  assert.equal(findUefaClub('Real Madrid', names), 'Real Madrid');
+  assert.equal(findUefaClub('Malmö FF', names), 'Malmö');
+  assert.equal(findUefaClub('Borussia Mönchengladbach', names), 'Mönchengladbach');
+  assert.equal(findUefaClub('Reims', names), null);
 });

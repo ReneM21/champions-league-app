@@ -89,7 +89,17 @@ export function buildTeams(manualTeams = [], seasons = [], fromUefa = false) {
   });
 }
 
-export function buildPlayers({ ranking, assists, details = [], photos = {}, profiles = {}, allGoals = [], allAssists = [], uefa = {} }) {
+// Títulos y finales a partir de las temporadas de la UEFA y de la lista de
+// finales (Wikipedia): una temporada en un club que ganó o perdió la final.
+// Cuenta como lo hace la UEFA: basta con haber jugado esa Champions con el club.
+export function titlesFromFinals(seasons, finals = []) {
+  const bySeason = new Map(finals.map((final) => [final.season, final]));
+  const isWin = (s) => bySeason.has(s.season) && bySeason.get(s.season).winner === s.club;
+  const reached = seasons.filter((s) => bySeason.has(s.season) && [bySeason.get(s.season).winner, bySeason.get(s.season).runnerUp].includes(s.club));
+  return { titles: seasons.filter(isWin).length, finals: reached.length, isWin };
+}
+
+export function buildPlayers({ ranking, assists, details = [], photos = {}, profiles = {}, allGoals = [], allAssists = [], uefa = {}, finals = [] }) {
   const detailsById = indexById(details);
   const goalsById = indexById([...allGoals, ...ranking.players]);
   const assistsById = indexById([...allAssists, ...assists.players]);
@@ -125,8 +135,15 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
       // Asistidores que no están en la tabla de goleadores: goles de la UEFA
       if (player.goals === null) player.goals = sumOrNull(player.seasons.map((s) => s.goals));
     }
-    // Temporadas ganadas indicadas a mano con "titleSeasons"
-    if (detail.titleSeasons) {
+    // Con las temporadas de la UEFA y la lista de finales, los títulos y las
+    // finales se calculan solos; si no, valen los escritos a mano
+    if (player.seasonsSource === 'uefa' && finals.length) {
+      const computed = titlesFromFinals(player.seasons, finals);
+      player.titles = computed.titles;
+      player.finals = computed.finals;
+      player.seasons = player.seasons.map((season) => ({ ...season, title: computed.isWin(season) }));
+    } else if (detail.titleSeasons) {
+      // Temporadas ganadas indicadas a mano con "titleSeasons"
       player.seasons = player.seasons.map((season) => (detail.titleSeasons.includes(season.season) ? { ...season, title: true } : season));
     }
     delete player.titleSeasons;
