@@ -114,3 +114,14 @@ test('asistencias: top 10 con empates y validación', () => {
 test('asistencias: falla si la página no tiene la tabla', () => {
   assert.throws(() => parseStatTable(fixture, 'assists'), /No se encontró la tabla de asistencias/);
 });
+
+test('quita la variante del nombre del archivo de bandera', () => {
+  const flag = (file) => `<span class="flagicon"><img alt="" src="//upload.wikimedia.org/x/${file}/23px-${file}.png"/></span>`;
+  const html = `<table>
+    <tr><th>Player</th><th>Assists</th></tr>
+    <tr><td>${flag('Flag_of_Portugal_(official).svg')} <a>Luís Figo</a></td><td>34</td></tr>
+    <tr><td>${flag('Flag_of_Belgium_(civil).svg')} <a>Kevin De Bruyne</a></td><td>27</td></tr>
+    <tr><td>${flag('Flag_of_Wales_(1959%E2%80%93present).svg')} <a>Ryan Giggs</a></td><td>41</td></tr>
+  </table>`;
+  assert.deepEqual(parseStatTable(html, 'assists').map((r) => r.nationality), ['Portugal', 'Bélgica', 'Gales']);
+});
