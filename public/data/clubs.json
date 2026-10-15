@@ -169,6 +169,23 @@
       }
     ]
   },
+  "Beşiktaş": {
+    "logo": "images/clubs/besiktas.png",
+    "topScorers": [
+      {
+        "name": "Cenk Tosun",
+        "goals": 5
+      },
+      {
+        "name": "Talisca",
+        "goals": 5
+      },
+      {
+        "name": "Oktay Derelioğlu",
+        "goals": 4
+      }
+    ]
+  },
   "Borussia Dortmund": {
     "logo": "images/clubs/borussia-dortmund.png",
     "topScorers": [
@@ -251,6 +268,23 @@
       {
         "name": "Gert Verheyen",
         "goals": 6
+      }
+    ]
+  },
+  "Dinamo Zagreb": {
+    "logo": "images/clubs/dinamo-zagreb.png",
+    "topScorers": [
+      {
+        "name": "Mislav Oršić",
+        "goals": 6
+      },
+      {
+        "name": "Bruno Petković",
+        "goals": 4
+      },
+      {
+        "name": "Sandro Kulenović",
+        "goals": 3
       }
     ]
   },
@@ -628,6 +662,23 @@
       }
     ]
   },
+  "Parma": {
+    "logo": "images/clubs/parma.png",
+    "topScorers": [
+      {
+        "name": "Enrico Chiesa",
+        "goals": 3
+      },
+      {
+        "name": "Hernán Crespo",
+        "goals": 2
+      },
+      {
+        "name": "Roberto Néstor Sensini",
+        "goals": 1
+      }
+    ]
+  },
   "Partizan": {
     "logo": "images/clubs/partizan.png",
     "topScorers": [
@@ -740,6 +791,57 @@
       {
         "name": "Jefferson Farfán",
         "goals": 5
+      }
+    ]
+  },
+  "Schalke 04": {
+    "logo": "images/clubs/schalke.png",
+    "topScorers": [
+      {
+        "name": "Klaas Jan Huntelaar",
+        "goals": 13
+      },
+      {
+        "name": "Benedikt Höwedes",
+        "goals": 5
+      },
+      {
+        "name": "Jefferson Farfán",
+        "goals": 5
+      }
+    ]
+  },
+  "Sevilla": {
+    "logo": "images/clubs/sevilla.png",
+    "topScorers": [
+      {
+        "name": "Wissam Ben Yedder",
+        "goals": 10
+      },
+      {
+        "name": "Youssef En-Nesyri",
+        "goals": 10
+      },
+      {
+        "name": "Frédéric Kanouté",
+        "goals": 7
+      }
+    ]
+  },
+  "Shakhtar Donetsk": {
+    "logo": "images/clubs/shakhtar-donetsk.png",
+    "topScorers": [
+      {
+        "name": "Luiz Adriano",
+        "goals": 20
+      },
+      {
+        "name": "Alex Teixeira",
+        "goals": 11
+      },
+      {
+        "name": "Jádson",
+        "goals": 9
       }
     ]
   },
