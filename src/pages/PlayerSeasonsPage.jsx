@@ -65,7 +65,9 @@ const PlayerSeasonsPage = () => (
                   ? summary.titleSeasons.length > 0
                     ? `Campeón en ${summary.titleSeasons.join(', ')}`
                     : null
-                  : 'Aún sin títulos'
+                  : player.titles === 0
+                    ? 'Aún sin títulos'
+                    : null
               }
             />
             <StatCard label={`${labels.title} por partido`} value={formatRatio(summary.perMatch)} highlight />
@@ -111,7 +113,7 @@ const PlayerSeasonsPage = () => (
                 Suma: {summary.totalGoals} goles y {formatValue(summary.totalAssists)} asistencias en{' '}
                 {formatValue(summary.totalMatches)} partidos.{' '}
                 {fromUefa
-                  ? 'Datos oficiales de la UEFA, actualizados automáticamente. La UEFA registra las asistencias desde la temporada 2000-01 ("-" en las anteriores).'
+                  ? 'Datos oficiales de la UEFA, actualizados automáticamente. La UEFA registra las asistencias desde la temporada 2001-02 ("-" en las anteriores).'
                   : 'Se actualiza a mano y puede no incluir la temporada en curso.'}{' '}
                 El promedio solo cuenta las temporadas con partidos registrados.
               </Card.Description>

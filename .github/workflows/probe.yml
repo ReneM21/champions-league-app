@@ -13,6 +13,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Filtro por equipo
+        run: |
+          B="https://compstats.uefa.com/v1/player-ranking?competitionId=1&limit=100&offset=0&optionalFields=PLAYER%2CTEAM&order=DESC&phase=TOURNAMENT&seasonYear=2020&stats=matches_appearance,goals,assists"
+          SAL=$(curl -sS "$B" | jq -r '[.[] | select(.team.internationalName | test("Salzburg"))][0].team.id')
+          echo "Salzburg id: $SAL"
+          for q in "teamId=$SAL" "teamIds=$SAL" "team=$SAL" "clubId=$SAL"; do
+            echo "== $q"; curl -sS "$B&$q" | jq -c '[.[] | {n:.player.internationalName, t:.team.internationalName, s:[.statistics[]|{name,value}]}] | .[0:4], (map(select(.n|test("Haaland"))))' | head -c 1500; echo
+          done
       - run: node scripts/update-uefa-stats.js
       - if: ${{ !cancelled() }}
         run: |

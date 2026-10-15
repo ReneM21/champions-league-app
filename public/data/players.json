@@ -108,6 +108,7 @@
     "image": "images/players/4.webp",
     "finals": 5,
     "titles": 5,
+    "titleSeasons": ["2013-14", "2015-16", "2016-17", "2017-18", "2021-22"],
     "teams": [
       { "name": "Lyon", "goals": 12 },
       { "name": "Real Madrid", "goals": 78 }
@@ -143,6 +144,7 @@
     "image": "images/players/5.webp",
     "finals": 3,
     "titles": 3,
+    "titleSeasons": ["1997-98", "1999-00", "2001-02"],
     "teams": [
       { "name": "Real Madrid", "goals": 66 },
       { "name": "Schalke", "goals": 5 }
@@ -307,64 +309,72 @@
   {
     "id": "harry-kane",
     "name": "Harry Kane",
-    "titles": null,
-    "finals": null,
+    "titles": 0,
+    "finals": 1,
+    "titleSeasons": [],
     "teams": [],
     "seasons": []
   },
   {
     "id": "ryan-giggs",
     "name": "Ryan Giggs",
-    "titles": null,
-    "finals": null,
+    "titles": 2,
+    "finals": 4,
+    "titleSeasons": ["1998-99", "2007-08"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "angel-di-maria",
     "name": "Ángel Di María",
-    "titles": null,
-    "finals": null,
+    "titles": 1,
+    "finals": 2,
+    "titleSeasons": ["2013-14"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "david-beckham",
     "name": "David Beckham",
-    "titles": null,
-    "finals": null,
+    "titles": 1,
+    "finals": 1,
+    "titleSeasons": ["1998-99"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "luis-figo",
     "name": "Luís Figo",
-    "titles": null,
-    "finals": null,
+    "titles": 1,
+    "finals": 1,
+    "titleSeasons": ["2001-02"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "xavi",
     "name": "Xavi",
-    "titles": null,
-    "finals": null,
+    "titles": 4,
+    "finals": 4,
+    "titleSeasons": ["2005-06", "2008-09", "2010-11", "2014-15"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "neymar",
     "name": "Neymar",
-    "titles": null,
-    "finals": null,
+    "titles": 1,
+    "finals": 2,
+    "titleSeasons": ["2014-15"],
     "teams": [],
     "seasons": []
   },
   {
     "id": "kevin-de-bruyne",
     "name": "Kevin De Bruyne",
-    "titles": null,
-    "finals": null,
+    "titles": 1,
+    "finals": 2,
+    "titleSeasons": ["2022-23"],
     "teams": [],
     "seasons": []
   }

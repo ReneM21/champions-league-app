@@ -80,7 +80,7 @@ const PlayerTeamsPage = () => (
           </div>
           <p className="text-sm text-muted">
             Porcentaje sobre {player[stat] === null ? 'el total' : `${labels.article} ${player[stat]} ${labels.many}`} del jugador en la competición
-            {stat === 'goals' ? '' : ' (la UEFA registra las asistencias desde la temporada 2000-01)'}.
+            {stat === 'goals' ? '' : ' (la UEFA registra las asistencias desde la temporada 2001-02)'}.
           </p>
         </div>
       );

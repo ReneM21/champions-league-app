@@ -92,7 +92,7 @@ describe('temporadas de la UEFA', () => {
     { season: '1998-99', club: 'Manchester United', matches: 9, goals: 2, assists: null },
   ];
 
-  it('mergeSeasons usa las cifras de la UEFA, el título manual y lo que la UEFA no tiene', () => {
+  it('mergeSeasons usa las cifras de la UEFA, el título manual y lo que la UEFA no tiene, y descarta temporadas que la UEFA no tiene', () => {
     const manual = [
       { season: '2007-08', club: 'Man United', goals: 5, title: true },
       { season: '1998-99', club: 'Manchester United', goals: 2, assists: 4 },
@@ -102,8 +102,9 @@ describe('temporadas de la UEFA', () => {
       { season: '1998-99', club: 'Manchester United', matches: 9, goals: 2, assists: 4 },
       { season: '2007-08', club: 'Manchester United', matches: 9, goals: 0, assists: 3, title: true },
       { season: '2008-09', club: 'Manchester United', matches: 8, goals: 1, assists: 2 },
-      { season: '2015-16', club: 'Solo manual', goals: 1 },
     ]);
+    // Sin datos de la UEFA, se queda todo lo manual
+    expect(mergeSeasons(manual, [])).toHaveLength(3);
   });
 
   it('mergeSeasons respeta una temporada repartida a mano entre dos clubes', () => {
@@ -126,11 +127,18 @@ describe('temporadas de la UEFA', () => {
     expect(buildTeams([{ name: 'Sin temporadas', goals: 4 }], [])).toEqual([{ name: 'Sin temporadas', matches: null, goals: 4, assists: null }]);
   });
 
-  it('buildPlayers usa las temporadas de la UEFA', () => {
-    const { byId: withUefa } = buildPlayers({ ranking, assists, details, photos, profiles, allGoals, uefa: { asistidor: { seasons: uefa } } });
+  it('buildPlayers usa las temporadas de la UEFA y marca las ganadas con titleSeasons', () => {
+    const withTitles = [...details, { id: 'asistidor', name: 'Asistidor', titles: 1, titleSeasons: ['2007-08'] }];
+    const { byId: withUefa } = buildPlayers({ ranking, assists, details: withTitles, photos, profiles, allGoals, uefa: { asistidor: { seasons: uefa } } });
     const player = withUefa.get('asistidor');
+    expect(player.seasons.filter((s) => s.title).map((s) => s.season)).toEqual(['2007-08']);
+    expect(player.titleSeasons).toBeUndefined();
     expect(player.seasons).toHaveLength(3);
     expect(player.seasonsSource).toBe('uefa');
     expect(player.teams).toEqual([{ name: 'Manchester United', matches: 26, goals: 3, assists: 5 }]);
+    // Ya tenía goles por la tabla completa; un jugador sin ellos los toma de la UEFA
+    expect(player.goals).toBe(29);
+    const { byId: other } = buildPlayers({ ranking, assists, details, photos, profiles, uefa: { asistidor: { seasons: uefa } } });
+    expect(other.get('asistidor').goals).toBe(3);
   });
 });

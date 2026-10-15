@@ -40,8 +40,7 @@ const fromProfile = (profile) =>
 // de la UEFA mandan (sus totales coinciden con los rankings); de lo manual se
 // toma el título ("title") y los datos que la UEFA no tiene (asistencias antes
 // de 2001-02). Si a mano una temporada está repartida entre dos clubes
-// (fichaje en invierno), se respeta ese reparto. Las temporadas que solo
-// están a mano se mantienen.
+// (fichaje en invierno), se respeta ese reparto.
 export function mergeSeasons(manual = [], uefa = []) {
   const merged = [];
   const covered = new Set();
@@ -60,7 +59,9 @@ export function mergeSeasons(manual = [], uefa = []) {
     if (own.title) season.title = true;
     merged.push(season);
   }
-  merged.push(...manual.filter((s) => !covered.has(s.season)));
+  // Las temporadas que solo están a mano se mantienen si no hay datos de la
+  // UEFA; si los hay, la UEFA tiene todas y lo demás son errores de escritura
+  if (uefa.length === 0) merged.push(...manual);
   return merged.sort((a, b) => a.season.localeCompare(b.season) || a.club.localeCompare(b.club));
 }
 
@@ -119,7 +120,14 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
     if (official && official.seasons.length) {
       player.seasons = mergeSeasons(player.seasons, official.seasons);
       player.seasonsSource = 'uefa';
+      // Asistidores que no están en la tabla de goleadores: goles de la UEFA
+      if (player.goals === null) player.goals = sumOrNull(player.seasons.map((s) => s.goals));
     }
+    // Temporadas ganadas indicadas a mano con "titleSeasons"
+    if (detail.titleSeasons) {
+      player.seasons = player.seasons.map((season) => (detail.titleSeasons.includes(season.season) ? { ...season, title: true } : season));
+    }
+    delete player.titleSeasons;
     player.teams = buildTeams(player.teams, player.seasons, player.seasonsSource === 'uefa');
     return withPhoto(player, photos);
   };

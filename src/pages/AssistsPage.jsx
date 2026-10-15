@@ -66,6 +66,10 @@ const AssistsPage = () => {
           )}
         </p>
         <p>
+          Las asistencias por equipo y por temporada son datos oficiales de la UEFA, que las registra desde la temporada
+          2001-02: en las anteriores aparecen como "-", por eso su suma puede ser menor que el total del ranking.
+        </p>
+        <p>
           Las fichas de los jugadores sin ficha propia se crean automáticamente con su biografía de la Wikipedia en
           español y sus datos de Wikidata.
         </p>

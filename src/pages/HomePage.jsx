@@ -44,7 +44,7 @@ const HomePage = () => {
               <Link href={source} target="_blank" rel="noopener noreferrer">
                 Wikipedia
               </Link>{' '}
-              (CC BY-SA). Las biografías y el desglose por temporada se mantienen a mano.
+              (CC BY-SA). El desglose por equipo y por temporada son datos oficiales de la UEFA.
             </>
           ) : (
             'El ranking todavía no se ha actualizado automáticamente.'
