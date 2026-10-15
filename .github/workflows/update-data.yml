@@ -1,5 +1,6 @@
 # Actualiza los rankings de goleadores y asistidores desde Wikipedia todos los
-# días y, si cambiaron, los commitea en master y vuelve a publicar la app.
+# días, descarga de Wikimedia Commons la foto de los jugadores que no tienen
+# una y, si algo cambió, lo commitea en master y vuelve a publicar la app.
 # Si los datos de un ranking no pasan las comprobaciones, ese ranking no se
 # toca, el otro se actualiza igualmente y el workflow termina en error para
 # que GitHub avise por email.
@@ -44,18 +45,23 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: npm run update-assists
 
+      # Después de los rankings, para incluir a los jugadores que acaban de entrar
+      - name: Fotos
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run update-photos
+
       - name: Commit si hay cambios
         id: commit
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json public/data/assists.json
+          git add public/data/ranking.json public/data/assists.json public/data/photos.json public/images/players
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Actualizar rankings desde Wikipedia"
+            git commit -m "Actualizar datos desde Wikipedia"
             git push origin HEAD:master
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

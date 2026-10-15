@@ -1,4 +1,4 @@
-import { mergePlayers } from './mergePlayers';
+import { mergePlayers, withPhoto } from './mergePlayers';
 
 const ranking = {
   players: [
@@ -35,5 +35,31 @@ describe('mergePlayers', () => {
 
   it('no muestra fichas que no están en el ranking', () => {
     expect(players.find((p) => p.id === 'fuera-del-top')).toBeUndefined();
+  });
+});
+
+describe('fotos de Wikimedia Commons', () => {
+  const photos = {
+    nuevo: { image: 'images/players/nuevo.jpg', author: 'Ana', license: 'CC BY-SA 4.0', source: 'https://commons.wikimedia.org/wiki/File:X.jpg' },
+    'raul-gonzalez': { image: 'images/players/raul-gonzalez.jpg', author: 'Otro', license: 'CC BY 2.0', source: 'x' },
+  };
+  const players = mergePlayers(ranking, details, photos);
+
+  it('usa la foto descargada si el jugador no tiene una propia', () => {
+    expect(players.find((p) => p.id === 'nuevo')).toMatchObject({
+      image: 'images/players/nuevo.jpg',
+      photoCredit: { author: 'Ana', license: 'CC BY-SA 4.0' },
+    });
+  });
+
+  it('mantiene la foto de la ficha manual', () => {
+    const raul = players.find((p) => p.id === 'raul-gonzalez');
+    expect(raul.image).toBe('images/players/5.webp');
+    expect(raul.photoCredit).toBeUndefined();
+  });
+
+  it('withPhoto no toca a jugadores sin foto descargada', () => {
+    const player = { id: 'x', name: 'X' };
+    expect(withPhoto(player, photos)).toBe(player);
   });
 });

@@ -13,6 +13,7 @@ test('lee la tabla histórica e ignora las demás tablas', () => {
   assert.deepEqual(rows[0], {
     id: 'cristiano-ronaldo',
     name: 'Cristiano Ronaldo',
+    article: 'Cristiano_Ronaldo',
     nationality: 'Portugal',
     goals: 140,
     matches: 183,
@@ -83,6 +84,7 @@ test('asistencias: elige la tabla histórica aunque antes haya otra con columna 
   assert.deepEqual(rows[0], {
     id: 'jugador-uno',
     name: 'Jugador Uno',
+    article: 'Jugador_Uno',
     nationality: 'Portugal',
     assists: 45,
     matches: 180,

@@ -89,7 +89,8 @@ const AssistsPage = () => {
           )}
         </p>
         <p className="text-sm text-gray-700 mt-2">
-          Los jugadores que también están entre los máximos goleadores enlazan a su ficha.
+          Los jugadores que también están entre los máximos goleadores enlazan a su ficha. Las fotos de Wikimedia Commons
+          muestran su autor y licencia al pasar el ratón por encima.
         </p>
       </div>
     </div>

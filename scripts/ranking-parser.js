@@ -136,6 +136,15 @@ function playerName($, cell) {
   return cleanText(raw).replace(/\s*\([A-Z]{3}\)\s*$/, '').replace(/[*†‡^]+$/, '').trim();
 }
 
+// Título del artículo de Wikipedia del jugador ("./Ra%C3%BAl_(footballer)" -> "Raúl_(footballer)")
+function playerArticle($, cell) {
+  const copy = $(cell).clone();
+  copy.find('.flagicon, sup').remove();
+  const href = copy.find('a[href]').first().attr('href') || '';
+  if (!href.startsWith('./')) return '';
+  return decodeURIComponent(href.slice(2).split('#')[0]);
+}
+
 function clubsFromCell($, cell) {
   const copy = $(cell).clone();
   copy.find('sup, .flagicon, style').remove();
@@ -169,6 +178,7 @@ function rowsFromTable($, table, stat, config) {
     rows.push({
       id: playerId(name),
       name,
+      article: playerArticle($, playerCell),
       nationality: translateNation(nation),
       [stat]: value,
       matches: Number.isNaN(apps) ? null : apps,

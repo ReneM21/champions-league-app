@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { asset } from '../utils/asset';
 import { rankPlayers } from '../utils/stats';
-import { mergePlayers } from './mergePlayers';
+import { mergePlayers, withPhoto } from './mergePlayers';
 
 const EMPTY_ASSISTS = { updatedAt: null, source: null, players: [] };
 
@@ -29,17 +29,22 @@ export function PlayersProvider({ children }) {
         console.error('Error cargando las asistencias:', error);
         return EMPTY_ASSISTS;
       }),
+      // Sin fotos descargadas se muestra el logo
+      fetchJson('data/photos.json').catch(() => ({})),
     ])
-      .then(([ranking, details, assists]) => {
+      .then(([ranking, details, assists, photos]) => {
         if (cancelled) return;
         setState({
           status: 'ready',
-          players: mergePlayers(ranking, details),
+          players: mergePlayers(ranking, details, photos),
           updatedAt: ranking.updatedAt,
           source: ranking.source,
           assists: {
             ...assists,
-            players: rankPlayers([...assists.players].sort((a, b) => b.assists - a.assists), 'assists'),
+            players: rankPlayers(
+              [...assists.players].sort((a, b) => b.assists - a.assists).map((player) => withPhoto(player, photos)),
+              'assists'
+            ),
           },
         });
       })
