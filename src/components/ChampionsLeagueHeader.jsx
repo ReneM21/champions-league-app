@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
 import PlayerSearch from './PlayerSearch';
+import { usePlayers } from '../data/PlayersContext';
 import ThemeToggle from './ThemeToggle';
 import { STARBALL } from '../utils/asset';
 
@@ -19,7 +20,11 @@ const ChampionsLeagueHeader = () => {
 
   // Las fichas de jugador cuelgan de la lista de goleadores, o de la de
   // asistidores si se abrieron desde ella (?ranking=asistencias)
-  const fromAssists = search.includes('ranking=asistencias');
+  const { byId } = usePlayers();
+  const playerId = (pathname.match(/^\/jugadores\/([^/]+)/) || [])[1];
+  const player = playerId && byId ? byId.get(playerId) : null;
+  // Igual que en la ficha: los asistidores que no son goleadores cuelgan de Asistencias
+  const fromAssists = search.includes('ranking=asistencias') || Boolean(player && !player.goalsPosition);
   const isActive = (to) => {
     if (pathname.startsWith('/jugadores')) return to === (fromAssists ? '/asistencias' : '/');
     return pathname === to;
