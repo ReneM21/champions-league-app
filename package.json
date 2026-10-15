@@ -12,7 +12,8 @@
     "deploy": "gh-pages -d build",
     "test:scripts": "node --test \"scripts/*.test.js\"",
     "update-data": "node scripts/update-ranking.js goals",
-    "update-assists": "node scripts/update-ranking.js assists"
+    "update-assists": "node scripts/update-ranking.js assists",
+    "update-photos": "node scripts/update-photos.js"
   },
   "dependencies": {
     "react": "^18.2.0",

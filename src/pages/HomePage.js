@@ -82,7 +82,8 @@ const HomePage = () => {
               <a href={source} target="_blank" rel="noopener noreferrer" className="text-champions-blue underline">
                 Wikipedia
               </a>{' '}
-              (CC BY-SA). Las biografías y el desglose por temporada se mantienen a mano.
+              (CC BY-SA). Las biografías y el desglose por temporada se mantienen a mano. Las fotos de los jugadores sin
+              ficha propia vienen de Wikimedia Commons; el autor y la licencia aparecen al pasar el ratón por encima.
             </>
           ) : (
             'El ranking todavía no se ha actualizado automáticamente.'

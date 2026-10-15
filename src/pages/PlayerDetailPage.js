@@ -20,8 +20,18 @@ const PlayerDetailPage = () => (
       <>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="glass-card p-5">
-            <div className="flex justify-center mb-4">
+            <div className="flex flex-col items-center mb-4">
               <PlayerAvatar player={player} className="h-32 w-32" />
+              {player.photoCredit && (
+                <a
+                  href={player.photoCredit.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 text-xs text-gray-500 hover:text-champions-blue text-center"
+                >
+                  Foto: {player.photoCredit.author} · {player.photoCredit.license}
+                </a>
+              )}
             </div>
             <h3 className="text-xl font-semibold mb-4 text-champions-blue border-b border-gray-200 pb-2">Información Personal</h3>
             <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Posición en el ranking:</span> {player.position}º</p>
