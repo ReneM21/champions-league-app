@@ -1,23 +1,19 @@
 // Se ejecuta con el test runner de Node: npm run test:scripts
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { commonsFileFromSummary, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto } = require('./photos');
+const { pageImageFromQuery, photoFromImageInfo, extensionFromUrl, playersWithoutPhoto } = require('./photos');
 
-test('commonsFileFromSummary extrae el archivo de Commons', () => {
-  assert.equal(
-    commonsFileFromSummary({ originalimage: { source: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Ryan_Giggs_2011.jpg' } }),
-    'Ryan_Giggs_2011.jpg'
-  );
-  assert.equal(
-    commonsFileFromSummary({ thumbnail: { source: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Xavi_Hern%C3%A1ndez.jpg/320px-Xavi_Hern%C3%A1ndez.jpg' } }),
-    'Xavi_Hernández.jpg'
-  );
+test('pageImageFromQuery lee la imagen principal (formatversion 1 y 2)', () => {
+  const v2 = { query: { redirects: [{ from: 'Xavi', to: 'Xavi Hernández' }], pages: [{ pageid: 1, title: 'Xavi Hernández', pageimage: 'Xavi_2016.jpg' }] } };
+  assert.equal(pageImageFromQuery(v2), 'Xavi_2016.jpg');
+  const v1 = { query: { pages: { 123: { pageid: 123, title: 'Ryan Giggs', pageimage: 'Ryan_Giggs_2018.jpg' } } } };
+  assert.equal(pageImageFromQuery(v1), 'Ryan_Giggs_2018.jpg');
 });
 
-test('commonsFileFromSummary descarta imágenes que no son de Commons o artículos sin imagen', () => {
-  assert.equal(commonsFileFromSummary({ originalimage: { source: 'https://upload.wikimedia.org/wikipedia/en/1/1a/Logo.png' } }), null);
-  assert.equal(commonsFileFromSummary({ title: 'Sin imagen' }), null);
-  assert.equal(commonsFileFromSummary(null), null);
+test('pageImageFromQuery devuelve null sin imagen o sin página', () => {
+  assert.equal(pageImageFromQuery({ query: { pages: [{ pageid: 1, title: 'Sin imagen' }] } }), null);
+  assert.equal(pageImageFromQuery({ query: { pages: [{ title: 'No existe', missing: true }] } }), null);
+  assert.equal(pageImageFromQuery(null), null);
 });
 
 test('photoFromImageInfo extrae URL y crédito en texto plano', () => {
