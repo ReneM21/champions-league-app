@@ -16,7 +16,7 @@ const initials = (name) =>
 // Si no hay foto o no carga, HeroUI muestra las iniciales del jugador.
 // La foto es decorativa (alt vacío): el nombre siempre aparece al lado.
 const PlayerAvatar = ({ player, className = 'size-12' }) => (
-  <Avatar color="accent" variant="soft" className={`rounded-full ring-2 ring-surface shadow-sm ${className}`}>
+  <Avatar color="accent" variant="soft" data-has-image={Boolean(player.image)} className={`rounded-full ring-2 ring-surface shadow-sm ${className}`}>
     {player.image && (
       <Avatar.Image
         src={asset(player.image)}
@@ -25,7 +25,11 @@ const PlayerAvatar = ({ player, className = 'size-12' }) => (
         className="object-cover object-top"
       />
     )}
-    <Avatar.Fallback className="rounded-full font-semibold">{initials(player.name)}</Avatar.Fallback>
+    {/* Con foto, las iniciales solo salen si la foto tarda: así no parpadean
+        mientras carga una foto que ya está en la caché */}
+    <Avatar.Fallback delayMs={player.image ? 800 : 0} className="rounded-full font-semibold">
+      {initials(player.name)}
+    </Avatar.Fallback>
   </Avatar>
 );
 

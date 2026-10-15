@@ -8,13 +8,31 @@ import { usePlayers } from './data/PlayersContext';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
-// El resto de páginas se descargan al visitarlas: la portada carga antes
-const PlayerPage = lazy(() => import('./components/PlayerPage'));
-const TeamsPage = lazy(() => import('./pages/TeamsPage'));
-const SeasonsPage = lazy(() => import('./pages/SeasonsPage'));
-const AssistsPage = lazy(() => import('./pages/AssistsPage'));
-const ComparePage = lazy(() => import('./pages/ComparePage'));
-const RecordsPage = lazy(() => import('./pages/RecordsPage'));
+// El resto de páginas se descargan aparte para que la portada cargue antes,
+// y se precargan en segundo plano en cuanto la app está lista: así al
+// navegar no aparece el esqueleto de carga
+const PAGES = {
+  PlayerPage: () => import('./components/PlayerPage'),
+  TeamsPage: () => import('./pages/TeamsPage'),
+  SeasonsPage: () => import('./pages/SeasonsPage'),
+  AssistsPage: () => import('./pages/AssistsPage'),
+  ComparePage: () => import('./pages/ComparePage'),
+  RecordsPage: () => import('./pages/RecordsPage'),
+};
+const PlayerPage = lazy(PAGES.PlayerPage);
+const TeamsPage = lazy(PAGES.TeamsPage);
+const SeasonsPage = lazy(PAGES.SeasonsPage);
+const AssistsPage = lazy(PAGES.AssistsPage);
+const ComparePage = lazy(PAGES.ComparePage);
+const RecordsPage = lazy(PAGES.RecordsPage);
+
+const usePreloadPages = (ready) => {
+  useEffect(() => {
+    if (!ready) return undefined;
+    const timer = setTimeout(() => Object.values(PAGES).forEach((load) => load().catch(() => {})), 300);
+    return () => clearTimeout(timer);
+  }, [ready]);
+};
 
 // Sube al principio al cambiar de página, pero no al cambiar de pestaña dentro
 // de la misma ficha de jugador
@@ -29,6 +47,7 @@ const ScrollToTopOnNavigate = () => {
 
 const App = () => {
   const { status } = usePlayers();
+  usePreloadPages(status === 'ready');
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">

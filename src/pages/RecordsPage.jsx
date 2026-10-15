@@ -146,7 +146,7 @@ const RecordsPage = () => {
   const { records } = competition;
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader title="Récords" description="Los récords individuales de la Copa de Europa y la Champions League: títulos, partidos, goles y asistencias en una temporada y entrenadores." />
 
       {!records ? (

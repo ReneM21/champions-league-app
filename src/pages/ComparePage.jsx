@@ -111,7 +111,7 @@ const ComparePage = () => {
   const swap = () => left && right && setParams({ a: right.id, b: left.id }, { replace: true });
 
   return (
-    <div className="animate-fadeIn">
+    <div>
       <PageHeader title="Comparar jugadores" description="Elige dos jugadores de los rankings y compara sus cifras en la Champions League.">
         {left && right && (
           <div>
