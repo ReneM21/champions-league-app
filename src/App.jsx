@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { Button } from '@heroui/react';
 import ChampionsLeagueHeader from './components/ChampionsLeagueHeader';
 import ChampionsLeagueFooter from './components/ChampionsLeagueFooter';
-import LoadingScreen from './components/LoadingScreen';
+import PageSkeleton from './components/PageSkeleton';
 import { usePlayers } from './data/PlayersContext';
 import HomePage from './pages/HomePage';
 import PlayerDetailPage from './pages/PlayerDetailPage';
@@ -25,15 +25,15 @@ const ScrollToTopOnNavigate = () => {
 const App = () => {
   const { status } = usePlayers();
 
-  if (status === 'loading') return <LoadingScreen />;
-
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <ScrollToTopOnNavigate />
       <ChampionsLeagueHeader />
 
       <main className="mx-auto w-full max-w-6xl grow px-4 py-8">
-        {status === 'error' ? (
+        {status === 'loading' ? (
+          <PageSkeleton />
+        ) : status === 'error' ? (
           <NotFoundPage
             title="No se pudieron cargar los datos"
             message="Comprueba tu conexión y recarga la página."
