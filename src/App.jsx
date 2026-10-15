@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { Button } from '@heroui/react';
 import ChampionsLeagueHeader from './components/ChampionsLeagueHeader';
 import ChampionsLeagueFooter from './components/ChampionsLeagueFooter';
 import LoadingScreen from './components/LoadingScreen';
@@ -31,7 +32,7 @@ const App = () => {
       <ScrollToTopOnNavigate />
       <ChampionsLeagueHeader />
 
-      <main className="flex-grow">
+      <main className="grow">
         {status === 'error' ? (
           <NotFoundPage
             title="No se pudieron cargar los datos"
@@ -54,15 +55,17 @@ const App = () => {
       <ChampionsLeagueFooter />
 
       <div className="fixed bottom-4 right-4 z-50">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="bg-champions-blue text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
+        <Button
+          isIconOnly
+          size="lg"
+          onPress={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="rounded-full shadow-lg"
           aria-label="Volver arriba"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
           </svg>
-        </button>
+        </Button>
       </div>
     </div>
   );

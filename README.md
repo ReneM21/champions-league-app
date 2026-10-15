@@ -1,6 +1,6 @@
 # Champions League Máximos Goleadores
 
-Una aplicación web desarrollada con React y TailwindCSS que muestra información sobre los máximos goleadores históricos de la UEFA Champions League.
+Una aplicación web desarrollada con React, [HeroUI](https://heroui.com) y Tailwind CSS que muestra información sobre los máximos goleadores históricos de la UEFA Champions League.
 
 ## Características
 
@@ -24,18 +24,18 @@ champions-league-app/
 │   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
 ├── src/
-│   ├── App.js                   # Layout y rutas
-│   ├── index.js                 # Punto de entrada (HashRouter + PlayersProvider)
-│   ├── index.css                # Estilos propios (efectos, tablas, animaciones)
-│   ├── components/              # Cabecera, pie, avatar, paginación, marco de ficha...
+│   ├── App.jsx                  # Layout y rutas
+│   ├── main.jsx                 # Punto de entrada (HashRouter + RouterProvider de HeroUI + PlayersProvider)
+│   ├── index.css                # Tailwind, estilos de HeroUI, tema y efectos propios
+│   ├── components/              # Cabecera, pie, avatar, tabla de ranking, selector, paginación...
 │   ├── data/                    # Carga los JSON y une ranking.json con players.json
 │   ├── pages/                   # Una página por ruta
 │   └── utils/                   # Cálculos de estadísticas (con tests) y rutas de assets
 ├── scripts/                     # Actualización del ranking desde Wikipedia (con tests)
 ├── .github/workflows/           # Publicación y actualización automáticas
 ├── package.json
-├── tailwind.config.js           # Colores de marca: champions-blue y champions-gold
-└── postcss.config.js
+├── index.html                   # Página de entrada de Vite
+└── vite.config.mjs              # Vite: base de GitHub Pages, build en build/ y Vitest
 ```
 
 ### Rutas
@@ -88,7 +88,7 @@ El ranking decide qué jugadores aparecen y en qué orden. Si entra al top 10 un
 
 ```bash
 npm install
-npm start      # servidor de desarrollo
+npm run dev    # servidor de desarrollo (Vite)
 npm test       # tests de la app
 npm run test:scripts  # tests del analizador de Wikipedia
 npm run update-data     # descarga el ranking de goleadores
@@ -142,6 +142,13 @@ Notas:
 
 ## Tecnologías Utilizadas
 
-- React 18 y React Router 7
-- TailwindCSS
-- Create React App
+- React 19 y React Router 7
+- [HeroUI v3](https://heroui.com) (sobre React Aria): Table, Card, Avatar, Select, Pagination, Chip, Button, Link, Spinner
+- Tailwind CSS 4
+- Vite y Vitest
+
+### Estilos y tema
+
+- Los colores de marca están en `src/index.css`: `@theme` define `champions-blue` y `champions-gold` para Tailwind, y `:root` asigna `--accent` (azul) y `--warning` (dorado) al tema de HeroUI.
+- `@import "@heroui/styles"` tiene que ir siempre después de `@import "tailwindcss"`.
+- Los enlaces de navegación que no son componentes de HeroUI usan su aspecto con `buttonVariants` (por ejemplo, la cabecera).

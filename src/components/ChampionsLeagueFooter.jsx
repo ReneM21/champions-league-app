@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@heroui/react';
 import { usePlayers } from '../data/PlayersContext';
 import { LOGO } from '../utils/asset';
 
@@ -22,15 +23,15 @@ const ChampionsLeagueFooter = () => {
         {source && (
           <p className="text-xs text-blue-300 ml-4">
             Fuente:{' '}
-            <a href={source} target="_blank" rel="noopener noreferrer" className="underline hover:text-champions-gold">
+            <Link href={source} target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-champions-gold">
               Wikipedia
-            </a>
+            </Link>
           </p>
         )}
       </div>
 
       {/* Barra decorativa con estrellas */}
-      <div className="px-6 py-2 bg-opacity-20 bg-black text-center border-t border-opacity-20 border-white">
+      <div className="px-6 py-2 bg-black/20 text-center border-t border-white/20">
         <div className="flex justify-center space-x-4">
           {Array(5).fill('').map((_, i) => (
             <span key={i} className="champions-star" style={{ animationDelay: `${i * 0.5}s` }}>★</span>

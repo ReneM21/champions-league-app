@@ -1,8 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+/* Componentes de HeroUI: siempre después de tailwindcss */
+@import '@heroui/styles';
 
-/* Los colores de marca están en tailwind.config.js (bg-champions-blue, text-champions-gold...).
+@theme {
+  --color-champions-blue: #0e1e5b;
+  --color-champions-gold: #fb9f00;
+}
+
+/* Tema de HeroUI con los colores de la Champions. Fuera de @layer para que
+   tenga prioridad sobre las variables por defecto de @heroui/styles. */
+:root {
+  --accent: #0e1e5b;
+  --accent-foreground: #ffffff;
+  --warning: #fb9f00;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+/* Los colores de marca para Tailwind están en @theme (bg-champions-blue, text-champions-gold...).
    Estas variables son para los estilos de este archivo y deben coincidir con ellos. */
 :root {
   --champions-blue: #0e1e5b;
@@ -39,14 +70,6 @@ body {
 }
 
 /* Efectos de cards y contenedores */
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(14, 30, 91, 0.1);
-}
-
 .champions-card {
   position: relative;
   transition: all 0.3s ease;
@@ -99,42 +122,6 @@ body {
 
 .champions-gradient-blue {
   background: linear-gradient(135deg, var(--champions-blue), #253a8e);
-}
-
-/* Tablas */
-.champions-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(14, 30, 91, 0.1);
-}
-
-/* Sin text-align: la alineación se elige con text-left / text-center en cada celda */
-.champions-table th {
-  background-color: var(--champions-blue);
-  color: white;
-  font-weight: 600;
-  padding: 12px 15px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.champions-table td {
-  padding: 10px 15px;
-  border-bottom: 1px solid #edf2f7;
-}
-
-.champions-table tr:last-child td {
-  border-bottom: none;
-}
-
-.champions-table tbody tr:nth-child(even) {
-  background-color: rgba(14, 30, 91, 0.05);
-}
-
-.champions-table tbody tr:hover {
-  background-color: rgba(251, 159, 0, 0.05);
 }
 
 /* Esquinas doradas en secciones destacadas */
