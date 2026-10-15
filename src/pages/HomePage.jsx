@@ -54,7 +54,8 @@ const HomePage = () => {
         </p>
         <p>
           Las fotos de los jugadores sin ficha propia vienen de Wikimedia Commons; el autor y la licencia aparecen al
-          pasar el ratón por encima. Los campos marcados con "-" no tienen datos disponibles.
+          pasar el ratón por encima. Los campos marcados con "-" no tienen datos disponibles. "En activo" señala a los
+          jugadores que han jugado la Champions esta temporada.
         </p>
       </DataNote>
     </div>

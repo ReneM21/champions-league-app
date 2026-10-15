@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { asset } from '../utils/asset';
 import { buildPlayers } from './buildPlayers';
 
@@ -101,8 +101,22 @@ export const useCompetition = () => {
   return { competition, seasonLeaders: seasonLeaders || {}, clubs: clubs || {} };
 };
 
+const normalizeName = (name) =>
+  name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+// Busca un jugador con página por su nombre en cualquiera de las fuentes
 export const usePlayerByName = () => {
   const { byId } = usePlayers();
-  const all = byId ? [...byId.values()] : [];
-  return (name) => all.find((player) => player.name === name);
+  const index = useMemo(() => {
+    const map = new Map();
+    for (const player of byId ? byId.values() : []) {
+      for (const alias of player.aliases || [player.name]) map.set(normalizeName(alias), player);
+    }
+    return map;
+  }, [byId]);
+  return (name) => index.get(normalizeName(name || ''));
 };

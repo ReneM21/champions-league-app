@@ -47,6 +47,8 @@ describe('buildPlayers', () => {
     expect(raul.photoCredit).toBeUndefined();
     expect(raul.clubs).toEqual(['Real Madrid']);
     expect(raul.biographySource).toBeUndefined();
+    // Se le encuentra también por el nombre de Wikipedia
+    expect(raul.aliases).toEqual(['Raúl González', 'Raúl']);
   });
 
   it('un asistidor sin ficha usa la ficha automática y sus goles de la tabla completa', () => {

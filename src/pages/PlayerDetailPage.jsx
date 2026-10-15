@@ -73,7 +73,7 @@ const PlayerDetailPage = () => (
                 <InfoRow label="Posición">{formatValue(player.role ? capitalize(player.role) : null)}</InfoRow>
                 <InfoRow label="Nacimiento">{formatValue(player.birthdate)}</InfoRow>
                 <InfoRow label="Años">{formatValue(player.years || null)}</InfoRow>
-                <InfoRow label="Equipos">{(player.clubs || player.teams.map((t) => t.name)).join(', ') || '-'}</InfoRow>
+                <InfoRow label="Equipos">{(player.teams.length ? player.teams.map((t) => t.name) : player.clubs || []).join(', ') || '-'}</InfoRow>
               </dl>
               {player.photoCredit && (
                 <Link

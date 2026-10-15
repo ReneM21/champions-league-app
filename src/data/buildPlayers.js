@@ -141,6 +141,9 @@ export function buildPlayers({ ranking, assists, details = [], photos = {}, prof
       assists: assistsRow ? assistsRow.assists : null,
       matches: (goalsRow && goalsRow.matches) || (assistsRow && assistsRow.matches) || null,
     };
+    // Nombres con los que aparece el jugador en cada fuente ("Raúl" en
+    // Wikipedia, "Xavi Hernández" en la UEFA), para enlazarlo desde cualquiera
+    player.aliases = [...new Set([player.name, goalsRow && goalsRow.name, assistsRow && assistsRow.name, uefa[id] && uefa[id].name].filter(Boolean))];
     // Una biografía manual no lleva el enlace de la automática
     if (detail.biography) delete player.biographySource;
     const official = uefa[id];
