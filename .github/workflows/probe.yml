@@ -1,0 +1,20 @@
+name: Probe (temporal)
+on:
+  push:
+    branches: [claude/nifty-archimedes-bl6gsx]
+    paths: ['.github/workflows/probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p probe-html
+          curl -sSL -A "champions-league-app (https://github.com/ReneM21/champions-league-app)" "https://en.wikipedia.org/api/rest_v1/page/html/European_Cup_and_UEFA_Champions_League_records_and_statistics" -o probe-html/records.html
+          git add probe-html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Página de récords (temporal)"
+          git push origin HEAD:${{ github.ref_name }}
