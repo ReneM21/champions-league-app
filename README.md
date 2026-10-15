@@ -1,14 +1,17 @@
-# Champions League Máximos Goleadores
+# Champions Stats
 
-Una aplicación web desarrollada con React, [HeroUI](https://heroui.com) y Tailwind CSS que muestra información sobre los máximos goleadores históricos de la UEFA Champions League.
+Una aplicación web desarrollada con React, [HeroUI](https://heroui.com) y Tailwind CSS con las estadísticas históricas de la UEFA Champions League: goleadores, asistidores, finales, equipos y récords.
 
 ## Características
 
 - Ranking de los máximos goleadores de la Champions League, actualizado automáticamente cada día desde Wikipedia
 - Ranking de los máximos asistidores, actualizado de la misma forma
 - Fotos de Wikimedia Commons para los jugadores sin foto propia, con su autor y licencia
-- Ficha de cada jugador con su perfil, sus equipos y sus temporadas
-- Páginas de equipos legendarios y de temporadas históricas
+- Ficha de cada jugador con su perfil, sus finales, sus equipos y sus temporadas (con gráfico), con datos oficiales de la UEFA
+- Equipos: todos los finalistas de la historia con títulos, finales, clasificación histórica y escudos
+- Temporadas: las 71 finales desde 1955-56 con campeón, resultado, estadio y máximos goleadores
+- Récords: más títulos como jugador, más partidos, más goles y asistencias en una temporada y entrenadores
+- Comparador de dos jugadores y buscador en la cabecera
 - Rutas propias para cada vista (`#/jugadores/cristiano-ronaldo/temporadas`): se pueden compartir y el botón "atrás" funciona
 - Diseño responsive para dispositivos móviles y de escritorio, con modo claro y oscuro
 
@@ -23,6 +26,9 @@ champions-league-app/
 │   ├── data/profiles.json       # Fichas automáticas: biografía, nacimiento y posición (generado)
 │   ├── data/all-goals.json      # Tabla completa de goleadores (generado)
 │   ├── data/all-assists.json    # Tabla completa de asistidores (generado)
+│   ├── data/uefa-seasons.json   # Temporadas de la UEFA por jugador y líderes de cada temporada (generado)
+│   ├── data/competition.json    # Finales, títulos por club, clasificación histórica y récords (generado)
+│   ├── data/clubs.json          # Escudos y goleadores por club (generado)
 │   ├── data/players.json        # Fichas de jugador (se editan a mano)
 │   ├── images/                  # Logos y fotos de jugadores
 │   └── index.html
@@ -50,8 +56,10 @@ champions-league-app/
 | `#/jugadores/:id/equipos` | Goles por equipo |
 | `#/jugadores/:id/temporadas` | Estadísticas por temporada |
 | `#/asistencias` | Ranking de asistidores |
-| `#/equipos` | Equipos legendarios |
-| `#/temporadas` | Temporadas históricas |
+| `#/equipos` | Equipos finalistas y campeones |
+| `#/temporadas` | Todas las finales y temporadas |
+| `#/records` | Récords individuales |
+| `#/comparar?a=:id&b=:id` | Comparador de dos jugadores |
 
 ### Datos
 

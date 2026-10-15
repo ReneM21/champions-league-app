@@ -48,7 +48,7 @@ const PlayerTeamsPage = () => (
       }
 
       return (
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <div className="grid gap-4 md:grid-cols-2">
             {teams.map((team) => (
               <Card key={team.name}>

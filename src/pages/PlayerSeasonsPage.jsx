@@ -58,7 +58,7 @@ const PlayerSeasonsPage = () => (
       }
 
       return (
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 gap-6">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <StatCard label="Temporadas" value={summary.count} note={`${summary.first.season} – ${summary.last.season}`} />
             <StatCard label="Equipos" value={summary.clubs.length} note={summary.clubs.join(', ')} />
