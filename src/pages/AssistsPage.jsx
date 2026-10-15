@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Link } from '@heroui/react';
 import DataNote from '../components/DataNote';
 import PageHeader from '../components/PageHeader';
+import PlayerTabLinks from '../components/PlayerTabLinks';
 import Podium from '../components/Podium';
 import RankingTable from '../components/RankingTable';
 import { usePlayers } from '../data/PlayersContext';
@@ -43,12 +44,7 @@ const AssistsPage = () => {
             statLabel="Asistencias"
             profileOf={profileOf}
             linkQuery={QUERY}
-            actions={(player) => (
-              <div className="flex justify-end gap-3 text-sm">
-                <Link href={`/jugadores/${player.id}/equipos${QUERY}`}>Equipos</Link>
-                <Link href={`/jugadores/${player.id}/temporadas${QUERY}`}>Temporadas</Link>
-              </div>
-            )}
+            actions={(player) => <PlayerTabLinks playerId={player.id} query={QUERY} />}
           />
         </>
       )}
