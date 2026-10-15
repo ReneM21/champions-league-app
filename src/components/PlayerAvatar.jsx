@@ -1,21 +1,31 @@
 import React from 'react';
-import { asset, LOGO } from '../utils/asset';
+import { Avatar } from '@heroui/react';
+import { asset } from '../utils/asset';
 
 export const creditText = (credit) => `Foto: ${credit.author} · ${credit.license} · Wikimedia Commons`;
 
-const PlayerAvatar = ({ player, className = 'h-12 w-12' }) => (
-  <div className={`shrink-0 overflow-hidden rounded-full border-2 border-champions-blue bg-white ${className}`}>
-    <img
-      src={player.image ? asset(player.image) : LOGO}
-      alt={player.name}
-      title={player.photoCredit ? creditText(player.photoCredit) : undefined}
-      className="h-full w-full object-cover object-top"
-      onError={(e) => {
-        e.target.onerror = null;
-        e.target.src = LOGO;
-      }}
-    />
-  </div>
+const initials = (name) =>
+  name
+    .split(' ')
+    .filter(Boolean)
+    .map((word) => word[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+
+// Si no hay foto o no carga, HeroUI muestra las iniciales del jugador
+const PlayerAvatar = ({ player, className = 'size-12' }) => (
+  <Avatar color="accent" variant="soft" className={`rounded-full ring-2 ring-champions-blue ${className}`}>
+    {player.image && (
+      <Avatar.Image
+        src={asset(player.image)}
+        alt={player.name}
+        title={player.photoCredit ? creditText(player.photoCredit) : undefined}
+        className="object-cover object-top"
+      />
+    )}
+    <Avatar.Fallback className="rounded-full font-semibold">{initials(player.name)}</Avatar.Fallback>
+  </Avatar>
 );
 
 export default PlayerAvatar;

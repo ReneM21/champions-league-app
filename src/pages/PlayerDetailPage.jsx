@@ -1,50 +1,62 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Card, Link, buttonVariants } from '@heroui/react';
 import PlayerAvatar from '../components/PlayerAvatar';
 import PlayerPage from '../components/PlayerPage';
 import { formatValue } from '../utils/stats';
 
 const StatTile = ({ value, label }) => (
-  <div className="bg-linear-to-br from-champions-blue to-blue-900 p-5 rounded-lg text-center shadow-lg transform transition-transform hover:scale-105 duration-300">
-    <p className="text-4xl font-bold mb-1 text-champions-gold">{formatValue(value)}</p>
-    <p className="text-sm uppercase tracking-wider font-semibold text-white bg-blue-800 py-1 px-2 rounded-md inline-block">{label}</p>
-  </div>
+  <Card className="bg-linear-to-br from-champions-blue to-blue-900 text-center shadow-lg transform transition-transform hover:scale-105 duration-300">
+    <Card.Content className="items-center p-5">
+      <p className="text-4xl font-bold mb-1 text-champions-gold">{formatValue(value)}</p>
+      <p className="text-sm uppercase tracking-wider font-semibold text-white bg-blue-800 py-1 px-2 rounded-md inline-block">{label}</p>
+    </Card.Content>
+  </Card>
 );
 
-const buttonClass =
-  'bg-champions-blue text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transform transition-transform duration-300 hover:scale-105 active:scale-95';
+const InfoRow = ({ label, children }) => (
+  <p className="text-gray-700">
+    <span className="font-semibold text-champions-blue">{label}:</span> {children}
+  </p>
+);
 
 const PlayerDetailPage = () => (
   <PlayerPage title="Perfil de" backTo={() => '/'} backLabel="Volver">
     {(player) => (
       <>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="glass-card p-5">
-            <div className="flex flex-col items-center mb-4">
-              <PlayerAvatar player={player} className="h-32 w-32" />
-              {player.photoCredit && (
-                <a
-                  href={player.photoCredit.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 text-xs text-gray-500 hover:text-champions-blue text-center"
-                >
-                  Foto: {player.photoCredit.author} · {player.photoCredit.license}
-                </a>
-              )}
-            </div>
-            <h3 className="text-xl font-semibold mb-4 text-champions-blue border-b border-gray-200 pb-2">Información Personal</h3>
-            <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Posición en el ranking:</span> {player.position}º</p>
-            <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Nacionalidad:</span> {formatValue(player.nationality)}</p>
-            <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Fecha de nacimiento:</span> {formatValue(player.birthdate)}</p>
-            <p className="text-gray-700 mb-3"><span className="font-semibold text-champions-blue">Años en la competición:</span> {formatValue(player.years || null)}</p>
-            <p className="text-gray-700"><span className="font-semibold text-champions-blue">Equipos:</span> {(player.clubs || player.teams.map((t) => t.name)).join(', ') || '-'}</p>
-          </div>
+          <Card variant="secondary">
+            <Card.Content className="gap-3 p-5">
+              <div className="flex flex-col items-center mb-2">
+                <PlayerAvatar player={player} className="size-32" />
+                {player.photoCredit && (
+                  <Link
+                    href={player.photoCredit.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 text-xs text-gray-500 text-center no-underline hover:text-champions-blue"
+                  >
+                    Foto: {player.photoCredit.author} · {player.photoCredit.license}
+                  </Link>
+                )}
+              </div>
+              <h3 className="text-xl font-semibold text-champions-blue border-b border-gray-200 pb-2">Información Personal</h3>
+              <InfoRow label="Posición en el ranking">{player.position}º</InfoRow>
+              <InfoRow label="Nacionalidad">{formatValue(player.nationality)}</InfoRow>
+              <InfoRow label="Fecha de nacimiento">{formatValue(player.birthdate)}</InfoRow>
+              <InfoRow label="Años en la competición">{formatValue(player.years || null)}</InfoRow>
+              <InfoRow label="Equipos">{(player.clubs || player.teams.map((t) => t.name)).join(', ') || '-'}</InfoRow>
+            </Card.Content>
+          </Card>
 
-          <div className="md:col-span-2 glass-card p-5">
-            <h3 className="text-xl font-semibold mb-4 text-champions-blue border-b border-gray-200 pb-2">Biografía</h3>
-            <p className="text-gray-700 leading-relaxed">{player.biography || 'Información no disponible'}</p>
-          </div>
+          <Card variant="secondary" className="md:col-span-2">
+            <Card.Header>
+              <Card.Title className="text-xl font-semibold text-champions-blue border-b border-gray-200 pb-2">Biografía</Card.Title>
+            </Card.Header>
+            <Card.Content>
+              <p className="text-gray-700 leading-relaxed">{player.biography || 'Información no disponible'}</p>
+            </Card.Content>
+          </Card>
         </div>
 
         <div className="mt-8">
@@ -58,8 +70,12 @@ const PlayerDetailPage = () => (
         </div>
 
         <div className="mt-8 flex flex-wrap gap-4">
-          <Link to={`/jugadores/${player.id}/equipos`} className={buttonClass}>Ver Equipos</Link>
-          <Link to={`/jugadores/${player.id}/temporadas`} className={buttonClass}>Ver Temporadas</Link>
+          <RouterLink to={`/jugadores/${player.id}/equipos`} className={buttonVariants({ size: 'lg' })}>
+            Ver Equipos
+          </RouterLink>
+          <RouterLink to={`/jugadores/${player.id}/temporadas`} className={buttonVariants({ size: 'lg' })}>
+            Ver Temporadas
+          </RouterLink>
         </div>
       </>
     )}

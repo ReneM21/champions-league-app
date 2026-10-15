@@ -1,16 +1,20 @@
 import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { buttonVariants } from '@heroui/react';
 import { LOGO } from '../utils/asset';
 
-const linkClass = (isActive) =>
-  `px-1.5 sm:px-3 py-2 rounded-md text-xs sm:text-sm font-medium transition-colors duration-200 ${
-    isActive ? 'bg-champions-blue text-white' : 'text-champions-blue hover:bg-blue-50 hover:text-blue-800'
-  }`;
+const SECTIONS = [
+  { to: '/', label: 'Goleadores' },
+  { to: '/asistencias', label: 'Asistencias' },
+  { to: '/equipos', label: 'Equipos' },
+  { to: '/temporadas', label: 'Temporadas' },
+];
 
 const ChampionsLeagueHeader = () => {
   const { pathname } = useLocation();
+
   // Las fichas de jugador cuelgan de la lista de goleadores
-  const scorersActive = pathname === '/' || pathname.startsWith('/jugadores');
+  const isActive = (to) => (to === '/' ? pathname === '/' || pathname.startsWith('/jugadores') : pathname === to);
 
   return (
     <header className="sticky top-0 bg-white shadow-md z-50">
@@ -23,19 +27,21 @@ const ChampionsLeagueHeader = () => {
             <h1 className="hidden sm:block text-champions-blue font-bold text-xl">Champions League</h1>
           </Link>
 
-          <nav className="flex items-center space-x-1 sm:space-x-4">
-            <NavLink to="/" className={() => linkClass(scorersActive)}>
-              Goleadores
-            </NavLink>
-            <NavLink to="/asistencias" className={({ isActive }) => linkClass(isActive)}>
-              Asistencias
-            </NavLink>
-            <NavLink to="/equipos" className={({ isActive }) => linkClass(isActive)}>
-              Equipos
-            </NavLink>
-            <NavLink to="/temporadas" className={({ isActive }) => linkClass(isActive)}>
-              Temporadas
-            </NavLink>
+          {/* Enlaces de React Router con el estilo de los botones de HeroUI */}
+          <nav className="flex items-center gap-0.5 sm:gap-2">
+            {SECTIONS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                className={buttonVariants({
+                  variant: isActive(to) ? 'primary' : 'ghost',
+                  size: 'sm',
+                  className: 'px-2 text-xs sm:px-3 sm:text-sm',
+                })}
+              >
+                {label}
+              </NavLink>
+            ))}
           </nav>
         </div>
       </div>

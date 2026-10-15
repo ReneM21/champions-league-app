@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from '@heroui/react';
 import { asset, LOGO } from '../utils/asset';
 
 const LoadingScreen = () => (
@@ -24,7 +25,7 @@ const LoadingScreen = () => (
         <img src={asset('images/award.png')} alt="" className="w-full h-full object-contain" />
       </div>
 
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-champions-gold mx-auto"></div>
+      <Spinner size="lg" color="warning" aria-label="Cargando" />
       <p className="mt-4 text-lg text-white animate-pulse">
         <span className="champions-star">★</span> Cargando goleadores <span className="champions-star">★</span>
       </p>

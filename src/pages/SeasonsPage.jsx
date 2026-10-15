@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Card, Chip, Link } from '@heroui/react';
 import Pagination, { paginate } from '../components/Pagination';
+import PlayerAvatar from '../components/PlayerAvatar';
+import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
 
 const SEASONS = [
@@ -89,6 +91,13 @@ const SORTS = {
 
 const SEASONS_PER_PAGE = 4;
 
+const SORT_OPTIONS = [
+  { id: 'all', label: 'Sin ordenar' },
+  { id: 'recent', label: 'Más recientes' },
+  { id: 'oldest', label: 'Más antiguas' },
+  { id: 'mostGoals', label: 'Más goles' },
+];
+
 const SeasonsPage = () => {
   const [sort, setSort] = useState('all');
   const [page, setPage] = useState(1);
@@ -105,23 +114,15 @@ const SeasonsPage = () => {
       </section>
 
       <section className="mb-8">
-        <div className="bg-gray-50 p-4 rounded-lg shadow-xs max-w-md mx-auto flex items-center justify-center">
-          <label htmlFor="seasonSort" className="text-gray-700 mr-3 font-medium">Ordenar por:</label>
-          <select
-            id="seasonSort"
-            className="rounded-md border-gray-300 shadow-xs"
-            value={sort}
-            onChange={(e) => {
-              setSort(e.target.value);
-              setPage(1);
-            }}
-          >
-            <option value="all">Sin ordenar</option>
-            <option value="recent">Más recientes</option>
-            <option value="oldest">Más antiguas</option>
-            <option value="mostGoals">Más goles</option>
-          </select>
-        </div>
+        <SortSelect
+          label="Ordenar por"
+          value={sort}
+          onChange={(value) => {
+            setSort(value);
+            setPage(1);
+          }}
+          options={SORT_OPTIONS}
+        />
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -129,20 +130,22 @@ const SeasonsPage = () => {
           const scorer = findPlayer(season.topScorer.name);
 
           return (
-            <div key={season.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-              <div className="champions-gradient-blue p-6 text-white">
-                <h3 className="text-2xl font-bold">{season.year}</h3>
+            <Card key={season.id} className="p-0 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card.Header className="champions-gradient-blue p-6 text-white">
+                <Card.Title className="text-2xl font-bold text-white">{season.year}</Card.Title>
                 <div className="flex items-center mt-1">
                   <span className="mr-2">🏆</span>
                   <span className="font-medium text-champions-gold">{season.winner}</span>
                 </div>
-              </div>
+              </Card.Header>
 
               <div className="bg-champions-blue/10 p-4 border-b border-gray-200">
                 <h4 className="font-bold text-champions-blue mb-2">Final</h4>
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-gray-700">{season.finalTeams[0]}</span>
-                  <span className="bg-champions-blue text-white font-bold px-3 py-1 rounded-md">{season.finalScore}</span>
+                  <Chip color="accent" variant="primary" size="lg" className="font-bold">
+                    {season.finalScore}
+                  </Chip>
                   <span className="font-medium text-gray-700">{season.finalTeams[1]}</span>
                 </div>
                 <div className="text-sm text-gray-500 mt-2 text-center">{season.finalVenue}</div>
@@ -166,15 +169,18 @@ const SeasonsPage = () => {
               <div className="p-4">
                 <h4 className="font-bold text-champions-blue mb-2">Máximo Goleador</h4>
                 <div className="flex items-center justify-between">
-                  <div>
-                    {scorer ? (
-                      <Link to={`/jugadores/${scorer.id}`} className="font-medium hover:text-champions-blue">
-                        {season.topScorer.name}
-                      </Link>
-                    ) : (
-                      <p className="font-medium">{season.topScorer.name}</p>
-                    )}
-                    <p className="text-sm text-gray-500">{season.topScorer.team}</p>
+                  <div className="flex items-center gap-3">
+                    <PlayerAvatar player={scorer || { name: season.topScorer.name }} className="size-10" />
+                    <div>
+                      {scorer ? (
+                        <Link href={`/jugadores/${scorer.id}`} className="font-medium text-foreground no-underline hover:text-champions-blue">
+                          {season.topScorer.name}
+                        </Link>
+                      ) : (
+                        <p className="font-medium">{season.topScorer.name}</p>
+                      )}
+                      <p className="text-sm text-gray-500">{season.topScorer.team}</p>
+                    </div>
                   </div>
                   <div className="flex items-center">
                     <span className="text-lg mr-2">⚽</span>
@@ -182,7 +188,7 @@ const SeasonsPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Card>
           );
         })}
       </section>

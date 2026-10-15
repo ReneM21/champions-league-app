@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Card, Chip, Link } from '@heroui/react';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
+import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
 
 const TEAMS = [
@@ -108,25 +109,27 @@ const initials = (name) =>
     .slice(0, 2)
     .toUpperCase();
 
+const SORT_OPTIONS = [
+  { id: 'all', label: 'Todos los equipos' },
+  { id: 'titles', label: 'Más títulos' },
+  { id: 'goals', label: 'Más goles' },
+];
+
 // Los goleadores que están en la lista principal enlazan a su ficha
 const Scorer = ({ scorer }) => {
   const player = usePlayerByName()(scorer.name);
-  const content = (
-    <div className="flex items-center">
-      {player ? (
-        <PlayerAvatar player={player} className="w-10 h-10 mr-3" />
-      ) : (
-        <div className="w-10 h-10 mr-3 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm font-bold">
-          {initials(scorer.name)}
-        </div>
-      )}
-      <span className={`font-medium ${player ? 'hover:text-champions-blue' : ''}`}>{scorer.name}</span>
-    </div>
-  );
-
   return (
     <li className="flex items-center justify-between">
-      {player ? <Link to={`/jugadores/${player.id}`}>{content}</Link> : content}
+      <div className="flex items-center gap-3">
+        <PlayerAvatar player={player || { name: scorer.name }} className="size-10" />
+        {player ? (
+          <Link href={`/jugadores/${player.id}`} className="font-medium text-foreground no-underline hover:text-champions-blue">
+            {scorer.name}
+          </Link>
+        ) : (
+          <span className="font-medium">{scorer.name}</span>
+        )}
+      </div>
       <span className="text-champions-blue font-bold">{scorer.goals} goles</span>
     </li>
   );
@@ -147,28 +150,21 @@ const TeamsPage = () => {
       </section>
 
       <section className="mb-8">
-        <div className="bg-gray-50 p-4 rounded-lg shadow-xs max-w-md mx-auto flex items-center justify-center">
-          <label htmlFor="teamSort" className="text-gray-700 mr-3 font-medium">Ordenar por:</label>
-          <select
-            id="teamSort"
-            className="rounded-md border-gray-300 shadow-xs"
-            value={sort}
-            onChange={(e) => {
-              setSort(e.target.value);
-              setPage(1);
-            }}
-          >
-            <option value="all">Todos los equipos</option>
-            <option value="titles">Más títulos</option>
-            <option value="goals">Más goles</option>
-          </select>
-        </div>
+        <SortSelect
+          label="Ordenar por"
+          value={sort}
+          onChange={(value) => {
+            setSort(value);
+            setPage(1);
+          }}
+          options={SORT_OPTIONS}
+        />
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {items.map((team) => (
-          <div key={team.id} className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow duration-300">
-            <div className="bg-champions-blue text-white p-4 flex items-center">
+          <Card key={team.id} className="p-0 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Card.Header className="bg-champions-blue text-white p-4 flex-row items-center">
               <div className="bg-white text-champions-blue rounded-full h-16 w-16 flex items-center justify-center mr-4 text-xl font-bold">
                 {initials(team.name)}
               </div>
@@ -177,7 +173,7 @@ const TeamsPage = () => {
                 <span className="text-3xl font-bold">{team.titles}</span>
                 <span className="text-sm text-blue-200">Títulos</span>
               </div>
-            </div>
+            </Card.Header>
 
             <div className="grid grid-cols-3 p-4 text-center border-b border-gray-200">
               <div className="p-2">
@@ -207,13 +203,13 @@ const TeamsPage = () => {
               <h4 className="font-bold text-champions-blue mb-2">Títulos de Champions League</h4>
               <div className="flex flex-wrap gap-2">
                 {team.titleYears.map((year) => (
-                  <span key={year} className="bg-blue-50 text-champions-blue px-2 py-1 rounded-md text-sm font-medium">
+                  <Chip key={year} color="accent" variant="soft">
                     {year}
-                  </span>
+                  </Chip>
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
         ))}
       </section>
 

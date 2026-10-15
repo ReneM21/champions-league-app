@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card } from '@heroui/react';
 import PlayerPage, { backToProfile } from '../components/PlayerPage';
 import { teamBreakdown } from '../utils/stats';
 
@@ -17,9 +18,11 @@ const PlayerTeamsPage = () => (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {teams.map((team) => (
-              <div key={team.name} className="bg-linear-to-r from-gray-50 to-gray-200 p-5 rounded-lg border border-gray-100 champions-card">
-                <h3 className="text-lg font-bold text-champions-blue mb-2">{team.name}</h3>
-                <div className="grid grid-cols-2 gap-4 my-3">
+              <Card key={team.name} variant="secondary" className="champions-card">
+                <Card.Header>
+                  <Card.Title className="text-lg font-bold text-champions-blue">{team.name}</Card.Title>
+                </Card.Header>
+                <Card.Content className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-gray-500 font-medium">Goles</p>
                     <p className="text-2xl font-bold text-green-600">{team.goals}</p>
@@ -28,14 +31,14 @@ const PlayerTeamsPage = () => (
                     <p className="text-sm text-gray-500 font-medium">Temporadas</p>
                     <p className="text-2xl font-bold text-purple-600">{team.seasons || '-'}</p>
                   </div>
-                </div>
-              </div>
+                </Card.Content>
+              </Card>
             ))}
           </div>
 
           <div className="mt-8">
             <h3 className="text-xl font-semibold mb-3 text-champions-blue">Rendimiento por Equipo</h3>
-            <div className="bg-gray-100 p-4 rounded-lg">
+            <Card variant="secondary" className="p-4">
               <div className="w-full h-16 bg-gray-200 rounded-full flex overflow-hidden">
                 {teams.map((team, index) => (
                   <div
@@ -55,7 +58,7 @@ const PlayerTeamsPage = () => (
                 ))}
               </div>
               <p className="text-xs text-gray-500 mt-2">Porcentaje sobre los {player.goals} goles totales del jugador en la competición.</p>
-            </div>
+            </Card>
           </div>
         </>
       );

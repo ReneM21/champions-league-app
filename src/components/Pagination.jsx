@@ -1,26 +1,34 @@
 import React from 'react';
+import { Pagination as HeroPagination } from '@heroui/react';
 
+// Paginación de HeroUI. No se muestra si solo hay una página.
 const Pagination = ({ page, pageCount, onChange }) => {
   if (pageCount <= 1) return null;
 
-  const buttonClass = (active) =>
-    `w-10 h-10 rounded-full flex items-center justify-center ${
-      active ? 'bg-champions-blue text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-    }`;
-
   return (
-    <div className="flex justify-center mt-10 space-x-2">
-      {Array.from({ length: pageCount }, (_, idx) => (
-        <button key={idx} className={buttonClass(page === idx + 1)} onClick={() => onChange(idx + 1)}>
-          {idx + 1}
-        </button>
-      ))}
-      {page < pageCount && (
-        <button className={buttonClass(false)} onClick={() => onChange(page + 1)} aria-label="Página siguiente">
-          →
-        </button>
-      )}
-    </div>
+    <HeroPagination className="mt-10 justify-center">
+      <HeroPagination.Content>
+        <HeroPagination.Item>
+          <HeroPagination.Previous isDisabled={page === 1} onPress={() => onChange(page - 1)}>
+            <HeroPagination.PreviousIcon />
+            <span>Anterior</span>
+          </HeroPagination.Previous>
+        </HeroPagination.Item>
+        {Array.from({ length: pageCount }, (_, idx) => (
+          <HeroPagination.Item key={idx}>
+            <HeroPagination.Link isActive={page === idx + 1} onPress={() => onChange(idx + 1)}>
+              {idx + 1}
+            </HeroPagination.Link>
+          </HeroPagination.Item>
+        ))}
+        <HeroPagination.Item>
+          <HeroPagination.Next isDisabled={page === pageCount} onPress={() => onChange(page + 1)}>
+            <span>Siguiente</span>
+            <HeroPagination.NextIcon />
+          </HeroPagination.Next>
+        </HeroPagination.Item>
+      </HeroPagination.Content>
+    </HeroPagination>
   );
 };
 
