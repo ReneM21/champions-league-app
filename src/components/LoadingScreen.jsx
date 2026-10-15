@@ -16,8 +16,7 @@ const LoadingScreen = () => (
         <img
           src={LOGO}
           alt="Champions League Logo"
-          className="w-full h-full object-contain rounded-lg"
-          style={{ filter: 'drop-shadow(0 0 3px rgba(255, 255, 255, 0.8))' }}
+          className="w-full h-full object-contain brightness-0 invert"
         />
       </div>
 
