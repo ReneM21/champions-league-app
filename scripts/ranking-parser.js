@@ -36,7 +36,7 @@ const NATIONS = {
 const slugify = (text) =>
   text
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
@@ -248,4 +248,4 @@ function validateRanking(players, previous, stat = 'goals') {
   if (errors.length) throw new Error(`Datos descartados:\n- ${errors.join('\n- ')}`);
 }
 
-module.exports = { parseStatTable, parseTopScorers, topPlayers, validateRanking, playerId, translateNation, STATS, TOP_N };
+module.exports = { parseStatTable, parseTopScorers, topPlayers, validateRanking, playerId, translateNation, tableGrid, cleanText, toInt, NATIONS, STATS, TOP_N };

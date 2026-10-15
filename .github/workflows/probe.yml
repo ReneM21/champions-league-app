@@ -2,7 +2,7 @@ name: Probe (temporal)
 on:
   push:
     branches: [claude/nifty-archimedes-bl6gsx]
-    paths: ['.github/workflows/probe.yml']
+    paths: ['.github/workflows/probe.yml', 'scripts/update-uefa-stats.js', 'scripts/uefa-stats.js', 'scripts/update-competition.js']
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -10,16 +10,17 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Descargar páginas de Wikipedia
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: node scripts/update-competition.js
+      - run: node scripts/update-uefa-stats.js
+      - if: ${{ !cancelled() }}
         run: |
-          mkdir -p probe-html
-          for p in List_of_UEFA_Champions_League_top_scorers European_Cup_and_UEFA_Champions_League_top_scorers_by_season List_of_European_Cup_and_UEFA_Champions_League_top_scorers_by_season; do
-            curl -sSL -A "champions-league-app (https://github.com/ReneM21/champions-league-app)" "https://en.wikipedia.org/api/rest_v1/page/html/$p" -o "probe-html/$p.html"
-            echo "$p $(wc -c < probe-html/$p.html)"
-          done
-      - run: |
-          git add probe-html
+          git add public/data/competition.json public/data/uefa-seasons.json public/data/clubs.json public/images/clubs
+          git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Páginas de Wikipedia (temporal)"
+          git commit -m "Datos de la competición y de la UEFA (prueba)"
           git push origin HEAD:${{ github.ref_name }}

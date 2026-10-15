@@ -6,6 +6,7 @@ import PlayerAvatar from '../components/PlayerAvatar';
 import PageHeader from '../components/PageHeader';
 import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
+import { useTitle } from '../utils/useTitle';
 
 const SEASONS = [
   {
@@ -108,6 +109,7 @@ const Figure = ({ value, label }) => (
 );
 
 const SeasonsPage = () => {
+  useTitle('Temporadas históricas');
   const [sort, setSort] = useState('all');
   const [page, setPage] = useState(1);
   const findPlayer = usePlayerByName();

@@ -6,6 +6,7 @@ import PlayerAvatar from '../components/PlayerAvatar';
 import PageHeader from '../components/PageHeader';
 import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
+import { useTitle } from '../utils/useTitle';
 
 const TEAMS = [
   {
@@ -136,6 +137,7 @@ const Figure = ({ value, label }) => (
 );
 
 const TeamsPage = () => {
+  useTitle('Equipos legendarios');
   const [sort, setSort] = useState('all');
   const [page, setPage] = useState(1);
   const { items, pageCount } = paginate(SORTS[sort](TEAMS), page, TEAMS_PER_PAGE);

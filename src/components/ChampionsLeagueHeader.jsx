@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { buttonVariants } from '@heroui/react';
+import PlayerSearch from './PlayerSearch';
 import ThemeToggle from './ThemeToggle';
 import { STARBALL } from '../utils/asset';
 
@@ -47,17 +48,23 @@ const ChampionsLeagueHeader = () => {
         </Link>
 
         <div className="flex items-center gap-1">
-          <nav aria-label="Secciones" className="hidden items-center gap-1 sm:flex">
+          <nav aria-label="Secciones" className="hidden items-center gap-1 md:flex">
             {links}
           </nav>
+          <PlayerSearch className="hidden w-48 sm:block lg:w-56" />
           <ThemeToggle />
         </div>
       </div>
 
-      {/* En móvil el menú va en una segunda fila con scroll horizontal */}
-      <nav aria-label="Secciones" className="flex gap-1 overflow-x-auto border-t border-separator px-3 py-2 sm:hidden">
-        {links}
-      </nav>
+      {/* En pantallas pequeñas el menú va en una segunda fila con scroll horizontal */}
+      <div className="border-t border-separator md:hidden">
+        <nav aria-label="Secciones" className="flex gap-1 overflow-x-auto px-3 py-2">
+          {links}
+        </nav>
+        <div className="px-3 pb-2 sm:hidden">
+          <PlayerSearch className="w-full" />
+        </div>
+      </div>
     </header>
   );
 };
