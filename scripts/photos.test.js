@@ -70,3 +70,14 @@ test('playersWithoutPhoto ignora a quien ya tiene foto y no repite jugadores', (
     { id: 'd', name: 'Jugador D', article: 'Jugador_D' },
   ]);
 });
+
+test('playersWithoutPhoto incluye a quien tiene una foto elegida a mano distinta de la descargada', () => {
+  const rankings = [{ players: [{ id: 'a', name: 'A' }, { id: 'b', name: 'B' }, { id: 'c', name: 'C' }] }];
+  const details = [
+    { id: 'a', photoFile: 'File:A 2008.jpg' },
+    { id: 'b', photoFile: 'File:B 2010.jpg' },
+    { id: 'c', image: 'images/players/c.jpg', photoFile: 'File:C.jpg' },
+  ];
+  const photos = { a: { image: 'images/players/a.jpg' }, b: { image: 'images/players/b.jpg', file: 'File:B 2010.jpg' } };
+  assert.deepEqual(playersWithoutPhoto(rankings, details, photos), [{ id: 'a', name: 'A', article: 'A', photoFile: 'File:A 2008.jpg' }]);
+});

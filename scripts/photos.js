@@ -39,15 +39,25 @@ function extensionFromUrl(url) {
   return match ? `.${match[1] === 'jpeg' ? 'jpg' : match[1]}` : '.jpg';
 }
 
-// Jugadores de los rankings sin foto propia ni descargada
+// Jugadores de los rankings sin foto propia ni descargada. También los que
+// tienen elegida a mano una foto de Commons ("photoFile" en players.json)
+// distinta de la descargada, por ejemplo una de cuando jugaban.
 function playersWithoutPhoto(rankings, details, photos) {
-  const withImage = new Set(details.filter((d) => d.image).map((d) => d.id));
+  const detailsById = new Map(details.map((d) => [d.id, d]));
   const seen = new Set();
   const result = [];
   for (const player of rankings.flatMap((r) => r.players)) {
-    if (withImage.has(player.id) || photos[player.id] || seen.has(player.id)) continue;
+    const detail = detailsById.get(player.id) || {};
+    const current = photos[player.id];
+    const wanted = detail.photoFile && (!current || current.file !== detail.photoFile);
+    if (detail.image || seen.has(player.id) || (current && !wanted)) continue;
     seen.add(player.id);
-    result.push({ id: player.id, name: player.name, article: player.article || player.name.replace(/ /g, '_') });
+    result.push({
+      id: player.id,
+      name: player.name,
+      article: player.article || player.name.replace(/ /g, '_'),
+      ...(detail.photoFile ? { photoFile: detail.photoFile } : {}),
+    });
   }
   return result;
 }

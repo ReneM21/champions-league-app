@@ -2,7 +2,7 @@ name: Probe (temporal)
 on:
   push:
     branches: [claude/nifty-archimedes-bl6gsx]
-    paths: ['.github/workflows/probe.yml', '.github/probe/**']
+    paths: ['.github/workflows/probe.yml', 'public/data/players.json']
 jobs:
   probe:
     runs-on: ubuntu-latest
@@ -14,14 +14,12 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - run: node .github/probe/era-photos.js
-      - name: Datos UEFA y escudos
-        run: node scripts/update-uefa-stats.js
+      - run: node scripts/update-photos.js
       - if: ${{ !cancelled() }}
         run: |
-          git add probe-photos2 public/data/uefa-seasons.json public/data/clubs.json public/images/clubs
+          git add public/data/photos.json public/images/players
           git diff --cached --quiet && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Candidatas de fotos (temporal)"
+          git commit -m "Fotos de cuando jugaban"
           git push origin HEAD:${{ github.ref_name }}
