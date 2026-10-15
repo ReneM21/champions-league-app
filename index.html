@@ -12,8 +12,21 @@
   <link rel="apple-touch-icon" href="/logo192.png" />
   <link rel="manifest" href="/manifest.json" />
   <title>Champions League - Máximos Goleadores</title>
+  <script>
+    // Aplica el tema guardado antes de pintar, para que no parpadee en claro.
+    // Usa la misma clave que useTheme de HeroUI (src/components/ThemeToggle.jsx).
+    (function () {
+      try {
+        var stored = localStorage.getItem('heroui-theme') || 'system';
+        var dark = stored === 'dark' || (stored === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var theme = dark ? 'dark' : 'light';
+        document.documentElement.classList.add(theme);
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
-<body>
+<body class="bg-background text-foreground">
   <noscript>Necesitas habilitar JavaScript para ejecutar esta aplicación.</noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>

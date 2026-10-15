@@ -3,7 +3,7 @@ import { Spinner } from '@heroui/react';
 import { asset, LOGO } from '../utils/asset';
 
 const LoadingScreen = () => (
-  <div className="min-h-screen flex items-center justify-center bg-champions-blue relative overflow-hidden">
+  <div className="champions-hero min-h-screen flex items-center justify-center relative overflow-hidden">
     {/* Estrellas de fondo */}
     <div className="absolute inset-0 overflow-hidden">
       {Array.from({ length: 12 }, (_, i) => (

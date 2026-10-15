@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Card, buttonVariants } from '@heroui/react';
+import { Link, NavLink, useParams } from 'react-router-dom';
+import { buttonVariants } from '@heroui/react';
+import PlayerAvatar from './PlayerAvatar';
 import { usePlayer } from '../data/PlayersContext';
 import NotFoundPage from '../pages/NotFoundPage';
 
+const TABS = [
+  { path: '', label: 'Perfil' },
+  { path: '/equipos', label: 'Equipos' },
+  { path: '/temporadas', label: 'Temporadas' },
+];
+
 // Marco común de las fichas de jugador: busca el jugador de la URL y pinta
-// la cabecera con el título y el enlace de vuelta.
-const PlayerPage = ({ title, backTo, backLabel, children }) => {
+// la portada y el submenú Perfil / Equipos / Temporadas.
+const PlayerPage = ({ children }) => {
   const { id } = useParams();
   const player = usePlayer(id);
 
@@ -15,26 +22,48 @@ const PlayerPage = ({ title, backTo, backLabel, children }) => {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-8 animate-fadeIn">
-      <Card className="p-0 overflow-hidden shadow-lg">
-        <Card.Header className="champions-gradient-blue px-6 py-4">
-          <div className="flex flex-wrap gap-3 justify-between items-center">
-            <Card.Title className="text-2xl font-bold text-white flex items-center">
-              <span className="mr-2">{title}</span>
-              <span className="bg-champions-gold text-champions-blue px-2 py-1 rounded-sm shadow-md">{player.name}</span>
-            </Card.Title>
-            <Link to={backTo(player)} className={buttonVariants({ variant: 'secondary', className: 'bg-white text-champions-blue font-bold' })}>
-              {backLabel}
-            </Link>
-          </div>
-        </Card.Header>
+    <div className="animate-fadeIn">
+      <Link to="/" className={buttonVariants({ variant: 'ghost', size: 'sm', className: 'mb-4 text-muted' })}>
+        ← Goleadores
+      </Link>
 
-        <Card.Content className="p-6">{children(player)}</Card.Content>
-      </Card>
+      <section className="champions-hero mb-6 flex flex-col gap-6 rounded-3xl p-6 text-white sm:flex-row sm:items-center sm:p-8">
+        <PlayerAvatar player={player} className="size-24 ring-4 ring-white/20" />
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-medium text-white/70">{player.position}º máximo goleador de la historia</p>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{player.name}</h1>
+          <p className="mt-1 text-white/80">
+            {[player.nationality, player.years].filter(Boolean).join(' · ') || ' '}
+          </p>
+        </div>
+        <div className="sm:text-right">
+          <p className="text-5xl font-bold tabular-nums text-champions-gold">{player.goals}</p>
+          <p className="text-sm uppercase tracking-wide text-white/70">goles</p>
+        </div>
+      </section>
+
+      <nav aria-label="Secciones del jugador" className="mb-8 flex gap-1 overflow-x-auto rounded-2xl bg-surface p-1 shadow-sm">
+        {TABS.map(({ path, label }) => (
+          <NavLink
+            key={label}
+            to={`/jugadores/${player.id}${path}`}
+            end
+            className={({ isActive }) =>
+              buttonVariants({
+                variant: isActive ? 'primary' : 'ghost',
+                size: 'sm',
+                className: 'flex-1',
+              })
+            }
+          >
+            {label}
+          </NavLink>
+        ))}
+      </nav>
+
+      {children(player)}
     </div>
   );
 };
-
-export const backToProfile = (player) => `/jugadores/${player.id}`;
 
 export default PlayerPage;

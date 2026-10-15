@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Chip, Link } from '@heroui/react';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
+import PageHeader from '../components/PageHeader';
 import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
 
@@ -119,21 +120,28 @@ const SORT_OPTIONS = [
 const Scorer = ({ scorer }) => {
   const player = usePlayerByName()(scorer.name);
   return (
-    <li className="flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <PlayerAvatar player={player || { name: scorer.name }} className="size-10" />
+    <li className="flex items-center justify-between gap-3">
+      <div className="flex min-w-0 items-center gap-3">
+        <PlayerAvatar player={player || { name: scorer.name }} className="size-9" />
         {player ? (
-          <Link href={`/jugadores/${player.id}`} className="font-medium text-foreground no-underline hover:text-champions-blue">
+          <Link href={`/jugadores/${player.id}`} className="truncate font-medium text-foreground no-underline hover:text-accent">
             {scorer.name}
           </Link>
         ) : (
-          <span className="font-medium">{scorer.name}</span>
+          <span className="truncate font-medium">{scorer.name}</span>
         )}
       </div>
-      <span className="text-champions-blue font-bold">{scorer.goals} goles</span>
+      <span className="shrink-0 text-sm font-semibold tabular-nums text-accent">{scorer.goals} goles</span>
     </li>
   );
 };
+
+const Figure = ({ value, label }) => (
+  <div>
+    <p className="text-xl font-bold tabular-nums">{value}</p>
+    <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
+  </div>
+);
 
 const TeamsPage = () => {
   const [sort, setSort] = useState('all');
@@ -141,15 +149,11 @@ const TeamsPage = () => {
   const { items, pageCount } = paginate(SORTS[sort](TEAMS), page, TEAMS_PER_PAGE);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fadeIn">
-      <section className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-champions-blue mb-4">Equipos Legendarios de la Champions</h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
-          Descubre los equipos más exitosos en la historia de la UEFA Champions League, sus estadísticas, goleadores y títulos.
-        </p>
-      </section>
-
-      <section className="mb-8">
+    <div className="animate-fadeIn">
+      <PageHeader
+        title="Equipos legendarios"
+        description="Los clubes más exitosos de la competición: estadísticas, máximos goleadores y títulos."
+      >
         <SortSelect
           label="Ordenar por"
           value={sort}
@@ -159,56 +163,50 @@ const TeamsPage = () => {
           }}
           options={SORT_OPTIONS}
         />
-      </section>
+      </PageHeader>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="grid gap-6 md:grid-cols-2">
         {items.map((team) => (
-          <Card key={team.id} className="p-0 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Card.Header className="bg-champions-blue text-white p-4 flex-row items-center">
-              <div className="bg-white text-champions-blue rounded-full h-16 w-16 flex items-center justify-center mr-4 text-xl font-bold">
+          <Card key={team.id}>
+            <Card.Header className="flex-row items-center gap-4">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-lg font-bold text-accent">
                 {initials(team.name)}
               </div>
-              <h3 className="text-xl font-bold">{team.name}</h3>
-              <div className="ml-auto flex flex-col items-center">
-                <span className="text-3xl font-bold">{team.titles}</span>
-                <span className="text-sm text-blue-200">Títulos</span>
+              <div className="min-w-0 flex-1">
+                <Card.Title className="text-lg">{team.name}</Card.Title>
               </div>
+              <Chip color="warning" variant="soft" className="font-bold">
+                🏆 {team.titles}
+              </Chip>
             </Card.Header>
 
-            <div className="grid grid-cols-3 p-4 text-center border-b border-gray-200">
-              <div className="p-2">
-                <span className="block text-xl font-bold text-champions-blue">{team.matches}</span>
-                <span className="block text-sm text-gray-500">Partidos</span>
+            <Card.Content className="gap-5">
+              <div className="grid grid-cols-3 gap-4 rounded-2xl bg-surface-secondary p-4">
+                <Figure value={team.matches} label="Partidos" />
+                <Figure value={team.goals} label="Goles" />
+                <Figure value={team.goalsPerMatch.toFixed(2)} label="Goles/partido" />
               </div>
-              <div className="p-2 border-l border-r border-gray-200">
-                <span className="block text-xl font-bold text-champions-blue">{team.goals}</span>
-                <span className="block text-sm text-gray-500">Goles</span>
-              </div>
-              <div className="p-2">
-                <span className="block text-xl font-bold text-champions-blue">{team.goalsPerMatch.toFixed(2)}</span>
-                <span className="block text-sm text-gray-500">Goles/partido</span>
-              </div>
-            </div>
 
-            <div className="p-4 border-b border-gray-200">
-              <h4 className="font-bold text-champions-blue mb-2">Máximos Goleadores</h4>
-              <ul className="space-y-3">
-                {team.topScorers.map((scorer) => (
-                  <Scorer key={scorer.name} scorer={scorer} />
-                ))}
-              </ul>
-            </div>
-
-            <div className="p-4">
-              <h4 className="font-bold text-champions-blue mb-2">Títulos de Champions League</h4>
-              <div className="flex flex-wrap gap-2">
-                {team.titleYears.map((year) => (
-                  <Chip key={year} color="accent" variant="soft">
-                    {year}
-                  </Chip>
-                ))}
+              <div>
+                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Máximos goleadores</p>
+                <ul className="space-y-3">
+                  {team.topScorers.map((scorer) => (
+                    <Scorer key={scorer.name} scorer={scorer} />
+                  ))}
+                </ul>
               </div>
-            </div>
+
+              <div>
+                <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Títulos</p>
+                <div className="flex flex-wrap gap-2">
+                  {team.titleYears.map((year) => (
+                    <Chip key={year} size="sm" variant="secondary">
+                      {year}
+                    </Chip>
+                  ))}
+                </div>
+              </div>
+            </Card.Content>
           </Card>
         ))}
       </section>

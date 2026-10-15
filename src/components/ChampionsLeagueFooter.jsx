@@ -8,35 +8,27 @@ const ChampionsLeagueFooter = () => {
   const { source } = usePlayers();
 
   return (
-    <footer className="bg-champions-blue text-white border-t border-champions-gold">
-      <div className="flex flex-wrap justify-center items-center gap-y-2 p-6">
-        <div className="w-10 h-10 mr-4 overflow-hidden rounded-lg shadow-md border border-champions-gold/30 bg-champions-blue/80">
-          <img
-            src={LOGO}
-            alt="Champions League Logo"
-            className="w-full h-full object-contain transform hover:scale-110 transition-transform duration-300"
-          />
+    <footer className="mt-16 border-t border-separator bg-surface">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-muted sm:flex-row">
+        <div className="flex items-center gap-3">
+          <img src={LOGO} alt="" className="size-8 rounded-full bg-white p-0.5 ring-1 ring-border" />
+          <p>
+            © {currentYear} Champions Stats · Estadísticas históricas de la UEFA Champions League
+            <span className="champions-star ml-2" aria-hidden="true">★</span>
+          </p>
         </div>
-        <p className="text-sm">
-          &copy; {currentYear} <span className="text-champions-gold">UEFA Champions League</span> - Estadísticas Históricas
-        </p>
         {source && (
-          <p className="text-xs text-blue-300 ml-4">
-            Fuente:{' '}
-            <Link href={source} target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-champions-gold">
+          <p>
+            Datos:{' '}
+            <Link href={source} target="_blank" rel="noopener noreferrer">
               Wikipedia
+            </Link>{' '}
+            · Fotos adicionales:{' '}
+            <Link href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer">
+              Wikimedia Commons
             </Link>
           </p>
         )}
-      </div>
-
-      {/* Barra decorativa con estrellas */}
-      <div className="px-6 py-2 bg-black/20 text-center border-t border-white/20">
-        <div className="flex justify-center space-x-4">
-          {Array(5).fill('').map((_, i) => (
-            <span key={i} className="champions-star" style={{ animationDelay: `${i * 0.5}s` }}>★</span>
-          ))}
-        </div>
       </div>
     </footer>
   );

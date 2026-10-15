@@ -1,14 +1,15 @@
 import React from 'react';
-import { Card } from '@heroui/react';
+import { Alert } from '@heroui/react';
 
-// Recuadro "Nota sobre los datos" al pie de los rankings
+// Aviso "Sobre los datos" al pie de los rankings
 const DataNote = ({ children }) => (
-  <Card variant="secondary" className="mt-6">
-    <Card.Header>
-      <Card.Title className="text-lg font-semibold text-champions-blue">Nota sobre los datos</Card.Title>
-    </Card.Header>
-    <Card.Content className="space-y-2 text-sm text-gray-700">{children}</Card.Content>
-  </Card>
+  <Alert className="mt-8">
+    <Alert.Indicator />
+    <Alert.Content>
+      <Alert.Title>Sobre los datos</Alert.Title>
+      <Alert.Description className="space-y-2">{children}</Alert.Description>
+    </Alert.Content>
+  </Alert>
 );
 
 export default DataNote;

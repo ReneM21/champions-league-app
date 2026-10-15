@@ -1,66 +1,68 @@
 import React from 'react';
-import { Card } from '@heroui/react';
-import PlayerPage, { backToProfile } from '../components/PlayerPage';
+import { Card, Chip, Label, ProgressBar } from '@heroui/react';
+import PlayerPage from '../components/PlayerPage';
 import { teamBreakdown } from '../utils/stats';
 
-const COLORS = ['bg-champions-gold', 'bg-champions-blue', 'bg-green-500', 'bg-purple-500'];
-
 const PlayerTeamsPage = () => (
-  <PlayerPage title="Equipos de" backTo={backToProfile} backLabel="Volver al Perfil">
+  <PlayerPage>
     {(player) => {
       const teams = teamBreakdown(player);
 
       if (teams.length === 0) {
-        return <p className="p-8 text-center text-gray-500">No hay información disponible sobre los equipos de este jugador.</p>;
+        // Sin ficha manual: se muestran los clubes que da el ranking, sin desglose de goles
+        const clubs = player.clubs || [];
+        return (
+          <Card>
+            <Card.Header>
+              <Card.Title>Clubes en la Champions League</Card.Title>
+              <Card.Description>Todavía no hay desglose de goles por equipo para este jugador.</Card.Description>
+            </Card.Header>
+            <Card.Content>
+              {clubs.length > 0 ? (
+                <div className="flex flex-wrap gap-2">
+                  {clubs.map((club) => (
+                    <Chip key={club} color="accent" variant="soft">
+                      {club}
+                    </Chip>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted">No hay información disponible sobre los equipos de este jugador.</p>
+              )}
+            </Card.Content>
+          </Card>
+        );
       }
 
       return (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid gap-6">
+          <div className="grid gap-4 md:grid-cols-2">
             {teams.map((team) => (
-              <Card key={team.name} variant="secondary" className="champions-card">
-                <Card.Header>
-                  <Card.Title className="text-lg font-bold text-champions-blue">{team.name}</Card.Title>
+              <Card key={team.name}>
+                <Card.Header className="flex-row items-center justify-between">
+                  <Card.Title>{team.name}</Card.Title>
+                  <span className="text-sm text-muted">
+                    {team.seasons ? `${team.seasons} temporada${team.seasons === 1 ? '' : 's'}` : '-'}
+                  </span>
                 </Card.Header>
-                <Card.Content className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm text-gray-500 font-medium">Goles</p>
-                    <p className="text-2xl font-bold text-green-600">{team.goals}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 font-medium">Temporadas</p>
-                    <p className="text-2xl font-bold text-purple-600">{team.seasons || '-'}</p>
-                  </div>
+                <Card.Content className="gap-3">
+                  <p>
+                    <span className="text-3xl font-bold tabular-nums text-accent">{team.goals}</span>
+                    <span className="ml-2 text-muted">goles</span>
+                  </p>
+                  <ProgressBar value={team.share} aria-label={`Porcentaje de goles con ${team.name}`}>
+                    <Label className="text-xs text-muted">Del total del jugador</Label>
+                    <ProgressBar.Output />
+                    <ProgressBar.Track>
+                      <ProgressBar.Fill />
+                    </ProgressBar.Track>
+                  </ProgressBar>
                 </Card.Content>
               </Card>
             ))}
           </div>
-
-          <div className="mt-8">
-            <h3 className="text-xl font-semibold mb-3 text-champions-blue">Rendimiento por Equipo</h3>
-            <Card variant="secondary" className="p-4">
-              <div className="w-full h-16 bg-gray-200 rounded-full flex overflow-hidden">
-                {teams.map((team, index) => (
-                  <div
-                    key={team.name}
-                    className={`${COLORS[index % COLORS.length]} h-full`}
-                    style={{ width: `${team.share}%` }}
-                    title={`${team.name}: ${team.goals} goles (${team.share.toFixed(1)}%)`}
-                  ></div>
-                ))}
-              </div>
-              <div className="mt-2 flex flex-wrap">
-                {teams.map((team, index) => (
-                  <div key={team.name} className="flex items-center mr-4 mb-2">
-                    <div className={`w-3 h-3 ${COLORS[index % COLORS.length]} rounded-full mr-1`}></div>
-                    <span className="text-sm text-gray-600">{team.name} ({team.share.toFixed(1)}%)</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-gray-500 mt-2">Porcentaje sobre los {player.goals} goles totales del jugador en la competición.</p>
-            </Card>
-          </div>
-        </>
+          <p className="text-sm text-muted">Porcentaje sobre los {player.goals} goles totales del jugador en la competición.</p>
+        </div>
       );
     }}
   </PlayerPage>

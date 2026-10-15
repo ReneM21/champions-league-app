@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Chip, Link } from '@heroui/react';
 import Pagination, { paginate } from '../components/Pagination';
 import PlayerAvatar from '../components/PlayerAvatar';
+import PageHeader from '../components/PageHeader';
 import SortSelect from '../components/SortSelect';
 import { usePlayerByName } from '../data/PlayersContext';
 
@@ -98,6 +99,13 @@ const SORT_OPTIONS = [
   { id: 'mostGoals', label: 'Más goles' },
 ];
 
+const Figure = ({ value, label }) => (
+  <div>
+    <p className="text-xl font-bold tabular-nums">{value}</p>
+    <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
+  </div>
+);
+
 const SeasonsPage = () => {
   const [sort, setSort] = useState('all');
   const [page, setPage] = useState(1);
@@ -105,15 +113,11 @@ const SeasonsPage = () => {
   const { items, pageCount } = paginate(SORTS[sort](SEASONS), page, SEASONS_PER_PAGE);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fadeIn">
-      <section className="mb-10 text-center">
-        <h2 className="text-3xl font-bold text-champions-blue mb-4">Temporadas Históricas de la Champions League</h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
-          Explora las estadísticas de cada edición de la UEFA Champions League, conoce a los campeones, máximos goleadores y momentos destacados.
-        </p>
-      </section>
-
-      <section className="mb-8">
+    <div className="animate-fadeIn">
+      <PageHeader
+        title="Temporadas históricas"
+        description="Cada edición de la competición: campeón, final, cifras y máximo goleador."
+      >
         <SortSelect
           label="Ordenar por"
           value={sort}
@@ -123,71 +127,63 @@ const SeasonsPage = () => {
           }}
           options={SORT_OPTIONS}
         />
-      </section>
+      </PageHeader>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="grid gap-6 md:grid-cols-2">
         {items.map((season) => {
           const scorer = findPlayer(season.topScorer.name);
 
           return (
-            <Card key={season.id} className="p-0 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <Card.Header className="champions-gradient-blue p-6 text-white">
-                <Card.Title className="text-2xl font-bold text-white">{season.year}</Card.Title>
-                <div className="flex items-center mt-1">
-                  <span className="mr-2">🏆</span>
-                  <span className="font-medium text-champions-gold">{season.winner}</span>
+            <Card key={season.id} className="overflow-hidden p-0">
+              <div className="champions-hero flex items-end justify-between gap-4 p-6 text-white">
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wide text-white/70">Temporada</p>
+                  <h2 className="text-2xl font-bold">{season.year}</h2>
                 </div>
-              </Card.Header>
-
-              <div className="bg-champions-blue/10 p-4 border-b border-gray-200">
-                <h4 className="font-bold text-champions-blue mb-2">Final</h4>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium text-gray-700">{season.finalTeams[0]}</span>
-                  <Chip color="accent" variant="primary" size="lg" className="font-bold">
-                    {season.finalScore}
-                  </Chip>
-                  <span className="font-medium text-gray-700">{season.finalTeams[1]}</span>
-                </div>
-                <div className="text-sm text-gray-500 mt-2 text-center">{season.finalVenue}</div>
-              </div>
-
-              <div className="grid grid-cols-3 p-4 text-center border-b border-gray-200">
-                <div className="p-2">
-                  <span className="block text-xl font-bold text-champions-blue">{season.totalGoals}</span>
-                  <span className="block text-sm text-gray-500">Goles</span>
-                </div>
-                <div className="p-2 border-l border-r border-gray-200">
-                  <span className="block text-xl font-bold text-champions-blue">{season.matches}</span>
-                  <span className="block text-sm text-gray-500">Partidos</span>
-                </div>
-                <div className="p-2">
-                  <span className="block text-xl font-bold text-champions-blue">{season.teams}</span>
-                  <span className="block text-sm text-gray-500">Equipos</span>
+                <div className="text-right">
+                  <p className="text-xs font-medium uppercase tracking-wide text-white/70">Campeón</p>
+                  <p className="font-semibold text-champions-gold">🏆 {season.winner}</p>
                 </div>
               </div>
 
-              <div className="p-4">
-                <h4 className="font-bold text-champions-blue mb-2">Máximo Goleador</h4>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <PlayerAvatar player={scorer || { name: season.topScorer.name }} className="size-10" />
-                    <div>
-                      {scorer ? (
-                        <Link href={`/jugadores/${scorer.id}`} className="font-medium text-foreground no-underline hover:text-champions-blue">
-                          {season.topScorer.name}
-                        </Link>
-                      ) : (
-                        <p className="font-medium">{season.topScorer.name}</p>
-                      )}
-                      <p className="text-sm text-gray-500">{season.topScorer.team}</p>
+              <Card.Content className="gap-5 p-6">
+                <div>
+                  <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Final · {season.finalVenue}</p>
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="flex-1 font-medium">{season.finalTeams[0]}</span>
+                    <Chip color="accent" size="lg" className="font-bold tabular-nums">
+                      {season.finalScore}
+                    </Chip>
+                    <span className="flex-1 text-right font-medium">{season.finalTeams[1]}</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 rounded-2xl bg-surface-secondary p-4">
+                  <Figure value={season.totalGoals} label="Goles" />
+                  <Figure value={season.matches} label="Partidos" />
+                  <Figure value={season.teams} label="Equipos" />
+                </div>
+
+                <div>
+                  <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Máximo goleador</p>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <PlayerAvatar player={scorer || { name: season.topScorer.name }} className="size-10" />
+                      <div className="min-w-0">
+                        {scorer ? (
+                          <Link href={`/jugadores/${scorer.id}`} className="block truncate font-medium text-foreground no-underline hover:text-accent">
+                            {season.topScorer.name}
+                          </Link>
+                        ) : (
+                          <p className="truncate font-medium">{season.topScorer.name}</p>
+                        )}
+                        <p className="truncate text-sm text-muted">{season.topScorer.team}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-lg mr-2">⚽</span>
-                    <span className="text-xl font-bold text-champions-blue">{season.topScorer.goals}</span>
+                    <p className="shrink-0 text-2xl font-bold tabular-nums text-accent">{season.topScorer.goals}</p>
                   </div>
                 </div>
-              </div>
+              </Card.Content>
             </Card>
           );
         })}
