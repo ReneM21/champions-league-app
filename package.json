@@ -4,41 +4,37 @@
   "description": "Aplicación que muestra los máximos goleadores de la UEFA Champions League",
   "homepage": "https://renem21.github.io/champions-league-app",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
     "test:scripts": "node --test \"scripts/*.test.js\"",
     "update-data": "node scripts/update-ranking.js goals",
     "update-assists": "node scripts/update-ranking.js assists",
-    "update-photos": "node scripts/update-photos.js"
+    "update-photos": "node scripts/update-photos.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^7.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@heroui/react": "^3.2.6",
+    "@heroui/styles": "^3.2.6",
+    "@internationalized/date": "^3.12.4",
+    "@react-aria/ssr": "^3.10.1",
+    "@react-aria/utils": "^3.34.1",
+    "react": "^19.3.1",
+    "react-aria": "^3.53.1",
+    "react-aria-components": "^1.22.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.3.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.2",
     "cheerio": "^1.2.0",
     "gh-pages": "^6.1.1",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4"
   }
 }

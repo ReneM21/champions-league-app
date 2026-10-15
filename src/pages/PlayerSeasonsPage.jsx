@@ -30,7 +30,7 @@ const PlayerSeasonsPage = () => (
       return (
         <>
           {/* Resumen de carrera */}
-          <div className="mb-8 bg-gradient-to-r from-white to-blue-50 p-5 rounded-lg shadow-lg glass-card glow-container">
+          <div className="mb-8 bg-linear-to-r from-white to-blue-50 p-5 rounded-lg shadow-lg glass-card glow-container">
             <h3 className="text-xl font-bold mb-3 text-champions-blue border-b border-gray-200 pb-2">Resumen de Carrera en Champions League</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
@@ -58,7 +58,7 @@ const PlayerSeasonsPage = () => (
           {best && (
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-3 text-champions-blue">Mejor Temporada</h3>
-              <div className="bg-gradient-to-r from-champions-gold to-amber-100 p-5 rounded-lg border-l-4 border-champions-gold shadow-md glow-container">
+              <div className="bg-linear-to-r from-champions-gold to-amber-100 p-5 rounded-lg border-l-4 border-champions-gold shadow-md glow-container">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   <SeasonLabel season={best} />
                   <Figure value={best.goals} label="Goles" color="text-green-700" />
@@ -73,7 +73,7 @@ const PlayerSeasonsPage = () => (
           {mostEfficient && (
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-3 text-champions-blue">Máxima Eficiencia Goleadora</h3>
-              <div className="bg-gradient-to-r from-green-50 to-green-100 p-5 rounded-lg border-l-4 border-green-500 shadow-md glow-container">
+              <div className="bg-linear-to-r from-green-50 to-green-100 p-5 rounded-lg border-l-4 border-green-500 shadow-md glow-container">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <SeasonLabel season={mostEfficient} />
                   <Figure value={formatRatio(goalsPerMatch(mostEfficient.goals, mostEfficient.matches))} label="Goles por Partido" color="text-green-600" />
@@ -87,7 +87,7 @@ const PlayerSeasonsPage = () => (
           {/* Suma de las temporadas registradas */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-3 text-champions-blue border-b border-blue-100 pb-2">Resumen de Rendimiento</h3>
-            <div className="bg-blue-50 p-5 rounded-lg shadow-sm glass-card">
+            <div className="bg-blue-50 p-5 rounded-lg shadow-xs glass-card">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <Figure value={summary.totalGoals} label="Goles" />
                 <Figure value={formatValue(summary.totalMatches)} label="Partidos" />

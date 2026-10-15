@@ -5,7 +5,7 @@ import PlayerPage from '../components/PlayerPage';
 import { formatValue } from '../utils/stats';
 
 const StatTile = ({ value, label }) => (
-  <div className="bg-gradient-to-br from-champions-blue to-blue-900 p-5 rounded-lg text-center shadow-lg transform transition-transform hover:scale-105 duration-300">
+  <div className="bg-linear-to-br from-champions-blue to-blue-900 p-5 rounded-lg text-center shadow-lg transform transition-transform hover:scale-105 duration-300">
     <p className="text-4xl font-bold mb-1 text-champions-gold">{formatValue(value)}</p>
     <p className="text-sm uppercase tracking-wider font-semibold text-white bg-blue-800 py-1 px-2 rounded-md inline-block">{label}</p>
   </div>

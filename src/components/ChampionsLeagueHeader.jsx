@@ -17,7 +17,7 @@ const ChampionsLeagueHeader = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <Link to="/" className="flex items-center">
-            <div className="h-10 w-10 sm:h-12 sm:w-12 overflow-hidden mr-2 sm:mr-3 rounded-full shadow-lg border-2 border-champions-blue transform transition-transform duration-300 hover:scale-110 bg-gradient-to-br from-white to-blue-100">
+            <div className="h-10 w-10 sm:h-12 sm:w-12 overflow-hidden mr-2 sm:mr-3 rounded-full shadow-lg border-2 border-champions-blue transform transition-transform duration-300 hover:scale-110 bg-linear-to-br from-white to-blue-100">
               <img src={LOGO} alt="UEFA Champions League" className="h-full w-full object-contain p-1 rounded-full" />
             </div>
             <h1 className="hidden sm:block text-champions-blue font-bold text-xl">Champions League</h1>

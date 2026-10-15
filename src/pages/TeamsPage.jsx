@@ -147,11 +147,11 @@ const TeamsPage = () => {
       </section>
 
       <section className="mb-8">
-        <div className="bg-gray-50 p-4 rounded-lg shadow-sm max-w-md mx-auto flex items-center justify-center">
+        <div className="bg-gray-50 p-4 rounded-lg shadow-xs max-w-md mx-auto flex items-center justify-center">
           <label htmlFor="teamSort" className="text-gray-700 mr-3 font-medium">Ordenar por:</label>
           <select
             id="teamSort"
-            className="rounded-md border-gray-300 shadow-sm"
+            className="rounded-md border-gray-300 shadow-xs"
             value={sort}
             onChange={(e) => {
               setSort(e.target.value);

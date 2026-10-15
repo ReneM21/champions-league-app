@@ -20,11 +20,11 @@ const PlayerPage = ({ title, backTo, backLabel, children }) => {
           <div className="flex flex-wrap gap-3 justify-between items-center">
             <h2 className="text-2xl font-bold text-white flex items-center">
               <span className="mr-2">{title}</span>
-              <span className="bg-champions-gold text-champions-blue px-2 py-1 rounded shadow-md">{player.name}</span>
+              <span className="bg-champions-gold text-champions-blue px-2 py-1 rounded-sm shadow-md">{player.name}</span>
             </h2>
             <Link
               to={backTo(player)}
-              className="bg-white text-champions-blue px-4 py-2 rounded font-bold hover:bg-gray-100 transform transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md"
+              className="bg-white text-champions-blue px-4 py-2 rounded-sm font-bold hover:bg-gray-100 transform transition-transform duration-300 hover:scale-105 active:scale-95 shadow-md"
             >
               {backLabel}
             </Link>

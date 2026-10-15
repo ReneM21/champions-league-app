@@ -17,7 +17,7 @@ const HomePage = () => {
           Máximos Goleadores de la UEFA Champions League
         </h2>
         <p className="text-gray-600 mb-4">Descubre los mejores goleadores en la historia de la competición</p>
-        <div className="w-24 h-1 bg-gradient-to-r from-champions-blue to-champions-gold mx-auto"></div>
+        <div className="w-24 h-1 bg-linear-to-r from-champions-blue to-champions-gold mx-auto"></div>
       </div>
 
       <div className="overflow-hidden bg-white rounded-lg shadow-lg champions-card decorated-section">
@@ -68,7 +68,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="mt-6 bg-blue-50 p-4 rounded-lg shadow border border-blue-100">
+      <div className="mt-6 bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-100">
         <h3 className="text-lg font-semibold text-champions-blue mb-2">Nota sobre los datos</h3>
         <p className="text-sm text-gray-700">
           La información mostrada incluye los máximos goleadores históricos de la UEFA Champions League.

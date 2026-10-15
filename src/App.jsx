@@ -31,7 +31,7 @@ const App = () => {
       <ScrollToTopOnNavigate />
       <ChampionsLeagueHeader />
 
-      <main className="flex-grow">
+      <main className="grow">
         {status === 'error' ? (
           <NotFoundPage
             title="No se pudieron cargar los datos"

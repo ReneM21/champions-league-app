@@ -17,7 +17,7 @@ const PlayerTeamsPage = () => (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {teams.map((team) => (
-              <div key={team.name} className="bg-gradient-to-r from-gray-50 to-gray-200 p-5 rounded-lg border border-gray-100 champions-card">
+              <div key={team.name} className="bg-linear-to-r from-gray-50 to-gray-200 p-5 rounded-lg border border-gray-100 champions-card">
                 <h3 className="text-lg font-bold text-champions-blue mb-2">{team.name}</h3>
                 <div className="grid grid-cols-2 gap-4 my-3">
                   <div>
