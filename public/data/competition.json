@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T10:13:02.987Z",
+  "updatedAt": "2026-10-21T10:41:00.964Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1472,12 +1472,12 @@
       "rank": 3,
       "club": "Barcelona",
       "seasons": 37,
-      "played": 377,
+      "played": 378,
       "won": 221,
       "drawn": 81,
-      "lost": 75,
-      "goalsFor": 771,
-      "goalsAgainst": 403,
+      "lost": 76,
+      "goalsFor": 773,
+      "goalsAgainst": 407,
       "points": 523
     },
     {
@@ -1508,13 +1508,13 @@
       "rank": 6,
       "club": "Liverpool",
       "seasons": 30,
-      "played": 272,
-      "won": 159,
+      "played": 273,
+      "won": 160,
       "drawn": 50,
       "lost": 63,
-      "goalsFor": 522,
-      "goalsAgainst": 251,
-      "points": 368
+      "goalsFor": 526,
+      "goalsAgainst": 254,
+      "points": 370
     },
     {
       "rank": 7,
@@ -1544,12 +1544,12 @@
       "rank": 9,
       "club": "Porto",
       "seasons": 39,
-      "played": 279,
+      "played": 280,
       "won": 126,
       "drawn": 61,
-      "lost": 92,
+      "lost": 93,
       "goalsFor": 413,
-      "goalsAgainst": 318,
+      "goalsAgainst": 319,
       "points": 313
     },
     {
@@ -1628,61 +1628,61 @@
       "rank": 16,
       "club": "Paris Saint-Germain",
       "seasons": 20,
-      "played": 191,
-      "won": 105,
+      "played": 192,
+      "won": 106,
       "drawn": 35,
       "lost": 51,
-      "goalsFor": 395,
-      "goalsAgainst": 222,
-      "points": 245
+      "goalsFor": 399,
+      "goalsAgainst": 224,
+      "points": 247
     },
     {
       "rank": 17,
       "club": "Borussia Dortmund",
       "seasons": 25,
-      "played": 209,
-      "won": 101,
+      "played": 210,
+      "won": 102,
       "drawn": 40,
       "lost": 68,
-      "goalsFor": 360,
-      "goalsAgainst": 268,
-      "points": 242
+      "goalsFor": 362,
+      "goalsAgainst": 269,
+      "points": 244
     },
     {
       "rank": 18,
       "club": "Atlético de Madrid",
       "seasons": 22,
-      "played": 198,
+      "played": 199,
       "won": 97,
-      "drawn": 47,
+      "drawn": 48,
       "lost": 54,
-      "goalsFor": 309,
-      "goalsAgainst": 209,
-      "points": 241
+      "goalsFor": 310,
+      "goalsAgainst": 210,
+      "points": 242
     },
     {
       "rank": 19,
       "club": "PSV Eindhoven",
       "seasons": 34,
-      "played": 221,
-      "won": 81,
+      "played": 222,
+      "won": 82,
       "drawn": 55,
       "lost": 85,
-      "goalsFor": 312,
+      "goalsFor": 313,
       "goalsAgainst": 298,
-      "points": 217
+      "points": 219
     },
     {
       "rank": 20,
       "club": "Manchester City",
       "seasons": 17,
-      "played": 151,
-      "won": 83,
+      "played": 152,
+      "won": 84,
       "drawn": 29,
       "lost": 39,
-      "goalsFor": 314,
-      "goalsAgainst": 182,
-      "points": 195
+      "goalsFor": 319,
+      "goalsAgainst": 183,
+      "points": 197
     },
     {
       "rank": 21,

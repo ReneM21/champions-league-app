@@ -93,7 +93,7 @@
       },
       {
         "name": "Julián Alvarez",
-        "goals": 17
+        "goals": 18
       },
       {
         "name": "Saúl Ñíguez",
@@ -199,7 +199,7 @@
       },
       {
         "name": "Serhou Guirassy",
-        "goals": 19
+        "goals": 21
       }
     ]
   },
@@ -268,23 +268,6 @@
       {
         "name": "Gert Verheyen",
         "goals": 6
-      }
-    ]
-  },
-  "Como": {
-    "logo": "images/clubs/como.png",
-    "topScorers": [
-      {
-        "name": "Assane Diao",
-        "goals": 2
-      },
-      {
-        "name": "Tasos Douvikas",
-        "goals": 2
-      },
-      {
-        "name": "Martin Baturina",
-        "goals": 1
       }
     ]
   },
@@ -858,23 +841,6 @@
       }
     ]
   },
-  "Shakhtar": {
-    "logo": "images/clubs/shakhtar.png",
-    "topScorers": [
-      {
-        "name": "Luiz Adriano",
-        "goals": 20
-      },
-      {
-        "name": "Alex Teixeira",
-        "goals": 11
-      },
-      {
-        "name": "Jádson",
-        "goals": 9
-      }
-    ]
-  },
   "Shakhtar Donetsk": {
     "logo": "images/clubs/shakhtar-donetsk.png",
     "topScorers": [
@@ -917,11 +883,11 @@
         "goals": 5
       },
       {
-        "name": "Kevin Kuranyi",
+        "name": "Jamie Leweling",
         "goals": 3
       },
       {
-        "name": "Mario Gomez",
+        "name": "Kevin Kuranyi",
         "goals": 3
       }
     ]
@@ -957,6 +923,23 @@
       {
         "name": "John Carew",
         "goals": 8
+      }
+    ]
+  },
+  "Villarreal": {
+    "logo": "images/clubs/villarreal.png",
+    "topScorers": [
+      {
+        "name": "Arnaut Danjuma",
+        "goals": 6
+      },
+      {
+        "name": "Joseba Llorente",
+        "goals": 4
+      },
+      {
+        "name": "Tani Oluwaseyi",
+        "goals": 4
       }
     ]
   }

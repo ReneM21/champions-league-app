@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T08:20:58.065Z",
+  "updatedAt": "2026-10-21T10:43:03.771Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -1806,9 +1806,9 @@
         {
           "season": "2026-27",
           "club": "Napoli",
-          "matches": 2,
+          "matches": 3,
           "goals": 0,
-          "assists": 0
+          "assists": 1
         }
       ]
     }
@@ -2519,6 +2519,11 @@
           "name": "Nicolò Tresoldi",
           "club": "Club Brugge",
           "goals": 4
+        },
+        {
+          "name": "Serhou Guirassy",
+          "club": "Borussia Dortmund",
+          "goals": 4
         }
       ],
       "topAssists": [
@@ -2541,28 +2546,22 @@
         "matches": 2
       },
       {
-        "name": "Ermedin Demirović",
-        "club": "Stuttgart",
-        "goals": 4,
-        "matches": 2
-      },
-      {
         "name": "Nicolò Tresoldi",
         "club": "Club Brugge",
         "goals": 4,
         "matches": 2
       },
       {
-        "name": "Bradley Barcola",
-        "club": "Liverpool",
-        "goals": 3,
-        "matches": 2
+        "name": "Ermedin Demirović",
+        "club": "Stuttgart",
+        "goals": 4,
+        "matches": 3
       },
       {
-        "name": "Ferran Torres",
-        "club": "Paris Saint-Germain",
-        "goals": 3,
-        "matches": 2
+        "name": "Serhou Guirassy",
+        "club": "Borussia Dortmund",
+        "goals": 4,
+        "matches": 3
       },
       {
         "name": "Harry Kane",
@@ -2577,22 +2576,28 @@
         "matches": 2
       },
       {
-        "name": "Ousmane Dembélé",
-        "club": "Paris Saint-Germain",
+        "name": "Phil Foden",
+        "club": "Manchester City",
         "goals": 3,
         "matches": 2
       },
       {
-        "name": "Raphinha",
-        "club": "Barcelona",
-        "goals": 2,
-        "matches": 1
+        "name": "Alexis Mac Allister",
+        "club": "Liverpool",
+        "goals": 3,
+        "matches": 3
       },
       {
-        "name": "Assane Diao",
-        "club": "Como",
-        "goals": 2,
-        "matches": 2
+        "name": "Bradley Barcola",
+        "club": "Liverpool",
+        "goals": 3,
+        "matches": 3
+      },
+      {
+        "name": "Donyell Malen",
+        "club": "Roma",
+        "goals": 3,
+        "matches": 3
       }
     ],
     "assisters": [
@@ -2600,7 +2605,7 @@
         "name": "Lamine Yamal",
         "club": "Barcelona",
         "assists": 4,
-        "matches": 2
+        "matches": 3
       },
       {
         "name": "Yvan Dibango",
@@ -2615,10 +2620,22 @@
         "matches": 2
       },
       {
+        "name": "Donyell Malen",
+        "club": "Roma",
+        "assists": 3,
+        "matches": 3
+      },
+      {
+        "name": "Kostas Tsimikas",
+        "club": "Liverpool",
+        "assists": 3,
+        "matches": 3
+      },
+      {
         "name": "Ousmane Dembélé",
         "club": "Paris Saint-Germain",
         "assists": 3,
-        "matches": 2
+        "matches": 3
       },
       {
         "name": "Arda Güler",
@@ -2627,32 +2644,20 @@
         "matches": 1
       },
       {
-        "name": "Angelo Stiller",
-        "club": "Stuttgart",
+        "name": "Rico Lewis",
+        "club": "Manchester City",
+        "assists": 2,
+        "matches": 1
+      },
+      {
+        "name": "Ayoze Pérez",
+        "club": "Villarreal",
         "assists": 2,
         "matches": 2
       },
       {
-        "name": "Deniz Undav",
-        "club": "Stuttgart",
-        "assists": 2,
-        "matches": 2
-      },
-      {
-        "name": "Isaque",
-        "club": "Shakhtar",
-        "assists": 2,
-        "matches": 2
-      },
-      {
-        "name": "Jeremie Frimpong",
-        "club": "Liverpool",
-        "assists": 2,
-        "matches": 2
-      },
-      {
-        "name": "Kostas Tsimikas",
-        "club": "Liverpool",
+        "name": "Désiré Doué",
+        "club": "Paris Saint-Germain",
         "assists": 2,
         "matches": 2
       }

@@ -371,7 +371,7 @@
     "article": "Ousmane_Dembélé",
     "nationality": "Francia",
     "goals": 31,
-    "matches": 81,
+    "matches": 82,
     "years": "2016–",
     "clubs": [
       "Borussia Dortmund",
@@ -640,6 +640,19 @@
     ]
   },
   {
+    "id": "julian-alvarez",
+    "name": "Julián Alvarez",
+    "article": "Julián_Alvarez",
+    "nationality": "Argentina",
+    "goals": 26,
+    "matches": 45,
+    "years": "2022–",
+    "clubs": [
+      "Manchester City",
+      "Atlético Madrid"
+    ]
+  },
+  {
     "id": "rodrygo",
     "name": "Rodrygo",
     "article": "Rodrygo",
@@ -649,19 +662,6 @@
     "years": "2019–",
     "clubs": [
       "Real Madrid"
-    ]
-  },
-  {
-    "id": "julian-alvarez",
-    "name": "Julián Alvarez",
-    "article": "Julián_Alvarez",
-    "nationality": "Argentina",
-    "goals": 25,
-    "matches": 44,
-    "years": "2022–",
-    "clubs": [
-      "Manchester City",
-      "Atlético Madrid"
     ]
   },
   {
