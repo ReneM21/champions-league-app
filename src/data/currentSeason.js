@@ -77,11 +77,11 @@ export const defaultMatchday = (matches, now = new Date()) => {
   return pick ? { round: pick.round, key: matchdayKey(pick) } : null;
 };
 
-// Partidos agrupados por día (fecha local del navegador)
+// Partidos agrupados por día (en hora de Colombia)
 export const byDay = (matches) => {
   const days = new Map();
   for (const match of matches) {
-    const key = match.date ? new Date(match.date).toLocaleDateString('sv-SE') : 'sin-fecha';
+    const key = match.date ? new Date(match.date).toLocaleDateString('sv-SE', { timeZone: TIME_ZONE }) : 'sin-fecha';
     if (!days.has(key)) days.set(key, { key, date: match.date, matches: [] });
     days.get(key).matches.push(match);
   }
@@ -105,7 +105,13 @@ export const resultFor = (match, teamId) => {
 
 export const teamMatches = (matches, teamId) => matches.filter((m) => m.home === teamId || m.away === teamId);
 
-const DAY = { weekday: 'long', day: 'numeric', month: 'long' };
+// Fechas y horas siempre en hora de Colombia (UTC-5, sin horario de verano),
+// sea cual sea la zona horaria del dispositivo
+export const TIME_ZONE = 'America/Bogota';
+export const TIME_ZONE_LABEL = 'hora de Colombia';
+
+const DAY = { weekday: 'long', day: 'numeric', month: 'long', timeZone: TIME_ZONE };
 export const formatDay = (iso) => (iso ? new Date(iso).toLocaleDateString('es-ES', DAY) : 'Fecha por confirmar');
-export const formatShortDay = (iso) => (iso ? new Date(iso).toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' }) : 'Por confirmar');
-export const formatTime = (iso) => (iso ? new Date(iso).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }) : '');
+export const formatShortDay = (iso) =>
+  iso ? new Date(iso).toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', timeZone: TIME_ZONE }) : 'Por confirmar';
+export const formatTime = (iso) => (iso ? new Date(iso).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: TIME_ZONE }) : '');

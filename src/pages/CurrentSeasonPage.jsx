@@ -9,7 +9,7 @@ import PlayerAvatar from '../components/PlayerAvatar';
 import SortSelect from '../components/SortSelect';
 import TeamLogo from '../components/TeamLogo';
 import { usePlayerByName } from '../data/PlayersContext';
-import { ZONES, byDay, defaultMatchday, formatDay, isLive, matchdaysOf, resultFor, teamMatches, useCurrentSeason, zoneOf } from '../data/currentSeason';
+import { TIME_ZONE, TIME_ZONE_LABEL, ZONES, byDay, defaultMatchday, formatDay, formatTime, isLive, matchdaysOf, resultFor, teamMatches, useCurrentSeason, zoneOf } from '../data/currentSeason';
 import { formatDate } from '../utils/stats';
 import { useTitle } from '../utils/useTitle';
 
@@ -180,6 +180,8 @@ const MatchesView = ({ data, onTeam }) => {
           </div>
         )}
       </div>
+
+      <p className="-mt-2 mb-6 text-xs text-muted">Horarios en {TIME_ZONE_LABEL}.</p>
 
       {day ? (
         byDay(day.matches).map((group) => (
@@ -352,7 +354,7 @@ const TeamView = ({ data, teamId, onTeam }) => {
                 </p>
                 <p className="text-sm text-muted first-letter:uppercase">
                   {formatDay(next.date)}
-                  {next.date ? ` · ${new Date(next.date).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}` : ''}
+                  {next.date ? ` · ${formatTime(next.date)} (${TIME_ZONE_LABEL})` : ''}
                 </p>
               </Card.Content>
             </Card>
@@ -486,10 +488,10 @@ const CurrentSeasonPage = () => {
             UEFA
           </Link>
           , actualizados automáticamente cada media hora los días de partido (martes y miércoles por la tarde y noche) y cada mañana el resto de
-          días. Última actualización: <strong>{formatDate(data.updatedAt)}</strong>, a las{' '}
-          {new Date(data.updatedAt).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}.
+          días. Última actualización: <strong>{formatDate(data.updatedAt, TIME_ZONE)}</strong>, a las{' '}
+          {formatTime(data.updatedAt)} ({TIME_ZONE_LABEL}).
         </p>
-        <p>Las horas de los partidos se muestran en la hora local de tu dispositivo.</p>
+        <p>Todas las fechas y horas están en hora de Colombia.</p>
       </DataNote>
     </div>
   );

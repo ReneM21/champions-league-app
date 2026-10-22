@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { byDay, defaultMatchday, matchdaysOf, resultFor, teamMatches, zoneOf } from './currentSeason';
+import { byDay, defaultMatchday, formatDay, formatTime, matchdaysOf, resultFor, teamMatches, zoneOf } from './currentSeason';
 
 const match = (id, round, matchday, date, status = 'FINISHED', extra = {}) => ({
   id,
@@ -78,5 +78,19 @@ describe('zoneOf y teamMatches', () => {
 
   it('partidos de un equipo', () => {
     expect(teamMatches([...MATCHES, { ...MATCHES[0], id: '9', home: 'C', away: 'D' }], 'B')).toHaveLength(5);
+  });
+});
+
+describe('hora de Colombia', () => {
+  it('las 20:00 UTC (21:00 en España en invierno) son las 15:00 en Colombia', () => {
+    expect(formatTime('2026-11-03T20:00:00Z')).toBe('15:00');
+    expect(formatTime('2026-10-21T16:45:00Z')).toBe('11:45');
+  });
+
+  it('el día también se calcula en hora de Colombia', () => {
+    // 03:00 UTC del 4 de noviembre son las 22:00 del 3 en Colombia
+    expect(formatDay('2026-11-04T03:00:00Z')).toBe('martes, 3 de noviembre');
+    const days = byDay([match('1', 'liga', 1, '2026-11-03T20:00:00Z'), match('2', 'liga', 1, '2026-11-04T03:00:00Z')]);
+    expect(days).toHaveLength(1);
   });
 });
