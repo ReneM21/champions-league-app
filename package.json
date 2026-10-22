@@ -17,7 +17,8 @@
     "deploy": "gh-pages -d build",
     "update-profiles": "node scripts/update-profiles.js",
     "update-uefa-stats": "node scripts/update-uefa-stats.js",
-    "update-competition": "node scripts/update-competition.js"
+    "update-competition": "node scripts/update-competition.js",
+    "update-current-season": "node scripts/update-current-season.js"
   },
   "dependencies": {
     "@heroui/react": "^3.2.6",

@@ -1,0 +1,63 @@
+# Actualiza la temporada en curso (clasificación, resultados, goleadores y
+# asistentes) cada media hora las tardes y noches de martes y miércoles, que es
+# cuando juega la Champions, para que los resultados aparezcan casi en directo.
+# El resto de días lo actualiza update-data.yml a las 06:00 UTC.
+name: Actualizar temporada actual
+
+on:
+  schedule:
+    - cron: '*/30 16-23 * * 2,3' # martes y miércoles de 16:00 a 23:30 UTC
+  workflow_dispatch: # permite lanzarlo a mano desde la pestaña Actions
+
+# El mismo grupo que update-data.yml: nunca suben cambios a la vez
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # El script solo usa módulos de Node: no hace falta npm ci
+      - name: Temporada actual (UEFA)
+        run: node scripts/update-current-season.js
+
+      - name: Commit si hay cambios
+        id: commit
+        run: |
+          git add -A public/data/current-season.json public/images
+          if git diff --cached --quiet; then
+            echo "Sin cambios."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Actualizar la temporada actual desde la UEFA"
+            git push origin HEAD:master
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: update
+    if: ${{ needs.update.outputs.changed == 'true' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.update.outputs.sha }}

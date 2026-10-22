@@ -6,6 +6,7 @@ Una aplicación web desarrollada con React, [HeroUI](https://heroui.com) y Tailw
 
 - Ranking de los máximos goleadores de la Champions League, actualizado automáticamente cada día desde Wikipedia
 - Ranking de los máximos asistidores, actualizado de la misma forma
+- Temporada actual: clasificación de la fase de liga, resultados por ronda y jornada (con goleadores, expulsiones, global y penaltis), calendario de cada equipo y máximos goleadores y asistentes, con datos oficiales de la UEFA actualizados cada media hora los días de partido
 - Fotos de Wikimedia Commons para los jugadores sin foto propia, con su autor y licencia
 - Ficha de cada jugador con su perfil, sus finales, sus equipos y sus temporadas (con gráfico), con datos oficiales de la UEFA
 - Equipos: todos los finalistas de la historia con títulos, finales, clasificación histórica y escudos
@@ -56,6 +57,7 @@ champions-league-app/
 | `#/jugadores/:id/equipos` | Goles por equipo |
 | `#/jugadores/:id/temporadas` | Estadísticas por temporada |
 | `#/asistencias` | Ranking de asistidores |
+| `#/temporada-actual?vista=partidos` | Temporada en curso (`vista`: `clasificacion`, `partidos`, `goleadores`, `asistentes`, `equipos`; con `equipos`, `&equipo=:idUefa`) |
 | `#/equipos` | Equipos finalistas y campeones |
 | `#/temporadas` | Todas las finales y temporadas |
 | `#/records` | Récords individuales |
@@ -152,6 +154,7 @@ npm run update-photos   # descarga las fotos que faltan
 npm run update-profiles # crea las fichas automáticas que faltan
 npm run update-competition # descarga las finales y los datos por club
 npm run update-uefa-stats # descarga las temporadas de la UEFA
+npm run update-current-season # descarga la temporada en curso de la UEFA
 npm run build  # build de producción
 ```
 
@@ -166,7 +169,10 @@ El workflow `.github/workflows/update-data.yml` se ejecuta todos los días a las
 5. `npm run update-uefa-stats` descarga de la UEFA (`compstats.uefa.com`, los mismos datos que las estadísticas de uefa.com) los partidos, goles y asistencias de cada temporada desde 1992-93 y se queda con los de los jugadores de los rankings, identificados por nombre y fecha de nacimiento. Con eso se rellenan las pestañas **Equipos** y **Temporadas** de todos los jugadores, también desde la lista de asistidores. La UEFA registra las asistencias desde la temporada 2001-02: en las anteriores se muestra "-". Las cifras oficiales de la UEFA mandan sobre las temporadas escritas a mano en `players.json` (sus totales coinciden con los rankings); de lo manual se conservan los títulos (`"title": true`), los datos que la UEFA no tiene y el reparto de una temporada entre dos clubes. La API numera las temporadas de forma distinta antes y después de 2007; el script lo corrige (ver `scripts/uefa-stats.js`).
 6. `npm run update-competition` descarga de Wikipedia todas las finales, el máximo goleador de cada temporada, los títulos por club y la clasificación histórica (`public/data/competition.json`), que alimentan las páginas **Equipos** y **Temporadas**. Antes de guardar comprueba que cada título y subcampeonato por club coincide con la lista de finales.
 7. Con las temporadas de la UEFA y la lista de finales, los **títulos y finales de cada jugador se calculan solos** (una temporada en un club que ganó o perdió la final, como cuenta la UEFA); `titles`, `finals` y `titleSeasons` de `players.json` solo se usan para jugadores sin datos de la UEFA.
-8. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
+8. `npm run update-current-season` descarga de la UEFA la temporada en curso: todos los partidos (`match.uefa.com`, previas incluidas), la clasificación de la fase de liga (`standings.uefa.com`) y los 50 primeros goleadores y asistentes (`compstats.uefa.com`). Lo guarda en `public/data/current-season.json` y descarga a `public/images/teams/` el escudo de los equipos nuevos. Antes de guardar comprueba que no haya menos partidos (ni menos partidos jugados) que en la versión anterior. El análisis está en `scripts/current-season.js`.
+9. Si algo cambió, lo commitea en `master` y vuelve a publicar la app.
+
+Además, el workflow `.github/workflows/update-current-season.yml` ejecuta solo el paso 8 cada media hora los martes y miércoles de 16:00 a 23:30 UTC, cuando se juega la Champions, para que los resultados y la clasificación aparezcan casi en directo. Se lanza a mano en **Actions → Actualizar temporada actual → Run workflow**. Los dos workflows comparten grupo de concurrencia, así que nunca suben cambios a la vez.
 
 Para usar otra foto para un jugador, ponla en `public/images/players/` y añade `"image"` a su ficha en `players.json`: la foto de la ficha siempre tiene prioridad.
 

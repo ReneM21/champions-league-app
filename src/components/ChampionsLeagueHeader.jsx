@@ -9,6 +9,7 @@ import { STARBALL } from '../utils/asset';
 const SECTIONS = [
   { to: '/', label: 'Goleadores' },
   { to: '/asistencias', label: 'Asistencias' },
+  { to: '/temporada-actual', label: 'Temporada actual' },
   { to: '/equipos', label: 'Equipos' },
   { to: '/temporadas', label: 'Temporadas' },
   { to: '/records', label: 'Récords' },
@@ -37,7 +38,7 @@ const ChampionsLeagueHeader = () => {
       className={buttonVariants({
         variant: isActive(to) ? 'secondary' : 'ghost',
         size: 'sm',
-        className: isActive(to) ? 'text-accent font-semibold' : 'text-muted',
+        className: `px-2 ${isActive(to) ? 'text-accent font-semibold' : 'text-muted'}`,
       })}
     >
       {label}
@@ -47,7 +48,7 @@ const ChampionsLeagueHeader = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-separator bg-background/80 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex shrink-0 items-center gap-3 whitespace-nowrap">
           <img src={STARBALL} alt="" className="size-9 dark:brightness-0 dark:invert" />
           <span className="text-lg font-bold tracking-tight">
             Champions <span className="text-muted font-medium">Stats</span>
@@ -55,7 +56,7 @@ const ChampionsLeagueHeader = () => {
         </Link>
 
         <div className="flex items-center gap-6">
-          <nav aria-label="Secciones" className="hidden items-center gap-1 xl:flex">
+          <nav aria-label="Secciones" className="hidden items-center gap-0.5 xl:flex">
             {links}
           </nav>
           <PlayerSearch className="hidden w-56 sm:block" />

@@ -6,6 +6,7 @@ import ChampionsLeagueFooter from './components/ChampionsLeagueFooter';
 import PageSkeleton from './components/PageSkeleton';
 import { usePlayers } from './data/PlayersContext';
 import { asset } from './utils/asset';
+import { loadCurrentSeason } from './data/currentSeason';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -19,6 +20,7 @@ const PAGES = {
   AssistsPage: () => import('./pages/AssistsPage'),
   ComparePage: () => import('./pages/ComparePage'),
   RecordsPage: () => import('./pages/RecordsPage'),
+  CurrentSeasonPage: () => import('./pages/CurrentSeasonPage'),
 };
 const PlayerPage = lazy(PAGES.PlayerPage);
 const TeamsPage = lazy(PAGES.TeamsPage);
@@ -26,6 +28,7 @@ const SeasonsPage = lazy(PAGES.SeasonsPage);
 const AssistsPage = lazy(PAGES.AssistsPage);
 const ComparePage = lazy(PAGES.ComparePage);
 const RecordsPage = lazy(PAGES.RecordsPage);
+const CurrentSeasonPage = lazy(PAGES.CurrentSeasonPage);
 
 // Las imágenes precargadas se guardan aquí para que el navegador las mantenga
 // decodificadas en memoria y aparezcan al instante al cambiar de página
@@ -52,6 +55,10 @@ const usePreload = ({ status, clubs, byId }) => {
         ...Object.values(clubs || {}).map((club) => club.logo),
         ...[...(byId || new Map()).values()].map((player) => player.image),
       ].filter(Boolean));
+      // Temporada actual: los datos y los escudos de sus equipos
+      loadCurrentSeason()
+        .then((season) => preloadImages(Object.values(season.teams).map((team) => team.logo).filter(Boolean)))
+        .catch(() => {});
     }, 300);
     return () => clearTimeout(timer);
   }, [status, clubs, byId]);
@@ -96,6 +103,7 @@ const App = () => {
               <Route path="/temporadas" element={<SeasonsPage />} />
               <Route path="/comparar" element={<ComparePage />} />
               <Route path="/records" element={<RecordsPage />} />
+              <Route path="/temporada-actual" element={<CurrentSeasonPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
