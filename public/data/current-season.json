@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T19:04:45.616Z",
+  "updatedAt": "2026-10-22T19:06:27.478Z",
   "season": "2026-27",
   "seasonYear": 2027,
   "rounds": [
@@ -9459,6 +9459,13 @@
   ],
   "scorers": [
     {
+      "name": "Erling Haaland",
+      "team": "52919",
+      "goals": 4,
+      "assists": 0,
+      "matches": 2
+    },
+    {
       "name": "Ermedin Demirović",
       "team": "50107",
       "goals": 4,
@@ -9492,9 +9499,268 @@
       "goals": 4,
       "assists": 0,
       "matches": 3
+    },
+    {
+      "name": "Phil Foden",
+      "team": "52919",
+      "goals": 3,
+      "assists": 1,
+      "matches": 2
+    },
+    {
+      "name": "Alexis Mac Allister",
+      "team": "7889",
+      "goals": 3,
+      "assists": 0,
+      "matches": 3
+    },
+    {
+      "name": "Bradley Barcola",
+      "team": "7889",
+      "goals": 3,
+      "assists": 0,
+      "matches": 3
+    },
+    {
+      "name": "Donyell Malen",
+      "team": "50137",
+      "goals": 3,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Ferran Torres",
+      "team": "52747",
+      "goals": 3,
+      "assists": 0,
+      "matches": 3
+    },
+    {
+      "name": "Kylian Mbappé",
+      "team": "50051",
+      "goals": 3,
+      "assists": 1,
+      "matches": 3
+    },
+    {
+      "name": "Nicolas Jackson",
+      "team": "52683",
+      "goals": 3,
+      "assists": 0,
+      "matches": 3
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "52747",
+      "goals": 3,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Ross Barkley",
+      "team": "52683",
+      "goals": 3,
+      "assists": 1,
+      "matches": 3
+    },
+    {
+      "name": "Tasos Douvikas",
+      "team": "79946",
+      "goals": 3,
+      "assists": 0,
+      "matches": 3
+    },
+    {
+      "name": "Assane Diao",
+      "team": "79946",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
+    },
+    {
+      "name": "Carlos Augusto",
+      "team": "50138",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
+    },
+    {
+      "name": "Désiré Doué",
+      "team": "52747",
+      "goals": 2,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Emiliano Buendía",
+      "team": "52683",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
+    },
+    {
+      "name": "Lautaro Martínez",
+      "team": "50138",
+      "goals": 2,
+      "assists": 1,
+      "matches": 2
+    },
+    {
+      "name": "Michael Olise",
+      "team": "50037",
+      "goals": 2,
+      "assists": 1,
+      "matches": 2
+    },
+    {
+      "name": "Raphinha",
+      "team": "50080",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
+    },
+    {
+      "name": "Scott McTominay",
+      "team": "50136",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
+    },
+    {
+      "name": "Soriba Diaoune",
+      "team": "75797",
+      "goals": 2,
+      "assists": 0,
+      "matches": 2
     }
   ],
   "assisters": [
+    {
+      "name": "Lamine Yamal",
+      "team": "50080",
+      "goals": 2,
+      "assists": 4,
+      "matches": 3
+    },
+    {
+      "name": "Arda Güler",
+      "team": "50051",
+      "goals": 1,
+      "assists": 3,
+      "matches": 2
+    },
+    {
+      "name": "Yvan Dibango",
+      "team": "63405",
+      "goals": 0,
+      "assists": 3,
+      "matches": 2
+    },
+    {
+      "name": "Carlos Forbs",
+      "team": "50043",
+      "goals": 1,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Donyell Malen",
+      "team": "50137",
+      "goals": 3,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Kostas Tsimikas",
+      "team": "7889",
+      "goals": 0,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Nico Paz",
+      "team": "79946",
+      "goals": 2,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Ousmane Dembélé",
+      "team": "52747",
+      "goals": 3,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "Rico Lewis",
+      "team": "52919",
+      "goals": 0,
+      "assists": 2,
+      "matches": 1
+    },
+    {
+      "name": "Ayoze Pérez",
+      "team": "70691",
+      "goals": 0,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Brahim Díaz",
+      "team": "50051",
+      "goals": 0,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Désiré Doué",
+      "team": "52747",
+      "goals": 2,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Ibrahim Mbaye",
+      "team": "52683",
+      "goals": 0,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Jeremie Frimpong",
+      "team": "7889",
+      "goals": 1,
+      "assists": 2,
+      "matches": 2
+    },
+    {
+      "name": "Alysson",
+      "team": "52683",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Angelo Stiller",
+      "team": "50107",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Deniz Undav",
+      "team": "50107",
+      "goals": 1,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Enzo Fernández",
+      "team": "52919",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
     {
       "name": "Harry Kane",
       "team": "50037",
@@ -9503,10 +9769,45 @@
       "matches": 3
     },
     {
-      "name": "Nicolò Tresoldi",
-      "team": "50043",
-      "goals": 4,
-      "assists": 1,
+      "name": "Isaque",
+      "team": "52707",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Lucas Torreira",
+      "team": "50067",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Matías Soulé",
+      "team": "50137",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Pau Torres",
+      "team": "52683",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Rio Ngumoha",
+      "team": "7889",
+      "goals": 0,
+      "assists": 2,
+      "matches": 3
+    },
+    {
+      "name": "Sondre Brunstad Fet",
+      "team": "59333",
+      "goals": 1,
+      "assists": 2,
       "matches": 3
     }
   ],
@@ -9516,567 +9817,648 @@
       "name": "Olympiacos",
       "short": "Olympiacos",
       "code": "OLY",
-      "country": "Grecia"
+      "country": "Grecia",
+      "logo": "images/teams/2610.png"
     },
     "5312": {
       "id": "5312",
       "name": "Lyon",
       "short": "Lyon",
       "code": "LYO",
-      "country": "Francia"
+      "country": "Francia",
+      "logo": "images/teams/5312.png"
     },
     "7889": {
       "id": "7889",
       "name": "Liverpool",
       "short": "Liverpool",
       "code": "LIV",
-      "country": "Inglaterra"
+      "country": "Inglaterra",
+      "logo": "images/teams/7889.png"
     },
     "50019": {
       "id": "50019",
       "name": "Aarhus",
       "short": "Aarhus",
       "code": "AGF",
-      "country": "Dinamarca"
+      "country": "Dinamarca",
+      "logo": "images/teams/50019.png"
     },
     "50033": {
       "id": "50033",
       "name": "Sparta Praha",
       "short": "Sparta Praha",
       "code": "SPA",
-      "country": "Chequia"
+      "country": "Chequia",
+      "logo": "images/teams/50033.png"
     },
     "50037": {
       "id": "50037",
       "name": "Bayern München",
       "short": "Bayern München",
       "code": "BAY",
-      "country": "Alemania"
+      "country": "Alemania",
+      "logo": "images/teams/50037.png"
     },
     "50043": {
       "id": "50043",
       "name": "Club Brugge",
       "short": "Club Brugge",
       "code": "BRU",
-      "country": "Bélgica"
+      "country": "Bélgica",
+      "logo": "images/teams/50043.png"
     },
     "50044": {
       "id": "50044",
       "name": "Levski Sofia",
       "short": "Levski Sofia",
       "code": "LSO",
-      "country": "Bulgaria"
+      "country": "Bulgaria",
+      "logo": "images/teams/50044.png"
     },
     "50050": {
       "id": "50050",
       "name": "Celtic",
       "short": "Celtic",
       "code": "CEL",
-      "country": "Escocia"
+      "country": "Escocia",
+      "logo": "images/teams/50050.png"
     },
     "50051": {
       "id": "50051",
       "name": "Real Madrid",
       "short": "Real Madrid",
       "code": "RMA",
-      "country": "España"
+      "country": "España",
+      "logo": "images/teams/50051.png"
     },
     "50062": {
       "id": "50062",
       "name": "PSV Eindhoven",
       "short": "PSV",
       "code": "PSV",
-      "country": "Holanda"
+      "country": "Holanda",
+      "logo": "images/teams/50062.png"
     },
     "50063": {
       "id": "50063",
       "name": "Górnik Zabrze",
       "short": "Górnik Zabrze",
       "code": "GOR",
-      "country": "Polonia"
+      "country": "Polonia",
+      "logo": "images/teams/50063.png"
     },
     "50064": {
       "id": "50064",
       "name": "Porto",
       "short": "Porto",
       "code": "POR",
-      "country": "Portugal"
+      "country": "Portugal",
+      "logo": "images/teams/50064.png"
     },
     "50067": {
       "id": "50067",
       "name": "Galatasaray",
       "short": "Galatasaray",
       "code": "GAL",
-      "country": "Turquía"
+      "country": "Turquía",
+      "logo": "images/teams/50067.png"
     },
     "50069": {
       "id": "50069",
       "name": "Estrella Roja",
       "short": "Crvena Zvezda",
       "code": "ZVE",
-      "country": "Serbia"
+      "country": "Serbia",
+      "logo": "images/teams/50069.png"
     },
     "50077": {
       "id": "50077",
       "name": "Omonia",
       "short": "Omonia",
       "code": "OMO",
-      "country": "Chipre"
+      "country": "Chipre",
+      "logo": "images/teams/50077.png"
     },
     "50080": {
       "id": "50080",
       "name": "Barcelona",
       "short": "Barcelona",
       "code": "BAR",
-      "country": "España"
+      "country": "España",
+      "logo": "images/teams/50080.png"
     },
     "50092": {
       "id": "50092",
       "name": "Floriana",
       "short": "Floriana",
       "code": "FLO",
-      "country": "Malta"
+      "country": "Malta",
+      "logo": "images/teams/50092.png"
     },
     "50104": {
       "id": "50104",
       "name": "Borac",
       "short": "Borac",
       "code": "BOR",
-      "country": "Bosnia y Herzegovina"
+      "country": "Bosnia y Herzegovina",
+      "logo": "images/teams/50104.png"
     },
     "50107": {
       "id": "50107",
       "name": "Stuttgart",
       "short": "Stuttgart",
       "code": "STU",
-      "country": "Alemania"
+      "country": "Alemania",
+      "logo": "images/teams/50107.png"
     },
     "50111": {
       "id": "50111",
       "name": "Sturm Graz",
       "short": "Sturm Graz",
       "code": "SGR",
-      "country": "Austria"
+      "country": "Austria",
+      "logo": "images/teams/50111.png"
     },
     "50120": {
       "id": "50120",
       "name": "Hearts",
       "short": "Hearts",
       "code": "HEA",
-      "country": "Escocia"
+      "country": "Escocia",
+      "logo": "images/teams/50120.png"
     },
     "50124": {
       "id": "50124",
       "name": "Atlético de Madrid",
       "short": "Atleti",
       "code": "ATM",
-      "country": "España"
+      "country": "España",
+      "logo": "images/teams/50124.png"
     },
     "50129": {
       "id": "50129",
       "name": "AEK Athens",
       "short": "AEK Athens",
       "code": "AEK",
-      "country": "Grecia"
+      "country": "Grecia",
+      "logo": "images/teams/50129.png"
     },
     "50136": {
       "id": "50136",
       "name": "Napoli",
       "short": "Napoli",
       "code": "NAP",
-      "country": "Italia"
+      "country": "Italia",
+      "logo": "images/teams/50136.png"
     },
     "50137": {
       "id": "50137",
       "name": "Roma",
       "short": "Roma",
       "code": "ROM",
-      "country": "Italia"
+      "country": "Italia",
+      "logo": "images/teams/50137.png"
     },
     "50138": {
       "id": "50138",
       "name": "Inter de Milán",
       "short": "Inter",
       "code": "INT",
-      "country": "Italia"
+      "country": "Italia",
+      "logo": "images/teams/50138.png"
     },
     "50149": {
       "id": "50149",
       "name": "Sporting CP",
       "short": "Sporting CP",
       "code": "SPO",
-      "country": "Portugal"
+      "country": "Portugal",
+      "logo": "images/teams/50149.png"
     },
     "50164": {
       "id": "50164",
       "name": "Dinamo Zagreb",
       "short": "GNK Dinamo",
       "code": "DIN",
-      "country": "Croacia"
+      "country": "Croacia",
+      "logo": "images/teams/50164.png"
     },
     "52265": {
       "id": "52265",
       "name": "Real Betis",
       "short": "Real Betis",
       "code": "BET",
-      "country": "España"
+      "country": "España",
+      "logo": "images/teams/52265.png"
     },
     "52277": {
       "id": "52277",
       "name": "Lens",
       "short": "Lens",
       "code": "LEN",
-      "country": "Francia"
+      "country": "Francia",
+      "logo": "images/teams/52277.png"
     },
     "52280": {
       "id": "52280",
       "name": "Arsenal",
       "short": "Arsenal",
       "code": "ARS",
-      "country": "Inglaterra"
+      "country": "Inglaterra",
+      "logo": "images/teams/52280.png"
     },
     "52287": {
       "id": "52287",
       "name": "Győri ETO",
       "short": "Győri ETO",
       "code": "ETO",
-      "country": "Hungría"
+      "country": "Hungría",
+      "logo": "images/teams/52287.png"
     },
     "52319": {
       "id": "52319",
       "name": "Viking",
       "short": "Viking",
       "code": "VFK",
-      "country": "Noruega"
+      "country": "Noruega",
+      "logo": "images/teams/52319.png"
     },
     "52330": {
       "id": "52330",
       "name": "N.E.C.",
       "short": "N.E.C.",
       "code": "NEC",
-      "country": "Holanda"
+      "country": "Holanda",
+      "logo": "images/teams/52330.png"
     },
     "52350": {
       "id": "52350",
       "name": "KuPS Kuopio",
       "short": "KuPS Kuopio",
       "code": "KUP",
-      "country": "Finlandia"
+      "country": "Finlandia",
+      "logo": "images/teams/52350.png"
     },
     "52381": {
       "id": "52381",
       "name": "Shamrock Rovers",
       "short": "Shamrock Rovers",
       "code": "SHR",
-      "country": "República de Irlanda"
+      "country": "República de Irlanda",
+      "logo": "images/teams/52381.png"
     },
     "52498": {
       "id": "52498",
       "name": "Slavia Praha",
       "short": "Slavia Praha",
       "code": "SLA",
-      "country": "Chequia"
+      "country": "Chequia",
+      "logo": "images/teams/52498.png"
     },
     "52682": {
       "id": "52682",
       "name": "Manchester United",
       "short": "Man Utd",
       "code": "MUN",
-      "country": "Inglaterra"
+      "country": "Inglaterra",
+      "logo": "images/teams/52682.png"
     },
     "52683": {
       "id": "52683",
       "name": "Aston Villa",
       "short": "Aston Villa",
       "code": "AVL",
-      "country": "Inglaterra"
+      "country": "Inglaterra",
+      "logo": "images/teams/52683.png"
     },
     "52692": {
       "id": "52692",
       "name": "Fenerbahçe",
       "short": "Fenerbahçe",
       "code": "FEN",
-      "country": "Turquía"
+      "country": "Turquía",
+      "logo": "images/teams/52692.png"
     },
     "52697": {
       "id": "52697",
       "name": "Víkingur R.",
       "short": "Víkingur R.",
       "code": "VKR",
-      "country": "Islandia"
+      "country": "Islandia",
+      "logo": "images/teams/52697.png"
     },
     "52707": {
       "id": "52707",
       "name": "Shakhtar",
       "short": "Shakhtar",
       "code": "SHK",
-      "country": "Ucrania"
+      "country": "Ucrania",
+      "logo": "images/teams/52707.png"
     },
     "52747": {
       "id": "52747",
       "name": "Paris Saint-Germain",
       "short": "Paris",
       "code": "PSG",
-      "country": "Francia"
+      "country": "Francia",
+      "logo": "images/teams/52747.png"
     },
     "52749": {
       "id": "52749",
       "name": "Feyenoord",
       "short": "Feyenoord",
       "code": "FEY",
-      "country": "Holanda"
+      "country": "Holanda",
+      "logo": "images/teams/52749.png"
     },
     "52758": {
       "id": "52758",
       "name": "Borussia Dortmund",
       "short": "B. Dortmund",
       "code": "BVB",
-      "country": "Alemania"
+      "country": "Alemania",
+      "logo": "images/teams/52758.png"
     },
     "52797": {
       "id": "52797",
       "name": "S. Bratislava",
       "short": "S. Bratislava",
       "code": "SBR",
-      "country": "Eslovaquia"
+      "country": "Eslovaquia",
+      "logo": "images/teams/52797.png"
     },
     "52919": {
       "id": "52919",
       "name": "Manchester City",
       "short": "Man City",
       "code": "MCI",
-      "country": "Inglaterra"
+      "country": "Inglaterra",
+      "logo": "images/teams/52919.png"
     },
     "53080": {
       "id": "53080",
       "name": "Vardar",
       "short": "Vardar",
       "code": "VAR",
-      "country": "Macedonia del Norte"
+      "country": "Macedonia del Norte",
+      "logo": "images/teams/53080.png"
     },
     "57475": {
       "id": "57475",
       "name": "Klaksvík",
       "short": "Klaksvík",
       "code": "KLA",
-      "country": "Islas Feroe"
+      "country": "Islas Feroe",
+      "logo": "images/teams/57475.png"
     },
     "59030": {
       "id": "59030",
       "name": "Celje",
       "short": "Celje",
       "code": "CLJ",
-      "country": "Eslovenia"
+      "country": "Eslovenia",
+      "logo": "images/teams/59030.png"
     },
     "59333": {
       "id": "59333",
       "name": "Bodø/Glimt",
       "short": "Bodø/Glimt",
       "code": "BOD",
-      "country": "Noruega"
+      "country": "Noruega",
+      "logo": "images/teams/59333.png"
     },
     "59340": {
       "id": "59340",
       "name": "H. Beer-Sheva",
       "short": "H. Beer-Sheva",
       "code": "HBS",
-      "country": "Israel"
+      "country": "Israel",
+      "logo": "images/teams/59340.png"
     },
     "59341": {
       "id": "59341",
       "name": "Flora Tallinn",
       "short": "Flora Tallinn",
       "code": "FLO",
-      "country": "Estonia"
+      "country": "Estonia",
+      "logo": "images/teams/59341.png"
     },
     "60457": {
       "id": "60457",
       "name": "The New Saints",
       "short": "The New Saints",
       "code": "TNS",
-      "country": "Gales"
+      "country": "Gales",
+      "logo": "images/teams/60457.png"
     },
     "63401": {
       "id": "63401",
       "name": "Inter Escaldes",
       "short": "Inter Escaldes",
       "code": "IES",
-      "country": "Andorra"
+      "country": "Andorra",
+      "logo": "images/teams/63401.png"
     },
     "63405": {
       "id": "63405",
       "name": "LASK",
       "short": "LASK",
       "code": "LASK",
-      "country": "Austria"
+      "country": "Austria",
+      "logo": "images/teams/63405.png"
     },
     "64125": {
       "id": "64125",
       "name": "Union SG",
       "short": "Union SG",
       "code": "USG",
-      "country": "Bélgica"
+      "country": "Bélgica",
+      "logo": "images/teams/64125.png"
     },
     "64227": {
       "id": "64227",
       "name": "Lech Poznań",
       "short": "Lech Poznań",
       "code": "LPO",
-      "country": "Polonia"
+      "country": "Polonia",
+      "logo": "images/teams/64227.png"
     },
     "64514": {
       "id": "64514",
       "name": "Tre Fiori",
       "short": "Tre Fiori",
       "code": "TRE",
-      "country": "San Marino"
+      "country": "San Marino",
+      "logo": "images/teams/64514.png"
     },
     "70691": {
       "id": "70691",
       "name": "Villarreal",
       "short": "Villarreal",
       "code": "VIL",
-      "country": "España"
+      "country": "España",
+      "logo": "images/teams/70691.png"
     },
     "73936": {
       "id": "73936",
       "name": "Sutjeska",
       "short": "Sutjeska",
       "code": "SUT",
-      "country": "Montenegro"
+      "country": "Montenegro",
+      "logo": "images/teams/73936.png"
     },
     "74233": {
       "id": "74233",
       "name": "Mjällby",
       "short": "Mjällby",
       "code": "MJA",
-      "country": "Suecia"
+      "country": "Suecia",
+      "logo": "images/teams/74233.png"
     },
     "75797": {
       "id": "75797",
       "name": "Lille",
       "short": "Lille",
       "code": "LIL",
-      "country": "Francia"
+      "country": "Francia",
+      "logo": "images/teams/75797.png"
     },
     "79946": {
       "id": "79946",
       "name": "Como",
       "short": "Como",
       "code": "COM",
-      "country": "Italia"
+      "country": "Italia",
+      "logo": "images/teams/79946.png"
     },
     "79970": {
       "id": "79970",
       "name": "Kairat Almaty",
       "short": "Kairat Almaty",
       "code": "KAI",
-      "country": "Kazajstán"
+      "country": "Kazajstán",
+      "logo": "images/teams/79970.png"
     },
     "80409": {
       "id": "80409",
       "name": "Thun",
       "short": "Thun",
       "code": "THU",
-      "country": "Suiza"
+      "country": "Suiza",
+      "logo": "images/teams/80409.png"
     },
     "85009": {
       "id": "85009",
       "name": "Larne",
       "short": "Larne",
       "code": "LAR",
-      "country": "Irlanda del Norte"
+      "country": "Irlanda del Norte",
+      "logo": "images/teams/85009.png"
     },
     "88148": {
       "id": "88148",
       "name": "Egnatia",
       "short": "Egnatia",
       "code": "EGN",
-      "country": "Albania"
+      "country": "Albania",
+      "logo": "images/teams/88148.png"
     },
     "2603790": {
       "id": "2603790",
       "name": "Leipzig",
       "short": "Leipzig",
       "code": "RBL",
-      "country": "Alemania"
+      "country": "Alemania",
+      "logo": "images/teams/2603790.png"
     },
     "2605351": {
       "id": "2605351",
       "name": "Atert Bissen",
       "short": "Atert Bissen",
       "code": "",
-      "country": "Luxemburgo"
+      "country": "Luxemburgo",
+      "logo": "images/teams/2605351.png"
     },
     "2605572": {
       "id": "2605572",
       "name": "L. Red Imps",
       "short": "L. Red Imps",
       "code": "LRI",
-      "country": "Gibraltar"
+      "country": "Gibraltar",
+      "logo": "images/teams/2605572.png"
     },
     "2605905": {
       "id": "2605905",
       "name": "Iberia Tbilisi",
       "short": "Iberia Tbilisi",
       "code": "IBE",
-      "country": "Georgia"
+      "country": "Georgia",
+      "logo": "images/teams/2605905.png"
     },
     "2605907": {
       "id": "2605907",
       "name": "Kauno Žalgiris",
       "short": "Kauno Žalgiris",
       "code": "KAU",
-      "country": "Lituania"
+      "country": "Lituania",
+      "logo": "images/teams/2605907.png"
     },
     "2606501": {
       "id": "2606501",
       "name": "Univ. Craiova",
       "short": "Univ. Craiova",
       "code": "UCR",
-      "country": "Rumanía"
+      "country": "Rumanía",
+      "logo": "images/teams/2606501.png"
     },
     "2607112": {
       "id": "2607112",
       "name": "Petrocub",
       "short": "Petrocub",
       "code": "PET",
-      "country": "Moldavia"
+      "country": "Moldavia",
+      "logo": "images/teams/2607112.png"
     },
     "2607924": {
       "id": "2607924",
       "name": "Riga",
       "short": "Riga",
       "code": "RIG",
-      "country": "Letonia"
+      "country": "Letonia",
+      "logo": "images/teams/2607924.png"
     },
     "2608290": {
       "id": "2608290",
       "name": "Drita",
       "short": "Drita",
       "code": "DRI",
-      "country": "Kosovo"
+      "country": "Kosovo",
+      "logo": "images/teams/2608290.png"
     },
     "2609356": {
       "id": "2609356",
       "name": "Sabah",
       "short": "Sabah",
       "code": "SAB",
-      "country": "Azerbaiyán"
+      "country": "Azerbaiyán",
+      "logo": "images/teams/2609356.png"
     },
     "2610304": {
       "id": "2610304",
       "name": "Ararat-Armenia",
       "short": "Ararat-Armenia",
       "code": "ARA",
-      "country": "Armenia"
+      "country": "Armenia",
+      "logo": "images/teams/2610304.png"
     },
     "2613945": {
       "id": "2613945",
       "name": "ML Vitebsk",
       "short": "ML Vitebsk",
       "code": "",
-      "country": "Bielorrusia"
+      "country": "Bielorrusia",
+      "logo": "images/teams/2613945.png"
     }
   }
 }
