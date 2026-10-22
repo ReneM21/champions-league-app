@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T10:43:03.771Z",
+  "updatedAt": "2026-10-22T10:45:49.262Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -600,9 +600,9 @@
         {
           "season": "2026-27",
           "club": "Real Madrid",
-          "matches": 2,
-          "goals": 2,
-          "assists": 0
+          "matches": 3,
+          "goals": 3,
+          "assists": 1
         }
       ]
     },
@@ -849,9 +849,9 @@
         {
           "season": "2026-27",
           "club": "Bayern München",
-          "matches": 2,
-          "goals": 3,
-          "assists": 1
+          "matches": 3,
+          "goals": 4,
+          "assists": 2
         }
       ]
     },
@@ -2516,6 +2516,16 @@
           "goals": 4
         },
         {
+          "name": "Harry Kane",
+          "club": "Bayern München",
+          "goals": 4
+        },
+        {
+          "name": "Luis Suárez",
+          "club": "Sporting CP",
+          "goals": 4
+        },
+        {
           "name": "Nicolò Tresoldi",
           "club": "Club Brugge",
           "goals": 4
@@ -2546,14 +2556,26 @@
         "matches": 2
       },
       {
-        "name": "Nicolò Tresoldi",
-        "club": "Club Brugge",
-        "goals": 4,
-        "matches": 2
-      },
-      {
         "name": "Ermedin Demirović",
         "club": "Stuttgart",
+        "goals": 4,
+        "matches": 3
+      },
+      {
+        "name": "Harry Kane",
+        "club": "Bayern München",
+        "goals": 4,
+        "matches": 3
+      },
+      {
+        "name": "Luis Suárez",
+        "club": "Sporting CP",
+        "goals": 4,
+        "matches": 3
+      },
+      {
+        "name": "Nicolò Tresoldi",
+        "club": "Club Brugge",
         "goals": 4,
         "matches": 3
       },
@@ -2562,18 +2584,6 @@
         "club": "Borussia Dortmund",
         "goals": 4,
         "matches": 3
-      },
-      {
-        "name": "Harry Kane",
-        "club": "Bayern München",
-        "goals": 3,
-        "matches": 2
-      },
-      {
-        "name": "Nicolas Jackson",
-        "club": "Aston Villa",
-        "goals": 3,
-        "matches": 2
       },
       {
         "name": "Phil Foden",
@@ -2608,16 +2618,22 @@
         "matches": 3
       },
       {
+        "name": "Arda Güler",
+        "club": "Real Madrid",
+        "assists": 3,
+        "matches": 2
+      },
+      {
         "name": "Yvan Dibango",
         "club": "LASK",
         "assists": 3,
-        "matches": 1
+        "matches": 2
       },
       {
         "name": "Carlos Forbs",
         "club": "Club Brugge",
         "assists": 3,
-        "matches": 2
+        "matches": 3
       },
       {
         "name": "Donyell Malen",
@@ -2632,16 +2648,16 @@
         "matches": 3
       },
       {
-        "name": "Ousmane Dembélé",
-        "club": "Paris Saint-Germain",
+        "name": "Nicolás Paz",
+        "club": "Como",
         "assists": 3,
         "matches": 3
       },
       {
-        "name": "Arda Güler",
-        "club": "Real Madrid",
-        "assists": 2,
-        "matches": 1
+        "name": "Ousmane Dembélé",
+        "club": "Paris Saint-Germain",
+        "assists": 3,
+        "matches": 3
       },
       {
         "name": "Rico Lewis",
@@ -2652,12 +2668,6 @@
       {
         "name": "Ayoze Pérez",
         "club": "Villarreal",
-        "assists": 2,
-        "matches": 2
-      },
-      {
-        "name": "Désiré Doué",
-        "club": "Paris Saint-Germain",
         "assists": 2,
         "matches": 2
       }

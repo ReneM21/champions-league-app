@@ -79,8 +79,8 @@
         "goals": 4
       },
       {
-        "name": "Jhon Durán",
-        "goals": 3
+        "name": "Ross Barkley",
+        "goals": 4
       }
     ]
   },
@@ -148,7 +148,7 @@
       },
       {
         "name": "Harry Kane",
-        "goals": 36
+        "goals": 37
       }
     ]
   },
@@ -259,7 +259,7 @@
     "topScorers": [
       {
         "name": "Hans Vanaken",
-        "goals": 12
+        "goals": 13
       },
       {
         "name": "Nicolò Tresoldi",
@@ -268,6 +268,23 @@
       {
         "name": "Gert Verheyen",
         "goals": 6
+      }
+    ]
+  },
+  "Como": {
+    "logo": "images/clubs/como.png",
+    "topScorers": [
+      {
+        "name": "Tasos Douvikas",
+        "goals": 3
+      },
+      {
+        "name": "Assane Diao",
+        "goals": 2
+      },
+      {
+        "name": "Nicolás Paz",
+        "goals": 2
       }
     ]
   },
@@ -386,7 +403,7 @@
       },
       {
         "name": "Victor Osimhen",
-        "goals": 7
+        "goals": 8
       }
     ]
   },
@@ -466,7 +483,11 @@
         "goals": 2
       },
       {
-        "name": "Robert Ljubičić",
+        "name": "Christoph Lang",
+        "goals": 1
+      },
+      {
+        "name": "Kryštof Daněk",
         "goals": 1
       }
     ]
@@ -855,6 +876,23 @@
       {
         "name": "Jádson",
         "goals": 9
+      }
+    ]
+  },
+  "Sporting CP": {
+    "logo": "images/clubs/sporting-cp.png",
+    "topScorers": [
+      {
+        "name": "Luis Suárez",
+        "goals": 9
+      },
+      {
+        "name": "Francisco Trincão",
+        "goals": 6
+      },
+      {
+        "name": "Liedson",
+        "goals": 6
       }
     ]
   },

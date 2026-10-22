@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T10:41:00.964Z",
+  "updatedAt": "2026-10-22T10:43:29.522Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1448,25 +1448,25 @@
       "rank": 1,
       "club": "Real Madrid",
       "seasons": 57,
-      "played": 519,
-      "won": 313,
+      "played": 520,
+      "won": 314,
       "drawn": 85,
       "lost": 121,
-      "goalsFor": 1143,
-      "goalsAgainst": 582,
-      "points": 711
+      "goalsFor": 1147,
+      "goalsAgainst": 583,
+      "points": 713
     },
     {
       "rank": 2,
       "club": "Bayern München",
       "seasons": 43,
-      "played": 424,
+      "played": 425,
       "won": 256,
-      "drawn": 83,
+      "drawn": 84,
       "lost": 85,
-      "goalsFor": 907,
-      "goalsAgainst": 427,
-      "points": 595
+      "goalsFor": 909,
+      "goalsAgainst": 429,
+      "points": 596
     },
     {
       "rank": 3,
@@ -1496,12 +1496,12 @@
       "rank": 5,
       "club": "Manchester United",
       "seasons": 31,
-      "played": 301,
+      "played": 302,
       "won": 162,
       "drawn": 70,
-      "lost": 69,
-      "goalsFor": 549,
-      "goalsAgainst": 301,
+      "lost": 70,
+      "goalsFor": 550,
+      "goalsAgainst": 305,
       "points": 394
     },
     {
@@ -1556,25 +1556,25 @@
       "rank": 10,
       "club": "Arsenal",
       "seasons": 25,
-      "played": 242,
+      "played": 243,
       "won": 128,
-      "drawn": 51,
+      "drawn": 52,
       "lost": 63,
-      "goalsFor": 416,
-      "goalsAgainst": 243,
-      "points": 307
+      "goalsFor": 418,
+      "goalsAgainst": 245,
+      "points": 308
     },
     {
       "rank": 11,
       "club": "Inter de Milán",
       "seasons": 28,
-      "played": 240,
-      "won": 117,
+      "played": 241,
+      "won": 118,
       "drawn": 60,
       "lost": 63,
-      "goalsFor": 347,
+      "goalsFor": 348,
       "goalsAgainst": 245,
-      "points": 294
+      "points": 296
     },
     {
       "rank": 12,
@@ -1710,6 +1710,18 @@
     },
     {
       "rank": 23,
+      "club": "Galatasaray",
+      "seasons": 31,
+      "played": 206,
+      "won": 69,
+      "drawn": 47,
+      "lost": 90,
+      "goalsFor": 262,
+      "goalsAgainst": 330,
+      "points": 185
+    },
+    {
+      "rank": 24,
       "club": "Anderlecht",
       "seasons": 34,
       "played": 200,
@@ -1719,18 +1731,6 @@
       "goalsFor": 282,
       "goalsAgainst": 320,
       "points": 184
-    },
-    {
-      "rank": 24,
-      "club": "Galatasaray",
-      "seasons": 31,
-      "played": 205,
-      "won": 68,
-      "drawn": 47,
-      "lost": 90,
-      "goalsFor": 258,
-      "goalsAgainst": 328,
-      "points": 183
     },
     {
       "rank": 25,
@@ -3043,10 +3043,10 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 3,
         "player": "Manuel Neuer",
         "nation": "Alemania",
-        "apps": 162,
+        "apps": 163,
         "years": "2007-",
         "clubs": [
           {
@@ -3055,7 +3055,7 @@
           },
           {
             "club": "Bayern München",
-            "detail": "140"
+            "detail": "141"
           }
         ]
       },
@@ -3450,7 +3450,7 @@
         "rank": 5,
         "manager": "José Mourinho",
         "nation": "Portugal",
-        "matches": 156,
+        "matches": 157,
         "years": "2001-",
         "clubs": [
           {
@@ -3467,7 +3467,7 @@
           },
           {
             "club": "Real Madrid",
-            "detail": "35"
+            "detail": "36"
           },
           {
             "club": "Manchester United",
@@ -3487,12 +3487,12 @@
         "rank": 6,
         "manager": "Diego Simeone",
         "nation": "Argentina",
-        "matches": 129,
+        "matches": 130,
         "years": "2013-",
         "clubs": [
           {
             "club": "Atlético de Madrid",
-            "detail": "129"
+            "detail": "130"
           }
         ]
       },
@@ -3529,7 +3529,7 @@
         "rank": 8,
         "manager": "Massimiliano Allegri",
         "nation": "Italia",
-        "matches": 102,
+        "matches": 103,
         "years": "2010-",
         "clubs": [
           {
@@ -3542,7 +3542,7 @@
           },
           {
             "club": "Napoli",
-            "detail": "2"
+            "detail": "3"
           }
         ]
       },
