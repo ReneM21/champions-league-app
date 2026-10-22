@@ -2,7 +2,8 @@
 # días, descarga de Wikimedia Commons la foto de los jugadores que no tienen
 # una, crea la ficha (biografía, nacimiento, posición) de los que no tienen
 # ficha manual, descarga de la UEFA las temporadas (partidos, goles y
-# asistencias por club) de todos ellos y, si algo cambió, lo commitea en master y vuelve a publicar la app.
+# asistencias por club) de todos ellos y la temporada en curso (clasificación,
+# partidos y resultados) y, si algo cambió, lo commitea en master y vuelve a publicar la app.
 # Si los datos de un ranking no pasan las comprobaciones, ese ranking no se
 # toca, el otro se actualiza igualmente y el workflow termina en error para
 # que GitHub avise por email.
@@ -65,11 +66,16 @@ jobs:
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: npm run update-uefa-stats
 
+      - name: Temporada actual (UEFA)
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: npm run update-current-season
+
       - name: Commit si hay cambios
         id: commit
         if: ${{ !cancelled() && steps.install.outcome == 'success' }}
         run: |
-          git add public/data/ranking.json public/data/assists.json public/data/all-goals.json public/data/all-assists.json public/data/photos.json public/data/profiles.json public/data/uefa-seasons.json public/data/clubs.json public/data/competition.json public/images/players public/images/clubs
+          # Todo lo que generan los scripts (si una carpeta nueva no existe, git add -A no falla)
+          git add -A public/data public/images
           if git diff --cached --quiet; then
             echo "Sin cambios."
             echo "changed=false" >> "$GITHUB_OUTPUT"

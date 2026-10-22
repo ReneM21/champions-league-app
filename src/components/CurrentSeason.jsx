@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Card, Chip, Link } from '@heroui/react';
+import { Link as RouterLink } from 'react-router-dom';
+import { Button, Card, Chip, Link, buttonVariants } from '@heroui/react';
 import ClubLogo from './ClubLogo';
 import PlayerAvatar from './PlayerAvatar';
 import { useCompetition, usePlayerByName } from '../data/PlayersContext';
@@ -72,11 +73,16 @@ const CurrentSeason = () => {
           <LeaderList title="Goleadores" rows={currentSeason.scorers.slice(0, count)} stat="goals" />
           <LeaderList title="Asistentes" rows={currentSeason.assisters.slice(0, count)} stat="assists" />
         </div>
-        {(currentSeason.scorers.length > 5 || currentSeason.assisters.length > 5) && (
-          <Button size="sm" variant="ghost" className="self-start" onPress={() => setAll(!all)}>
-            {all ? 'Ver menos' : 'Ver los 10 primeros'}
-          </Button>
-        )}
+        <div className="flex flex-wrap gap-2">
+          {(currentSeason.scorers.length > 5 || currentSeason.assisters.length > 5) && (
+            <Button size="sm" variant="ghost" onPress={() => setAll(!all)}>
+              {all ? 'Ver menos' : 'Ver los 10 primeros'}
+            </Button>
+          )}
+          <RouterLink to="/temporada-actual" className={buttonVariants({ size: 'sm', variant: 'secondary', className: 'text-accent' })}>
+            Clasificación, resultados y calendario ›
+          </RouterLink>
+        </div>
       </Card.Content>
     </Card>
   );
