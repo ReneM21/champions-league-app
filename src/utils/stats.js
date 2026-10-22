@@ -10,8 +10,8 @@ export const formatRatio = (ratio) => (ratio === null ? '-' : ratio.toFixed(2));
 
 export const formatValue = (value) => (value === undefined || value === null ? '-' : value);
 
-export const formatDate = (isoDate) =>
-  isoDate ? new Date(isoDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+export const formatDate = (isoDate, timeZone) =>
+  isoDate ? new Date(isoDate).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', ...(timeZone ? { timeZone } : {}) }) : null;
 
 // Posición con empates: dos jugadores con el mismo valor comparten puesto (1, 2, 2, 4...).
 export const rankPlayers = (players, key = 'goals') =>
