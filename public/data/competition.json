@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T10:43:29.522Z",
+  "updatedAt": "2026-11-04T13:21:12.810Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1460,25 +1460,25 @@
       "rank": 2,
       "club": "Bayern München",
       "seasons": 43,
-      "played": 425,
-      "won": 256,
+      "played": 426,
+      "won": 257,
       "drawn": 84,
       "lost": 85,
-      "goalsFor": 909,
+      "goalsFor": 911,
       "goalsAgainst": 429,
-      "points": 596
+      "points": 598
     },
     {
       "rank": 3,
       "club": "Barcelona",
       "seasons": 37,
-      "played": 378,
-      "won": 221,
+      "played": 379,
+      "won": 222,
       "drawn": 81,
       "lost": 76,
-      "goalsFor": 773,
+      "goalsFor": 776,
       "goalsAgainst": 407,
-      "points": 523
+      "points": 525
     },
     {
       "rank": 4,
@@ -1496,13 +1496,13 @@
       "rank": 5,
       "club": "Manchester United",
       "seasons": 31,
-      "played": 302,
-      "won": 162,
+      "played": 303,
+      "won": 163,
       "drawn": 70,
       "lost": 70,
-      "goalsFor": 550,
-      "goalsAgainst": 305,
-      "points": 394
+      "goalsFor": 553,
+      "goalsAgainst": 307,
+      "points": 396
     },
     {
       "rank": 6,
@@ -1568,13 +1568,13 @@
       "rank": 11,
       "club": "Inter de Milán",
       "seasons": 28,
-      "played": 241,
-      "won": 118,
+      "played": 242,
+      "won": 119,
       "drawn": 60,
       "lost": 63,
-      "goalsFor": 348,
+      "goalsFor": 351,
       "goalsAgainst": 245,
-      "points": 296
+      "points": 298
     },
     {
       "rank": 12,
@@ -1628,13 +1628,13 @@
       "rank": 16,
       "club": "Paris Saint-Germain",
       "seasons": 20,
-      "played": 192,
-      "won": 106,
+      "played": 193,
+      "won": 107,
       "drawn": 35,
       "lost": 51,
-      "goalsFor": 399,
+      "goalsFor": 405,
       "goalsAgainst": 224,
-      "points": 247
+      "points": 249
     },
     {
       "rank": 17,
@@ -1652,12 +1652,12 @@
       "rank": 18,
       "club": "Atlético de Madrid",
       "seasons": 22,
-      "played": 199,
+      "played": 200,
       "won": 97,
       "drawn": 48,
-      "lost": 54,
+      "lost": 55,
       "goalsFor": 310,
-      "goalsAgainst": 210,
+      "goalsAgainst": 212,
       "points": 242
     },
     {
@@ -1712,13 +1712,13 @@
       "rank": 23,
       "club": "Galatasaray",
       "seasons": 31,
-      "played": 206,
-      "won": 69,
+      "played": 207,
+      "won": 70,
       "drawn": 47,
       "lost": 90,
-      "goalsFor": 262,
+      "goalsFor": 264,
       "goalsAgainst": 330,
-      "points": 185
+      "points": 187
     },
     {
       "rank": 24,
@@ -3014,6 +3014,23 @@
       },
       {
         "rank": 3,
+        "player": "Manuel Neuer",
+        "nation": "Alemania",
+        "apps": 164,
+        "years": "2007-",
+        "clubs": [
+          {
+            "club": "Schalke 04",
+            "detail": "22"
+          },
+          {
+            "club": "Bayern München",
+            "detail": "142"
+          }
+        ]
+      },
+      {
+        "rank": 4,
         "player": "Lionel Messi",
         "nation": "Argentina",
         "apps": 163,
@@ -3030,7 +3047,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "player": "Thomas Müller",
         "nation": "Alemania",
         "apps": 163,
@@ -3039,23 +3056,6 @@
           {
             "club": "Bayern München",
             "detail": ""
-          }
-        ]
-      },
-      {
-        "rank": 3,
-        "player": "Manuel Neuer",
-        "nation": "Alemania",
-        "apps": 163,
-        "years": "2007-",
-        "clubs": [
-          {
-            "club": "Schalke 04",
-            "detail": "22"
-          },
-          {
-            "club": "Bayern München",
-            "detail": "141"
           }
         ]
       },
@@ -3487,12 +3487,12 @@
         "rank": 6,
         "manager": "Diego Simeone",
         "nation": "Argentina",
-        "matches": 130,
+        "matches": 131,
         "years": "2013-",
         "clubs": [
           {
             "club": "Atlético de Madrid",
-            "detail": "130"
+            "detail": "131"
           }
         ]
       },

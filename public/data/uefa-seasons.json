@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T10:38:04.653Z",
+  "updatedAt": "2026-11-04T13:22:58.815Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -849,9 +849,9 @@
         {
           "season": "2026-27",
           "club": "Bayern München",
-          "matches": 3,
+          "matches": 4,
           "goals": 4,
-          "assists": 2
+          "assists": 3
         }
       ]
     },
@@ -2506,6 +2506,16 @@
     "2026-27": {
       "topScorers": [
         {
+          "name": "Aleksei Batrakov",
+          "club": "Galatasaray",
+          "goals": 4
+        },
+        {
+          "name": "Donyell Malen",
+          "club": "Roma",
+          "goals": 4
+        },
+        {
           "name": "Erling Haaland",
           "club": "Manchester City",
           "goals": 4
@@ -2513,6 +2523,11 @@
         {
           "name": "Ermedin Demirović",
           "club": "Stuttgart",
+          "goals": 4
+        },
+        {
+          "name": "Fabián Ruiz",
+          "club": "Paris Saint-Germain",
           "goals": 4
         },
         {
@@ -2528,6 +2543,11 @@
         {
           "name": "Nicolò Tresoldi",
           "club": "Club Brugge",
+          "goals": 4
+        },
+        {
+          "name": "Raphinha",
+          "club": "Barcelona",
           "goals": 4
         },
         {
@@ -2556,26 +2576,14 @@
         "matches": 2
       },
       {
-        "name": "Ermedin Demirović",
-        "club": "Stuttgart",
-        "goals": 4,
-        "matches": 3
-      },
-      {
-        "name": "Harry Kane",
-        "club": "Bayern München",
-        "goals": 4,
-        "matches": 3
-      },
-      {
-        "name": "Luis Suárez",
-        "club": "Sporting CP",
-        "goals": 4,
-        "matches": 3
-      },
-      {
         "name": "Nicolò Tresoldi",
         "club": "Club Brugge",
+        "goals": 4,
+        "matches": 3
+      },
+      {
+        "name": "Raphinha",
+        "club": "Barcelona",
         "goals": 4,
         "matches": 3
       },
@@ -2586,28 +2594,40 @@
         "matches": 3
       },
       {
-        "name": "Phil Foden",
-        "club": "Manchester City",
-        "goals": 3,
-        "matches": 2
-      },
-      {
-        "name": "Alexis Mac Allister",
-        "club": "Liverpool",
-        "goals": 3,
-        "matches": 3
-      },
-      {
-        "name": "Bradley Barcola",
-        "club": "Liverpool",
-        "goals": 3,
-        "matches": 3
+        "name": "Aleksei Batrakov",
+        "club": "Galatasaray",
+        "goals": 4,
+        "matches": 4
       },
       {
         "name": "Donyell Malen",
         "club": "Roma",
-        "goals": 3,
-        "matches": 3
+        "goals": 4,
+        "matches": 4
+      },
+      {
+        "name": "Ermedin Demirović",
+        "club": "Stuttgart",
+        "goals": 4,
+        "matches": 4
+      },
+      {
+        "name": "Fabián Ruiz",
+        "club": "Paris Saint-Germain",
+        "goals": 4,
+        "matches": 4
+      },
+      {
+        "name": "Harry Kane",
+        "club": "Bayern München",
+        "goals": 4,
+        "matches": 4
+      },
+      {
+        "name": "Luis Suárez",
+        "club": "Sporting CP",
+        "goals": 4,
+        "matches": 4
       }
     ],
     "assisters": [
@@ -2615,17 +2635,11 @@
         "name": "Lamine Yamal",
         "club": "Barcelona",
         "assists": 4,
-        "matches": 3
+        "matches": 4
       },
       {
         "name": "Arda Güler",
         "club": "Real Madrid",
-        "assists": 3,
-        "matches": 2
-      },
-      {
-        "name": "Yvan Dibango",
-        "club": "LASK",
         "assists": 3,
         "matches": 2
       },
@@ -2636,8 +2650,8 @@
         "matches": 3
       },
       {
-        "name": "Donyell Malen",
-        "club": "Roma",
+        "name": "João Neves",
+        "club": "Paris Saint-Germain",
         "assists": 3,
         "matches": 3
       },
@@ -2660,16 +2674,22 @@
         "matches": 3
       },
       {
-        "name": "Rico Lewis",
-        "club": "Manchester City",
-        "assists": 2,
-        "matches": 1
+        "name": "Yvan Dibango",
+        "club": "LASK",
+        "assists": 3,
+        "matches": 3
       },
       {
-        "name": "Ayoze Pérez",
-        "club": "Villarreal",
-        "assists": 2,
-        "matches": 2
+        "name": "Donyell Malen",
+        "club": "Roma",
+        "assists": 3,
+        "matches": 4
+      },
+      {
+        "name": "Harry Kane",
+        "club": "Bayern München",
+        "assists": 3,
+        "matches": 4
       }
     ]
   }
