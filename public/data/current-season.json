@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T21:39:23.525Z",
+  "updatedAt": "2026-11-04T02:03:46.833Z",
   "season": "2026-27",
   "seasonYear": 2027,
   "rounds": [
@@ -33,7 +33,7 @@
     {
       "round": "2002239",
       "name": "League",
-      "official": false,
+      "official": true,
       "rows": [
         {
           "rank": 1,
@@ -47,8 +47,9 @@
           "goalDifference": 15,
           "points": 12,
           "trend": "same",
-          "live": true,
+          "live": false,
           "form": [
+            "G",
             "G",
             "G",
             "G"
@@ -66,11 +67,12 @@
           "goalDifference": 8,
           "points": 9,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "G",
             "G",
-            "P"
+            "P",
+            "G"
           ]
         },
         {
@@ -85,11 +87,12 @@
           "goalDifference": 6,
           "points": 9,
           "trend": "down",
-          "live": true,
+          "live": false,
           "form": [
             "G",
             "G",
-            "G"
+            "G",
+            "P"
           ]
         },
         {
@@ -181,34 +184,16 @@
           "goalDifference": 7,
           "points": 8,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "G",
             "E",
-            "E"
-          ]
-        },
-        {
-          "rank": 9,
-          "team": "50137",
-          "played": 4,
-          "won": 2,
-          "drawn": 1,
-          "lost": 1,
-          "goalsFor": 10,
-          "goalsAgainst": 6,
-          "goalDifference": 4,
-          "points": 7,
-          "trend": "up",
-          "live": true,
-          "form": [
             "E",
-            "P",
             "G"
           ]
         },
         {
-          "rank": 10,
+          "rank": 9,
           "team": "52280",
           "played": 3,
           "won": 2,
@@ -227,7 +212,7 @@
           ]
         },
         {
-          "rank": 11,
+          "rank": 10,
           "team": "50107",
           "played": 4,
           "won": 2,
@@ -247,7 +232,7 @@
           ]
         },
         {
-          "rank": 12,
+          "rank": 11,
           "team": "79946",
           "played": 3,
           "won": 2,
@@ -266,7 +251,7 @@
           ]
         },
         {
-          "rank": 13,
+          "rank": 12,
           "team": "52919",
           "played": 3,
           "won": 2,
@@ -285,7 +270,7 @@
           ]
         },
         {
-          "rank": 14,
+          "rank": 13,
           "team": "50043",
           "played": 3,
           "won": 2,
@@ -304,7 +289,7 @@
           ]
         },
         {
-          "rank": 15,
+          "rank": 14,
           "team": "50138",
           "played": 4,
           "won": 2,
@@ -315,15 +300,16 @@
           "goalDifference": 2,
           "points": 6,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "P",
+            "G",
             "G"
           ]
         },
         {
-          "rank": 16,
+          "rank": 15,
           "team": "63405",
           "played": 4,
           "won": 2,
@@ -334,15 +320,16 @@
           "goalDifference": 1,
           "points": 6,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "P",
+            "G",
             "G"
           ]
         },
         {
-          "rank": 17,
+          "rank": 16,
           "team": "52758",
           "played": 3,
           "won": 2,
@@ -356,6 +343,26 @@
           "live": false,
           "form": [
             "G",
+            "P",
+            "G"
+          ]
+        },
+        {
+          "rank": 17,
+          "team": "52682",
+          "played": 4,
+          "won": 2,
+          "drawn": 0,
+          "lost": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "goalDifference": 0,
+          "points": 6,
+          "trend": "up",
+          "live": false,
+          "form": [
+            "G",
+            "P",
             "P",
             "G"
           ]
@@ -382,6 +389,26 @@
         },
         {
           "rank": 19,
+          "team": "50137",
+          "played": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 10,
+          "goalsAgainst": 8,
+          "goalDifference": 2,
+          "points": 4,
+          "trend": "down",
+          "live": false,
+          "form": [
+            "E",
+            "P",
+            "G",
+            "P"
+          ]
+        },
+        {
+          "rank": 20,
           "team": "52707",
           "played": 4,
           "won": 1,
@@ -401,7 +428,7 @@
           ]
         },
         {
-          "rank": 20,
+          "rank": 21,
           "team": "50062",
           "played": 3,
           "won": 1,
@@ -420,7 +447,7 @@
           ]
         },
         {
-          "rank": 21,
+          "rank": 22,
           "team": "50124",
           "played": 4,
           "won": 1,
@@ -431,15 +458,16 @@
           "goalDifference": -1,
           "points": 4,
           "trend": "down",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "G",
-            "E"
+            "E",
+            "P"
           ]
         },
         {
-          "rank": 22,
+          "rank": 23,
           "team": "59333",
           "played": 4,
           "won": 1,
@@ -450,30 +478,12 @@
           "goalDifference": -5,
           "points": 4,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "G",
-            "P"
-          ]
-        },
-        {
-          "rank": 23,
-          "team": "52682",
-          "played": 4,
-          "won": 1,
-          "drawn": 0,
-          "lost": 3,
-          "goalsFor": 6,
-          "goalsAgainst": 8,
-          "goalDifference": -2,
-          "points": 3,
-          "trend": "down",
-          "live": true,
-          "form": [
-            "G",
             "P",
-            "P"
+            "E"
           ]
         },
         {
@@ -583,10 +593,11 @@
           "goalDifference": -6,
           "points": 3,
           "trend": "down",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "G",
+            "P",
             "P"
           ]
         },
@@ -602,10 +613,11 @@
           "goalDifference": -7,
           "points": 3,
           "trend": "down",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "G",
+            "P",
             "P"
           ]
         },
@@ -678,11 +690,12 @@
           "goalDifference": -6,
           "points": 1,
           "trend": "up",
-          "live": true,
+          "live": false,
           "form": [
             "P",
             "P",
-            "P"
+            "P",
+            "E"
           ]
         },
         {
@@ -716,8 +729,9 @@
           "goalDifference": -16,
           "points": 0,
           "trend": "same",
-          "live": true,
+          "live": false,
           "form": [
+            "P",
             "P",
             "P",
             "P"
@@ -7644,7 +7658,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "50080",
       "away": "52683",
       "score": {
@@ -7654,11 +7668,11 @@
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "50080",
       "qualified": null,
       "stadium": "Camp Nou",
       "city": "Barcelona",
-      "attendance": null,
+      "attendance": 52662,
       "goals": [
         {
           "teamId": "50080",
@@ -7687,7 +7701,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "50124",
       "away": "50037",
       "score": {
@@ -7697,11 +7711,11 @@
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "50037",
       "qualified": null,
       "stadium": "Estadio Metropolitano",
       "city": "Madrid",
-      "attendance": null,
+      "attendance": 69821,
       "goals": [
         {
           "teamId": "50037",
@@ -7724,21 +7738,21 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "52682",
       "away": "50137",
       "score": {
-        "home": 1,
+        "home": 3,
         "away": 2
       },
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "52682",
       "qualified": null,
       "stadium": "Old Trafford",
       "city": "Mánchester",
-      "attendance": null,
+      "attendance": 73747,
       "goals": [
         {
           "teamId": "50137",
@@ -7757,9 +7771,27 @@
           "player": "Bruno Fernandes",
           "minute": "58'",
           "type": "penalty"
+        },
+        {
+          "teamId": "52682",
+          "player": "Matheus Cunha",
+          "minute": "83'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52682",
+          "player": "Matheus Cunha",
+          "minute": "86'",
+          "type": "goal"
         }
       ],
-      "redCards": []
+      "redCards": [
+        {
+          "teamId": "52682",
+          "player": "Matheus Cunha",
+          "minute": "90+1'"
+        }
+      ]
     },
     {
       "id": "2049610",
@@ -7767,7 +7799,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "52749",
       "away": "50138",
       "score": {
@@ -7777,7 +7809,7 @@
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "50138",
       "qualified": null,
       "stadium": "Stadion Feijenoord 'De Kuip'",
       "city": "Róterdam",
@@ -7810,7 +7842,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "59333",
       "away": "75797",
       "score": {
@@ -7824,7 +7856,7 @@
       "qualified": null,
       "stadium": "Aspmyra",
       "city": "Bodø",
-      "attendance": null,
+      "attendance": 7737,
       "goals": [],
       "redCards": []
     },
@@ -7834,7 +7866,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "70691",
       "away": "52747",
       "score": {
@@ -7844,11 +7876,11 @@
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "52747",
       "qualified": null,
       "stadium": "Estadio de la Cerámica",
       "city": "Villarreal",
-      "attendance": null,
+      "attendance": 20036,
       "goals": [
         {
           "teamId": "52747",
@@ -7895,7 +7927,7 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-03T20:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "home": "63405",
       "away": "52797",
       "score": {
@@ -7905,7 +7937,7 @@
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "63405",
       "qualified": null,
       "stadium": "Oberösterreich Arena",
       "city": "Linz",
@@ -9775,6 +9807,13 @@
       "matches": 4
     },
     {
+      "name": "Matheus Cunha",
+      "team": "52682",
+      "goals": 3,
+      "assists": 0,
+      "matches": 4
+    },
+    {
       "name": "Nicolas Jackson",
       "team": "52683",
       "goals": 3,
@@ -9808,13 +9847,6 @@
       "goals": 2,
       "assists": 0,
       "matches": 2
-    },
-    {
-      "name": "Carlos Augusto",
-      "team": "50138",
-      "goals": 2,
-      "assists": 0,
-      "matches": 3
     }
   ],
   "assisters": [
@@ -9835,6 +9867,13 @@
     {
       "name": "Carlos Forbs",
       "team": "50043",
+      "goals": 1,
+      "assists": 3,
+      "matches": 3
+    },
+    {
+      "name": "João Neves",
+      "team": "52747",
       "goals": 1,
       "assists": 3,
       "matches": 3
@@ -9948,13 +9987,6 @@
       "name": "Ibrahim Mbaye",
       "team": "52683",
       "goals": 0,
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "João Neves",
-      "team": "52747",
-      "goals": 1,
       "assists": 2,
       "matches": 3
     },
