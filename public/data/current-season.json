@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T02:03:46.833Z",
+  "updatedAt": "2026-11-04T21:47:11.013Z",
   "season": "2026-27",
   "seasonYear": 2027,
   "rounds": [
@@ -33,7 +33,7 @@
     {
       "round": "2002239",
       "name": "League",
-      "official": true,
+      "official": false,
       "rows": [
         {
           "rank": 1,
@@ -57,6 +57,64 @@
         },
         {
           "rank": 2,
+          "team": "50051",
+          "played": 4,
+          "won": 4,
+          "drawn": 0,
+          "lost": 0,
+          "goalsFor": 13,
+          "goalsAgainst": 7,
+          "goalDifference": 6,
+          "points": 12,
+          "trend": "up",
+          "live": false,
+          "form": [
+            "G",
+            "G",
+            "G",
+            "G"
+          ]
+        },
+        {
+          "rank": 3,
+          "team": "52280",
+          "played": 4,
+          "won": 3,
+          "drawn": 1,
+          "lost": 0,
+          "goalsFor": 8,
+          "goalsAgainst": 2,
+          "goalDifference": 6,
+          "points": 10,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "G",
+            "G",
+            "E"
+          ]
+        },
+        {
+          "rank": 4,
+          "team": "79946",
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 18,
+          "goalsAgainst": 6,
+          "goalDifference": 12,
+          "points": 9,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "G",
+            "P",
+            "G"
+          ]
+        },
+        {
+          "rank": 5,
           "team": "50080",
           "played": 4,
           "won": 3,
@@ -76,7 +134,7 @@
           ]
         },
         {
-          "rank": 3,
+          "rank": 6,
           "team": "52683",
           "played": 4,
           "won": 3,
@@ -96,45 +154,65 @@
           ]
         },
         {
-          "rank": 4,
-          "team": "7889",
-          "played": 3,
+          "rank": 7,
+          "team": "52919",
+          "played": 4,
           "won": 3,
           "drawn": 0,
-          "lost": 0,
+          "lost": 1,
           "goalsFor": 12,
           "goalsAgainst": 7,
           "goalDifference": 5,
           "points": 9,
-          "trend": "down",
-          "live": false,
+          "trend": "up",
+          "live": true,
           "form": [
             "G",
-            "G",
+            "P",
             "G"
           ]
         },
         {
-          "rank": 5,
-          "team": "50051",
-          "played": 3,
+          "rank": 8,
+          "team": "7889",
+          "played": 4,
           "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "goalsFor": 10,
-          "goalsAgainst": 5,
-          "goalDifference": 5,
+          "lost": 1,
+          "goalsFor": 14,
+          "goalsAgainst": 10,
+          "goalDifference": 4,
           "points": 9,
           "trend": "down",
           "live": false,
           "form": [
             "G",
             "G",
+            "G",
+            "P"
+          ]
+        },
+        {
+          "rank": 9,
+          "team": "50043",
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 11,
+          "goalsAgainst": 7,
+          "goalDifference": 4,
+          "points": 9,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "P",
+            "G",
             "G"
           ]
         },
         {
-          "rank": 6,
+          "rank": 10,
           "team": "50149",
           "played": 4,
           "won": 3,
@@ -154,18 +232,18 @@
           ]
         },
         {
-          "rank": 7,
+          "rank": 11,
           "team": "52265",
-          "played": 3,
+          "played": 4,
           "won": 3,
           "drawn": 0,
-          "lost": 0,
-          "goalsFor": 7,
-          "goalsAgainst": 4,
-          "goalDifference": 3,
+          "lost": 1,
+          "goalsFor": 8,
+          "goalsAgainst": 6,
+          "goalDifference": 2,
           "points": 9,
           "trend": "down",
-          "live": false,
+          "live": true,
           "form": [
             "G",
             "G",
@@ -173,7 +251,26 @@
           ]
         },
         {
-          "rank": 8,
+          "rank": 12,
+          "team": "52758",
+          "played": 4,
+          "won": 3,
+          "drawn": 0,
+          "lost": 1,
+          "goalsFor": 7,
+          "goalsAgainst": 5,
+          "goalDifference": 2,
+          "points": 9,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "G",
+            "P",
+            "G"
+          ]
+        },
+        {
+          "rank": 13,
           "team": "50037",
           "played": 4,
           "won": 2,
@@ -193,26 +290,7 @@
           ]
         },
         {
-          "rank": 9,
-          "team": "52280",
-          "played": 3,
-          "won": 2,
-          "drawn": 1,
-          "lost": 0,
-          "goalsFor": 6,
-          "goalsAgainst": 2,
-          "goalDifference": 4,
-          "points": 7,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "G",
-            "G",
-            "E"
-          ]
-        },
-        {
-          "rank": 10,
+          "rank": 14,
           "team": "50107",
           "played": 4,
           "won": 2,
@@ -232,64 +310,7 @@
           ]
         },
         {
-          "rank": 11,
-          "team": "79946",
-          "played": 3,
-          "won": 2,
-          "drawn": 0,
-          "lost": 1,
-          "goalsFor": 10,
-          "goalsAgainst": 5,
-          "goalDifference": 5,
-          "points": 6,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "G",
-            "P",
-            "G"
-          ]
-        },
-        {
-          "rank": 12,
-          "team": "52919",
-          "played": 3,
-          "won": 2,
-          "drawn": 0,
-          "lost": 1,
-          "goalsFor": 9,
-          "goalsAgainst": 5,
-          "goalDifference": 4,
-          "points": 6,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "G",
-            "P",
-            "G"
-          ]
-        },
-        {
-          "rank": 13,
-          "team": "50043",
-          "played": 3,
-          "won": 2,
-          "drawn": 0,
-          "lost": 1,
-          "goalsFor": 9,
-          "goalsAgainst": 6,
-          "goalDifference": 3,
-          "points": 6,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "P",
-            "G",
-            "G"
-          ]
-        },
-        {
-          "rank": 14,
+          "rank": 15,
           "team": "50138",
           "played": 4,
           "won": 2,
@@ -309,7 +330,7 @@
           ]
         },
         {
-          "rank": 15,
+          "rank": 16,
           "team": "63405",
           "played": 4,
           "won": 2,
@@ -325,25 +346,6 @@
             "P",
             "P",
             "G",
-            "G"
-          ]
-        },
-        {
-          "rank": 16,
-          "team": "52758",
-          "played": 3,
-          "won": 2,
-          "drawn": 0,
-          "lost": 1,
-          "goalsFor": 5,
-          "goalsAgainst": 4,
-          "goalDifference": 1,
-          "points": 6,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "G",
-            "P",
             "G"
           ]
         },
@@ -389,6 +391,26 @@
         },
         {
           "rank": 19,
+          "team": "52692",
+          "played": 4,
+          "won": 1,
+          "drawn": 2,
+          "lost": 1,
+          "goalsFor": 6,
+          "goalsAgainst": 11,
+          "goalDifference": -5,
+          "points": 5,
+          "trend": "up",
+          "live": false,
+          "form": [
+            "E",
+            "P",
+            "E",
+            "G"
+          ]
+        },
+        {
+          "rank": 20,
           "team": "50137",
           "played": 4,
           "won": 1,
@@ -408,7 +430,7 @@
           ]
         },
         {
-          "rank": 20,
+          "rank": 21,
           "team": "52707",
           "played": 4,
           "won": 1,
@@ -425,25 +447,6 @@
             "G",
             "P",
             "P"
-          ]
-        },
-        {
-          "rank": 21,
-          "team": "50062",
-          "played": 3,
-          "won": 1,
-          "drawn": 1,
-          "lost": 1,
-          "goalsFor": 2,
-          "goalsAgainst": 2,
-          "goalDifference": 0,
-          "points": 4,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "E",
-            "P",
-            "G"
           ]
         },
         {
@@ -468,6 +471,44 @@
         },
         {
           "rank": 23,
+          "team": "50062",
+          "played": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 3,
+          "goalsAgainst": 4,
+          "goalDifference": -1,
+          "points": 4,
+          "trend": "down",
+          "live": true,
+          "form": [
+            "E",
+            "P",
+            "G"
+          ]
+        },
+        {
+          "rank": 24,
+          "team": "52319",
+          "played": 4,
+          "won": 1,
+          "drawn": 1,
+          "lost": 2,
+          "goalsFor": 8,
+          "goalsAgainst": 10,
+          "goalDifference": -2,
+          "points": 4,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "P",
+            "E",
+            "P"
+          ]
+        },
+        {
+          "rank": 25,
           "team": "59333",
           "played": 4,
           "won": 1,
@@ -487,18 +528,37 @@
           ]
         },
         {
-          "rank": 24,
-          "team": "50136",
-          "played": 3,
+          "rank": 26,
+          "team": "50064",
+          "played": 4,
           "won": 1,
           "drawn": 0,
-          "lost": 2,
+          "lost": 3,
           "goalsFor": 5,
           "goalsAgainst": 7,
           "goalDifference": -2,
           "points": 3,
+          "trend": "up",
+          "live": true,
+          "form": [
+            "P",
+            "P",
+            "P"
+          ]
+        },
+        {
+          "rank": 27,
+          "team": "50136",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 6,
+          "goalsAgainst": 10,
+          "goalDifference": -4,
+          "points": 3,
           "trend": "down",
-          "live": false,
+          "live": true,
           "form": [
             "P",
             "P",
@@ -506,75 +566,18 @@
           ]
         },
         {
-          "rank": 25,
+          "rank": 28,
           "team": "2609356",
-          "played": 3,
+          "played": 4,
           "won": 1,
           "drawn": 0,
-          "lost": 2,
-          "goalsFor": 3,
-          "goalsAgainst": 6,
-          "goalDifference": -3,
-          "points": 3,
-          "trend": "same",
-          "live": false,
-          "form": [
-            "P",
-            "G",
-            "P"
-          ]
-        },
-        {
-          "rank": 26,
-          "team": "52277",
-          "played": 3,
-          "won": 1,
-          "drawn": 0,
-          "lost": 2,
-          "goalsFor": 3,
-          "goalsAgainst": 7,
-          "goalDifference": -4,
-          "points": 3,
-          "trend": "up",
-          "live": false,
-          "form": [
-            "G",
-            "P",
-            "P"
-          ]
-        },
-        {
-          "rank": 27,
-          "team": "50129",
-          "played": 3,
-          "won": 1,
-          "drawn": 0,
-          "lost": 2,
-          "goalsFor": 3,
-          "goalsAgainst": 8,
+          "lost": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 9,
           "goalDifference": -5,
           "points": 3,
-          "trend": "up",
-          "live": false,
-          "form": [
-            "G",
-            "P",
-            "P"
-          ]
-        },
-        {
-          "rank": 27,
-          "team": "2603790",
-          "played": 3,
-          "won": 1,
-          "drawn": 0,
-          "lost": 2,
-          "goalsFor": 3,
-          "goalsAgainst": 8,
-          "goalDifference": -5,
-          "points": 3,
-          "trend": "up",
-          "live": false,
+          "trend": "down",
+          "live": true,
           "form": [
             "P",
             "G",
@@ -603,6 +606,45 @@
         },
         {
           "rank": 30,
+          "team": "50129",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 5,
+          "goalsAgainst": 11,
+          "goalDifference": -6,
+          "points": 3,
+          "trend": "down",
+          "live": false,
+          "form": [
+            "G",
+            "P",
+            "P",
+            "P"
+          ]
+        },
+        {
+          "rank": 30,
+          "team": "2603790",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 5,
+          "goalsAgainst": 11,
+          "goalDifference": -6,
+          "points": 3,
+          "trend": "down",
+          "live": true,
+          "form": [
+            "P",
+            "G",
+            "P"
+          ]
+        },
+        {
+          "rank": 32,
           "team": "52749",
           "played": 4,
           "won": 1,
@@ -622,64 +664,45 @@
           ]
         },
         {
-          "rank": 31,
-          "team": "52692",
-          "played": 3,
-          "won": 0,
-          "drawn": 2,
-          "lost": 1,
-          "goalsFor": 3,
-          "goalsAgainst": 9,
-          "goalDifference": -6,
-          "points": 2,
-          "trend": "same",
-          "live": false,
-          "form": [
-            "E",
-            "P",
-            "E"
-          ]
-        },
-        {
-          "rank": 32,
-          "team": "52498",
-          "played": 3,
-          "won": 0,
-          "drawn": 1,
-          "lost": 2,
-          "goalsFor": 4,
-          "goalsAgainst": 7,
-          "goalDifference": -3,
-          "points": 1,
-          "trend": "same",
-          "live": false,
-          "form": [
-            "P",
-            "P",
-            "E"
-          ]
-        },
-        {
           "rank": 33,
-          "team": "52319",
-          "played": 3,
-          "won": 0,
-          "drawn": 1,
-          "lost": 2,
-          "goalsFor": 5,
-          "goalsAgainst": 9,
-          "goalDifference": -4,
-          "points": 1,
-          "trend": "same",
-          "live": false,
+          "team": "52277",
+          "played": 4,
+          "won": 1,
+          "drawn": 0,
+          "lost": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 15,
+          "goalDifference": -11,
+          "points": 3,
+          "trend": "down",
+          "live": true,
           "form": [
+            "G",
             "P",
-            "E",
             "P"
           ]
         },
         {
           "rank": 34,
+          "team": "52498",
+          "played": 4,
+          "won": 0,
+          "drawn": 1,
+          "lost": 3,
+          "goalsFor": 4,
+          "goalsAgainst": 9,
+          "goalDifference": -5,
+          "points": 1,
+          "trend": "down",
+          "live": true,
+          "form": [
+            "P",
+            "P",
+            "E"
+          ]
+        },
+        {
+          "rank": 35,
           "team": "75797",
           "played": 4,
           "won": 0,
@@ -689,32 +712,13 @@
           "goalsAgainst": 10,
           "goalDifference": -6,
           "points": 1,
-          "trend": "up",
+          "trend": "same",
           "live": false,
           "form": [
             "P",
             "P",
             "P",
             "E"
-          ]
-        },
-        {
-          "rank": 35,
-          "team": "50064",
-          "played": 3,
-          "won": 0,
-          "drawn": 0,
-          "lost": 3,
-          "goalsFor": 2,
-          "goalsAgainst": 6,
-          "goalDifference": -4,
-          "points": 0,
-          "trend": "down",
-          "live": false,
-          "form": [
-            "P",
-            "P",
-            "P"
           ]
         },
         {
@@ -3859,12 +3863,12 @@
         },
         {
           "teamId": "64125",
-          "player": "Adem Zorgane",
+          "player": "Raul Florucz",
           "minute": "120+5'"
         },
         {
           "teamId": "64125",
-          "player": "Raul Florucz",
+          "player": "Adem Zorgane",
           "minute": "120+5'"
         }
       ]
@@ -7976,19 +7980,53 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T17:45:00Z",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "home": "52692",
       "away": "7889",
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 2
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "52692",
       "qualified": null,
       "stadium": "Fenerbahçe Şükrü Saracoğlu Spor Kompleksi",
       "city": "Estambul",
-      "attendance": null,
-      "goals": [],
+      "attendance": 39536,
+      "goals": [
+        {
+          "teamId": "7889",
+          "player": "Trey Nyoni",
+          "minute": "25'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52692",
+          "player": "Mason Greenwood",
+          "minute": "29'",
+          "type": "goal"
+        },
+        {
+          "teamId": "7889",
+          "player": "Alexander Isak",
+          "minute": "69'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52692",
+          "player": "Archie Brown",
+          "minute": "73'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52692",
+          "player": "Vedat Muriqi",
+          "minute": "79'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -7997,20 +8035,60 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T17:45:00Z",
-      "status": "UPCOMING",
+      "status": "FINISHED",
       "home": "50129",
       "away": "50051",
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 3
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
-      "winner": null,
+      "winner": "50051",
       "qualified": null,
       "stadium": "AEK Arena",
       "city": "Atenas",
-      "attendance": null,
-      "goals": [],
-      "redCards": []
+      "attendance": 30368,
+      "goals": [
+        {
+          "teamId": "50129",
+          "player": "Aboubakary Koita",
+          "minute": "12'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50051",
+          "player": "Jude Bellingham",
+          "minute": "32'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50129",
+          "player": "Stavros Pilios",
+          "minute": "75'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50051",
+          "player": "Kylian Mbappé",
+          "minute": "78'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50051",
+          "player": "Federico Valverde",
+          "minute": "90+2'",
+          "type": "goal"
+        }
+      ],
+      "redCards": [
+        {
+          "teamId": "50129",
+          "player": "Aboubakary Koita",
+          "minute": "90+5'"
+        }
+      ]
     },
     {
       "id": "2049616",
@@ -8018,10 +8096,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "52758",
       "away": "52265",
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 1
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8030,7 +8111,26 @@
       "stadium": "BVB Stadion Dortmund",
       "city": "Dortmund",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "52758",
+          "player": "Fábio Silva",
+          "minute": "49'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52265",
+          "player": "Aitor Ruibal",
+          "minute": "67'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52758",
+          "player": "Konstantinos Karetsas",
+          "minute": "72'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8039,10 +8139,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "50064",
       "away": "50136",
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 1
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8051,7 +8154,32 @@
       "stadium": "Estádio do Dragão",
       "city": "Oporto",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "50064",
+          "player": "Jan Bednarek",
+          "minute": "11'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50136",
+          "player": "Scott McTominay",
+          "minute": "43'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50064",
+          "player": "Gabriel Veiga",
+          "minute": "71'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50064",
+          "player": "Jakub Kiwior",
+          "minute": "80'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8060,10 +8188,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "50062",
       "away": "50043",
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 2
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8072,7 +8203,26 @@
       "stadium": "PSV Stadion",
       "city": "Eindhoven",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "50043",
+          "player": "Nicolò Tresoldi",
+          "minute": "25'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50062",
+          "player": "Kodai Sano",
+          "minute": "54'",
+          "type": "goal"
+        },
+        {
+          "teamId": "50043",
+          "player": "Carlos Forbs",
+          "minute": "65'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8081,10 +8231,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "2603790",
       "away": "52919",
-      "score": null,
+      "score": {
+        "home": 2,
+        "away": 3
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8093,7 +8246,38 @@
       "stadium": "RB Arena",
       "city": "Leipzig",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "52919",
+          "player": "Castello Lukeba",
+          "minute": "37'",
+          "type": "own"
+        },
+        {
+          "teamId": "2603790",
+          "player": "Ridle Baku",
+          "minute": "49'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52919",
+          "player": "Enzo Fernández",
+          "minute": "58'",
+          "type": "goal"
+        },
+        {
+          "teamId": "2603790",
+          "player": "Antonio Nusa",
+          "minute": "61'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52919",
+          "player": "Erling Haaland",
+          "minute": "78'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8102,10 +8286,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "52498",
       "away": "52280",
-      "score": null,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8114,7 +8301,20 @@
       "stadium": "Eden Arena",
       "city": "Praga",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "52280",
+          "player": "Noni Madueke",
+          "minute": "9'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52280",
+          "player": "Viktor Gyökeres",
+          "minute": "38'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8123,10 +8323,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "52277",
       "away": "79946",
-      "score": null,
+      "score": {
+        "home": 1,
+        "away": 8
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8135,7 +8338,62 @@
       "stadium": "Stade Bollaert-Delelis",
       "city": "Lens",
       "attendance": null,
-      "goals": [],
+      "goals": [
+        {
+          "teamId": "79946",
+          "player": "Tasos Douvikas",
+          "minute": "7'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Tasos Douvikas",
+          "minute": "32'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Nico Paz",
+          "minute": "40'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Lucas Da Cunha",
+          "minute": "47'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Marc-Oliver Kempf",
+          "minute": "53'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Tasos Douvikas",
+          "minute": "57'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Mattia Liberali",
+          "minute": "62'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52277",
+          "player": "Ruben Aguilar",
+          "minute": "65'",
+          "type": "goal"
+        },
+        {
+          "teamId": "79946",
+          "player": "Martin Baturina",
+          "minute": "69'",
+          "type": "goal"
+        }
+      ],
       "redCards": []
     },
     {
@@ -8144,10 +8402,13 @@
       "matchday": 4,
       "matchdayName": "Jornada 4",
       "date": "2026-11-04T20:00:00Z",
-      "status": "UPCOMING",
+      "status": "LIVE",
       "home": "52319",
       "away": "2609356",
-      "score": null,
+      "score": {
+        "home": 3,
+        "away": 1
+      },
       "penalties": null,
       "leg": null,
       "aggregate": null,
@@ -8156,8 +8417,39 @@
       "stadium": "Viking Stadion",
       "city": "Stavanger",
       "attendance": null,
-      "goals": [],
-      "redCards": []
+      "goals": [
+        {
+          "teamId": "2609356",
+          "player": "Orphé Mbina",
+          "minute": "11'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52319",
+          "player": "Erik Botheim",
+          "minute": "27'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52319",
+          "player": "Zlatko Tripić",
+          "minute": "69'",
+          "type": "goal"
+        },
+        {
+          "teamId": "52319",
+          "player": "Henrik Falchener",
+          "minute": "81'",
+          "type": "goal"
+        }
+      ],
+      "redCards": [
+        {
+          "teamId": "2609356",
+          "player": "Aden McCarthy",
+          "minute": "77'"
+        }
+      ]
     },
     {
       "id": "2049629",
@@ -9674,29 +9966,29 @@
   ],
   "scorers": [
     {
+      "name": "Tasos Douvikas",
+      "team": "79946",
+      "goals": 6,
+      "assists": 1,
+      "matches": 4
+    },
+    {
       "name": "Erling Haaland",
       "team": "52919",
-      "goals": 4,
+      "goals": 5,
       "assists": 0,
-      "matches": 2
+      "matches": 3
     },
     {
       "name": "Nicolò Tresoldi",
       "team": "50043",
-      "goals": 4,
+      "goals": 5,
       "assists": 1,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "Raphinha",
       "team": "50080",
-      "goals": 4,
-      "assists": 0,
-      "matches": 3
-    },
-    {
-      "name": "Serhou Guirassy",
-      "team": "52758",
       "goals": 4,
       "assists": 0,
       "matches": 3
@@ -9737,6 +10029,13 @@
       "matches": 4
     },
     {
+      "name": "Kylian Mbappé",
+      "team": "50051",
+      "goals": 4,
+      "assists": 1,
+      "matches": 4
+    },
+    {
       "name": "Luis Suárez",
       "team": "50149",
       "goals": 4,
@@ -9744,38 +10043,17 @@
       "matches": 4
     },
     {
-      "name": "Phil Foden",
-      "team": "52919",
-      "goals": 3,
-      "assists": 1,
-      "matches": 2
-    },
-    {
-      "name": "Alexis Mac Allister",
-      "team": "7889",
-      "goals": 3,
+      "name": "Serhou Guirassy",
+      "team": "52758",
+      "goals": 4,
       "assists": 0,
-      "matches": 3
-    },
-    {
-      "name": "Bradley Barcola",
-      "team": "7889",
-      "goals": 3,
-      "assists": 0,
-      "matches": 3
+      "matches": 4
     },
     {
       "name": "Désiré Doué",
       "team": "52747",
       "goals": 3,
       "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "Kylian Mbappé",
-      "team": "50051",
-      "goals": 3,
-      "assists": 1,
       "matches": 3
     },
     {
@@ -9786,11 +10064,32 @@
       "matches": 3
     },
     {
-      "name": "Tasos Douvikas",
-      "team": "79946",
+      "name": "Phil Foden",
+      "team": "52919",
+      "goals": 3,
+      "assists": 1,
+      "matches": 3
+    },
+    {
+      "name": "Scott McTominay",
+      "team": "50136",
       "goals": 3,
       "assists": 0,
       "matches": 3
+    },
+    {
+      "name": "Alexis Mac Allister",
+      "team": "7889",
+      "goals": 3,
+      "assists": 0,
+      "matches": 4
+    },
+    {
+      "name": "Bradley Barcola",
+      "team": "7889",
+      "goals": 3,
+      "assists": 0,
+      "matches": 4
     },
     {
       "name": "Ferran Torres",
@@ -9814,6 +10113,13 @@
       "matches": 4
     },
     {
+      "name": "Nico Paz",
+      "team": "79946",
+      "goals": 3,
+      "assists": 5,
+      "matches": 4
+    },
+    {
       "name": "Nicolas Jackson",
       "team": "52683",
       "goals": 3,
@@ -9828,28 +10134,21 @@
       "matches": 4
     },
     {
-      "name": "Assane Diao",
-      "team": "79946",
-      "goals": 2,
-      "assists": 0,
-      "matches": 2
-    },
-    {
       "name": "Lautaro Martínez",
       "team": "50138",
       "goals": 2,
       "assists": 1,
       "matches": 2
-    },
-    {
-      "name": "Scott McTominay",
-      "team": "50136",
-      "goals": 2,
-      "assists": 0,
-      "matches": 2
     }
   ],
   "assisters": [
+    {
+      "name": "Nico Paz",
+      "team": "79946",
+      "goals": 3,
+      "assists": 5,
+      "matches": 4
+    },
     {
       "name": "Lamine Yamal",
       "team": "50080",
@@ -9865,9 +10164,9 @@
       "matches": 2
     },
     {
-      "name": "Carlos Forbs",
-      "team": "50043",
-      "goals": 1,
+      "name": "Brahim Díaz",
+      "team": "50051",
+      "goals": 0,
       "assists": 3,
       "matches": 3
     },
@@ -9875,20 +10174,6 @@
       "name": "João Neves",
       "team": "52747",
       "goals": 1,
-      "assists": 3,
-      "matches": 3
-    },
-    {
-      "name": "Kostas Tsimikas",
-      "team": "7889",
-      "goals": 0,
-      "assists": 3,
-      "matches": 3
-    },
-    {
-      "name": "Nico Paz",
-      "team": "79946",
-      "goals": 2,
       "assists": 3,
       "matches": 3
     },
@@ -9907,6 +10192,13 @@
       "matches": 3
     },
     {
+      "name": "Carlos Forbs",
+      "team": "50043",
+      "goals": 2,
+      "assists": 3,
+      "matches": 4
+    },
+    {
       "name": "Donyell Malen",
       "team": "50137",
       "goals": 4,
@@ -9921,9 +10213,23 @@
       "matches": 4
     },
     {
+      "name": "Kostas Tsimikas",
+      "team": "7889",
+      "goals": 0,
+      "assists": 3,
+      "matches": 4
+    },
+    {
       "name": "Maghnes Akliouche",
       "team": "52747",
       "goals": 1,
+      "assists": 3,
+      "matches": 4
+    },
+    {
+      "name": "Zlatko Tripić",
+      "team": "52319",
+      "goals": 2,
       "assists": 3,
       "matches": 4
     },
@@ -9935,8 +10241,8 @@
       "matches": 1
     },
     {
-      "name": "Brahim Díaz",
-      "team": "50051",
+      "name": "Cody Gakpo",
+      "team": "7889",
       "goals": 0,
       "assists": 2,
       "matches": 2
@@ -9977,13 +10283,6 @@
       "matches": 3
     },
     {
-      "name": "Enzo Fernández",
-      "team": "52919",
-      "goals": 0,
-      "assists": 2,
-      "matches": 3
-    },
-    {
       "name": "Ibrahim Mbaye",
       "team": "52683",
       "goals": 0,
@@ -9991,29 +10290,22 @@
       "matches": 3
     },
     {
-      "name": "Rio Ngumoha",
-      "team": "7889",
+      "name": "Iliman Ndiaye",
+      "team": "52919",
       "goals": 0,
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "Yan Diomande",
-      "team": "50051",
-      "goals": 1,
-      "assists": 2,
-      "matches": 3
-    },
-    {
-      "name": "Zlatko Tripić",
-      "team": "52319",
-      "goals": 1,
       "assists": 2,
       "matches": 3
     },
     {
       "name": "Alysson",
       "team": "52683",
+      "goals": 0,
+      "assists": 2,
+      "matches": 4
+    },
+    {
+      "name": "Christopher Nkunku",
+      "team": "2603790",
       "goals": 0,
       "assists": 2,
       "matches": 4
