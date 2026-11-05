@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T13:21:12.810Z",
+  "updatedAt": "2026-11-05T13:34:03.105Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1448,13 +1448,13 @@
       "rank": 1,
       "club": "Real Madrid",
       "seasons": 57,
-      "played": 520,
-      "won": 314,
+      "played": 521,
+      "won": 315,
       "drawn": 85,
       "lost": 121,
-      "goalsFor": 1147,
-      "goalsAgainst": 583,
-      "points": 713
+      "goalsFor": 1150,
+      "goalsAgainst": 585,
+      "points": 715
     },
     {
       "rank": 2,
@@ -1508,12 +1508,12 @@
       "rank": 6,
       "club": "Liverpool",
       "seasons": 30,
-      "played": 273,
+      "played": 274,
       "won": 160,
       "drawn": 50,
-      "lost": 63,
-      "goalsFor": 526,
-      "goalsAgainst": 254,
+      "lost": 64,
+      "goalsFor": 528,
+      "goalsAgainst": 257,
       "points": 370
     },
     {
@@ -1544,25 +1544,25 @@
       "rank": 9,
       "club": "Porto",
       "seasons": 39,
-      "played": 280,
-      "won": 126,
+      "played": 281,
+      "won": 127,
       "drawn": 61,
       "lost": 93,
-      "goalsFor": 413,
-      "goalsAgainst": 319,
-      "points": 313
+      "goalsFor": 417,
+      "goalsAgainst": 320,
+      "points": 315
     },
     {
       "rank": 10,
       "club": "Arsenal",
       "seasons": 25,
-      "played": 243,
-      "won": 128,
+      "played": 244,
+      "won": 129,
       "drawn": 52,
       "lost": 63,
-      "goalsFor": 418,
-      "goalsAgainst": 245,
-      "points": 308
+      "goalsFor": 420,
+      "goalsAgainst": 246,
+      "points": 310
     },
     {
       "rank": 11,
@@ -1640,13 +1640,13 @@
       "rank": 17,
       "club": "Borussia Dortmund",
       "seasons": 25,
-      "played": 210,
-      "won": 102,
+      "played": 211,
+      "won": 103,
       "drawn": 40,
       "lost": 68,
-      "goalsFor": 362,
-      "goalsAgainst": 269,
-      "points": 244
+      "goalsFor": 364,
+      "goalsAgainst": 270,
+      "points": 246
     },
     {
       "rank": 18,
@@ -1664,25 +1664,25 @@
       "rank": 19,
       "club": "PSV Eindhoven",
       "seasons": 34,
-      "played": 222,
+      "played": 223,
       "won": 82,
       "drawn": 55,
-      "lost": 85,
-      "goalsFor": 313,
-      "goalsAgainst": 298,
+      "lost": 86,
+      "goalsFor": 314,
+      "goalsAgainst": 300,
       "points": 219
     },
     {
       "rank": 20,
       "club": "Manchester City",
       "seasons": 17,
-      "played": 152,
-      "won": 84,
+      "played": 153,
+      "won": 85,
       "drawn": 29,
       "lost": 39,
-      "goalsFor": 319,
-      "goalsAgainst": 183,
-      "points": 197
+      "goalsFor": 322,
+      "goalsAgainst": 185,
+      "points": 199
     },
     {
       "rank": 21,
@@ -3450,7 +3450,7 @@
         "rank": 5,
         "manager": "José Mourinho",
         "nation": "Portugal",
-        "matches": 157,
+        "matches": 158,
         "years": "2001-",
         "clubs": [
           {
@@ -3467,7 +3467,7 @@
           },
           {
             "club": "Real Madrid",
-            "detail": "36"
+            "detail": "37"
           },
           {
             "club": "Manchester United",
@@ -3529,7 +3529,7 @@
         "rank": 8,
         "manager": "Massimiliano Allegri",
         "nation": "Italia",
-        "matches": 103,
+        "matches": 104,
         "years": "2010-",
         "clubs": [
           {
@@ -3542,7 +3542,7 @@
           },
           {
             "club": "Napoli",
-            "detail": "3"
+            "detail": "4"
           }
         ]
       },

@@ -263,7 +263,7 @@
       },
       {
         "name": "Nicolò Tresoldi",
-        "goals": 7
+        "goals": 8
       },
       {
         "name": "Gert Verheyen",
@@ -276,14 +276,14 @@
     "topScorers": [
       {
         "name": "Tasos Douvikas",
+        "goals": 6
+      },
+      {
+        "name": "Nico Paz",
         "goals": 3
       },
       {
         "name": "Assane Diao",
-        "goals": 2
-      },
-      {
-        "name": "Nico Paz",
         "goals": 2
       }
     ]
@@ -565,7 +565,7 @@
     "topScorers": [
       {
         "name": "Erling Haaland",
-        "goals": 38
+        "goals": 39
       },
       {
         "name": "Sergio Agüero",
@@ -876,23 +876,6 @@
       {
         "name": "Jádson",
         "goals": 9
-      }
-    ]
-  },
-  "Sporting CP": {
-    "logo": "images/clubs/sporting-cp.png",
-    "topScorers": [
-      {
-        "name": "Luis Suárez",
-        "goals": 9
-      },
-      {
-        "name": "Francisco Trincão",
-        "goals": 6
-      },
-      {
-        "name": "Liedson",
-        "goals": 6
       }
     ]
   },

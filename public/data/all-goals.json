@@ -58,8 +58,8 @@
     "name": "Kylian Mbappé",
     "article": "Kylian_Mbappé",
     "nationality": "Francia",
-    "goals": 73,
-    "matches": 101,
+    "goals": 74,
+    "matches": 102,
     "years": "2016–",
     "clubs": [
       "Monaco",
@@ -85,8 +85,8 @@
     "name": "Erling Haaland",
     "article": "Erling_Haaland",
     "nationality": "Noruega",
-    "goals": 61,
-    "matches": 60,
+    "goals": 62,
+    "matches": 61,
     "years": "2019–",
     "clubs": [
       "Red Bull Salzburg",
@@ -100,7 +100,7 @@
     "article": "Harry_Kane",
     "nationality": "Inglaterra",
     "goals": 58,
-    "matches": 73,
+    "matches": 74,
     "years": "2016–",
     "clubs": [
       "Tottenham Hotspur",
@@ -343,7 +343,7 @@
     "article": "Vinícius_Júnior",
     "nationality": "Brasil",
     "goals": 34,
-    "matches": 85,
+    "matches": 86,
     "years": "2018–",
     "clubs": [
       "Real Madrid"
@@ -441,7 +441,7 @@
     "article": "Paco_Gento",
     "nationality": "España",
     "goals": 30,
-    "matches": 89,
+    "matches": 88,
     "years": "1955–1969",
     "clubs": [
       "Real Madrid"
@@ -493,7 +493,7 @@
     "article": "Edin_Džeko",
     "nationality": "Bosnia and Herzegovina",
     "goals": 29,
-    "matches": 74,
+    "matches": 75,
     "years": "2009–2023",
     "clubs": [
       "VfL Wolfsburg",
@@ -564,7 +564,7 @@
     "article": "Sadio_Mané",
     "nationality": "Senegal",
     "goals": 27,
-    "matches": 63,
+    "matches": 64,
     "years": "2017–2023",
     "clubs": [
       "Liverpool",

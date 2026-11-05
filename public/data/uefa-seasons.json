@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T13:22:58.815Z",
+  "updatedAt": "2026-11-05T13:35:51.472Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -600,8 +600,8 @@
         {
           "season": "2026-27",
           "club": "Real Madrid",
-          "matches": 3,
-          "goals": 3,
+          "matches": 4,
+          "goals": 4,
           "assists": 1
         }
       ]
@@ -780,8 +780,8 @@
         {
           "season": "2026-27",
           "club": "Manchester City",
-          "matches": 2,
-          "goals": 4,
+          "matches": 3,
+          "goals": 5,
           "assists": 0
         }
       ]
@@ -1806,7 +1806,7 @@
         {
           "season": "2026-27",
           "club": "Napoli",
-          "matches": 3,
+          "matches": 4,
           "goals": 0,
           "assists": 1
         }
@@ -2506,61 +2506,16 @@
     "2026-27": {
       "topScorers": [
         {
-          "name": "Aleksei Batrakov",
-          "club": "Galatasaray",
-          "goals": 4
-        },
-        {
-          "name": "Donyell Malen",
-          "club": "Roma",
-          "goals": 4
-        },
-        {
-          "name": "Erling Haaland",
-          "club": "Manchester City",
-          "goals": 4
-        },
-        {
-          "name": "Ermedin Demirović",
-          "club": "Stuttgart",
-          "goals": 4
-        },
-        {
-          "name": "Fabián Ruiz",
-          "club": "Paris Saint-Germain",
-          "goals": 4
-        },
-        {
-          "name": "Harry Kane",
-          "club": "Bayern München",
-          "goals": 4
-        },
-        {
-          "name": "Luis Suárez",
-          "club": "Sporting CP",
-          "goals": 4
-        },
-        {
-          "name": "Nicolò Tresoldi",
-          "club": "Club Brugge",
-          "goals": 4
-        },
-        {
-          "name": "Raphinha",
-          "club": "Barcelona",
-          "goals": 4
-        },
-        {
-          "name": "Serhou Guirassy",
-          "club": "Borussia Dortmund",
-          "goals": 4
+          "name": "Tasos Douvikas",
+          "club": "Como",
+          "goals": 6
         }
       ],
       "topAssists": [
         {
-          "name": "Lamine Yamal",
-          "club": "Barcelona",
-          "assists": 4
+          "name": "Nico Paz",
+          "club": "Como",
+          "assists": 5
         }
       ],
       "teams": 36
@@ -2570,26 +2525,26 @@
     "season": "2026-27",
     "scorers": [
       {
+        "name": "Tasos Douvikas",
+        "club": "Como",
+        "goals": 6,
+        "matches": 4
+      },
+      {
         "name": "Erling Haaland",
         "club": "Manchester City",
-        "goals": 4,
-        "matches": 2
+        "goals": 5,
+        "matches": 3
       },
       {
         "name": "Nicolò Tresoldi",
         "club": "Club Brugge",
-        "goals": 4,
-        "matches": 3
+        "goals": 5,
+        "matches": 4
       },
       {
         "name": "Raphinha",
         "club": "Barcelona",
-        "goals": 4,
-        "matches": 3
-      },
-      {
-        "name": "Serhou Guirassy",
-        "club": "Borussia Dortmund",
         "goals": 4,
         "matches": 3
       },
@@ -2624,13 +2579,19 @@
         "matches": 4
       },
       {
-        "name": "Luis Suárez",
-        "club": "Sporting CP",
+        "name": "Kylian Mbappé",
+        "club": "Real Madrid",
         "goals": 4,
         "matches": 4
       }
     ],
     "assisters": [
+      {
+        "name": "Nico Paz",
+        "club": "Como",
+        "assists": 5,
+        "matches": 4
+      },
       {
         "name": "Lamine Yamal",
         "club": "Barcelona",
@@ -2644,26 +2605,14 @@
         "matches": 2
       },
       {
-        "name": "Carlos Forbs",
-        "club": "Club Brugge",
+        "name": "Brahim Díaz",
+        "club": "Real Madrid",
         "assists": 3,
         "matches": 3
       },
       {
         "name": "João Neves",
         "club": "Paris Saint-Germain",
-        "assists": 3,
-        "matches": 3
-      },
-      {
-        "name": "Kostas Tsimikas",
-        "club": "Liverpool",
-        "assists": 3,
-        "matches": 3
-      },
-      {
-        "name": "Nico Paz",
-        "club": "Como",
         "assists": 3,
         "matches": 3
       },
@@ -2678,6 +2627,12 @@
         "club": "LASK",
         "assists": 3,
         "matches": 3
+      },
+      {
+        "name": "Carlos Forbs",
+        "club": "Club Brugge",
+        "assists": 3,
+        "matches": 4
       },
       {
         "name": "Donyell Malen",
