@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T03:41:46.083Z",
+  "updatedAt": "2026-11-12T14:05:37.337Z",
   "season": "2026-27",
   "seasonYear": 2027,
   "rounds": [
@@ -3877,12 +3877,12 @@
         },
         {
           "teamId": "64125",
-          "player": "Raul Florucz",
+          "player": "Adem Zorgane",
           "minute": "120+5'"
         },
         {
           "teamId": "64125",
-          "player": "Adem Zorgane",
+          "player": "Raul Florucz",
           "minute": "120+5'"
         }
       ]
