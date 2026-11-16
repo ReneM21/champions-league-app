@@ -104,7 +104,8 @@
   --muted: oklch(74% 0.02 275);
   color-scheme: dark;
 
-  --background: #060919;
+  /* Fondo de siempre del modo oscuro (el de HeroUI), sin manchas de color */
+  --background: oklch(12% 0.005 285.823);
 
   --surface: rgb(255 255 255 / 0.065);
   --surface-secondary: rgb(255 255 255 / 0.04);
@@ -147,11 +148,7 @@
     inset 1px 1px 0 0 rgb(255 255 255 / 0.16), inset -1px -1px 0 0 rgb(255 255 255 / 0.05),
     0 0 0 1px rgb(0 0 0 / 0.2), 0 1px 3px 0 rgb(0 0 0 / 0.25);
 
-  --ambient:
-    radial-gradient(62vmax 62vmax at 4% -12%, rgb(40 84 230 / 0.62), transparent 62%),
-    radial-gradient(52vmax 52vmax at 104% 2%, rgb(126 62 240 / 0.46), transparent 62%),
-    radial-gradient(48vmax 48vmax at 92% 104%, rgb(10 150 190 / 0.36), transparent 62%),
-    radial-gradient(44vmax 44vmax at -4% 96%, rgb(200 40 110 / 0.24), transparent 62%);
+  --ambient: none;
 }
 
 body {
