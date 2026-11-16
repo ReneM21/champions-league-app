@@ -11,7 +11,7 @@ const PageSkeleton = () => (
 
     <div className="mb-8 grid gap-4 md:grid-cols-3">
       {Array.from({ length: 3 }, (_, i) => (
-        <div key={i} className="flex items-center gap-4 rounded-3xl bg-surface p-6 shadow-sm">
+        <div key={i} className="flex items-center gap-4 glass-surface rounded-3xl p-6">
           <Skeleton className="size-16 shrink-0 rounded-full" />
           <div className="flex-1 space-y-2">
             <Skeleton className="h-4 w-3/4 rounded-lg" />
@@ -22,7 +22,7 @@ const PageSkeleton = () => (
       ))}
     </div>
 
-    <div className="space-y-3 rounded-3xl bg-surface p-4 shadow-sm">
+    <div className="space-y-3 glass-surface rounded-3xl p-4">
       {Array.from({ length: 6 }, (_, i) => (
         <div key={i} className="flex items-center gap-4">
           <Skeleton className="size-10 shrink-0 rounded-full" />

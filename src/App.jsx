@@ -81,7 +81,8 @@ const App = () => {
   usePreload(data);
 
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    // Sin fondo propio: detrás va el fondo ambiental de body::before (src/index.css)
+    <div className="flex min-h-screen flex-col text-foreground">
       <ScrollToTopOnNavigate />
       <ChampionsLeagueHeader />
 
@@ -116,8 +117,9 @@ const App = () => {
         <Button
           isIconOnly
           size="lg"
+          variant="tertiary"
           onPress={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="rounded-full shadow-lg"
+          className="glass-fab size-12 rounded-full md:size-12"
           aria-label="Volver arriba"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

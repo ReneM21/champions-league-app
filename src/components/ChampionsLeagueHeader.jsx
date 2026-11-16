@@ -46,31 +46,35 @@ const ChampionsLeagueHeader = () => {
   ));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-separator bg-background/80 backdrop-blur-lg">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
-        <Link to="/" className="flex shrink-0 items-center gap-3 whitespace-nowrap">
-          <img src={STARBALL} alt="" className="size-9 dark:brightness-0 dark:invert" />
-          <span className="text-lg font-bold tracking-tight">
-            Champions <span className="text-muted font-medium">Stats</span>
-          </span>
-        </Link>
+    // Barra flotante de vidrio: se queda arriba y el contenido pasa por detrás
+    <header className="site-header sticky top-0 z-50 px-2 pt-2 sm:px-3 sm:pt-3">
+      <div className="liquid-glass mx-auto max-w-7xl rounded-[1.75rem]">
+        <div className="flex h-14 items-center justify-between gap-4 px-4">
+          <Link to="/" className="flex shrink-0 items-center gap-3 whitespace-nowrap">
+            <img src={STARBALL} alt="" className="size-9 dark:brightness-0 dark:invert" />
+            <span className="text-lg font-bold tracking-tight">
+              Champions <span className="text-muted font-medium">Stats</span>
+            </span>
+          </Link>
 
-        <div className="flex items-center gap-6">
-          <nav aria-label="Secciones" className="hidden items-center gap-0.5 xl:flex">
+          <div className="flex min-w-0 items-center gap-6">
+            <nav aria-label="Secciones" className="hidden min-w-0 items-center gap-0.5 xl:flex">
+              {links}
+            </nav>
+            {/* sm:flex (no sm:block): así el campo ocupa justo su caja y no invade el botón de tema */}
+            <PlayerSearch className="hidden w-56 sm:flex" />
+            <ThemeToggle />
+          </div>
+        </div>
+
+        {/* En pantallas pequeñas el menú va en una segunda fila con scroll horizontal */}
+        <div className="border-t border-separator xl:hidden">
+          <nav aria-label="Secciones" className="flex gap-1 overflow-x-auto px-3 py-2">
             {links}
           </nav>
-          <PlayerSearch className="hidden w-56 sm:block" />
-          <ThemeToggle />
-        </div>
-      </div>
-
-      {/* En pantallas pequeñas el menú va en una segunda fila con scroll horizontal */}
-      <div className="border-t border-separator xl:hidden">
-        <nav aria-label="Secciones" className="flex gap-1 overflow-x-auto px-3 py-2">
-          {links}
-        </nav>
-        <div className="px-3 pb-2 sm:hidden">
-          <PlayerSearch className="w-full" />
+          <div className="px-3 pb-3 sm:hidden">
+            <PlayerSearch className="w-full" />
+          </div>
         </div>
       </div>
     </header>

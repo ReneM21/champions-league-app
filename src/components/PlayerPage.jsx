@@ -71,7 +71,7 @@ const PlayerPage = () => {
         </div>
       </section>
 
-      <nav aria-label="Secciones del jugador" className="mb-8 flex gap-1 overflow-x-auto rounded-2xl bg-surface p-1 shadow-sm">
+      <nav aria-label="Secciones del jugador" className="glass-well mb-8 flex gap-1 overflow-x-auto rounded-3xl p-1">
         {TABS.map(({ path, label }) => (
           <NavLink
             key={label}

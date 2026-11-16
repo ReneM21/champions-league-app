@@ -37,7 +37,7 @@ const PlayerDetailPage = ({ player }) => (
             {player.finalsList.map((final) => (
               <li key={final.season} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3">
                 <span className="flex min-w-0 items-center gap-3">
-                  <span className="w-16 shrink-0 font-semibold tabular-nums">{final.season}</span>
+                  <span className="w-[4.5rem] shrink-0 whitespace-nowrap font-semibold tabular-nums">{final.season}</span>
                   <ClubLogo name={final.club} className="size-6" />
                   <span className="truncate">
                     {final.club} <span className="text-muted">vs</span> {final.opponent}

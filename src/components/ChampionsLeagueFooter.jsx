@@ -8,8 +8,8 @@ const ChampionsLeagueFooter = () => {
   const { source } = usePlayers();
 
   return (
-    <footer className="mt-16 border-t border-separator bg-surface">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-muted sm:flex-row">
+    <footer className="mt-16 px-2 pb-2 sm:px-3 sm:pb-3">
+      <div className="glass-surface mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 rounded-[1.75rem] px-6 py-8 text-sm text-muted sm:flex-row">
         <div className="flex items-center gap-3">
           <img src={LOGO} alt="UEFA Champions League" className="h-12 w-auto shrink-0 dark:brightness-0 dark:invert" />
           <p>
