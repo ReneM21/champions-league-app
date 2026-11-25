@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T13:34:03.105Z",
+  "updatedAt": "2026-11-25T16:15:06.758Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1448,13 +1448,13 @@
       "rank": 1,
       "club": "Real Madrid",
       "seasons": 57,
-      "played": 521,
-      "won": 315,
+      "played": 522,
+      "won": 316,
       "drawn": 85,
       "lost": 121,
-      "goalsFor": 1150,
-      "goalsAgainst": 585,
-      "points": 715
+      "goalsFor": 1155,
+      "goalsAgainst": 586,
+      "points": 717
     },
     {
       "rank": 2,
@@ -1544,25 +1544,25 @@
       "rank": 9,
       "club": "Porto",
       "seasons": 39,
-      "played": 281,
-      "won": 127,
+      "played": 282,
+      "won": 128,
       "drawn": 61,
       "lost": 93,
-      "goalsFor": 417,
+      "goalsFor": 418,
       "goalsAgainst": 320,
-      "points": 315
+      "points": 317
     },
     {
       "rank": 10,
       "club": "Arsenal",
       "seasons": 25,
-      "played": 244,
+      "played": 245,
       "won": 129,
-      "drawn": 52,
+      "drawn": 53,
       "lost": 63,
-      "goalsFor": 420,
-      "goalsAgainst": 246,
-      "points": 310
+      "goalsFor": 421,
+      "goalsAgainst": 247,
+      "points": 311
     },
     {
       "rank": 11,
@@ -1640,13 +1640,13 @@
       "rank": 17,
       "club": "Borussia Dortmund",
       "seasons": 25,
-      "played": 211,
+      "played": 212,
       "won": 103,
-      "drawn": 40,
+      "drawn": 41,
       "lost": 68,
-      "goalsFor": 364,
-      "goalsAgainst": 270,
-      "points": 246
+      "goalsFor": 365,
+      "goalsAgainst": 271,
+      "points": 247
     },
     {
       "rank": 18,
@@ -1664,25 +1664,25 @@
       "rank": 19,
       "club": "PSV Eindhoven",
       "seasons": 34,
-      "played": 223,
+      "played": 224,
       "won": 82,
       "drawn": 55,
-      "lost": 86,
-      "goalsFor": 314,
-      "goalsAgainst": 300,
+      "lost": 87,
+      "goalsFor": 315,
+      "goalsAgainst": 305,
       "points": 219
     },
     {
       "rank": 20,
       "club": "Manchester City",
       "seasons": 17,
-      "played": 153,
+      "played": 154,
       "won": 85,
-      "drawn": 29,
+      "drawn": 30,
       "lost": 39,
-      "goalsFor": 322,
-      "goalsAgainst": 185,
-      "points": 199
+      "goalsFor": 324,
+      "goalsAgainst": 187,
+      "points": 200
     },
     {
       "rank": 21,
@@ -1698,6 +1698,18 @@
     },
     {
       "rank": 22,
+      "club": "Galatasaray",
+      "seasons": 31,
+      "played": 208,
+      "won": 71,
+      "drawn": 47,
+      "lost": 90,
+      "goalsFor": 265,
+      "goalsAgainst": 330,
+      "points": 189
+    },
+    {
+      "rank": 23,
       "club": "Dinamo Zagreb",
       "seasons": 27,
       "played": 176,
@@ -1706,18 +1718,6 @@
       "lost": 64,
       "goalsFor": 270,
       "goalsAgainst": 249,
-      "points": 187
-    },
-    {
-      "rank": 23,
-      "club": "Galatasaray",
-      "seasons": 31,
-      "played": 207,
-      "won": 70,
-      "drawn": 47,
-      "lost": 90,
-      "goalsFor": 264,
-      "goalsAgainst": 330,
       "points": 187
     },
     {
@@ -3450,7 +3450,7 @@
         "rank": 5,
         "manager": "José Mourinho",
         "nation": "Portugal",
-        "matches": 158,
+        "matches": 159,
         "years": "2001-",
         "clubs": [
           {
@@ -3467,7 +3467,7 @@
           },
           {
             "club": "Real Madrid",
-            "detail": "37"
+            "detail": "38"
           },
           {
             "club": "Manchester United",
@@ -3529,7 +3529,7 @@
         "rank": 8,
         "manager": "Massimiliano Allegri",
         "nation": "Italia",
-        "matches": 104,
+        "matches": 105,
         "years": "2010-",
         "clubs": [
           {
@@ -3542,7 +3542,7 @@
           },
           {
             "club": "Napoli",
-            "detail": "4"
+            "detail": "5"
           }
         ]
       },

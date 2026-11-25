@@ -58,8 +58,8 @@
     "name": "Kylian Mbappé",
     "article": "Kylian_Mbappé",
     "nationality": "Francia",
-    "goals": 74,
-    "matches": 102,
+    "goals": 76,
+    "matches": 103,
     "years": "2016–",
     "clubs": [
       "Monaco",
@@ -86,7 +86,7 @@
     "article": "Erling_Haaland",
     "nationality": "Noruega",
     "goals": 62,
-    "matches": 61,
+    "matches": 62,
     "years": "2019–",
     "clubs": [
       "Red Bull Salzburg",
@@ -326,6 +326,18 @@
     ]
   },
   {
+    "id": "vinicius-junior",
+    "name": "Vinícius Júnior",
+    "article": "Vinícius_Júnior",
+    "nationality": "Brasil",
+    "goals": 35,
+    "matches": 87,
+    "years": "2018–",
+    "clubs": [
+      "Real Madrid"
+    ]
+  },
+  {
     "id": "gerd-muller",
     "name": "Gerd Müller",
     "article": "Gerd_Müller",
@@ -335,18 +347,6 @@
     "years": "1969–1977",
     "clubs": [
       "Bayern Munich"
-    ]
-  },
-  {
-    "id": "vinicius-junior",
-    "name": "Vinícius Júnior",
-    "article": "Vinícius_Júnior",
-    "nationality": "Brasil",
-    "goals": 34,
-    "matches": 86,
-    "years": "2018–",
-    "clubs": [
-      "Real Madrid"
     ]
   },
   {

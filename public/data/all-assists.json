@@ -113,7 +113,7 @@
     "article": "Kevin_De_Bruyne",
     "nationality": "Bélgica",
     "assists": 28,
-    "matches": 86,
+    "matches": 87,
     "years": "2011–",
     "clubs": [
       "Genk",
@@ -145,6 +145,20 @@
     "years": "2005–2023",
     "clubs": [
       "Lyon",
+      "Real Madrid"
+    ]
+  },
+  {
+    "id": "kylian-mbappe",
+    "name": "Kylian Mbappé",
+    "article": "Kylian_Mbappé",
+    "nationality": "Francia",
+    "assists": 27,
+    "matches": 103,
+    "years": "2016–",
+    "clubs": [
+      "Monaco",
+      "Paris Saint-Germain",
       "Real Madrid"
     ]
   }

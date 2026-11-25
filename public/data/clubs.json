@@ -475,23 +475,6 @@
       }
     ]
   },
-  "LASK": {
-    "logo": "images/clubs/lask.png",
-    "topScorers": [
-      {
-        "name": "Florian Flecker",
-        "goals": 2
-      },
-      {
-        "name": "Kasper Jørgensen",
-        "goals": 2
-      },
-      {
-        "name": "Robert Ljubičić",
-        "goals": 2
-      }
-    ]
-  },
   "Leeds United": {
     "logo": "images/clubs/leeds-united.png",
     "topScorers": [
@@ -876,6 +859,23 @@
       {
         "name": "Jádson",
         "goals": 9
+      }
+    ]
+  },
+  "Sporting CP": {
+    "logo": "images/clubs/sporting-cp.png",
+    "topScorers": [
+      {
+        "name": "Luis Suárez",
+        "goals": 9
+      },
+      {
+        "name": "Francisco Trincão",
+        "goals": 6
+      },
+      {
+        "name": "Liedson",
+        "goals": 6
       }
     ]
   },

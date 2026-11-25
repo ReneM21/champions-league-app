@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T13:35:51.472Z",
+  "updatedAt": "2026-11-25T16:16:50.797Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -600,9 +600,9 @@
         {
           "season": "2026-27",
           "club": "Real Madrid",
-          "matches": 4,
-          "goals": 4,
-          "assists": 1
+          "matches": 5,
+          "goals": 6,
+          "assists": 2
         }
       ]
     },
@@ -780,7 +780,7 @@
         {
           "season": "2026-27",
           "club": "Manchester City",
-          "matches": 3,
+          "matches": 4,
           "goals": 5,
           "assists": 0
         }
@@ -1806,7 +1806,7 @@
         {
           "season": "2026-27",
           "club": "Napoli",
-          "matches": 4,
+          "matches": 5,
           "goals": 0,
           "assists": 1
         }
@@ -2506,12 +2506,22 @@
     "2026-27": {
       "topScorers": [
         {
+          "name": "Kylian Mbappé",
+          "club": "Real Madrid",
+          "goals": 6
+        },
+        {
           "name": "Tasos Douvikas",
           "club": "Como",
           "goals": 6
         }
       ],
       "topAssists": [
+        {
+          "name": "Arda Güler",
+          "club": "Real Madrid",
+          "assists": 5
+        },
         {
           "name": "Nico Paz",
           "club": "Como",
@@ -2525,16 +2535,22 @@
     "season": "2026-27",
     "scorers": [
       {
+        "name": "Kylian Mbappé",
+        "club": "Real Madrid",
+        "goals": 6,
+        "matches": 5
+      },
+      {
         "name": "Tasos Douvikas",
         "club": "Como",
         "goals": 6,
-        "matches": 4
+        "matches": 5
       },
       {
         "name": "Erling Haaland",
         "club": "Manchester City",
         "goals": 5,
-        "matches": 3
+        "matches": 4
       },
       {
         "name": "Nicolò Tresoldi",
@@ -2547,12 +2563,6 @@
         "club": "Barcelona",
         "goals": 4,
         "matches": 3
-      },
-      {
-        "name": "Aleksei Batrakov",
-        "club": "Galatasaray",
-        "goals": 4,
-        "matches": 4
       },
       {
         "name": "Donyell Malen",
@@ -2579,17 +2589,29 @@
         "matches": 4
       },
       {
-        "name": "Kylian Mbappé",
-        "club": "Real Madrid",
+        "name": "Luis Suárez",
+        "club": "Sporting CP",
         "goals": 4,
         "matches": 4
       }
     ],
     "assisters": [
       {
+        "name": "Arda Güler",
+        "club": "Real Madrid",
+        "assists": 5,
+        "matches": 3
+      },
+      {
         "name": "Nico Paz",
         "club": "Como",
         "assists": 5,
+        "matches": 5
+      },
+      {
+        "name": "Brahim Díaz",
+        "club": "Real Madrid",
+        "assists": 4,
         "matches": 4
       },
       {
@@ -2597,18 +2619,6 @@
         "club": "Barcelona",
         "assists": 4,
         "matches": 4
-      },
-      {
-        "name": "Arda Güler",
-        "club": "Real Madrid",
-        "assists": 3,
-        "matches": 2
-      },
-      {
-        "name": "Brahim Díaz",
-        "club": "Real Madrid",
-        "assists": 3,
-        "matches": 3
       },
       {
         "name": "João Neves",
@@ -2619,12 +2629,6 @@
       {
         "name": "Ousmane Dembélé",
         "club": "Paris Saint-Germain",
-        "assists": 3,
-        "matches": 3
-      },
-      {
-        "name": "Yvan Dibango",
-        "club": "LASK",
         "assists": 3,
         "matches": 3
       },
@@ -2643,6 +2647,12 @@
       {
         "name": "Harry Kane",
         "club": "Bayern München",
+        "assists": 3,
+        "matches": 4
+      },
+      {
+        "name": "Iliman Ndiaye",
+        "club": "Manchester City",
         "assists": 3,
         "matches": 4
       }
