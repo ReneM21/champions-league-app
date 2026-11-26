@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T16:15:06.758Z",
+  "updatedAt": "2026-11-26T15:52:46.471Z",
   "sources": [
     "https://en.wikipedia.org/wiki/List_of_European_Cup_and_UEFA_Champions_League_finals",
     "https://en.wikipedia.org/wiki/European_Cup_and_UEFA_Champions_League_records_and_statistics",
@@ -1460,25 +1460,25 @@
       "rank": 2,
       "club": "Bayern München",
       "seasons": 43,
-      "played": 426,
+      "played": 427,
       "won": 257,
       "drawn": 84,
-      "lost": 85,
-      "goalsFor": 911,
-      "goalsAgainst": 429,
+      "lost": 86,
+      "goalsFor": 912,
+      "goalsAgainst": 431,
       "points": 598
     },
     {
       "rank": 3,
       "club": "Barcelona",
       "seasons": 37,
-      "played": 379,
-      "won": 222,
+      "played": 380,
+      "won": 223,
       "drawn": 81,
       "lost": 76,
-      "goalsFor": 776,
-      "goalsAgainst": 407,
-      "points": 525
+      "goalsFor": 780,
+      "goalsAgainst": 408,
+      "points": 527
     },
     {
       "rank": 4,
@@ -1496,25 +1496,25 @@
       "rank": 5,
       "club": "Manchester United",
       "seasons": 31,
-      "played": 303,
+      "played": 304,
       "won": 163,
-      "drawn": 70,
+      "drawn": 71,
       "lost": 70,
-      "goalsFor": 553,
-      "goalsAgainst": 307,
-      "points": 396
+      "goalsFor": 555,
+      "goalsAgainst": 309,
+      "points": 397
     },
     {
       "rank": 6,
       "club": "Liverpool",
       "seasons": 30,
-      "played": 274,
-      "won": 160,
+      "played": 275,
+      "won": 161,
       "drawn": 50,
       "lost": 64,
-      "goalsFor": 528,
+      "goalsFor": 531,
       "goalsAgainst": 257,
-      "points": 370
+      "points": 372
     },
     {
       "rank": 7,
@@ -1568,13 +1568,13 @@
       "rank": 11,
       "club": "Inter de Milán",
       "seasons": 28,
-      "played": 242,
-      "won": 119,
+      "played": 243,
+      "won": 120,
       "drawn": 60,
       "lost": 63,
-      "goalsFor": 351,
+      "goalsFor": 353,
       "goalsAgainst": 245,
-      "points": 298
+      "points": 300
     },
     {
       "rank": 12,
@@ -1628,13 +1628,13 @@
       "rank": 16,
       "club": "Paris Saint-Germain",
       "seasons": 20,
-      "played": 193,
+      "played": 194,
       "won": 107,
-      "drawn": 35,
+      "drawn": 36,
       "lost": 51,
-      "goalsFor": 405,
-      "goalsAgainst": 224,
-      "points": 249
+      "goalsFor": 407,
+      "goalsAgainst": 226,
+      "points": 251
     },
     {
       "rank": 17,
@@ -1652,13 +1652,13 @@
       "rank": 18,
       "club": "Atlético de Madrid",
       "seasons": 22,
-      "played": 200,
-      "won": 97,
+      "played": 201,
+      "won": 98,
       "drawn": 48,
       "lost": 55,
-      "goalsFor": 310,
+      "goalsFor": 312,
       "goalsAgainst": 212,
-      "points": 242
+      "points": 244
     },
     {
       "rank": 19,
@@ -3487,12 +3487,12 @@
         "rank": 6,
         "manager": "Diego Simeone",
         "nation": "Argentina",
-        "matches": 131,
+        "matches": 132,
         "years": "2013-",
         "clubs": [
           {
             "club": "Atlético de Madrid",
-            "detail": "131"
+            "detail": "132"
           }
         ]
       },

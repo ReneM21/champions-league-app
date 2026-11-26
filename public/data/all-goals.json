@@ -70,7 +70,7 @@
   {
     "id": "raul-gonzalez",
     "name": "Raúl",
-    "article": "Raúl_(footballer)",
+    "article": "Raúl_González",
     "nationality": "España",
     "goals": 71,
     "matches": 142,
@@ -184,7 +184,7 @@
     "years": "1994–2012",
     "clubs": [
       "Dynamo Kyiv",
-      "AC Milan",
+      "Milan",
       "Chelsea"
     ]
   },
@@ -201,7 +201,7 @@
       "Juventus",
       "Inter Milan",
       "Barcelona",
-      "AC Milan",
+      "Milan",
       "Paris Saint-Germain",
       "Manchester United"
     ]
@@ -228,7 +228,7 @@
     "years": "1997–2012",
     "clubs": [
       "Juventus",
-      "AC Milan"
+      "Milan"
     ]
   },
   {
@@ -370,8 +370,8 @@
     "name": "Ousmane Dembélé",
     "article": "Ousmane_Dembélé",
     "nationality": "Francia",
-    "goals": 31,
-    "matches": 82,
+    "goals": 32,
+    "matches": 83,
     "years": "2016–",
     "clubs": [
       "Borussia Dortmund",
@@ -431,7 +431,7 @@
     "matches": 86,
     "years": "2003–2014",
     "clubs": [
-      "AC Milan",
+      "Milan",
       "Real Madrid"
     ]
   },
@@ -515,7 +515,7 @@
       "Juventus",
       "Chelsea",
       "Atlético Madrid",
-      "AC Milan"
+      "Milan"
     ]
   },
   {
@@ -528,8 +528,34 @@
     "years": "1989–1994",
     "clubs": [
       "Marseille",
-      "AC Milan",
+      "Milan",
       "Bayern Munich"
+    ]
+  },
+  {
+    "id": "gabriel-jesus",
+    "name": "Gabriel Jesus",
+    "article": "Gabriel_Jesus",
+    "nationality": "Brasil",
+    "goals": 28,
+    "matches": 61,
+    "years": "2017–",
+    "clubs": [
+      "Manchester City",
+      "Arsenal",
+      "Barcelona"
+    ]
+  },
+  {
+    "id": "lautaro-martinez",
+    "name": "Lautaro Martínez",
+    "article": "Lautaro_Martínez",
+    "nationality": "Argentina",
+    "goals": 28,
+    "matches": 69,
+    "years": "2019–",
+    "clubs": [
+      "Inter Milan"
     ]
   },
   {
@@ -545,17 +571,16 @@
     ]
   },
   {
-    "id": "gabriel-jesus",
-    "name": "Gabriel Jesus",
-    "article": "Gabriel_Jesus",
-    "nationality": "Brasil",
+    "id": "julian-alvarez",
+    "name": "Julián Alvarez",
+    "article": "Julián_Alvarez",
+    "nationality": "Argentina",
     "goals": 27,
-    "matches": 60,
-    "years": "2017–",
+    "matches": 47,
+    "years": "2022–",
     "clubs": [
       "Manchester City",
-      "Arsenal",
-      "Barcelona"
+      "Atlético Madrid"
     ]
   },
   {
@@ -572,18 +597,6 @@
     ]
   },
   {
-    "id": "lautaro-martinez",
-    "name": "Lautaro Martínez",
-    "article": "Lautaro_Martínez",
-    "nationality": "Argentina",
-    "goals": 27,
-    "matches": 68,
-    "years": "2019–",
-    "clubs": [
-      "Inter Milan"
-    ]
-  },
-  {
     "id": "rivaldo",
     "name": "Rivaldo",
     "article": "Rivaldo",
@@ -593,7 +606,7 @@
     "years": "1997–2007",
     "clubs": [
       "Barcelona",
-      "AC Milan",
+      "Milan",
       "Olympiacos"
     ]
   },
@@ -637,19 +650,6 @@
     "clubs": [
       "VfB Stuttgart",
       "Bayern Munich"
-    ]
-  },
-  {
-    "id": "julian-alvarez",
-    "name": "Julián Alvarez",
-    "article": "Julián_Alvarez",
-    "nationality": "Argentina",
-    "goals": 26,
-    "matches": 46,
-    "years": "2022–",
-    "clubs": [
-      "Manchester City",
-      "Atlético Madrid"
     ]
   },
   {
@@ -704,7 +704,7 @@
       "Lazio",
       "Inter Milan",
       "Chelsea",
-      "AC Milan"
+      "Milan"
     ]
   }
 ]

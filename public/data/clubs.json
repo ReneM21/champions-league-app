@@ -93,7 +93,7 @@
       },
       {
         "name": "Julián Alvarez",
-        "goals": 18
+        "goals": 19
       },
       {
         "name": "Saúl Ñíguez",
@@ -446,7 +446,7 @@
     "topScorers": [
       {
         "name": "Lautaro Martínez",
-        "goals": 27
+        "goals": 28
       },
       {
         "name": "Adriano",
@@ -867,7 +867,7 @@
     "topScorers": [
       {
         "name": "Luis Suárez",
-        "goals": 9
+        "goals": 11
       },
       {
         "name": "Francisco Trincão",
@@ -892,23 +892,6 @@
       },
       {
         "name": "Nica Panduru",
-        "goals": 3
-      }
-    ]
-  },
-  "Stuttgart": {
-    "logo": "images/clubs/stuttgart.png",
-    "topScorers": [
-      {
-        "name": "Ermedin Demirović",
-        "goals": 5
-      },
-      {
-        "name": "Jamie Leweling",
-        "goals": 3
-      },
-      {
-        "name": "Kevin Kuranyi",
         "goals": 3
       }
     ]
@@ -944,6 +927,23 @@
       {
         "name": "John Carew",
         "goals": 8
+      }
+    ]
+  },
+  "Villarreal": {
+    "logo": "images/clubs/villarreal.png",
+    "topScorers": [
+      {
+        "name": "Arnaut Danjuma",
+        "goals": 6
+      },
+      {
+        "name": "Joseba Llorente",
+        "goals": 4
+      },
+      {
+        "name": "Tani Oluwaseyi",
+        "goals": 4
       }
     ]
   }

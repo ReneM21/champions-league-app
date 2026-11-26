@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T16:16:50.797Z",
+  "updatedAt": "2026-11-26T15:54:46.071Z",
   "source": "https://www.uefa.com/uefachampionsleague/history/",
   "players": {
     "cristiano-ronaldo": {
@@ -2511,6 +2511,11 @@
           "goals": 6
         },
         {
+          "name": "Luis Suárez",
+          "club": "Sporting CP",
+          "goals": 6
+        },
+        {
           "name": "Tasos Douvikas",
           "club": "Como",
           "goals": 6
@@ -2541,6 +2546,12 @@
         "matches": 5
       },
       {
+        "name": "Luis Suárez",
+        "club": "Sporting CP",
+        "goals": 6,
+        "matches": 5
+      },
+      {
         "name": "Tasos Douvikas",
         "club": "Como",
         "goals": 6,
@@ -2553,34 +2564,16 @@
         "matches": 4
       },
       {
+        "name": "Donyell Malen",
+        "club": "Roma",
+        "goals": 5,
+        "matches": 5
+      },
+      {
         "name": "Nicolò Tresoldi",
         "club": "Club Brugge",
         "goals": 5,
-        "matches": 4
-      },
-      {
-        "name": "Raphinha",
-        "club": "Barcelona",
-        "goals": 4,
-        "matches": 3
-      },
-      {
-        "name": "Donyell Malen",
-        "club": "Roma",
-        "goals": 4,
-        "matches": 4
-      },
-      {
-        "name": "Ermedin Demirović",
-        "club": "Stuttgart",
-        "goals": 4,
-        "matches": 4
-      },
-      {
-        "name": "Fabián Ruiz",
-        "club": "Paris Saint-Germain",
-        "goals": 4,
-        "matches": 4
+        "matches": 5
       },
       {
         "name": "Harry Kane",
@@ -2589,10 +2582,22 @@
         "matches": 4
       },
       {
-        "name": "Luis Suárez",
-        "club": "Sporting CP",
+        "name": "Ousmane Dembélé",
+        "club": "Paris Saint-Germain",
         "goals": 4,
         "matches": 4
+      },
+      {
+        "name": "Raphinha",
+        "club": "Barcelona",
+        "goals": 4,
+        "matches": 4
+      },
+      {
+        "name": "Aleksei Batrakov",
+        "club": "Galatasaray",
+        "goals": 4,
+        "matches": 5
       }
     ],
     "assisters": [
@@ -2621,26 +2626,8 @@
         "matches": 4
       },
       {
-        "name": "João Neves",
-        "club": "Paris Saint-Germain",
-        "assists": 3,
-        "matches": 3
-      },
-      {
-        "name": "Ousmane Dembélé",
-        "club": "Paris Saint-Germain",
-        "assists": 3,
-        "matches": 3
-      },
-      {
-        "name": "Carlos Forbs",
-        "club": "Club Brugge",
-        "assists": 3,
-        "matches": 4
-      },
-      {
-        "name": "Donyell Malen",
-        "club": "Roma",
+        "name": "Ayoze Pérez",
+        "club": "Villarreal",
         "assists": 3,
         "matches": 4
       },
@@ -2653,6 +2640,24 @@
       {
         "name": "Iliman Ndiaye",
         "club": "Manchester City",
+        "assists": 3,
+        "matches": 4
+      },
+      {
+        "name": "João Neves",
+        "club": "Paris Saint-Germain",
+        "assists": 3,
+        "matches": 4
+      },
+      {
+        "name": "Kostas Tsimikas",
+        "club": "Liverpool",
+        "assists": 3,
+        "matches": 4
+      },
+      {
+        "name": "Ousmane Dembélé",
+        "club": "Paris Saint-Germain",
         "assists": 3,
         "matches": 4
       }
